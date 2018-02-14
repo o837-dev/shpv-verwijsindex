@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\temp\VerwijsIndex\Service</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/de/Itenso.TimePeriod.resources.dll">
+      <publishTime>04/03/2014 07:05:20</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.dll">
+      <publishTime>09/04/2017 16:40:45</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.pdb">
+      <publishTime>01/13/2017 13:25:21</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll">
+      <publishTime>09/27/2017 15:57:49</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.pdb">
+      <publishTime>01/13/2017 13:25:21</publishTime>
+    </File>
+    <File Include="bin/Itenso.TimePeriod.dll">
+      <publishTime>04/03/2014 07:05:20</publishTime>
+    </File>
+    <File Include="bin/NPRProviderService.dll">
+      <publishTime>12/21/2017 15:22:47</publishTime>
+    </File>
+    <File Include="bin/NPRProviderService.pdb">
+      <publishTime>02/20/2017 21:27:34</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll">
+      <publishTime>12/21/2017 15:22:46</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.pdb">
+      <publishTime>02/20/2017 21:27:33</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexService.dll">
+      <publishTime>12/22/2017 12:24:44</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexService.pdb">
+      <publishTime>02/20/2017 21:27:34</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.dll">
+      <publishTime>12/21/2017 15:22:46</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.pdb">
+      <publishTime>02/20/2017 21:27:33</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="ManagementService.svc">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/06/2017 22:47:35</publishTime>
+    </File>
+    <File Include="ProviderService.svc">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="registration.svc">
+      <publishTime>05/17/2017 10:58:49</publishTime>
+    </File>
+    <File Include="StatusPage.html">
+      <publishTime>06/19/2017 20:03:38</publishTime>
+    </File>
+    <File Include="VerwijsIndexService.cd">
+      <publishTime>06/02/2017 10:05:13</publishTime>
+    </File>
+    <File Include="VerwijsIndexService.svc">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/24/2017 21:54:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

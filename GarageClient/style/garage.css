@@ -1,0 +1,62 @@
+﻿body table
+{
+    color: white;
+    font-size:medium;
+}
+
+body table div
+{
+    color: white;
+}
+
+table input
+{
+    margin: 0 20px 0 20px;
+}
+.in_closed
+{
+    background-image: url('/garage/res/Gate_in_closed.png');
+    background-position: 0px 0px;
+}
+
+.in_opened
+{
+    background-image: url('/garage/res/Gate_in_opened.png');
+    background-position: 0px 0px;
+}
+
+.out_closed
+{
+    background-image: url('/garage/res/Gate_out_closed.png');
+    background-position: 20px 0px;
+}
+
+.out_opened
+{
+    background-image: url('/garage/res/Gate_out_opened.png');
+    background-position: 20px 0px;
+}
+
+.btnDirection
+{
+    border:none;
+    cursor:pointer;
+    background-color: transparent;
+    padding: 5px 20px 2px 20px;
+    margin: 0 0 0 0;
+
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+}
+
+.active
+{
+    color: white;
+    background-color: gray;
+}
+
+.inactive
+{
+    color: black;
+    background-color: LightGray;
+}

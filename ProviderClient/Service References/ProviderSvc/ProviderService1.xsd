@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://verwijsindex.shpv.nl/service/" elementFormDefault="qualified" targetNamespace="https://verwijsindex.shpv.nl/service/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://verwijsindex.shpv.nl/Service/ProviderService.svc?xsd=xsd2" namespace="https://verwijsindex.shpv.nl/messages/" />
+  <xs:element name="Request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="req" nillable="true" type="q1:LinkRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="RequestResult" nillable="true" type="q2:LinkResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Registration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="req" nillable="true" type="q3:LinkRegistrationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="RegistrationResult" nillable="true" type="q4:LinkRegistrationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchRegistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="req" nillable="true" type="q5:LinkRegistrationBatchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchRegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="BatchRegistrationResult" nillable="true" type="q6:LinkRegistrationBatchResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

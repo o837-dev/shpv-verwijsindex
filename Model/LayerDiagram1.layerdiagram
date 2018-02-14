@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="2b212cf8-e2a4-442f-b92e-17298e90fab5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="e0f56f00-7d76-4bc7-9eb2-9f59bc982274" name="Error.cs">
+      <references>
+        <reference Id="eb678d4f-a288-4236-a919-ab17dfc38ae9" name="Error.cs">
+          <ArtifactNode Label="Error.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../VerwijsIndexInterface/VerwijsIndexInterface.csproj File=../VerwijsIndexInterface/Error.cs)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=VerwijsIndexInterface Namespace=Denion.WebService.VerwijsIndex Type=Err105)" Label="Err105" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=VerwijsIndexInterface Namespace=Denion.WebService.VerwijsIndex Type=Err65)" Label="Err65" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=VerwijsIndexInterface Namespace=Denion.WebService.VerwijsIndex Type=Err60)" Label="Err60" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=VerwijsIndexInterface Namespace=Denion.WebService.VerwijsIndex Type=Err)" Label="Err" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="0b4fb1c5-d3e9-4848-b9f8-c9d0e837c9cc" name="IManagement.cs">
+      <references>
+        <reference Id="e96a5bc7-ff5f-452c-86fd-d89fbc47168a" name="IManagement.cs">
+          <ArtifactNode Label="IManagement.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../VerwijsIndexInterface/VerwijsIndexInterface.csproj File=../VerwijsIndexInterface/IManagement.cs)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=VerwijsIndexInterface Namespace=Denion.WebService.VerwijsIndex Type=IManagement)" Label="IManagement" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

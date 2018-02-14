@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Temp\VerwijsIndex\Provider</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Batch.aspx">
+      <publishTime>07/11/2016 16:17:38</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="bin/Denion.Web.ProviderClient.dll">
+      <publishTime>11/16/2017 13:11:57</publishTime>
+    </File>
+    <File Include="bin/Denion.Web.ProviderClient.pdb">
+      <publishTime>11/16/2017 13:11:57</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.dll">
+      <publishTime>05/09/2017 09:19:20</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.pdb">
+      <publishTime>05/09/2017 09:19:20</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll">
+      <publishTime>09/27/2017 15:59:51</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.pdb">
+      <publishTime>09/27/2017 15:59:51</publishTime>
+    </File>
+    <File Include="bin/LumenWorks.Framework.IO.dll">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="bin/nl/AjaxControlToolkit.resources.dll">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="bin/ref/AjaxControlToolkit.dll">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll">
+      <publishTime>11/16/2017 11:26:24</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.pdb">
+      <publishTime>11/16/2017 11:26:24</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.dll">
+      <publishTime>11/16/2017 11:26:25</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.pdb">
+      <publishTime>11/16/2017 11:26:25</publishTime>
+    </File>
+    <File Include="bin/WebControls.dll">
+      <publishTime>11/16/2017 11:26:27</publishTime>
+    </File>
+    <File Include="bin/WebControls.pdb">
+      <publishTime>11/16/2017 11:26:27</publishTime>
+    </File>
+    <File Include="Cancel.aspx">
+      <publishTime>01/12/2017 11:05:17</publishTime>
+    </File>
+    <File Include="CancelAuthorisation.aspx">
+      <publishTime>05/23/2017 15:46:42</publishTime>
+    </File>
+    <File Include="Controls/SiteMenu.ascx">
+      <publishTime>05/22/2017 17:15:16</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>01/12/2017 09:43:40</publishTime>
+    </File>
+    <File Include="Demo.aspx">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="EnrollPSRight.aspx">
+      <publishTime>05/22/2017 17:09:37</publishTime>
+    </File>
+    <File Include="lib/LumenWorks.Framework.IO.dll">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="LinkRegistration.aspx">
+      <publishTime>05/23/2017 15:07:12</publishTime>
+    </File>
+    <File Include="Provider.Master">
+      <publishTime>08/14/2017 11:43:27</publishTime>
+    </File>
+    <File Include="res/ProviderTemplate.csv">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="RevokePSRight.aspx">
+      <publishTime>05/22/2017 17:09:12</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/configuration.svcinfo">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/configuration91.svcinfo">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/Denion.Web.ProviderClient.ProviderSvc.LinkRegistrationBatchResponse.datasource">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/Denion.Web.ProviderClient.ProviderSvc.LinkRegistrationResponse.datasource">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/Denion.Web.ProviderClient.ProviderSvc.LinkResponse.datasource">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/Provider.wsdl">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Service References/ProviderSvc/Reference.svcmap">
+      <publishTime>07/11/2016 16:17:39</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/23/2017 16:02:47</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

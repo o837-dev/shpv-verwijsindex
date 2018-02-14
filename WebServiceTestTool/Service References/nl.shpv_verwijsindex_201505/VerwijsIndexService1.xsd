@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://verwijsindex.shpv.nl/messages/" elementFormDefault="qualified" targetNamespace="https://verwijsindex.shpv.nl/messages/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PaymentStartRequest">
+    <xs:sequence>
+      <xs:element name="AreaManagerId" nillable="true" type="xs:string" />
+      <xs:element name="AreaId" nillable="true" type="xs:string" />
+      <xs:element name="VehicleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccessId" nillable="true" type="xs:string" />
+      <xs:element name="StartDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="VAT" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleIdType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentStartRequest" nillable="true" type="tns:PaymentStartRequest" />
+  <xs:complexType name="PaymentStartResponse">
+    <xs:sequence>
+      <xs:element name="ProviderId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAuthorisationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorisationMaxAmount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="AuthorisationValidUntil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RemarkId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentStartResponse" nillable="true" type="tns:PaymentStartResponse" />
+  <xs:complexType name="PaymentEndRequest">
+    <xs:sequence>
+      <xs:element name="ProviderId" nillable="true" type="xs:string" />
+      <xs:element name="PaymentAuthorisationId" nillable="true" type="xs:string" />
+      <xs:element name="VehicleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element name="EndDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="VAT" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="VehicleIdType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentEndRequest" nillable="true" type="tns:PaymentEndRequest" />
+  <xs:complexType name="PaymentEndResponse">
+    <xs:sequence>
+      <xs:element name="PaymentAuthorisationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemarkId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentEndResponse" nillable="true" type="tns:PaymentEndResponse" />
+  <xs:complexType name="PaymentCheckRequest">
+    <xs:sequence>
+      <xs:element name="AreaManagerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element name="VehicleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element name="CheckDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Provider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleIdType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentCheckRequest" nillable="true" type="tns:PaymentCheckRequest" />
+  <xs:complexType name="PaymentCheckResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Granted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemarkId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentCheckResponse" nillable="true" type="tns:PaymentCheckResponse" />
+</xs:schema>

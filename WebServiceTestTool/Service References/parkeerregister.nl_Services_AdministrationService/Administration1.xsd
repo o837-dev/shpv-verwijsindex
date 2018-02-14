@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.parkeerregister.nl/2014/07/AVG" elementFormDefault="qualified" targetNamespace="http://schemas.parkeerregister.nl/2014/07/AVG" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.parkeerregister.nl/Services/Administration.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BezwaarBeroep" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Request" nillable="true" type="tns:Request" />
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="tns:Container" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Container">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Records" nillable="true" type="tns:ArrayOfRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Container" nillable="true" type="tns:Container" />
+  <xs:complexType name="ArrayOfRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Record" nillable="true" type="tns:Record" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecord" nillable="true" type="tns:ArrayOfRecord" />
+  <xs:complexType name="Record">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorisationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Uren" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Record" nillable="true" type="tns:Record" />
+  <xs:element name="PermitsByCitizensServiceNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CitizensServiceNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PermitsByCitizensServiceNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PermitsByCitizensServiceNumberResult" nillable="true" type="tns:Permits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Permits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Records" nillable="true" type="tns:ArrayOfPermit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Permits" nillable="true" type="tns:Permits" />
+  <xs:complexType name="ArrayOfPermit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Permit" nillable="true" type="tns:Permit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermit" nillable="true" type="tns:ArrayOfPermit" />
+  <xs:complexType name="Permit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CitizensServiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNumberAdditions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Infix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermitId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermitType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceOfResidence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Permit" nillable="true" type="tns:Permit" />
+  <xs:element name="AllPermits">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllPermitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AllPermitsResult" nillable="true" type="tns:Permits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Registration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parker" nillable="true" type="tns:LongParker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="LongParker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CitizensServiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LongParker" nillable="true" type="tns:LongParker" />
+  <xs:element name="RegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrationResult" nillable="true" type="tns:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Result" nillable="true" type="tns:Result" />
+  <xs:element name="RegistrationBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parker" nillable="true" type="tns:ArrayOfLongParker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfLongParker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LongParker" nillable="true" type="tns:LongParker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLongParker" nillable="true" type="tns:ArrayOfLongParker" />
+  <xs:element name="RegistrationBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrationBatchResult" nillable="true" type="tns:ArrayOfResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="tns:Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResult" nillable="true" type="tns:ArrayOfResult" />
+  <xs:element name="GarageInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GarageInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GarageInfoResult" nillable="true" type="tns:Garages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Garages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Records" nillable="true" type="tns:ArrayOfGarage" />
+      <xs:element minOccurs="0" name="ValidTill" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Garages" nillable="true" type="tns:Garages" />
+  <xs:complexType name="ArrayOfGarage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Garage" nillable="true" type="tns:Garage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarage" nillable="true" type="tns:ArrayOfGarage" />
+  <xs:complexType name="Garage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CapacityContracted" type="xs:int" />
+      <xs:element minOccurs="0" name="CapacityInUse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Garage" nillable="true" type="tns:Garage" />
+  <xs:element name="ServiceStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BezwaarBeroep" minOccurs="0" name="ServiceStatusResult" nillable="true" type="q1:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Parker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="licensee" nillable="true" type="tns:Licensee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Licensee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Licensee" nillable="true" type="tns:Licensee" />
+  <xs:element name="ParkerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ParkerResult" nillable="true" type="tns:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

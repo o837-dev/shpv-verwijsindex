@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Denion.WebService.VerwijsIndex.VerwijsIndexService" CodeBehind="VerwijsIndexService.svc.cs" %>

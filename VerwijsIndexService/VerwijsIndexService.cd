@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Denion.WebService.VerwijsIndex.DatabaseFunctions" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAQAAAABAAAwAAQEAAACARACQAAAEAAAAAAA=</HashCode>
+      <FileName>DatabaseFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.Global" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAEAAAAAAAAAAECIBQAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ProviderService" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5.25" Width="6" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAIAAAAAAAAAAAAAAAAAAAIBAAAAAAAEAAA=</HashCode>
+      <FileName>ProviderService.svc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.registration" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.75" Width="8.5" />
+    <TypeIdentifier>
+      <HashCode>ACggAAAAAQAEIAAAAAAAAACCIAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>registration.svc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.VerwijsIndexService" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.25" Width="5.5" />
+    <NestedTypes>
+      <Class Name="Denion.WebService.VerwijsIndex.VerwijsIndexService.PaymentStartWorker" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>VerwijsIndexService.svc.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Denion.WebService.VerwijsIndex.VerwijsIndexService.PaymentCheckWorker" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>VerwijsIndexService.svc.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EABAAgAQAAAAAAAAAAAAAAAAAAAAAgAAICAAAAAAAAA=</HashCode>
+      <FileName>VerwijsIndexService.svc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

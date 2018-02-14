@@ -1,0 +1,931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGAIEAEmQAAAAhAAAMEAgAQAwBQEkAQAI0EAACAEACA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceRequestDataLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.StatusRequestResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAAAAACACAAAQAAAQgAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.StatusRequestRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAAAAACACAAAQAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightRevokeResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhACAAAAACCAAAAEAAIUoAAEYAASAAAABAAAEAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.SpecifCalcAmountData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQgCADAAAAAAAAAEICAgAggAAAAAAAAAAAAEAAAAM=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightRemarkData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABCFAACAQAAAAAAAICAwCAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightRevokeRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAQAAAAAAAAAAgAABAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoForProviderResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAABAAAAAIAAAAAAAgAAAgAAAAAEAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightInfoData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cmQIErA2YAUFAxAAAsAEAgYU4BwFMAQSI0gcBCgAAiI=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightWindowData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACAAEgAIAAAAAIgAAIgAAgAEAAAAAAEAIACAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightInfoDataLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoForProviderRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACQBAAAAAAAAAAAAAAoAABgAAAAIkAAAAIAIA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACAABAAAAAIAAAAEAAgAAAgAACAAEAAAAAEAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACAAAAAAAAAAAAAEAAgAABgAACAAkAAAAAEAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CheckInfoData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAABAiBARAIAgAIAAiIIIAgABBAAIAIFAgEgAwAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CheckInfoDataCheckLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.AddressDataResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAACAAAAAQCIAAIAAAAAkFgAAEAAAQAAAAAACAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.AddressDataResponseLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveCheckInfoResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAASAAABAgAAAAAAAAQAgAAAgAAAAAEICAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveCheckInfoRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAEAAgAAAgAACAAEAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAgBAAAAAAAQAgAAAQAAAAAAAAAAAgAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.AreaData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIEBAiAAQAAAAAIKCgAAAAkYAIAAQCIEQEAAgQgAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.AreaRegulationData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAADAAAEAAAAAAAAAAIAiQAAAAAAAgAIAAAQAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFAAAAAiAAEAAgAAAAIAAAQAgAgEgAAkJEAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationRequestDataAreaLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.AddressDataRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAACAAAAAQCIAAAAAAAAkFgAAEAAAQAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.SpecialDay" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAgAgAABAAAAAEAAAAAgA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.FarePartData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAACAAAAAQACBAAwAACAhCAAAAAQQAAAAAhAAAg=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.FareData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAACAAQAAEAAAAAABAAAgAAgAAAEDQJAAAIwAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.TimeFrameData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABCACAICAIEABAEACgAgABBAgQAAYEAACIQAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RegulationData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAACAAAAAAAQIgYAAAACgAAAABAABCgAEAAgAAQ=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreaRegulationFareInfoResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAIAAAAgAgQAAQAAAAAAAAAEIAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreaRegulationFareInfoRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAEAAgAAAAAAIAQAgAAAAAAAIEAAEAIAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAhACAAAAAiCAAAAEAAYUoAAFYAASIEgABAAAEAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGAIEAEmQAAAAhAAAsEAgAQAwBQEkAQAI0EAACAEACA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollRequestDataLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.InformationalMessageType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAIAAgAwAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckPSRightData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGQAEhAiQAQRAQAAIoIEAAAixLANMAQSIEgAAgAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAABAAggQAAACAIQggAAAQAAAAAQAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECIAAAiAABAIgAAAAAgIIQAwAABgAQAIkEAEAAQAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckRequestDataCheckLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="35.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ResponseError" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAAAIAAAAAAAAIAAgAwAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.StatusRequestResponseError" Collapsed="true">
+    <Position X="26.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationResponseError" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAAAAgAAEAAAAAAAAAAAAAAAgEAAAgBAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationResponseErrorAreaLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceResponseError" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGAAEAAgAAAAAgAAAAEAAAQAgAAE0AQAAgEAACAEAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceResponseErrorLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreaRegulationFareInfoResponseError" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoForProviderResponseError" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAIAABgAAAAAkAAAAIAIA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoResponseError" Collapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAgAACAAEAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveCheckInfoResponseError" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAgAACAAEAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckResponseError" Collapsed="true">
+    <Position X="24" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAgAABAIgAAAAAgIIQAAAABgAQAIkEAEAAQAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckResponseErrorCheckLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightRevokeResponseError" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollResponseError" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAEAAgAAAAAgAAAAAAAAQAgAAEwAQAAgEAACAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollResponseErrorLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAhACAAAAAiCAAAAEAAYQgAAEYAASIEAABAAAEAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceRequest" Collapsed="true">
+    <Position X="30.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CalculatePriceResponse" Collapsed="true">
+    <Position X="35.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckRequest" Collapsed="true">
+    <Position X="32.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightCheckResponse" Collapsed="true">
+    <Position X="37.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollRequest" Collapsed="true">
+    <Position X="42.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightEnrollResponse" Collapsed="true">
+    <Position X="30.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreaRegulationFareInfoRequest" Collapsed="true">
+    <Position X="35.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreaRegulationFareInfoResponse" Collapsed="true">
+    <Position X="39.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationRequest" Collapsed="true">
+    <Position X="42.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveAreasByLocationResponse" Collapsed="true">
+    <Position X="30.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveCheckInfoRequest" Collapsed="true">
+    <Position X="35.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveCheckInfoResponse" Collapsed="true">
+    <Position X="39.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoRequest" Collapsed="true">
+    <Position X="32.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoResponse" Collapsed="true">
+    <Position X="35.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoForProviderRequest" Collapsed="true">
+    <Position X="42.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RetrieveRightInfoForProviderResponse" Collapsed="true">
+    <Position X="28.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightRevokeRequest" Collapsed="true">
+    <Position X="41" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PSRightRevokeResponse" Collapsed="true">
+    <Position X="44.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.StatusRequestRequest" Collapsed="true">
+    <Position X="32.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.StatusRequestResponse" Collapsed="true">
+    <Position X="35.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RegistrationClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAABgBAAAAAAQAAAgEjBAAAgAAPAAQAgAACABAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PaymentStartRequest" Collapsed="true">
+    <Position X="42.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAgAAAAAAEgAAAAgAIACAAAAAgAgAIAAAAAABAgA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PaymentStartResponse" Collapsed="true">
+    <Position X="44.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAABAAAAAAACAAAAAAAgAAAAgABAwA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PaymentEndRequest" Collapsed="true">
+    <Position X="39.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAgAAAAAAAAAABAgAAACAAAAAgAgAAAAAAgAAAAA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PaymentEndResponse" Collapsed="true">
+    <Position X="41" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAgAAAQA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PaymentCheckRequest" Collapsed="true">
+    <Position X="35.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAEAgAAAAgAAAAAAAAAgAgAIAAAAAAAAAA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.PaymentCheckResponse" Collapsed="true">
+    <Position X="37.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAiAAAAAAAIAAAAAAAAQA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.LinkTerminationAcknowledged" Collapsed="true">
+    <Position X="32.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.LinkTerminationNotification" Collapsed="true">
+    <Position X="34" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.LinkRegistrationRequest" Collapsed="true">
+    <Position X="42.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAEAAAAAAAAAAABAgAAAAAAAAggAgAICAAAAAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.LinkRegistrationResponse" Collapsed="true">
+    <Position X="44.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.LinkRegistrationBatchRequest" Collapsed="true">
+    <Position X="39.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.LinkRegistrationBatchResponse" Collapsed="true">
+    <Position X="41" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CancelAuthorisationRequest" Collapsed="true">
+    <Position X="41" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAAAAAAAAAAAgAABAgAAAAAAAAAgAgAIAAAAgAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.CancelAuthorisationResponse" Collapsed="true">
+    <Position X="42.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAiAAAAQAAAAAAAgAAAQA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateAuthorisationRequest" Collapsed="true">
+    <Position X="28.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAgAABAAAAAAAAAAAgAgAIAAAAgAAAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateAuthorisationResponse" Collapsed="true">
+    <Position X="30.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAiAAAAQAAAAAAAgAAAQA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.StatusResponse" Collapsed="true">
+    <Position X="39.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>IGeneral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.Err" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Error.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.Err60" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Error.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.Err65" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Error.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.Err105" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Error.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.Functions" Collapsed="true">
+    <Position X="35.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAAAAARAwAAAIAAAAAIAAAAAAABAAAAA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.VerwijsIndexClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAAAAACBA=</HashCode>
+      <FileName>Proxy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ProviderClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Proxy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ConsumerClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateEnrollRequestResponseError" Collapsed="true">
+    <Position X="6" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateEnrollRequestRequest" Collapsed="true">
+    <Position X="32.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateEnrollRequestResponse" Collapsed="true">
+    <Position X="35.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateEnrollRequestResponseData" Collapsed="true">
+    <Position X="37.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAABAAAAAAACAAAAAAAgAAAAgABAwA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.ActivateEnrollRequestRequestData" Collapsed="true">
+    <Position X="34" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAgAAAAAAEgAAAAAAIACAAAAAgAgAIAAAAAABAgA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestResponseError" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestRequest" Collapsed="true">
+    <Position X="39.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestResponse" Collapsed="true">
+    <Position X="42.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestResponseData" Collapsed="true">
+    <Position X="44.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAgAAAQA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestRequestData" Collapsed="true">
+    <Position X="41" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAgAAAAAAAAAABAAAAACAAAAAgAgAAAAAAgAAAAA=</HashCode>
+      <FileName>INprPlus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Denion.WebService.VerwijsIndex.DateTimeRange" Collapsed="true">
+    <Position X="28.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAACAAAAAEgAAAAABAAAAAgIBAAAAAAAAAAqg=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Denion.WebService.VerwijsIndex.IRegistration">
+    <Position X="13.75" Y="6.25" Width="7.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgBAAAAAAAAAAgEhAAAAgAAOAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Denion.WebService.VerwijsIndex.IVerwijsIndex">
+    <Position X="21.75" Y="6.25" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAAAAACBA=</HashCode>
+      <FileName>IVerwijsIndex.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Denion.WebService.VerwijsIndex.IProvider">
+    <Position X="13.5" Y="4" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>IProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Denion.WebService.VerwijsIndex.IConsumer">
+    <Position X="20.75" Y="4.25" Width="7.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IConsumer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Denion.WebService.VerwijsIndex.UneceLandCodesType" Collapsed="true">
+    <Position X="37.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JyjnfNuxCQckDzoEjRHox5LA1NnLfQgA0EEOPvf18H4=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.VerwijsIndex.KindOfRemarksType" Collapsed="true">
+    <Position X="34" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.VerwijsIndex.DaysOfTheWeekType" Collapsed="true">
+    <Position X="28.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAgACAABIAAAAAAAAAAAAAAEAgAAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.VerwijsIndex.IndicatorYNType" Collapsed="true">
+    <Position X="30.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgABAAIAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.VerwijsIndex.TypeOfRegulationType" Collapsed="true">
+    <Position X="35.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>INpr.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.VerwijsIndex.IntersectionType" Collapsed="true">
+    <Position X="32.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAQAIBAAEAAAA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://verwijsindex.shpv.nl/Monitor/MonitorVWX.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" />
+  <xs:element name="GetVWXPerPeriodRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="periodStart" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="periodEnd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVWXPerPeriodRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" minOccurs="0" name="GetVWXPerPeriodRecordsResult" nillable="true" type="q1:Models.CheckResultCollectionOfModels.VWXInfo_PerPeriodczrXvgmi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIISPerPeriodRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="periodStart" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="periodEnd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIISPerPeriodRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" minOccurs="0" name="GetIISPerPeriodRecordsResult" nillable="true" type="q2:Models.CheckResultCollectionOfModels.IISInfo_PerPeriodczrXvgmi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" minOccurs="0" name="GetServiceStatusResult" nillable="true" type="q3:StatusInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

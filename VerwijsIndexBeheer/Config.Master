@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Config.master.cs" Inherits="Denion.WebService.Beheer.Config" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Verwijsindex Beheer</title>
+    <link href="/style/verwijsindex.css" rel="stylesheet" type="text/css"/>
+    <meta content="/style/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" runat="server" id="CustomerIcon" href="/style/favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="content">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+	
+	<p class="heading1"><a href="/">..</a> / Beheer</p>
+    <sbs:Menu ID="Menu1" runat="server"/><br /><br />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

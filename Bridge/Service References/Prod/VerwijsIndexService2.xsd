@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://verwijsindex.shpv.nl/service/" elementFormDefault="qualified" targetNamespace="https://verwijsindex.shpv.nl/service/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://verwijsindex.ictspiritbs.nl/development/VerwijsIndexService.svc?xsd=xsd2" namespace="https://verwijsindex.shpv.nl/messages/" />
+  <xs:element name="PaymentStart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="PaymentStartRequest" nillable="true" type="q1:PaymentStartRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentStartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="PaymentStartResult" nillable="true" type="q2:PaymentStartResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentEnd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="PaymentEndRequest" nillable="true" type="q3:PaymentEndRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentEndResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="PaymentEndResult" nillable="true" type="q4:PaymentEndResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="PaymentCheckRequest" nillable="true" type="q5:PaymentCheckRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="https://verwijsindex.shpv.nl/messages/" minOccurs="0" name="PaymentCheckResult" nillable="true" type="q6:PaymentCheckResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Models.CheckResultCollectionOfModels.VWXInfo_PerPeriodczrXvgmi">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="Models.CheckResultCollectionOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Models.VWXInfo_PerPeriod" Namespace="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" NestedLevel="1" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="collection" nillable="true" type="tns:ArrayOfModels.VWXInfo_PerPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Models.CheckResultCollectionOfModels.VWXInfo_PerPeriodczrXvgmi" nillable="true" type="tns:Models.CheckResultCollectionOfModels.VWXInfo_PerPeriodczrXvgmi" />
+  <xs:complexType name="ArrayOfModels.VWXInfo_PerPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Models.VWXInfo_PerPeriod" nillable="true" type="tns:Models.VWXInfo_PerPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModels.VWXInfo_PerPeriod" nillable="true" type="tns:ArrayOfModels.VWXInfo_PerPeriod" />
+  <xs:complexType name="Models.VWXInfo_PerPeriod">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Models.DurationInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Function" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Models.VWXInfo_PerPeriod" nillable="true" type="tns:Models.VWXInfo_PerPeriod" />
+  <xs:complexType name="Models.DurationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Consumed" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Models.DurationInfo" nillable="true" type="tns:Models.DurationInfo" />
+  <xs:complexType name="Models.CheckResultCollectionOfModels.IISInfo_PerPeriodczrXvgmi">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="Models.CheckResultCollectionOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Models.IISInfo_PerPeriod" Namespace="http://schemas.datacontract.org/2004/07/Monitor.VWX.Imported" NestedLevel="1" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="collection" nillable="true" type="tns:ArrayOfModels.IISInfo_PerPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Models.CheckResultCollectionOfModels.IISInfo_PerPeriodczrXvgmi" nillable="true" type="tns:Models.CheckResultCollectionOfModels.IISInfo_PerPeriodczrXvgmi" />
+  <xs:complexType name="ArrayOfModels.IISInfo_PerPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Models.IISInfo_PerPeriod" nillable="true" type="tns:Models.IISInfo_PerPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModels.IISInfo_PerPeriod" nillable="true" type="tns:ArrayOfModels.IISInfo_PerPeriod" />
+  <xs:complexType name="Models.IISInfo_PerPeriod">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Models.DurationInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DestinationUri" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Models.IISInfo_PerPeriod" nillable="true" type="tns:Models.IISInfo_PerPeriod" />
+  <xs:complexType name="StatusInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusInfo" nillable="true" type="tns:StatusInfo" />
+</xs:schema>

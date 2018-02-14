@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="48facd80-a46e-473d-ad63-105534d71e01" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://verwijsindex.ictspiritbs.nl/development/VerwijsIndexService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VerwijsIndexService.xsd" MetadataType="Schema" ID="a0843137-b063-4973-a47a-0d8a24974cc0" SourceId="1" SourceUrl="http://verwijsindex.ictspiritbs.nl/development/VerwijsIndexService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VerwijsIndex.wsdl" MetadataType="Wsdl" ID="bed97cf8-c7a1-4d95-8294-f68524b12ec0" SourceId="1" SourceUrl="http://verwijsindex.ictspiritbs.nl/development/VerwijsIndexService.svc" />
+    <MetadataFile FileName="VerwijsIndexService1.xsd" MetadataType="Schema" ID="80f1161f-f91f-4d89-80d9-6bfa566f3ff6" SourceId="1" SourceUrl="http://verwijsindex.ictspiritbs.nl/development/VerwijsIndexService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VerwijsIndexService2.xsd" MetadataType="Schema" ID="0f1f9847-b86e-4524-8948-04a09ce605d7" SourceId="1" SourceUrl="http://verwijsindex.ictspiritbs.nl/development/VerwijsIndexService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

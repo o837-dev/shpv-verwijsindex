@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\temp\VerwijsIndex\AutoProvider</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AutonomousProviderService.svc">
+      <publishTime>07/11/2016 16:17:38</publishTime>
+    </File>
+    <File Include="bin/AutonomousProviderService.dll">
+      <publishTime>03/09/2017 15:36:05</publishTime>
+    </File>
+    <File Include="bin/AutonomousProviderService.pdb">
+      <publishTime>03/09/2017 15:36:05</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.dll">
+      <publishTime>01/13/2017 13:25:21</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.pdb">
+      <publishTime>01/13/2017 13:25:21</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll">
+      <publishTime>01/13/2017 13:25:21</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.pdb">
+      <publishTime>01/13/2017 13:25:21</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll">
+      <publishTime>02/20/2017 21:27:33</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.pdb">
+      <publishTime>02/20/2017 21:27:33</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.dll">
+      <publishTime>02/20/2017 21:27:33</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.pdb">
+      <publishTime>02/20/2017 21:27:33</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/09/2017 15:36:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

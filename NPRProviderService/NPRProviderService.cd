@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Denion.WebService.Functions" Collapsed="true">
+    <Position X="34.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAkAAAAAAAAAAAAAAAEAACCAABAEAQAAAAAEAAA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDWRight" Collapsed="true">
+    <Position X="34.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.NPRRight" Collapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.NPRRightCheck" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAoAAAAgAAAQA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.GEOinfo" Collapsed="true">
+    <Position X="36.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.NPRProviderService" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAgAAAAAAAAAAAAAAAAAAAAACAgAAAGAAAAAABAA=</HashCode>
+      <FileName>NPRProviderService.svc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.Properties.Settings" Collapsed="true">
+    <Position X="31.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAYAgABAAAIAAAAAABABAACAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGAIEAEmQAAAAhAAAMEAgAQAwBQEkAQAI0EAACAEACA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceRequestDataLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.StatusRequestResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAAAAACACAAAQAAAQgAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.StatusRequestRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAAAAACACAAAQAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightRevokeResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhACAAAAACCAAAAEAAIUoAAEYAASAAAABAAAEAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.SpecifCalcAmountData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQgCADAAAAAAAAAEICAgAggAAAAAAAAAAAAEAAAAM=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightRemarkData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABCFAACAQAAAAAAAICAwCAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightRevokeRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAQAAAAAAAAAAgAABAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoForProviderResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAABAAAAAIAAAAAAAgAAAgAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightInfoData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cmQIErA2YAUFAxAAAsAEAgYU4BwFMAQSI0gcBCgAAiI=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightWindowData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACAAEgAIAAAAAIgAAIgAAgAEAAAAAAEAIACAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightInfoDataLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoForProviderRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACQBAAAAAAAAAAAAAAoAABgAAAAIkAAAAIAIA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACAABAAAAAIAAAAEAAgAAAgAACAAEAAAAAEAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACAAAAAAAAAAAAAEAAgAABgAACAAkAAAAAEAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.CheckInfoData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAABAiBARAIAgAIAAiIIIAgABBAAIAIFAgEgAwAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.CheckInfoDataCheckLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.AddressDataResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAACAAAAAQCIAAIAAAAAkFgAAEAAAQAAAAAACAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.AddressDataResponseLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveCheckInfoResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAASAAABAgAAAAAAAAQAgAAAgAAAAAEICAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveCheckInfoRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAEAAgAAAgAACAAEAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAgBAAAAAAAQAgAAAQAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.AreaData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIEBAiAAQAAAAAIKCgAAAAkYAIAAQCIEQEAAgQgAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.AreaRegulationData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAADAAAEAAAAAAAAAAIAiQAAAAAAAgAIAAAQAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFAAAAAiAAEAAgAAAAIAAAQAgAgEgAAkJEAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationRequestDataAreaLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.AddressDataRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAACAAAAAQCIAAAAAAAAkFgAAEAAAQAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.SpecialDay" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAgAgAABAAAAAEAAAAAgA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.FarePartData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAACAAAAAQACBAAwAACAhCAAAAAQQAAAAAhAAAg=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.FareData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAACAAQAAEAAAAAABAAAgAAgAAAEDQJAAAIwAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.TimeFrameData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABCACAICAIEABAEACgAgABBAgQAAYEAACIQAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RegulationData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAACAAAAAAAQIgYAAAACgAAAABAABCgAEAAgAAQ=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAIAAAAgAgQAAQAAAAAAAAAEIAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreaRegulationFareInfoRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAEAAgAAAAAAIAQAgAAAAAAAIEAAEAIAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAhACAAAAAiCAAAAEAAYUoAAFYAASIEgABAAAEAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGAIEAEmQAAAAhAAAsEAgAQAwBQEkAQAI0EAACAEACA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollRequestDataLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.InformationalMessageType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAIAAgAwAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckPSRightData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGQAEhAiQAQRAQAAIoIEAAAixLANMAQSIEgAAgAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAABAAggQAAACAIQggAAAQAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckRequestData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECIAAAiAABAIgAAAAAgIIQAwAABgAQAIkEAEAAQAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckRequestDataCheckLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.ResponseError" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAAAIAAAAAAAAIAAgAwAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.StatusRequestResponseError" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationResponseError" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAAAAgAAEAAAAAAAAAAAAAAAgEAAAgBAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationResponseErrorAreaLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceResponseError" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EGAAEAAgAAAAAgAAAAEAAAQAgAAE0AQAAgEAACAEAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceResponseErrorLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseError" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoForProviderResponseError" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAIAABgAAAAAkAAAAIAIA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoResponseError" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAgAACAAEAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveCheckInfoResponseError" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAgAACAAEAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckResponseError" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAgAABAIgAAAAAgIIQAAAABgAQAIkEAEAAQAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckResponseErrorCheckLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightRevokeResponseError" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollResponseError" Collapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAEAAgAAAAAgAAAAAAAAQAgAAEwAQAAgEAACAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollResponseErrorLocationPSRight" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAAAAgAAIAAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceResponseData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAhACAAAAAiCAAAAEAAYQgAAEYAASIEAABAAAEAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceRequest" Collapsed="true">
+    <Position X="33" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.CalculatePriceResponse" Collapsed="true">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckRequest" Collapsed="true">
+    <Position X="31.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightCheckResponse" Collapsed="true">
+    <Position X="36.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollRequest" Collapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightEnrollResponse" Collapsed="true">
+    <Position X="31.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreaRegulationFareInfoRequest" Collapsed="true">
+    <Position X="24.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponse" Collapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationRequest" Collapsed="true">
+    <Position X="31.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveAreasByLocationResponse" Collapsed="true">
+    <Position X="36.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveCheckInfoRequest" Collapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveCheckInfoResponse" Collapsed="true">
+    <Position X="29.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoRequest" Collapsed="true">
+    <Position X="24.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoResponse" Collapsed="true">
+    <Position X="27.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoForProviderRequest" Collapsed="true">
+    <Position X="33" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RetrieveRightInfoForProviderResponse" Collapsed="true">
+    <Position X="36.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightRevokeRequest" Collapsed="true">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.PSRightRevokeResponse" Collapsed="true">
+    <Position X="29.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.StatusRequestRequest" Collapsed="true">
+    <Position X="36.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.StatusRequestResponse" Collapsed="true">
+    <Position X="24.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Denion.WebService.RDW.RegistrationClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAABgBAgAEAAAAAAgExAAQAgAAOAAAAAgEAAACI=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Denion.WebService.RDW.IRegistration" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgBAAAAAAAAAAgEhAAAAgAAOAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Denion.WebService.RDW.IRegistrationChannel" Collapsed="true">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Denion.WebService.RDW.UneceLandCodesType" Collapsed="true">
+    <Position X="31.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JyjnfNuxCQckDzoEjRHox5LA1NnLfQgA0EEOPvf18H4=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.RDW.KindOfRemarksType" Collapsed="true">
+    <Position X="27.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.RDW.DaysOfTheWeekType" Collapsed="true">
+    <Position X="24.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAgACAABIAAAAAAAAAAAAAAEAgAAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.RDW.IndicatorYNType" Collapsed="true">
+    <Position X="26" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgABAAIAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Denion.WebService.RDW.TypeOfRegulationType" Collapsed="true">
+    <Position X="29.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Service References\RDW\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

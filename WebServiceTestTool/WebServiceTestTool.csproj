@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CB998CC-50CC-43D4-A159-B0EE909C95A6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebServiceTestTool</RootNamespace>
+    <AssemblyName>WebServiceTestTool</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\nl.shpv_verwijsindex_201505\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\nl.shpv_verwijsindex_201709\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\parkeerregister.nl_Services_AdministrationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\shpv.nl_MonitorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\shpv.nl_Service_201404_verwijsindexservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\shpv.nl_Service_VerwijsIndexService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\nl.shpv_verwijsindex_201505\VerwijsIndex.wsdl" />
+    <None Include="Service References\nl.shpv_verwijsindex_201505\VerwijsIndexService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\VerwijsIndexService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\VerwijsIndexService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\WebServiceTestTool.nl.shpv_verwijsindex_201505.PaymentCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\WebServiceTestTool.nl.shpv_verwijsindex_201505.PaymentEndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\WebServiceTestTool.nl.shpv_verwijsindex_201505.PaymentStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\VerwijsIndex.wsdl" />
+    <None Include="Service References\nl.shpv_verwijsindex_201709\VerwijsIndexService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\VerwijsIndexService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\VerwijsIndexService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\WebServiceTestTool.nl.shpv_verwijsindex_201709.PaymentCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\WebServiceTestTool.nl.shpv_verwijsindex_201709.PaymentEndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\WebServiceTestTool.nl.shpv_verwijsindex_201709.PaymentStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\WebServiceTestTool.nl.shpv_verwijsindex_201709.StatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\Administration.wsdl" />
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\Administration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\Administration1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\Administration2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\WebServiceTestTool.parkeerregister.nl_Services_AdministrationService.Container.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\WebServiceTestTool.parkeerregister.nl_Services_AdministrationService.Garages.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\WebServiceTestTool.parkeerregister.nl_Services_AdministrationService.Permits.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\WebServiceTestTool.parkeerregister.nl_Services_AdministrationService.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\WebServiceTestTool.parkeerregister.nl_Services_AdministrationService.StatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_MonitorService\MonitorVWX.wsdl" />
+    <None Include="Service References\shpv.nl_MonitorService\MonitorVWX.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_MonitorService\MonitorVWX1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_MonitorService\MonitorVWX2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_MonitorService\WebServiceTestTool.shpv.nl_MonitorService.ModelsCheckResultCollectionOfModelsIISInfo_PerPeriodczrXvgmi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_MonitorService\WebServiceTestTool.shpv.nl_MonitorService.ModelsCheckResultCollectionOfModelsVWXInfo_PerPeriodczrXvgmi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_MonitorService\WebServiceTestTool.shpv.nl_MonitorService.StatusInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\VerwijsIndex.wsdl" />
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\VerwijsIndexService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\VerwijsIndexService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\VerwijsIndexService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\WebServiceTestTool.shpv.nl_Service_201404_verwijsindexservice.PaymentCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\WebServiceTestTool.shpv.nl_Service_201404_verwijsindexservice.PaymentEndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\WebServiceTestTool.shpv.nl_Service_201404_verwijsindexservice.PaymentStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\VerwijsIndex.wsdl" />
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\VerwijsIndexService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\VerwijsIndexService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\VerwijsIndexService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\WebServiceTestTool.shpv.nl_Service_VerwijsIndexService.PaymentEndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\WebServiceTestTool.shpv.nl_Service_VerwijsIndexService.PaymentStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\nl.shpv_verwijsindex_201505\" />
+    <WCFMetadataStorage Include="Service References\nl.shpv_verwijsindex_201709\" />
+    <WCFMetadataStorage Include="Service References\parkeerregister.nl_Services_AdministrationService\" />
+    <WCFMetadataStorage Include="Service References\shpv.nl_MonitorService\" />
+    <WCFMetadataStorage Include="Service References\shpv.nl_Service_201404_verwijsindexservice\" />
+    <WCFMetadataStorage Include="Service References\shpv.nl_Service_VerwijsIndexService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_Service_VerwijsIndexService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VerwijsIndexShared\VerwijsIndexShared.csproj">
+      <Project>{241ba670-9d8f-4956-bc8a-70ceb58758af}</Project>
+      <Name>VerwijsIndexShared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\parkeerregister.nl_Services_AdministrationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_MonitorService\MonitorVWX.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_MonitorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_MonitorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_MonitorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\shpv.nl_Service_201404_verwijsindexservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\nl.shpv_verwijsindex_201505\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\nl.shpv_verwijsindex_201709\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://verwijsindex.shpv.nl/messages/" elementFormDefault="qualified" targetNamespace="https://verwijsindex.shpv.nl/messages/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LinkRequest">
+    <xs:sequence>
+      <xs:element name="ProviderId" nillable="true" type="xs:string" />
+      <xs:element name="VehicleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkRequest" nillable="true" type="tns:LinkRequest" />
+  <xs:complexType name="LinkResponse">
+    <xs:sequence>
+      <xs:element name="ProviderId" nillable="true" type="xs:string" />
+      <xs:element name="LinkId" nillable="true" type="xs:string" />
+      <xs:element name="ValidFrom" type="xs:dateTime" />
+      <xs:element name="ValidUntil" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkResponse" nillable="true" type="tns:LinkResponse" />
+  <xs:complexType name="LinkRegistrationRequest">
+    <xs:sequence>
+      <xs:element name="ProviderId" nillable="true" type="xs:string" />
+      <xs:element name="LinkId" nillable="true" type="xs:string" />
+      <xs:element name="VehicleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element name="ValidFrom" type="xs:dateTime" />
+      <xs:element name="ValidUntil" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkRegistrationRequest" nillable="true" type="tns:LinkRegistrationRequest" />
+  <xs:complexType name="LinkRegistrationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RemarkId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkRegistrationResponse" nillable="true" type="tns:LinkRegistrationResponse" />
+  <xs:complexType name="LinkRegistrationBatchRequest">
+    <xs:sequence>
+      <xs:element name="Batch" nillable="true" type="tns:ArrayOfLinkRegistrationRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkRegistrationBatchRequest" nillable="true" type="tns:LinkRegistrationBatchRequest" />
+  <xs:complexType name="ArrayOfLinkRegistrationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkRegistrationRequest" nillable="true" type="tns:LinkRegistrationRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLinkRegistrationRequest" nillable="true" type="tns:ArrayOfLinkRegistrationRequest" />
+  <xs:complexType name="LinkRegistrationBatchResponse">
+    <xs:sequence>
+      <xs:element name="Batch" nillable="true" type="tns:ArrayOfLinkRegistrationResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkRegistrationBatchResponse" nillable="true" type="tns:LinkRegistrationBatchResponse" />
+  <xs:complexType name="ArrayOfLinkRegistrationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkRegistrationResponse" nillable="true" type="tns:LinkRegistrationResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLinkRegistrationResponse" nillable="true" type="tns:ArrayOfLinkRegistrationResponse" />
+</xs:schema>
