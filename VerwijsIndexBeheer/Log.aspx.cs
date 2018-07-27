@@ -17,7 +17,7 @@ namespace Denion.WebService.Beheer
             lblErr.Text = "";
             if (!IsPostBack)
             {
-                LoadData(string.Empty, true);
+                LoadData(string.Empty, false);
             }
         }
 

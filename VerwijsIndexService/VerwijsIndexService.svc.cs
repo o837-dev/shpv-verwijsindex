@@ -31,7 +31,7 @@ namespace Denion.WebService.VerwijsIndex
         {
             Timing t = new Timing("PaymentStart", Service.IncomingAddress(), Service.OperationContextAddress());
             PaymentStartResponse res = new PaymentStartResponse();
-
+            
             Err err = request.IsValid();
             if (err != null)
             {
@@ -676,6 +676,11 @@ namespace Denion.WebService.VerwijsIndex
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentStart", p.url);
                 clnt = Service.PaymentClient(p.url);
+
+                //Fix voor parkeergebouw amsterdam
+                if(p.url.Equals("https://parkeergebouwenamsterdam.nl/service/v1/service.php") && String.IsNullOrEmpty(request.VehicleIdType)) {
+                    request.VehicleIdType = "LICENSE_PLATE";
+                }
 
                 response = clnt.PaymentStart(request);
                 t.Finish();
