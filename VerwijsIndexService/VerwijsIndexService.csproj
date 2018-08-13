@@ -99,10 +99,9 @@
     <None Include="Properties\DataSources\PaymentEndResponse.datasource" />
     <None Include="Properties\DataSources\PaymentStartResponse.datasource" />
     <None Include="Properties\DataSources\PaymentStartResponse1.datasource" />
+    <None Include="Properties\PublishProfiles\52DN - Test deploy.pubxml" />
     <None Include="Properties\PublishProfiles\BS-SPO13.pubxml" />
     <None Include="Properties\PublishProfiles\BS-SPP10.pubxml" />
-    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\hth-w2k8.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Global.asax" />
