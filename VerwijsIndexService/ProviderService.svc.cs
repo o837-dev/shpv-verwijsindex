@@ -138,23 +138,16 @@ namespace Denion.WebService.VerwijsIndex
         }
         #endregion
 
-        private LinkRegistrationResponse HandleRegistration(LinkRegistrationRequest req)
-        {
+        private LinkRegistrationResponse HandleRegistration(LinkRegistrationRequest req) {
             LinkRegistrationResponse res = new LinkRegistrationResponse();
             Err err = req.IsValid();
-            if (err != null)
-            {
+            if (err != null) {
                 res.RemarkId = err.RemarkId;
                 res.Remark = err.Remark;
-            }
-            else
-            {
-                try
-                {
+            } else {
+                try {
                     res = DatabaseFunctions.VerifyLink(req);
-                }
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     res.RemarkId = "125";
                     res.Remark = ex.Message;
                 }

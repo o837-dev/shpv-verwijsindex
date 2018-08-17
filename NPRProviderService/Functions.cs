@@ -238,7 +238,7 @@ namespace Denion.WebService
                 encoding.MessageVersion = MessageVersion.Soap11WSAddressing10;
                 CustomBinding binding = new CustomBinding(encoding, httpsBinding);
 
-                client = new RDW.RegistrationClient(binding, Service.GetEndPoint(url));
+                client = new RDW.RegistrationClient(binding, Service.GetEndPoint(url ?? Properties.Settings.Default.EndPoint));
                 client.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
                 client.ClientCredentials.ClientCertificate.Certificate = cert;
             }

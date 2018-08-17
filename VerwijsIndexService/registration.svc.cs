@@ -50,54 +50,39 @@ namespace Denion.WebService.VerwijsIndex
 
         #endregion
 
-        PSRightEnrollResponse IRegistration.EnrollPSRight(PSRightEnrollRequest request)
-        {
+        PSRightEnrollResponse IRegistration.EnrollPSRight(PSRightEnrollRequest request) {
             Timing t = new Timing("EnrollPSRight", Service.IncomingAddress(), Service.OperationContextAddress());
             PSRightEnrollResponse res = new PSRightEnrollResponse();
 
             Err vErr = request.IsValid();
-            if (vErr != null)
-            {
-                res.PSRightEnrollResponseError = new PSRightEnrollResponseError
-                {
+            if (vErr != null) {
+                res.PSRightEnrollResponseError = new PSRightEnrollResponseError {
                     ErrorDesc = vErr.Remark,
                     ErrorCode = vErr.RemarkId
                 };
-            }
-            else
-            {
+            } else {
                 Worker worker = new EnrollPSRightWorker(request.PSRightEnrollRequestData);
                 Thread newThread = new Thread(new ThreadStart(worker.Settle));
                 newThread.Name = "EnrollPSRight";
                 newThread.Start();
 
-                if (newThread.Join(DatabaseFunctions.GetProperty("StartRequestTimeout", 2000)))
-                {
+                if (newThread.Join(DatabaseFunctions.GetProperty("StartRequestTimeout", 2000))) {
                     res = worker.Result as PSRightEnrollResponse;
-                }
-                else
-                {
+                } else {
                     worker.Abort();
-                    if (worker.Result != null)
-                    {
+                    if (worker.Result != null) {
                         res = worker.Result as PSRightEnrollResponse;
-                    }
-                    else
-                    {
-                        res.PSRightEnrollResponseError = new PSRightEnrollResponseError
-                        {
+                    } else {
+                        res.PSRightEnrollResponseError = new PSRightEnrollResponseError {
                             ErrorDesc = "ParkingFacility does not respond",
                             ErrorCode = "15",
                         };
                     }
                 }
 
-                if (res.PSRightEnrollResponseError == null)
-                {
-                    if (res.PSRightEnrollResponseData == null || string.IsNullOrEmpty(res.PSRightEnrollResponseData.PSRightId))
-                    {
-                        res.PSRightEnrollResponseError = new PSRightEnrollResponseError
-                        {
+                if (res.PSRightEnrollResponseError == null) {
+                    if (res.PSRightEnrollResponseData == null || string.IsNullOrEmpty(res.PSRightEnrollResponseData.PSRightId)) {
+                        res.PSRightEnrollResponseError = new PSRightEnrollResponseError {
                             ErrorDesc = "VehicleId not found at ParkingFacility",
                             ErrorCode = "150",
                         };
@@ -228,38 +213,28 @@ namespace Denion.WebService.VerwijsIndex
             }
         }
 
-        public override void Settle()
-        {
+        public override void Settle() {
             //translate location information to AreaManagerId/AreaId
             GEOinfo gi = null;
-            if (!string.IsNullOrEmpty(_request.AreaManagerId) && !string.IsNullOrEmpty(_request.AreaId))
-            {
+            if (!string.IsNullOrEmpty(_request.AreaManagerId) && !string.IsNullOrEmpty(_request.AreaId)) {
                 //TODO do we need additional GEO info??!
-                gi = new GEOinfo
-                {
+                gi = new GEOinfo {
                     AreaId = _request.AreaId,
                     AreaManagerId = _request.AreaManagerId
                 };
-            }
-            else if (_request.LocationPSRight != null)
-            {
+            } else if (_request.LocationPSRight != null) {
                 //translate lat/lon to AreaManagerId/AreaId
                 gi = GEO.FromLatLon(_request.LocationPSRight.Latitude, _request.LocationPSRight.Longitude);
             }
-            else if (!string.IsNullOrEmpty(_request.SellingPointId))
-            {
+            else if (!string.IsNullOrEmpty(_request.SellingPointId)) {
                 //translate SellingPointId to AreaManagerId/AreaId
                 gi = GEO.FromSellingPoint(_request.SellingPointId);
-            }
-            else
-            {
+            } else {
                 //Database.Database.Log("GEOInfo, nothing to translate..");
             }
             
-            if (gi == null || gi.AreaManagerId == null || gi.AreaId == null)
-            {
-                _response.PSRightEnrollResponseError = new PSRightEnrollResponseError()
-                {
+            if (gi == null || gi.AreaManagerId == null || gi.AreaId == null) {
+                _response.PSRightEnrollResponseError = new PSRightEnrollResponseError() {
                     ErrorCode = "145",
                     ErrorDesc = "Location unkown"
                 };
@@ -281,55 +256,21 @@ namespace Denion.WebService.VerwijsIndex
             req.VehicleId = _request.VehicleId;
             req.VehicleIdType = _request.VehicleIdType;
 
-            //** Location info
-            //_request.AreaId
-            //_request.AreaManagerId
-            //_request.LocationPSRight
-            //_request.SellingPointId
-            
-            //** tijd
-            //_request.StartTimePSright
-            //_request.StartTimeAdjusted
-            //_request.StartTimeAdjustedSpecified
-            //_request.EndTimePSright
-            //_request.EndTimePSrightSpecified
-            //_request.PSRightWindowList
-
-            //** vehicle ID
-            //_request.UsageId
-            //_request.VehicleId
-            //_request.VehicleIdType
-            //_request.CountryCodeVehicle
-            //_request.CountryCodeVehicleSpecified
-            //_request.ReferencePSRight
-
-            //** payment
-            //_request.ProviderId
-            //_request.AmountPSright
-            //_request.AmountPSrightSpecified
-            //_request.VATPSright
-            //_request.VATPSrightSpecified
-
             // select parkingfacility from DB
             Providers parkingFacility = DatabaseFunctions.ListOfParkingFacilities(gi.AreaManagerId, gi.AreaId, _request.StartTimePSright);
-            if (parkingFacility.Count > 0)
-            {
-                foreach (Provider p in parkingFacility)
-                {
+            if (parkingFacility.Count > 0) {
+                foreach (Provider p in parkingFacility) {
                     ConsumerClient clnt = null;
-                    try
-                    {
+                    try {
                         Timing t = new Timing("RegistrationService", "ActivateAuthorisation", p.url);
                         clnt = Service.Consumer(p.url);
 
                         ActivateAuthorisationResponse relayRes = clnt.ActivateAuthorisation(req);
                         t.Finish();
 
-                        if (relayRes != null)
-                        {
+                        if (relayRes != null) {
                             res = relayRes;
-                            if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId))
-                            {
+                            if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId)) {
                                 Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, _request.StartTimePSright, req.EndDateTime, null, req.AreaId, req.VehicleIdType, null);
 
                                 DatabaseFunctions.UpdateAuthorisation(req.ProviderId, relayRes.PaymentAuthorisationId, null, _requestid, link);
