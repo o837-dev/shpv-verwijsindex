@@ -9,94 +9,208 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>09/04/2017 16:40:45</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.pdb">
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>09/27/2017 15:57:49</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.pdb">
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/NPRProviderService.dll">
-      <publishTime>09/28/2017 11:38:39</publishTime>
+      <publishTime>08/24/2018 13:34:49</publishTime>
+    </File>
+    <File Include="bin/NPRProviderService.pdb">
+      <publishTime>08/24/2018 13:34:49</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>09/25/2017 02:02:34</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.pdb">
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>09/27/2017 15:57:50</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.pdb">
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="Functions.cs">
+      <publishTime>08/17/2018 11:55:24</publishTime>
     </File>
     <File Include="NPRProviderService.cd">
-      <publishTime>05/22/2017 12:56:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="NPRProviderService.csproj">
+      <publishTime>08/24/2018 13:34:17</publishTime>
+    </File>
+    <File Include="NPRProviderService.csproj.user">
+      <publishTime>08/24/2018 13:34:48</publishTime>
+    </File>
+    <File Include="NPRProviderService.csproj.vspscc">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="NPRProviderService.svc">
-      <publishTime>07/11/2016 16:17:38</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="NPRProviderService.svc.cs">
+      <publishTime>08/24/2018 13:30:21</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/AVGProd Local.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/AVGProd Local.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/AVGTest Local.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/AVGTest Local.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPP_NPRProd.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPP_NPRProd.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPP_NPRTest.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPP_NPRTest.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/Settings.Designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/Settings.settings">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/configuration.svcinfo">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/configuration91.svcinfo">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.CalculatePriceResponseData.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.CalculatePriceResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightCheckResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightCheckResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightEnrollResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightEnrollResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightRevokeResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightRevokeResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.ReplyPSPhotoInfoResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.ReplyPSPhotoInfoResponseError.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreasByLocationResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreasByLocationResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveCheckInfoResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveCheckInfoResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoForProviderResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoForProviderResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoResponseError.datasource">
-      <publishTime>09/27/2017 15:13:42</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.StatusRequestResponseData.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.StatusRequestResponseError.datasource">
-      <publishTime>09/27/2017 15:13:41</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/Reference.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/Reference.svcmap">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/registration.wsdl">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/registration.xsd">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Service References/RDW/Registration1.xsd">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.AVGProd Release.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.AVGTest Release.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/27/2017 15:15:31</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.NPRProd.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.NPRTest.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

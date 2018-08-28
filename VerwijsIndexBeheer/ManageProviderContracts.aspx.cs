@@ -130,10 +130,9 @@ namespace Denion.WebService.Beheer
 
 
 
-        private void RefreshPage()
-        {
+        private void RefreshPage() {
             // prevents the message on page refresh
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect(Request.RawUrl, false);
         }
 
         protected void grd_RowEditing(object sender, GridViewEditEventArgs e)

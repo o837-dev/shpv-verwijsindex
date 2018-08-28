@@ -8,41 +8,71 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>C:\Temp\VerwijsIndex\Beheer</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="ApplicationLogic.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
     <File Include="AreaGroups.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AreaGroups.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AreaGroups.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="AreaManager.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AreaManager.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AreaManager.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="AreaManagerFix.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AreaManagerFix.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AreaManagerFix.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Authorisation.aspx">
-      <publishTime>01/12/2017 16:17:50</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Authorisation.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Authorisation.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
-      <publishTime>07/11/2016 16:17:39</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Beheer.dll">
-      <publishTime>12/22/2017 11:27:30</publishTime>
+      <publishTime>08/24/2018 14:01:01</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Beheer.pdb">
-      <publishTime>02/17/2017 13:53:58</publishTime>
+      <publishTime>08/24/2018 14:01:01</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>09/04/2017 16:40:45</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
-      <publishTime>01/13/2017 13:25:21</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>09/27/2017 15:57:49</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
-      <publishTime>01/13/2017 13:25:21</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/nl/AjaxControlToolkit.resources.dll">
-      <publishTime>07/11/2016 16:17:39</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/VerwijsIndexBeheer.dll">
       <publishTime>09/08/2016 14:58:07</publishTime>
@@ -51,88 +81,280 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/08/2016 14:57:35</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>12/21/2017 15:22:46</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>01/20/2017 09:58:50</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>12/21/2017 15:22:46</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>02/16/2017 15:32:10</publishTime>
+      <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="Config.Master">
-      <publishTime>06/15/2017 12:48:46</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Config.Master.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Config.Master.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ConsumerContract.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ConsumerContract.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ConsumerContract.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Consumers.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Consumers.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Consumers.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Contract.aspx">
-      <publishTime>01/04/2017 16:51:05</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Contract.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Contract.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ContractUniqueness.aspx">
-      <publishTime>01/04/2017 16:43:15</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ContractUniqueness.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ContractUniqueness.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Controls/SiteMenu.ascx">
-      <publishTime>09/19/2017 22:45:25</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Controls/SiteMenu.ascx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Controls/SiteMenu.ascx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Controls/TimePicker.ascx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Controls/TimePicker.ascx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Controls/TimePicker.ascx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Dashboard.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Dashboard.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Dashboard.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Data.aspx">
-      <publishTime>01/12/2017 16:26:17</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Data.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Data.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Default.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Default.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Link.aspx">
-      <publishTime>01/12/2017 16:03:12</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Link.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Link.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Log.aspx">
-      <publishTime>09/08/2016 15:39:47</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Log.aspx.cs">
+      <publishTime>07/23/2018 16:54:49</publishTime>
+    </File>
+    <File Include="Log.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ManageProviderContracts.aspx">
-      <publishTime>06/01/2017 12:45:53</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ManageProviderContracts.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ManageProviderContracts.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Messages.aspx">
-      <publishTime>01/12/2017 16:11:30</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Messages.aspx.cs">
+      <publishTime>07/23/2018 14:59:12</publishTime>
+    </File>
+    <File Include="Messages.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPO13.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPO13.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/BS-SPP10.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/verwijsindexbeheer - Web Deploy.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/verwijsindexbeheer - Web Deploy.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/Settings.Designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/Settings.settings">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ProviderCertificates.aspx">
-      <publishTime>01/12/2017 11:00:08</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ProviderCertificates.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="ProviderCertificates.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Providers.aspx">
-      <publishTime>06/16/2017 11:27:17</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Providers.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Providers.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ref/AjaxControlToolkit.dll">
-      <publishTime>07/11/2016 16:17:39</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ref/nl/AjaxControlToolkit.resources.dll">
-      <publishTime>07/11/2016 16:17:39</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Search.aspx">
-      <publishTime>01/11/2017 14:52:04</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Search.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Search.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="SellingPointToGeo.aspx">
-      <publishTime>09/19/2017 23:00:05</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="SellingPointToGeo.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="SellingPointToGeo.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Settings.aspx">
-      <publishTime>09/08/2016 15:19:43</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Settings.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Settings.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="TestParkingFacility.aspx">
-      <publishTime>09/19/2017 22:59:39</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="TestParkingFacility.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="TestParkingFacility.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Types.aspx">
-      <publishTime>01/12/2017 10:51:14</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Types.aspx.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Types.aspx.designer.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="VerwijsIndexBeheer.csproj">
+      <publishTime>08/24/2018 14:00:20</publishTime>
+    </File>
+    <File Include="VerwijsIndexBeheer.csproj.user">
+      <publishTime>08/24/2018 14:01:00</publishTime>
+    </File>
+    <File Include="VerwijsIndexBeheer.csproj.vspscc">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="VWX.ico">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Azure.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Bravo.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.BS-SPO13.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/12/2017 15:40:12</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.NPRProd.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.NPRTest.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
   </ItemGroup>
 </Project>
