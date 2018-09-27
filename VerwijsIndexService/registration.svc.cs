@@ -452,11 +452,20 @@ namespace Denion.WebService.VerwijsIndex
                                     res = relayRes;
                                     if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId))
                                     {
-                                        //_responsebaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, _request.StartTimePSright, req.EndDateTime, null, req.AreaId, req.VehicleIdType, null);
+                                        object PSRightID = DBNull.Value;
+                                        Database.Database.Log("amount:" + res.Amount + ", reg? " + p.NPRRegistration);
+                                        if (res.Amount > 0 && p.NPRRegistration) {
+                                            DateTime endTime = res.EndTimeAdjusted != null? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
 
-                                        //_responsebaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link);
-
-                                        AuthorisationSettled(res.PaymentAuthorisationId);
+                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, (DateTime)dr["STARTDATE"], res.EndTimeAdjusted , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), res.PaymentAuthorisationId);
+                                            if (r.PSRightId != null)
+                                                PSRightID = r.PSRightId;
+                                            if (!string.IsNullOrEmpty(r.Remark)) {
+                                                res.RemarkId = "120";
+                                                res.Remark = "Problem with NPR registration; " + r.Remark;
+                                            }
+                                        }
+                                        AuthorisationSettled(res.PaymentAuthorisationId, PSRightID);
 
                                         clnt.Close();
                                         break;
@@ -543,12 +552,13 @@ namespace Denion.WebService.VerwijsIndex
             }
         }
 
-        private static void AuthorisationSettled(string PaymentAuthorisationId)
+        private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set SETTLED=@SETTLED where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.VarChar, 50).Value = PaymentAuthorisationId;
+            com.Parameters.Add("@PSRIGHTID", SqlDbType.NVarChar, 50).Value = PSRightId;
 
             Database.Database.ExecuteQuery(com);
         }

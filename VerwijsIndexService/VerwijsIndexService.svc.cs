@@ -197,8 +197,7 @@ namespace Denion.WebService.VerwijsIndex
                         {
                             object PSRightID = DBNull.Value;
                             Database.Database.Log("amount:" + request.Amount + ", reg? " + p.NPRRegistration);
-                            if (request.Amount > 0 && p.NPRRegistration)
-                            {
+                            if (request.Amount > 0 && p.NPRRegistration) {
                                 RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), request.PaymentAuthorisationId);
                                 if (r.PSRightId != null)
                                     PSRightID = r.PSRightId;
@@ -508,15 +507,9 @@ namespace Denion.WebService.VerwijsIndex
                     else
                         providers = DatabaseFunctions.ListOfProvider(_request.AreaManagerId, _request.CheckDateTime);
 
-                    if (providers != null && providers.Count > 0)
-                    {
+                    if (providers != null && providers.Count > 0) {
 
-                        //for (int i = 0; i < providers.Count; i++)
-                        //{
-                        //    Database.Database.Log(string.Format("PaymentCheckWorker [{0}/{1}] {2}; {3}", i, providers.Count, providers[i].id, providers[i].url));
-                        //}
-                        foreach (Provider p in providers)
-                        {
+                        foreach (Provider p in providers) {
                             if (_aborted) break;
 
                             Link link = DatabaseFunctions.GetLink(p.id, _request.VehicleId, _request.CheckDateTime, null, null, _request.AreaId, true, _request.VehicleIdType);
