@@ -452,9 +452,12 @@ namespace Denion.WebService.VerwijsIndex
                                     res = relayRes;
                                     if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId))
                                     {
+                                        bool nprRegistration = getNprRegistration(req.ProviderId, req.AreaManagerId);
+                                        Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
+
                                         object PSRightID = DBNull.Value;
-                                        Database.Database.Log("amount:" + res.Amount + ", reg? " + p.NPRRegistration);
-                                        if (res.Amount > 0 && p.NPRRegistration) {
+                                        Database.Database.Log("amount:" + res.Amount + ", reg? " + nprRegistration);
+                                        if (res.Amount > 0 && nprRegistration) {
                                             DateTime endTime = res.EndTimeAdjusted != null? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
 
                                             RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, (DateTime)dr["STARTDATE"], res.EndTimeAdjusted , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), res.PaymentAuthorisationId);
@@ -552,10 +555,29 @@ namespace Denion.WebService.VerwijsIndex
             }
         }
 
+        private bool getNprRegistration(object providerId, object areaManagerId) {
+            SqlCommand com = new SqlCommand();
+            com.CommandText = @"Select c.NPRREGISTRATION
+                    from [Provider] as p 
+                    join [Contract] as c on c.PROVIDERID2 = p.PID 
+                     where p.ID = @PROVIDERID and c.AREAMANAGERID = @AREAMANAGERID";
+
+            com.Parameters.Add("@PROVIDERID", System.Data.SqlDbType.NVarChar, 50).Value = providerId;
+            com.Parameters.Add("@AREAMANAGERID", System.Data.SqlDbType.NVarChar, 50).Value = areaManagerId;
+            DataTable dt = Database.Database.ExecuteQuery(com);
+            if (dt != null && dt.Rows.Count == 1) {
+                DataRow dr = dt.Rows[0];
+              
+                return (bool)dr["NPRREGISTRATION"];
+            }
+
+            return false;
+        }
+
         private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
-            com.CommandText = "Update Authorisation set SETTLED=@SETTLED where AUTHORISATIONID=@AUTHORISATIONID";
+            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.VarChar, 50).Value = PaymentAuthorisationId;
             com.Parameters.Add("@PSRIGHTID", SqlDbType.NVarChar, 50).Value = PSRightId;

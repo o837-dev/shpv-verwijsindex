@@ -9,26 +9,80 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>C:\Temp\VerwijsIndex\AutonomousConsumerService</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="AutonomousConsumerService.csproj">
+      <publishTime>09/27/2018 16:36:20</publishTime>
+    </File>
+    <File Include="AutonomousConsumerService.csproj.user">
+      <publishTime>09/27/2018 16:46:21</publishTime>
+    </File>
     <File Include="AutonomousConsumerService.svc">
-      <publishTime>09/08/2017 17:10:08</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="AutonomousConsumerService.svc.cs">
+      <publishTime>09/27/2018 16:46:14</publishTime>
     </File>
     <File Include="bin/AutonomousConsumerService.dll">
-      <publishTime>09/24/2017 22:56:08</publishTime>
+      <publishTime>09/27/2018 16:46:22</publishTime>
+    </File>
+    <File Include="bin/AutonomousConsumerService.pdb">
+      <publishTime>09/27/2018 16:46:22</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>09/04/2017 16:29:00</publishTime>
+      <publishTime>09/27/2018 16:35:14</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Cryptography.pdb">
+      <publishTime>09/27/2018 16:35:14</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>09/12/2017 15:39:20</publishTime>
+      <publishTime>09/27/2018 16:35:14</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.pdb">
+      <publishTime>09/27/2018 16:35:14</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>09/22/2017 00:18:10</publishTime>
+      <publishTime>09/27/2018 16:35:15</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.pdb">
+      <publishTime>09/27/2018 16:35:15</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>09/22/2017 00:18:16</publishTime>
+      <publishTime>09/27/2018 16:35:15</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.pdb">
+      <publishTime>09/27/2018 16:35:15</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Local.pubxml.user">
+      <publishTime>09/27/2018 16:36:37</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/verwijsindex - Web Deploy.pubxml">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/verwijsindex - Web Deploy.pubxml.user">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Azure.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/08/2017 16:55:01</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

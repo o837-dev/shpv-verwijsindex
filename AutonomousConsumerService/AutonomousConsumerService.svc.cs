@@ -115,6 +115,8 @@ namespace AutonomousConsumerService
                     res.Granted = true;
                     //res.CanceledDateTime = req.CancelDateTime;
                     res.EndTimeAdjusted = req.CancelDateTime;
+                    res.Amount = Convert.ToDouble(dt.Rows[0]["AMOUNT"]);
+                    res.VAT = Convert.ToDouble(dt.Rows[0]["VAT"]);
                 }
                 else
                 {
