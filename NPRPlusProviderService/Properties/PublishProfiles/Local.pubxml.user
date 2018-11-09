@@ -10,55 +10,55 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>06/09/2018 16:09:08</publishTime>
+      <publishTime>09/06/2018 16:09:08</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
-      <publishTime>06/09/2018 16:09:08</publishTime>
+      <publishTime>09/06/2018 16:09:08</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>06/09/2018 16:09:08</publishTime>
+      <publishTime>11/09/2018 13:18:34</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
-      <publishTime>06/09/2018 16:09:08</publishTime>
+      <publishTime>11/09/2018 13:18:34</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.dll">
-      <publishTime>11/09/2018 12:45:40</publishTime>
+      <publishTime>11/09/2018 15:05:31</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.pdb">
-      <publishTime>11/09/2018 12:45:40</publishTime>
+      <publishTime>11/09/2018 15:05:31</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>09/11/2018 11:08:04</publishTime>
+      <publishTime>11/09/2018 11:08:04</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>09/11/2018 11:08:04</publishTime>
+      <publishTime>11/09/2018 11:08:04</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>09/11/2018 11:08:05</publishTime>
+      <publishTime>11/09/2018 13:18:34</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>09/11/2018 11:08:05</publishTime>
+      <publishTime>11/09/2018 13:18:34</publishTime>
     </File>
     <File Include="Functions.cs">
-      <publishTime>09/11/2018 12:06:18</publishTime>
+      <publishTime>11/09/2018 12:06:18</publishTime>
     </File>
     <File Include="NPRPlusProviderService.csproj">
-      <publishTime>09/11/2018 12:07:32</publishTime>
+      <publishTime>11/09/2018 12:07:32</publishTime>
     </File>
     <File Include="NPRPlusProviderService.csproj.user">
-      <publishTime>09/11/2018 12:02:51</publishTime>
+      <publishTime>11/09/2018 15:05:30</publishTime>
     </File>
     <File Include="NprPlusProviderService.svc">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="NprPlusProviderService.svc.cs">
-      <publishTime>11/09/2018 12:45:19</publishTime>
+      <publishTime>11/09/2018 15:05:22</publishTime>
     </File>
     <File Include="Properties/AssemblyInfo.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -67,7 +67,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/Local.pubxml.user">
-      <publishTime>11/09/2018 12:07:51</publishTime>
+      <publishTime>11/09/2018 15:01:06</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/verwijsindex - Web Deploy.pubxml">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -76,100 +76,100 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Properties/Settings.Designer.cs">
-      <publishTime>09/11/2018 11:42:29</publishTime>
+      <publishTime>11/09/2018 11:42:29</publishTime>
     </File>
     <File Include="Properties/Settings.settings">
-      <publishTime>09/11/2018 11:42:29</publishTime>
+      <publishTime>11/09/2018 11:42:29</publishTime>
     </File>
     <File Include="Service References/RDW/configuration.svcinfo">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/configuration91.svcinfo">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.CalculatePriceResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.CalculatePriceResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightCheckResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightCheckResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightEnrollResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightEnrollResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightRevokeResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightRevokeResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveCheckInfoResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveCheckInfoResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoForProviderResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoForProviderResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.StatusRequestResponseData.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.StatusRequestResponseError.datasource">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/Reference.cs">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/Reference.svcmap">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/Registration.wsdl">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/Registration.xsd">
-      <publishTime>09/11/2018 11:36:08</publishTime>
+      <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Web.Azure.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/11/2018 11:34:38</publishTime>
+      <publishTime>11/09/2018 11:34:38</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>

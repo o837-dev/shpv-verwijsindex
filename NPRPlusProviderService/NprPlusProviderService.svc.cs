@@ -22,15 +22,47 @@ namespace NPRPlusProviderService
             ActivateEnrollRequestResponseError error = null;
 
             data.AuthorisationMaxAmount = -0.01;
-            data.AuthorisationValidUntil = DateTime.Now.AddHours(1);
-            data.PaymentAuthorisationId = Guid.NewGuid().ToString();
             data.ProviderId = ConfigurationManager.AppSettings["ProviderId"];
             //data.Remark = "string";
             //data.RemarkId = "string";
             //data.Token = "string";
             //data.TokenType = "string";
 
-            CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId);
+            PSRightCheckResponse checkRes = RDWCheck("WITTELIJST", "02065", request.ActivateEnrollRequestRequestData.StartDateTime, null, null, request.ActivateEnrollRequestRequestData.VehicleId);
+            PSRightCheckResponseError RDWerr = checkRes.PSRightCheckResponseError;
+            PSRightCheckResponseData RDWres = checkRes.PSRightCheckResponseData;
+
+
+            // Handle the response
+            if (RDWerr != null) {
+                Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
+
+                Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
+                data.Remark = "NPR provider service error";
+                data.RemarkId = "20";
+            } else if (RDWres != null) {
+                if (RDWres.CheckAnswer == IndicatorYNType.y || RDWres.CheckAnswer == IndicatorYNType.Y) {
+                    if (RDWres.InformationalMessage != null) {
+                        Database.Log("RDWINF; CODE: " + RDWres.InformationalMessage.ErrorCode + "; DESC: " + RDWres.InformationalMessage.ErrorDesc);
+
+                        data.PaymentAuthorisationId = "NPRPS_" + Hashing.CalculateMD5Hash(request.ActivateEnrollRequestRequestData.AreaId + request.ActivateEnrollRequestRequestData.VehicleId + request.ActivateEnrollRequestRequestData.StartDateTime.ToFileTime().ToString());
+                        data.Remark = "NPR provider service message; " + RDWres.InformationalMessage.ErrorDesc;
+                        data.RemarkId = "90";
+                    } else if (RDWres.PSRightCheckPSRightList != null) {
+                        PSRightCheckPSRightData right = RDWres.PSRightCheckPSRightList[0];
+
+                        //res.AuthorisationMaxAmount 
+                        if (right.EndTimePSRightAdjusted.HasValue)
+                            data.AuthorisationValidUntil = Denion.WebService.Functions.DateTimeToLocalTimeZone(right.EndTimePSRightAdjusted.Value);
+                        else if (right.EndTimePSRight.HasValue)
+                            data.AuthorisationValidUntil = Denion.WebService.Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
+
+                        data.PaymentAuthorisationId = DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId;
+
+                        CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId);
+                    }
+                }
+            }
 
             return new ActivateEnrollRequestResponse(data, error);
         }
@@ -163,7 +195,7 @@ namespace NPRPlusProviderService
                     //    return res;
                     //}
                 }
-                RDWreq.ExtraInfoIndicator = IndicatorYNType.N;
+                RDWreq.ExtraInfoIndicator = IndicatorYNType.Y;
                 if (!string.IsNullOrEmpty(accessId))
                     RDWreq.ReferenceCheckOrg = accessId;
 
