@@ -456,10 +456,11 @@ namespace Denion.WebService.VerwijsIndex
                                         Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
 
                                         object PSRightID = DBNull.Value;
-                                        Database.Database.Log("amount:" + res.Amount + ", reg? " + nprRegistration);
-                                        if (res.Amount > 0 && nprRegistration) {
+                                        Database.Database.Log("NPR Registration? " + nprRegistration);
+                                        if (nprRegistration) {
                                             DateTime endTime = res.EndTimeAdjusted != null? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
 
+                                            res.Amount = res.Amount == null ? 0 : res.Amount;
                                             RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, (DateTime)dr["STARTDATE"], res.EndTimeAdjusted , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), res.PaymentAuthorisationId);
                                             if (r.PSRightId != null)
                                                 PSRightID = r.PSRightId;
