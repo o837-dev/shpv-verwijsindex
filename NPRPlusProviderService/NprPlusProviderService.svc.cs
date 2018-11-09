@@ -1,5 +1,7 @@
-﻿using Denion.WebService.Cryptography;
+﻿using Denion.WebService;
+using Denion.WebService.Cryptography;
 using Denion.WebService.Database;
+using Denion.WebService.Properties;
 using Denion.WebService.VerwijsIndex;
 using System;
 using System.Configuration;
@@ -31,6 +33,29 @@ namespace NPRPlusProviderService
             CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId);
 
             return new ActivateEnrollRequestResponse(data, error);
+        }
+
+        public PSRightCheckResponse CheckPSRight(PSRightCheckRequest request) {
+            PSRightCheckRequestData req = request.PSRightCheckRequestData;
+            PSRightCheckResponse res = new PSRightCheckResponse();
+
+            try {
+                Database.Log("Provider: " + Settings.Default.ProviderId + "; Received: " + req.VehicleId);
+
+                res = RDWCheck("WITTELIJST", "02065", req.CheckTime, null, null, req.VehicleId);
+                   
+                //res.PSRightCheckResponseData.CheckAnswer = RDWres.PSRightCheckResponseData.CheckAnswer;
+                //res.AreaId = check.AreaId;
+                //res.ProviderId = Settings.Default.ProviderId;
+                
+            } catch (Exception e) {
+                Database.Log("CheckPSRight error; " + e.Message + "; " + e.StackTrace);
+                //res.Remark = "NPR Provider server error";
+                //res.RemarkId = "100";
+            }
+
+
+            return res;
         }
 
         public RevokedByThirdPartyRequestResponse RevokedByThirdParty(RevokedByThirdPartyRequestRequest request)
@@ -94,6 +119,74 @@ namespace NPRPlusProviderService
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = req.PaymentAuthorisationId;
 
             DatabaseQueue.Add(new QueueObject(com, true, string.Format(ConfigurationManager.ConnectionStrings["Denion.WebService.Database.SqlServer.AVG"].ConnectionString, Environment.MachineName)));
+        }
+
+        private PSRightCheckResponse RDWCheck(string areaId, string areaManagerId, DateTime startDateTime, string countryCode, string accessId, string vehicleId) {
+            //Database.Database.Log("Provider: " + Settings.Default.ProviderId + "; Received: " + req.VehicleId);
+            PSRightCheckResponse res = new PSRightCheckResponse();
+
+            // init RDW Client
+            RegistrationClient client = Denion.WebService.Functions.RDWClient();
+            if (client == null) {
+                //check.RemarkId = "70";
+                //check.Remark = "NPR Provider server error";
+            } else {
+                // create the request
+                PSRightCheckRequestData RDWreq = new PSRightCheckRequestData();
+                PSRightCheckResponseError RDWerr = new PSRightCheckResponseError();
+                PSRightCheckResponseData RDWres = null;
+
+                GEOinfo geo = GEO.FromArea(areaManagerId, areaId);
+                if (geo == null || (geo.lat == 0 && geo.lon == 0)) {
+                    RDWreq.AreaId = areaId;
+                    RDWreq.AreaManagerId = Denion.WebService.Functions.FixAreaManagerId(areaManagerId);
+                } else {
+                    RDWreq.CheckLocation = new PSRightCheckRequestDataCheckLocation() {
+                        Latitude = geo.lat,
+                        Longitude = geo.lon
+                    };
+                }
+                //RDWreq.CheckAddress //  NOT used
+                RDWreq.CheckTime = Denion.WebService.Functions.ToUTC(startDateTime);
+
+                if (!string.IsNullOrEmpty(countryCode)) {
+                    string cc = countryCode.ToUpper();
+                    if (Enum.IsDefined(typeof(RDW.UneceLandCodesType), cc)) {
+                        RDWreq.CountryCodeVehicle = (UneceLandCodesType)Enum.Parse(typeof(UneceLandCodesType), cc, true);
+                        RDWreq.CountryCodeVehicleSpecified = true;
+                    }
+                    //else
+                    //{
+                    //    Database.Log("LC; CountryCode '" + cc + "' is not valid");
+                    //    res.Remark = "NPR Provider server error; Invalid or unknown Country code";
+                    //    res.RemarkId = "75";
+                    //    return res;
+                    //}
+                }
+                RDWreq.ExtraInfoIndicator = IndicatorYNType.N;
+                if (!string.IsNullOrEmpty(accessId))
+                    RDWreq.ReferenceCheckOrg = accessId;
+
+                RDWreq.UsageId = Settings.Default.UsageId;
+                RDWreq.VehicleId = vehicleId;
+                //req.VAT //    NOT used
+                //req.Amount // NOT used
+
+                try {
+                    // send the request to the RDW
+                    Database.Log("sending NPR+ " + ConfigurationManager.AppSettings["ServiceId"]);
+                    RDWres = client.CheckPSRight(Rijndael.Decrypt(Settings.Default.MsgPin), RDWreq, out RDWerr);
+
+                } catch (Exception ex) {
+                   Database.Log(Settings.Default.ProviderId + "; Exception: " + ex.Message);
+                }
+
+
+                // Handle the response
+                res.PSRightCheckResponseData = RDWres;
+                res.PSRightCheckResponseError = RDWerr;
+            }
+            return res;
         }
     }
 }

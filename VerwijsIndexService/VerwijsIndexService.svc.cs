@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Threading;
 using System.Net;
+using System.Configuration;
 
 namespace Denion.WebService.VerwijsIndex
 {
@@ -638,19 +639,26 @@ namespace Denion.WebService.VerwijsIndex
         internal static PaymentCheckResponse PaymentCheckWrapper(Provider p, PaymentCheckRequest request)
         {
             PaymentCheckResponse relayRes = null;
+
+            Database.Database.Log("protocoll " + p.Protocoll);
+
             if (p.Protocoll == Provider.ProtocollType.Unknown)
             {
                 Database.Database.Log(string.Format("Unknown protocollType, on provider '{0}'", p.id));
             }
             else if (p.Protocoll == Provider.ProtocollType.NprPlus)
             {
-                Database.Database.Log(string.Format("No PaymentCheck for '{3}', received from: {2}/{0}, destination: {1}", request.AreaId, p.url, request.AreaManagerId, p.id));
-                relayRes = new PaymentCheckResponse()
-                {
-                    AreaId = request.AreaId,
-                    Granted = true,
-                    ProviderId = p.id,
-                };
+                //Database.Database.Log(string.Format("No PaymentCheck for '{3}', received from: {2}/{0}, destination: {1}", request.AreaId, p.url, request.AreaManagerId, p.id));
+
+
+                relayRes = CheckPSRight(p, request);
+
+                //relayRes = new PaymentCheckResponse()
+                //{
+                //    AreaId = request.AreaId,
+                //    Granted = true,
+                //    ProviderId = p.id,
+                //};
             }
             else
             {
@@ -799,6 +807,48 @@ namespace Denion.WebService.VerwijsIndex
             }
             finally
             {
+                if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
+                    clnt.Close();
+            }
+
+            return response;
+        }
+
+        internal static PaymentCheckResponse CheckPSRight(Provider p, PaymentCheckRequest request) {
+            PaymentCheckResponse response = null;
+            RegistrationPlusClient clnt = null;
+
+            try {
+                //prepare request
+                PSRightCheckRequestData req = new PSRightCheckRequestData {
+                    AreaManagerId = request.AreaManagerId,
+                    AreaId = request.AreaId,
+                    UsageId = "parkeren",
+                    VehicleId = request.VehicleId,
+                    CheckTime = request.CheckDateTime,
+                    ExtraInfoIndicator = IndicatorYNType.N
+                };
+                PSRightCheckResponseData res = null;
+                PSRightCheckResponseError err = null;
+
+                Database.Database.Log("sending NPR+ to PARKPRO " + ConfigurationManager.AppSettings["ServiceId"]);
+
+
+                // make the call
+                Timing t = new Timing("VerwijsIndexService", "CheckPSRight", p.url);
+                clnt = Service.NPRPlusClient(p.url);
+                res = clnt.CheckPSRight("", req, out err);
+                t.Finish();
+
+                // fill the response
+                response = new PaymentCheckResponse {
+                    Granted = res.CheckAnswer == IndicatorYNType.y || res.CheckAnswer == IndicatorYNType.Y
+                };
+            } catch (Exception ex) {
+                Database.Database.Log(string.Format("Exception on CheckPSRight from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
+                //response.Remark = "Exception on ActivateEnroll";
+                //response.RemarkId = "500x";
+            } finally {
                 if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
                     clnt.Close();
             }

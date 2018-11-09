@@ -78,7 +78,7 @@ namespace Denion.WebService.Database
         {
             SqlCommand com = new SqlCommand();
             com.CommandText =
-                "if (select convert(bit, [VALUE]) from [SETTINGS] where [PROPERTY] = @WEBSERVICE) = 1 " +
+                //"if (select convert(bit, [VALUE]) from [SETTINGS] where [PROPERTY] = @WEBSERVICE) = 1 " +
                 " insert into Messages (SOURCE, DESTINATION, SERVICE, RECEIVED, MESSAGE) values " +
                 "  (@SOURCE, @DESTINATION, @SERVICE, @RECEIVED, @MESSAGE)";
             com.Parameters.Add("@SOURCE", SqlDbType.NVarChar, 200).Value = Source;

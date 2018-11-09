@@ -14,6 +14,11 @@ namespace Denion.WebService.VerwijsIndex
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestResponse RevokedByThirdParty(RevokedByThirdPartyRequestRequest request);
+
+        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.VerwijsIndex.PSRightCheckResponse CheckPSRight(PSRightCheckRequest request);
     }
 
     public partial class PSRightEnrollRequestData : object, System.ComponentModel.INotifyPropertyChanged
@@ -736,6 +741,19 @@ namespace Denion.WebService.VerwijsIndex
             RevokedByThirdPartyRequestResponse retVal = ((INprPlus)(this)).RevokedByThirdParty(inValue);
             RevokedByThirdPartyRequestResponseError = retVal.RevokedByThirdPartyRequestResponseError;
             return retVal.RevokedByThirdPartyRequestResponseData;
+        }
+
+        public PSRightCheckResponseData CheckPSRight(string PIN, PSRightCheckRequestData PSRightCheckRequestData, out PSRightCheckResponseError PSRightCheckResponseError) {
+            PSRightCheckRequest inValue = new PSRightCheckRequest();
+            inValue.PIN = PIN;
+            inValue.PSRightCheckRequestData = PSRightCheckRequestData;
+            PSRightCheckResponse retVal = ((INprPlus)(this)).CheckPSRight(inValue);
+            PSRightCheckResponseError = retVal.PSRightCheckResponseError;
+            return retVal.PSRightCheckResponseData;
+        }
+
+        public PSRightCheckResponse CheckPSRight(PSRightCheckRequest request) {
+            return base.Channel.CheckPSRight(request);
         }
     }
 
