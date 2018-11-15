@@ -197,8 +197,8 @@ namespace Denion.WebService.VerwijsIndex
                         if (res.PaymentAuthorisationId != null)
                         {
                             object PSRightID = DBNull.Value;
-                            Database.Database.Log("amount:" + request.Amount + ", reg? " + p.NPRRegistration);
-                            if (request.Amount > 0 && p.NPRRegistration) {
+                            Database.Database.Log("Payment end reg? " + p.NPRRegistration);
+                            if (p.NPRRegistration) {
                                 RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), request.PaymentAuthorisationId);
                                 if (r.PSRightId != null)
                                     PSRightID = r.PSRightId;
