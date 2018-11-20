@@ -451,7 +451,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Update Autorisation request in the database
         /// </summary>
         /// <param name="LinkId">optional record id of the link record</param>
-        internal static void UpdateAuthorisation(string providerId, string paymentAuthorisationId, string remark, object requestId, Link link)
+        internal static void UpdateAuthorisation(string providerId, string paymentAuthorisationId, string remark, object requestId, Link link, DateTime? startDateTime)
         {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set PROVIDERID=@PROVIDERID, AUTHORISATIONID=@AUTHORISATIONID, REMARK=@REMARK {0} where REQUESTID=@REQUESTID";
@@ -470,13 +470,17 @@ namespace Denion.WebService.VerwijsIndex
             com.Parameters.Add("@REQUESTID", SqlDbType.Int).Value = requestId;
             //com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
 
-            if (link != null)
-            {
+            if (startDateTime.HasValue && link != null) {
+                com.CommandText = string.Format(com.CommandText, ", LINKID=@LINKID, STARTDATE=@STARTDATE");
+                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = startDateTime.Value;
+                com.Parameters.Add("@LINKID", SqlDbType.Int).Value = link.ID;
+            } else if (startDateTime.HasValue) {
+                com.CommandText = string.Format(com.CommandText, ", STARTDATE=@STARTDATE");
+                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = link.STARTDATE;
+            } else if (link != null) {
                 com.CommandText = string.Format(com.CommandText, ", LINKID=@LINKID ");
                 com.Parameters.Add("@LINKID", SqlDbType.Int).Value = link.ID;
-            }
-            else
-            {
+            } else {
                 com.CommandText = string.Format(com.CommandText, "");
             }
 

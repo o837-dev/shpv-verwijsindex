@@ -386,7 +386,7 @@ namespace Denion.WebService.VerwijsIndex
                                         link = DatabaseFunctions.CreateLink(_request.VehicleId, _request.CountryCode, _response.ProviderId, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, _request.AreaId, _request.VehicleIdType, _response.TokenType);
                                     }
 
-                                    DatabaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link);
+                                    DatabaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link, null);
 
                                     break;
                                 }

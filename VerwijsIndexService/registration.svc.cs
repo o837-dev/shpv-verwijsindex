@@ -271,9 +271,25 @@ namespace Denion.WebService.VerwijsIndex
                         if (relayRes != null) {
                             res = relayRes;
                             if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId)) {
-                                Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, _request.StartTimePSright, req.EndDateTime, null, req.AreaId, req.VehicleIdType, null);
+                                DateTime startDateTimeAdjusted = DateTime.Now;
+                                if(relayRes.StartDateTimeAdjusted.HasValue) {
+                                    startDateTimeAdjusted = relayRes.StartDateTimeAdjusted.Value;
+                                } else if(_request.StartTimePSright != null) {
+                                    startDateTimeAdjusted = _request.StartTimePSright;
+                                }
 
-                                DatabaseFunctions.UpdateAuthorisation(req.ProviderId, relayRes.PaymentAuthorisationId, null, _requestid, link);
+                                DateTime endDateTime = DateTime.Now;
+                                if (relayRes.EndDateTime.HasValue) {
+                                    //Als garage antwoordt
+                                    endDateTime = relayRes.EndDateTime.Value;
+                                } else if(req.EndDateTime.HasValue) {
+                                    //Garage heeft niets gestuurd dus kijken we of provider een eindtijd heeft gestuurd
+                                    endDateTime = req.EndDateTime.Value;
+                                }
+
+                                Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, startDateTimeAdjusted, endDateTime, null, req.AreaId, req.VehicleIdType, null);
+
+                                DatabaseFunctions.UpdateAuthorisation(req.ProviderId, relayRes.PaymentAuthorisationId, null, _requestid, link, startDateTimeAdjusted);
 
                                 clnt.Close();
                                 break;
