@@ -7,6 +7,7 @@ using System.Data;
 using Denion.WebService.Database;
 using Denion.WebService.Cryptography;
 using Itenso.TimePeriod;
+using Denion.WebService;
 
 namespace Denion.WebService.VerwijsIndex
 {
@@ -312,7 +313,7 @@ namespace Denion.WebService.VerwijsIndex
             string update = "update Link set [AUTHORISATIONTHRESHOLD]=@AUTHORISATIONTHRESHOLD, [STARTDATE]=@STARTDATE, [ENDDATE]=@ENDDATE, [TOKEN]=@TOKEN, [TOKENTYPE]=@TOKENTYPE";
             string where = " where [Id]=@ID";
 
-            com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = authorisationValidFrom;
+            com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(authorisationValidFrom);
             com.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
 
             if (authorisationMaxAmount.HasValue)
@@ -321,9 +322,9 @@ namespace Denion.WebService.VerwijsIndex
                 com.Parameters.Add("@AUTHORISATIONTHRESHOLD", SqlDbType.SmallMoney).Value = DBNull.Value;
 
             if (authorisationValidUntil.HasValue)
-                com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = authorisationValidUntil;
+                com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(authorisationValidUntil.Value);
             else
-                com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = authorisationValidFrom;
+                com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(authorisationValidFrom);
 
             if (!string.IsNullOrEmpty(token))
                 com.Parameters.Add("@TOKEN", SqlDbType.NVarChar, 200).Value = token;
@@ -472,11 +473,11 @@ namespace Denion.WebService.VerwijsIndex
 
             if (startDateTime.HasValue && link != null) {
                 com.CommandText = string.Format(com.CommandText, ", LINKID=@LINKID, STARTDATE=@STARTDATE");
-                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = startDateTime.Value;
+                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(startDateTime.Value);
                 com.Parameters.Add("@LINKID", SqlDbType.Int).Value = link.ID;
-            } else if (startDateTime.HasValue) {
+            } else if (startDateTime.HasValue && link == null) {
                 com.CommandText = string.Format(com.CommandText, ", STARTDATE=@STARTDATE");
-                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = link.STARTDATE;
+                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(startDateTime.Value);
             } else if (link != null) {
                 com.CommandText = string.Format(com.CommandText, ", LINKID=@LINKID ");
                 com.Parameters.Add("@LINKID", SqlDbType.Int).Value = link.ID;
@@ -497,11 +498,11 @@ namespace Denion.WebService.VerwijsIndex
 
             SqlCommand com = new SqlCommand();
             com.CommandText = "insert into Link ([VEHICLEID],[COUNTRYCODE],[PROVIDERID],[AUTHORISATIONTHRESHOLD],[STARTDATE],[ENDDATE],[TOKEN],[AREAID],[VEHICLEIDTYPE],[TOKENTYPE]) output inserted.id values (@VEHICLEID, @COUNTRYCODE, @PROVIDERID, @AUTHORISATIONTHRESHOLD, @STARTDATE, @ENDDATE, @TOKEN, @AREAID, @VEHICLEIDTYPE, @TOKENTYPE)";
-            com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = authorisationValidFrom;
+            com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(authorisationValidFrom);
             com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Cryptography.Rijndael.Encrypt(vehicleId);
             com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = providerId;
             com.Parameters.Add("@AUTHORISATIONTHRESHOLD", SqlDbType.SmallMoney).Value = (authorisationMaxAmount.HasValue) ? (object)authorisationMaxAmount : DBNull.Value;
-            com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = (authorisationValidUntil.HasValue) ? authorisationValidUntil : authorisationValidFrom;
+            com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone((authorisationValidUntil.HasValue) ? authorisationValidUntil.Value : authorisationValidFrom);
             com.Parameters.Add("@COUNTRYCODE", SqlDbType.NVarChar, 10).Value = (!string.IsNullOrEmpty(countryCode)) ? countryCode : "";
             com.Parameters.Add("@TOKEN", SqlDbType.NVarChar, 200).Value = (!string.IsNullOrEmpty(token)) ? (object)token : DBNull.Value;
             com.Parameters.Add("@AREAID", SqlDbType.NVarChar, 100).Value = (!string.IsNullOrEmpty(AreaId)) ? (object)AreaId : DBNull.Value;
@@ -551,7 +552,7 @@ namespace Denion.WebService.VerwijsIndex
             else
                 com.Parameters.Add("@COUNTRYCODE", SqlDbType.NVarChar, 10).Value = "";
             com.Parameters.Add("@AREAMANAGERID", SqlDbType.NVarChar, 200).Value = areaManagerId;
-            com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = startDateTime;
+            com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = Denion.WebService.Functions.DateTimeToLocalTimeZone(startDateTime);
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = false;
             com.Parameters.Add("@AREAID", SqlDbType.NVarChar, 200).Value = areaId;
             com.Parameters.Add("@VEHICLEIDTYPE", SqlDbType.NVarChar, 50).Value = (!string.IsNullOrEmpty(vehicleIdType)) ? (object)vehicleIdType : DBNull.Value;
