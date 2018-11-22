@@ -117,9 +117,10 @@ namespace AutonomousConsumerService
                     res.EndTimeAdjusted = req.CancelDateTime;
 
                     String unparsedAmount = dt.Rows[0]["AMOUNT"] != null? Convert.ToString(dt.Rows[0]["AMOUNT"]):"0";
+                    String unparsedVAT = dt.Rows[0]["VAT"] != null ? Convert.ToString(dt.Rows[0]["VAT"]) : "0";
 
                     res.Amount = Convert.ToDouble(unparsedAmount.Equals("")? "0": unparsedAmount);
-                    res.VAT = Convert.ToDouble(dt.Rows[0]["VAT"]);
+                    res.VAT = Convert.ToDouble(unparsedVAT.Equals("")? "0": unparsedVAT);
                 }
                 else
                 {

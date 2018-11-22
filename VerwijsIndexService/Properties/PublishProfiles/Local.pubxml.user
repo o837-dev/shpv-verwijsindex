@@ -9,52 +9,52 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/de/Itenso.TimePeriod.resources.dll">
-      <publishTime>04/03/2014 09:05:20</publishTime>
+      <publishTime>04/03/2014 07:05:20</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>11/20/2018 14:34:05</publishTime>
+      <publishTime>11/20/2018 09:41:56</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
       <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>11/20/2018 14:34:05</publishTime>
+      <publishTime>11/09/2018 13:18:34</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
       <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/Itenso.TimePeriod.dll">
-      <publishTime>04/03/2014 09:05:20</publishTime>
+      <publishTime>04/03/2014 07:05:20</publishTime>
     </File>
     <File Include="bin/NPRProviderService.dll">
-      <publishTime>11/20/2018 16:33:53</publishTime>
+      <publishTime>11/21/2018 14:07:56</publishTime>
     </File>
     <File Include="bin/NPRProviderService.dll.config">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/NPRProviderService.pdb">
       <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>11/20/2018 14:34:06</publishTime>
+      <publishTime>11/09/2018 11:08:04</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
       <publishTime>07/27/2018 09:22:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexService.dll">
-      <publishTime>11/20/2018 16:33:54</publishTime>
+      <publishTime>11/21/2018 14:07:58</publishTime>
     </File>
     <File Include="bin/VerwijsIndexService.pdb">
       <publishTime>07/27/2018 09:22:18</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>11/20/2018 14:34:06</publishTime>
+      <publishTime>11/20/2018 09:41:57</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
       <publishTime>07/27/2018 09:22:17</publishTime>
@@ -63,7 +63,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Global.asax.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -81,7 +81,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/13/2018 10:34:27</publishTime>
+      <publishTime>07/27/2018 11:19:13</publishTime>
     </File>
     <File Include="Properties/AssemblyInfo.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -162,22 +162,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ProviderService.svc">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="ProviderService.svc.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="registration.svc">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="registration.svc.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="StatusPage.html">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="VerwijsIndexService.cd">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="VerwijsIndexService.csproj">
       <publishTime>07/27/2018 09:22:15</publishTime>
@@ -189,7 +189,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="VerwijsIndexService.svc">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="VerwijsIndexService.svc.cs">
       <publishTime>07/17/2018 10:21:45</publishTime>
@@ -201,7 +201,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/20/2018 14:34:07</publishTime>
+      <publishTime>09/27/2018 14:54:45</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>07/24/2018 14:04:02</publishTime>
