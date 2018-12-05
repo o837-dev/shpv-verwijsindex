@@ -27,7 +27,7 @@ namespace Denion.WebService
             res.Token = "RDW";
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient();
+            RDW.RegistrationClient client = Functions.RDWClient(Settings.Default.ProviderId);
             if (client == null)
             {
                 res.Remark = "NPR Provider server error";
@@ -211,7 +211,7 @@ namespace Denion.WebService
             NPRRightCheck check = new NPRRightCheck();
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient();
+            RDW.RegistrationClient client = Functions.RDWClient(Settings.Default.ProviderId);
             if (client == null)
             {
                 check.RemarkId = "70";

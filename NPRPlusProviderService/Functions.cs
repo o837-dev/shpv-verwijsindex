@@ -92,6 +92,7 @@ namespace Denion.WebService
             X509Certificate2 cert = null;
             try
             {
+                Database.Database.Log("GetCert Local config " + certFile + "; pin: " + Rijndael.Decrypt(certPin));
                 cert = new X509Certificate2(certFile, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);
             }
             catch (Exception ex)
@@ -114,6 +115,7 @@ namespace Denion.WebService
                 DataRow dr = dt.Rows[0];
                 byte[] certificate = dr["CERTIFICATE"] as byte[];
                 string certPin = dr["CERTPIN"] as string;
+                Database.Database.Log("GetCert NPRPlusCert DB " + certificate + "; pin: " + Rijndael.Decrypt(certPin));
                 cert = new X509Certificate2(certificate, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);
             }
             return cert;

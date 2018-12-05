@@ -192,10 +192,6 @@ namespace Denion.WebService
             return null;
         }
 
-        internal static RDW.RegistrationClient RDWClient()
-        {
-            return RDWClient(GetCertificate(Properties.Settings.Default.CertFile, Properties.Settings.Default.CertPin));
-        }
         internal static RDW.RegistrationClient RDWClient(string provider)
         {
 
@@ -250,20 +246,6 @@ namespace Denion.WebService
             return client;
         }
 
-        internal static X509Certificate2 GetCertificate(string certFile, string certPin)
-        {
-            X509Certificate2 cert = null;
-            try
-            {
-                cert = new X509Certificate2(certFile, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);
-            }
-            catch (Exception ex)
-            {
-                Database.Database.Log("CERT; EX: " + ex.Message + "; STACK: " + ex.StackTrace);
-            }
-            return cert;
-        }
-
         internal static X509Certificate2 GetCertificate(string provider)
         {
             X509Certificate2 cert = null;
@@ -280,11 +262,6 @@ namespace Denion.WebService
                 cert = new X509Certificate2(certificate, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);
             }
             return cert;
-        }
-
-        internal static string GetPinFromCert()
-        {
-            return GetPinFromCert(GetCertificate(Properties.Settings.Default.CertFile, Properties.Settings.Default.CertPin));
         }
 
         internal static string GetPinFromCert(X509Certificate2 CERT)
