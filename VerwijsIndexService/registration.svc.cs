@@ -475,9 +475,15 @@ namespace Denion.WebService.VerwijsIndex
                                         Database.Database.Log("NPR Registration? " + nprRegistration);
                                         if (nprRegistration) {
                                             DateTime endTime = res.EndTimeAdjusted != null? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
+                                            DateTime startTime = (DateTime)dr["STARTDATE"];
+                                       
+                                            if (endTime == null || endTime <= startTime)
+                                            {
+                                                endTime = startTime;
+                                            }
 
                                             res.Amount = res.Amount == null ? 0 : res.Amount;
-                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, (DateTime)dr["STARTDATE"], res.EndTimeAdjusted , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), res.PaymentAuthorisationId);
+                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, startTime, endTime , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), res.PaymentAuthorisationId);
                                             if (r.PSRightId != null)
                                                 PSRightID = r.PSRightId;
                                             if (!string.IsNullOrEmpty(r.Remark)) {

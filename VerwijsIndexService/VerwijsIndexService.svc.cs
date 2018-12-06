@@ -405,7 +405,7 @@ namespace Denion.WebService.VerwijsIndex
                     else
                     {
                         //Database.Database.Log(string.Format("No contract found; area: {0}; startdate: {1}", _request.AreaManagerId, _request.StartDateTime));
-
+                        DatabaseFunctions.UnregisterRequest(_requestid);
                         _response.RemarkId = "115";
                         _response.Remark = "No available contract";
                     }
