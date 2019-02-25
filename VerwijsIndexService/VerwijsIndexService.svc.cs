@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Threading;
 using System.Net;
+using System.Threading;
 using System.Configuration;
 
 namespace Denion.WebService.VerwijsIndex
@@ -163,13 +164,10 @@ namespace Denion.WebService.VerwijsIndex
             PaymentEndResponse res = new PaymentEndResponse();
 
             Err err = request.IsValid();
-            if (err != null)
-            {
+            if (err != null) {
                 res.Remark = err.Remark;
                 res.RemarkId = err.RemarkId;
-            }
-            else
-            {
+            } else {
                 SqlCommand com = new SqlCommand();
                 com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL 
                     from Authorisation a join Provider p on a.PROVIDERID=p.ID
@@ -180,24 +178,27 @@ namespace Denion.WebService.VerwijsIndex
                 com.Parameters.Add("@VEHICLEID", System.Data.SqlDbType.NVarChar, 100).Value = Cryptography.Rijndael.Encrypt(request.VehicleId);
                 com.Parameters.Add("@PROVIDERID", System.Data.SqlDbType.NVarChar, 200).Value = request.ProviderId;
                 //com.Parameters.Add("@SETTLED", System.Data.SqlDbType.Bit).Value = false;
-                if (!string.IsNullOrEmpty(request.VehicleIdType))
-                {
+                if (!string.IsNullOrEmpty(request.VehicleIdType)) {
                     com.CommandText += " AND (a.VEHICLEIDTYPE=@VEHICLEIDTYPE OR a.VEHICLEIDTYPE IS NULL)";
                     com.Parameters.Add("@VEHICLEIDTYPE", System.Data.SqlDbType.NVarChar, 50).Value = request.VehicleIdType;
                 }
 
                 DataTable dt = Database.Database.ExecuteQuery(com);
-                if (dt != null)
-                {
-                    foreach (DataRow dr in dt.Rows)
-                    {
+                if (dt != null) {
+                    foreach (DataRow dr in dt.Rows) {
                         Provider p = new Provider(dr);
-                        res = WorkerFunctions.PaymentEndWrapper(p, request);
 
-                        if (res.PaymentAuthorisationId != null)
-                        {
+                        new Thread(() => {
+                            Thread.CurrentThread.IsBackground = true;
+                            //Bericht naar provider
+                            WorkerFunctions.PaymentEndWrapper(p, request);
+                        }).Start();
+
+                        if (request.PaymentAuthorisationId != null) {
                             object PSRightID = DBNull.Value;
                             Database.Database.Log("Payment end reg? " + p.NPRRegistration);
+
+                            //Registratie in NPR
                             if (p.NPRRegistration) {
                                 RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), request.PaymentAuthorisationId);
                                 if (r.PSRightId != null)
@@ -208,7 +209,8 @@ namespace Denion.WebService.VerwijsIndex
                                     res.Remark = "Problem with NPR registration; " + r.Remark;
                                 }
                             }
-                            AuthorisationSettled(res.PaymentAuthorisationId, PSRightID);
+                            AuthorisationSettled(request.PaymentAuthorisationId, PSRightID);
+                            res.PaymentAuthorisationId = request.PaymentAuthorisationId;
                             break;
                         }
                     }
@@ -242,8 +244,7 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// Class om het inrijd verzoek via een thread af te handelen
         /// </summary>
-        class PaymentStartWorker : Worker
-        {
+        class PaymentStartWorker : Worker {
             /// <summary>
             /// Verzoek bericht
             /// </summary>
@@ -280,16 +281,14 @@ namespace Denion.WebService.VerwijsIndex
             /// <summary>
             /// Result of the webservice call
             /// </summary>
-            public override object Result
-            {
+            public override object Result {
                 get { return _response; }
             }
 
             /// <summary>
             /// Het ingediende verzoek afmelden, op bais van eigen logica, om de administratie op orde te houden
             /// </summary>
-            public override void UnSettle()
-            {
+            public override void UnSettle() {
                 //Database.Database.Log("UnSettle: '" + _request.VehicleId + "' for " + _request.AreaId);
 
                 PaymentEndRequest abortReq = new PaymentEndRequest();
@@ -308,17 +307,13 @@ namespace Denion.WebService.VerwijsIndex
             /// <summary>
             /// Main function
             /// </summary>
-            public override void Settle()
-            {
-                try
-                {
+            public override void Settle() {
+                try {
                     _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode, _request.AreaManagerId, _request.StartDateTime, _request.AreaId, _request.VehicleIdType);
 
                     Providers providers = DatabaseFunctions.ListOfProvider(_request.AreaManagerId, _request.StartDateTime);
-                    if (providers.Count > 0)
-                    {
-                        foreach (Provider p in providers)
-                        {
+                    if (providers.Count > 0) {
+                        foreach (Provider p in providers) {
                             if (_aborted) break;
 
                             Link link = DatabaseFunctions.GetLink(p.id, _request.VehicleId, _request.StartDateTime, _request.EndDateTime, _request.Amount, _request.AreaId, true, _request.VehicleIdType);
@@ -335,32 +330,6 @@ namespace Denion.WebService.VerwijsIndex
                             {
                                 // autorisatieverzoek sturen en als daar een positief antwoord op komt een koppeling registreren met de einddatumtijd van de autorisatie als einddatumtijd van de koppeling
                             }
-                            //else if (p.sendlinkrequest == Provider.SendLinkRequest.EXPLICIT)
-                            //{
-                            //    // eerst een koppelingsverzoek sturen vragen bij een voertuig waarvoor nog geen Koppeling bestaat
-                            //    //Database.Database.Log("[LinkRequest] Checking: " + p.description);
-                            //    Timing t = new Timing("VerwijsIndexService", "SendLinkRequest", p.url);
-                            //    ProviderClient pc = Service.LinkClient(p.url);
-
-                            //    LinkRequest lreq = new LinkRequest();
-                            //    LinkResponse lres = new LinkResponse();
-
-                            //    lreq.VehicleId = _request.VehicleId;
-                            //    lreq.CountryCode = _request.CountryCode;
-                            //    lreq.ProviderId = p.id;
-
-                            //    lres = pc.Request(lreq);
-                            //    t.Finish();
-                            //    if (lres.LinkId != null)
-                            //    {
-                            //        //Database.Database.Log("[LinkRequest] GRANTED: " + lres.LinkId);
-                            //    }
-                            //    else
-                            //    {
-                            //        //Database.Database.Log("[LinkRequest] NOT GRANTED: " + lreq.VehicleId);
-                            //        continue;
-                            //    }
-                            //}
 
                             //Database.Database.Log("[PaymentStart] Checking: " + p.description);
 
@@ -460,46 +429,12 @@ namespace Denion.WebService.VerwijsIndex
                 }
             }
 
-            public PaymentCheckWorker(PaymentCheckRequest pcr)
-            {
+            public PaymentCheckWorker(PaymentCheckRequest pcr) {
                 _request = pcr;
                 _response = new PaymentCheckResponse();
             }
 
-            //private void LinkCheck(string providerId)
-            //{
-            //    SqlCommand cmd = new SqlCommand("SELECT [AREAID] FROM [VerwijsIndex].[dbo].[Link] WHERE [PROVIDERID]=@PROVIDERID AND [VEHICLEID]=@VEHICLEID AND [STARTDATE]<=@CHECKDATETIME AND [ENDDATE]>@CHECKDATETIME");
-
-            //    cmd.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 100).Value = providerId;
-            //    cmd.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Cryptography.Rijndael.Encrypt(_request.VehicleId);
-            //    cmd.Parameters.Add("@CHECKDATETIME", SqlDbType.DateTime).Value = _request.CheckDateTime;
-
-            //    if (!string.IsNullOrEmpty(_request.CountryCode))
-            //    {
-            //        cmd.CommandText += " and COUNTRYCODE=@COUNTRYCODE";
-            //        cmd.Parameters.Add("@COUNTRYCODE", SqlDbType.NVarChar, 10).Value = _request.CountryCode;
-            //    }
-            //    if (!string.IsNullOrEmpty(_request.VehicleIdType))
-            //    {
-            //        cmd.CommandText += " and VEHICLEIDTYPE=@VEHICLEIDTYPE";
-            //        cmd.Parameters.Add("@VEHICLEIDTYPE", SqlDbType.NVarChar, 50).Value = _request.VehicleIdType;
-            //    }
-
-            //    DataTable dt = Database.Database.ExecuteQuery(cmd);
-
-            //    if (dt != null && dt.Rows.Count > 0)
-            //    {
-            //        DataRow dr = dt.Rows[0];
-            //        _response.Granted = true;
-            //        if (string.IsNullOrEmpty(_request.AreaId) || _request.AreaId.Equals(dr["AreaId"].ToString(), StringComparison.OrdinalIgnoreCase))
-            //        {
-            //            _response.AreaId = dr["AreaId"].ToString();
-            //        }
-            //    }
-            //}
-
-            public override void Settle()
-            {
+            public override void Settle() {
                 try
                 {
                     Providers providers = null;
@@ -518,57 +453,15 @@ namespace Denion.WebService.VerwijsIndex
                             {
                                 // 29-08-2017 logica gelijk getrokken met PaymentStart!
                                 // geen autorisatieverzoeken voor voertuigen waarvoor geen koppeling bestaat
-                                if (link == null)
-                                {
+                                if (link == null) {
                                     //Database.Database.Log("No link for Vehicle: " + _request.VehicleId);
                                     continue;
                                 }
                                 // logica gelijk getrokken met PaymentStart!
-
-                                //else if (string.IsNullOrEmpty(link.AREAID))
-                                //{
-                                //    Database.Database.Log("AreaID in Link = null (!)");
-                                //}
-                                //else if (_request.AreaId.Equals(link.AREAID, StringComparison.OrdinalIgnoreCase))
-                                //{
-                                //    //Database.Database.Log("AreaID equals!");
-                                //}
-                                //else
-                                //{
-                                //    //Database.Database.Log(_request.AreaId + " NOT equals " + link.areaID);
-                                //    continue;
-                                //}
                             }
-                            else if (p.sendlinkrequest == Provider.SendLinkRequest.IMPLICIT)
-                            {
+                            else if (p.sendlinkrequest == Provider.SendLinkRequest.IMPLICIT) {
                                 // autorisatieverzoek sturen en als daar een positief antwoord op komt een koppeling registreren met de einddatumtijd van de autorisatie als einddatumtijd van de koppeling
                             }
-                            //else if (p.sendlinkrequest == Provider.SendLinkRequest.EXPLICIT)
-                            //{
-                            //    // eerst een koppelingsverzoek sturen vragen bij een voertuig waarvoor nog geen Koppeling bestaat
-                            //    //Database.Database.Log("[LinkRequest] Checking: " + p.description);
-                            //    Timing t = new Timing("VerwijsIndexService", "SendLinkRequest", p.url);
-                            //    ProviderClient pc = Service.LinkClient(p.url);
-
-                            //    LinkRequest lreq = new LinkRequest();
-                            //    LinkResponse lres = new LinkResponse();
-
-                            //    lreq.VehicleId = _request.VehicleId;
-                            //    lreq.CountryCode = _request.CountryCode;
-                            //    lreq.ProviderId = p.id;
-
-                            //    lres = pc.Request(lreq);
-                            //    t.Finish();
-                            //    if (lres.LinkId != null)
-                            //    {
-                            //        //Database.Database.Log("[LinkRequest] GRANTED: " + lres.LinkId);
-                            //    }
-                            //    else
-                            //    {
-                            //        //Database.Database.Log("[LinkRequest] NOT GRANTED: " + lreq.VehicleId);
-                            //        continue;
-                            //    }
-                            //}
 
                             PaymentCheckResponse relayRes = WorkerFunctions.PaymentCheckWrapper(p, _request);
 

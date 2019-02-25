@@ -5,17 +5,17 @@ namespace Denion.WebService.VerwijsIndex
     [System.ServiceModel.ServiceContractAttribute(Namespace = "http://rdw.nl/rpv/1.0", ConfigurationName = "Denion.WebService.VerwijsIndex.INprPlus")]
     public interface INprPlus
     {
-        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/ActivateEnroll")]
+        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/ActivateEnroll", ReplyAction = "http://rdw.nl/rpv/1.0/IRegistration/ActivateEnrollResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.VerwijsIndex.ActivateEnrollRequestResponse ActivateEnroll(ActivateEnrollRequestRequest request);
 
-        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/RevokedByThirdParty")]
+        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/RevokedByThirdParty", ReplyAction = "http://rdw.nl/rpv/1.0/IRegistration/RevokedByThirdPartyResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.VerwijsIndex.RevokedByThirdPartyRequestResponse RevokedByThirdParty(RevokedByThirdPartyRequestRequest request);
 
-        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight")]
+        [System.ServiceModel.OperationContractAttribute(Action = "http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight", ReplyAction = "http://rdw.nl/rpv/1.0/IRegistration/CheckPSRightResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.VerwijsIndex.PSRightCheckResponse CheckPSRight(PSRightCheckRequest request);
