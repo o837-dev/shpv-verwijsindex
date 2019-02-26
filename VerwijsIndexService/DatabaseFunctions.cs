@@ -149,9 +149,9 @@ namespace Denion.WebService.VerwijsIndex
 			                join Provider as p on  c.Providerid2 = p.PID
 			                where p.ID = @PROVIDERID 
                                 and @STARTDATE between STARTDATE and ENDDATE 
-                                and @ENDDATE between STARTDATE and ENDDATE) as cs on c.AREAMANAGERID = cs.AREAMANAGERID and c.PRIORITY = cs.PRIORITY
+                                or @ENDDATE between STARTDATE and ENDDATE) as cs on c.AREAMANAGERID = cs.AREAMANAGERID and c.PRIORITY = cs.PRIORITY
                     where @STARTDATE between STARTDATE and ENDDATE 
-                        and @ENDDATE between STARTDATE and ENDDATE"))
+                        or @ENDDATE between STARTDATE and ENDDATE"))
             {
                 com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = req.ProviderId;
                 com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = req.ValidFrom;
