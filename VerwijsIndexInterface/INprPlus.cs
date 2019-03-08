@@ -395,7 +395,7 @@ namespace Denion.WebService.VerwijsIndex
         /// leeg indien geen authorisatie is gegeven
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 1)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Provider kan maximum bedrag terug melden, optioneel
@@ -602,7 +602,7 @@ namespace Denion.WebService.VerwijsIndex
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = false, Order = 0)]
 
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Code van de foutmelding of opmerking, optioneel
@@ -636,7 +636,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = false, Order = 1)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht

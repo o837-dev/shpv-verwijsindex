@@ -141,6 +141,11 @@ namespace Denion.WebService
             return right;
         }
 
+        public static long GenerateUniqueId() {
+            Random r = new Random();
+            return long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss") + r.Next());
+        }
+
         public static string RDWRevokeRight(string providerID, string PSRightID, DateTime endDateTime)
         {
             RDW.RegistrationClient client = RDWClient(providerID);

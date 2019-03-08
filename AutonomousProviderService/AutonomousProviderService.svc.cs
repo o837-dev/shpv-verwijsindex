@@ -79,10 +79,10 @@ namespace AutonomousProviderService
                     res.Token = dr["TOKEN"].ToString();
                     res.TokenType = dr["TOKENTYPE"].ToString();
 
-                    if (string.IsNullOrEmpty(res.Remark))
-                    {
-                        res.PaymentAuthorisationId = Hashing.CalculateMD5Hash(req.AreaId + req.VehicleId + req.StartDateTime.ToFileTime().ToString());
-                        CreateRegistration(req, res.PaymentAuthorisationId);
+                    if (string.IsNullOrEmpty(res.Remark)) {
+                        long paymentAuthorisationId = Functions.GenerateUniqueId();
+                        res.PaymentAuthorisationId = paymentAuthorisationId;
+                        CreateRegistration(req, paymentAuthorisationId);
                     }
                     
                     res.AuthorisationMaxAmount = Max;
@@ -168,7 +168,7 @@ namespace AutonomousProviderService
         }
         #endregion
 
-        private void CreateRegistration(PaymentStartRequest req, string AuthorisationId)
+        private void CreateRegistration(PaymentStartRequest req, long AuthorisationId)
         {
             if (ConfigurationManager.AppSettings["AVG"] == null || !bool.Parse(ConfigurationManager.AppSettings["AVG"])) return;
 

@@ -155,7 +155,7 @@ namespace Denion.WebService.VerwijsIndex
         /// leeg indien geen authorisatie is gegeven
         /// </summary>
         [DataMember(Order = 1, IsRequired = false)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Provider kan maximum bedrag terug melden, optioneel
@@ -211,7 +211,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht
@@ -258,7 +258,7 @@ namespace Denion.WebService.VerwijsIndex
             {
                 return new Err60("EndDateTime");
             }
-            else if (string.IsNullOrEmpty(PaymentAuthorisationId))
+            else if (PaymentAuthorisationId == null)
             {
                 return new Err60("PaymentAuthorisationId");
             }
@@ -288,7 +288,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de provider, verplicht
         /// </summary>
         [DataMember(Order = 0, IsRequired = true)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Code van de foutmelding of opmerking, optioneel

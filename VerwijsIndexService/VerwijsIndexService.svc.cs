@@ -29,52 +29,38 @@ namespace Denion.WebService.VerwijsIndex
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest request)
-        {
+        PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest request) {
             Timing t = new Timing("PaymentStart", Service.IncomingAddress(), Service.OperationContextAddress());
             PaymentStartResponse res = new PaymentStartResponse();
             
             Err err = request.IsValid();
-            if (err != null)
-            {
+            if (err != null) {
                 res.Remark = err.Remark;
                 res.RemarkId = err.RemarkId;
-            }
-            else
-            {
+            } else {
                 PaymentStartWorker psw = new PaymentStartWorker(request);
                 Thread newThread = new Thread(new ThreadStart(psw.Settle));
                 newThread.Name = "PaymentStart+" + request.VehicleId;
                 newThread.Start();
 
-                if (newThread.Join(DatabaseFunctions.GetProperty("StartRequestTimeout", 2000)))
-                {
+                if (newThread.Join(DatabaseFunctions.GetProperty("StartRequestTimeout", 2000))) {
                     res = psw.Result as PaymentStartResponse;
-                }
-                else
-                {
+                } else {
                     psw.Abort();
-                    if (psw.Result != null)
-                    {
+                    if (psw.Result != null) {
                         res = psw.Result as PaymentStartResponse;
-                    }
-                    else
-                    {
+                    } else {
                         res.Remark = "PaymentServiceProvider does not respond";
                         res.RemarkId = "15";
                     }
                 }
 
-                if (string.IsNullOrEmpty(res.Remark))
-                {
-                    if (string.IsNullOrEmpty(res.PaymentAuthorisationId))
-                    {
-                        res.Remark = "No PaymentServiceProvider for this VehicleId";
-                        res.RemarkId = "10";
+                if (string.IsNullOrEmpty(res.Remark)) {
+                    res.Remark = "No PaymentServiceProvider for this VehicleId";
+                    res.RemarkId = "10";
 
-                        if (psw.AuthorisationRecordId != null)
-                            DatabaseFunctions.UnregisterRequest(psw.AuthorisationRecordId);
-                    }
+                    if (psw.AuthorisationRecordId != null)
+                        DatabaseFunctions.UnregisterRequest(psw.AuthorisationRecordId);
                 }
             }
             t.Finish();
@@ -200,7 +186,7 @@ namespace Denion.WebService.VerwijsIndex
 
                             //Registratie in NPR
                             if (p.NPRRegistration) {
-                                RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), request.PaymentAuthorisationId);
+                                RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
                                 if (r.PSRightId != null)
                                     PSRightID = r.PSRightId;
                                 if (!string.IsNullOrEmpty(r.Remark))
@@ -230,7 +216,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Update Autorisation request in the database, mark the record as settled
         /// </summary>
         /// <param name="PaymentAuthorisationId">Provider authorisation ID</param>
-        private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
+        private static void AuthorisationSettled(long? PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
@@ -309,7 +295,8 @@ namespace Denion.WebService.VerwijsIndex
             /// </summary>
             public override void Settle() {
                 try {
-                    _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode, _request.AreaManagerId, _request.StartDateTime, _request.AreaId, _request.VehicleIdType);
+                    long paymentAuthorisationId = Functions.GenerateUniqueId();
+                    _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode, _request.AreaManagerId, _request.StartDateTime, _request.AreaId, _request.VehicleIdType, paymentAuthorisationId);
 
                     Providers providers = DatabaseFunctions.ListOfProvider(_request.AreaManagerId, _request.StartDateTime);
                     if (providers.Count > 0) {
@@ -335,39 +322,32 @@ namespace Denion.WebService.VerwijsIndex
 
                             PaymentStartResponse relayRes = WorkerFunctions.PaymentStartWrapper(p, _request);
 
-                            if (relayRes != null)
-                            {
+                            if (relayRes != null) {
                                 _response = relayRes;
-                                if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId))
+                                _settled = true;
+
+                                if (link != null)
                                 {
-                                    _settled = true;
-
-                                    if (link != null)
+                                    if (p.sendlinkrequest != Provider.SendLinkRequest.NO)
                                     {
-                                        if (p.sendlinkrequest != Provider.SendLinkRequest.NO)
-                                        {
-                                            // don't update records of a static provider
-                                            DatabaseFunctions.UpdateLink(_request.CountryCode, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, link.ID, null, _response.TokenType);
-                                        }
+                                        // don't update records of a static provider
+                                        DatabaseFunctions.UpdateLink(_request.CountryCode, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, link.ID, null, _response.TokenType);
                                     }
-                                    else
-                                    {
-                                        link = DatabaseFunctions.CreateLink(_request.VehicleId, _request.CountryCode, _response.ProviderId, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, _request.AreaId, _request.VehicleIdType, _response.TokenType);
-                                    }
-
-                                    DatabaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link, null);
-
-                                    break;
                                 }
+                                else
+                                {
+                                    link = DatabaseFunctions.CreateLink(_request.VehicleId, _request.CountryCode, _response.ProviderId, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, _request.AreaId, _request.VehicleIdType, _response.TokenType);
+                                }
+
+                                DatabaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link, null);
+
+                                break;
                             }
                         }
 
-                        if (string.IsNullOrEmpty(_response.PaymentAuthorisationId))
-                        {
+                        if (_response.PaymentAuthorisationId == null) {
                             DatabaseFunctions.UnregisterRequest(_requestid);
-                        }
-                        else if (_aborted)
-                        {
+                        } else if (_aborted) {
                             UnSettle();
                         }
                     }
@@ -680,8 +660,7 @@ namespace Denion.WebService.VerwijsIndex
                 t.Finish();
 
                 // fill the response
-                response = new PaymentStartResponse
-                {
+                response = new PaymentStartResponse {
                     AuthorisationMaxAmount = res.AuthorisationMaxAmount,
                     AuthorisationValidUntil = res.AuthorisationValidUntil,
                     PaymentAuthorisationId = res.PaymentAuthorisationId,
@@ -691,15 +670,11 @@ namespace Denion.WebService.VerwijsIndex
                     Token = res.Token,
                     TokenType = res.TokenType,
                 };
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Database.Database.Log(string.Format("Exception on ActivateEnroll from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
                 //response.Remark = "Exception on ActivateEnroll";
                 //response.RemarkId = "500x";
-            }
-            finally
-            {
+            } finally {
                 if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
                     clnt.Close();
             }
@@ -757,8 +732,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 //prepare request
-                RevokedByThirdPartyRequestRequestData req = new RevokedByThirdPartyRequestRequestData
-                {
+                RevokedByThirdPartyRequestRequestData req = new RevokedByThirdPartyRequestRequestData {
                     Amount = request.Amount,
                     CountryCode = request.CountryCode,
                     EndDateTime = request.EndDateTime,

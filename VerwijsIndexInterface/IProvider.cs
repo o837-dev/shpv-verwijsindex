@@ -298,7 +298,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht
@@ -346,7 +346,7 @@ namespace Denion.WebService.VerwijsIndex
             {
                 return new Err60("ProviderId");
             }
-            else if (string.IsNullOrEmpty(PaymentAuthorisationId))
+            else if (PaymentAuthorisationId == null)
             {
                 return new Err60("PaymentAuthorisationId");
             }
@@ -386,7 +386,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Wordt er toegang verleend (of juist niet), optioneel
@@ -455,7 +455,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public string PaymentAuthorisationId { get; set; }
+        public long? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht

@@ -121,6 +121,11 @@ namespace Denion.WebService
             return cert;
         }
 
+        public static long GenerateUniqueId() {
+            Random r = new Random();
+            return long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss") + r.Next());
+        }
+
         internal static string GetPinFromCert()
         {
             return GetPinFromCert(GetCertificate(Properties.Settings.Default.CertFile, Properties.Settings.Default.CertPin));

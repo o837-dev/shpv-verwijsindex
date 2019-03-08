@@ -45,7 +45,7 @@ namespace NPRPlusProviderService
                     if (RDWres.InformationalMessage != null) {
                         Database.Log("RDWINF; CODE: " + RDWres.InformationalMessage.ErrorCode + "; DESC: " + RDWres.InformationalMessage.ErrorDesc);
 
-                        data.PaymentAuthorisationId = "NPRPS_" + Hashing.CalculateMD5Hash(request.ActivateEnrollRequestRequestData.AreaId + request.ActivateEnrollRequestRequestData.VehicleId + request.ActivateEnrollRequestRequestData.StartDateTime.ToFileTime().ToString());
+                        data.PaymentAuthorisationId = Denion.WebService.Functions.GenerateUniqueId();
                         data.Remark = "NPR provider service message; " + RDWres.InformationalMessage.ErrorDesc;
                         data.RemarkId = "90";
                     } else if (RDWres.PSRightCheckPSRightList != null) {
@@ -57,9 +57,9 @@ namespace NPRPlusProviderService
                         else if (right.EndTimePSRight.HasValue)
                             data.AuthorisationValidUntil = Denion.WebService.Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
 
-                        data.PaymentAuthorisationId = DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId;
+                        data.PaymentAuthorisationId = long.Parse(DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId);
 
-                        CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId);
+                        CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId.Value);
                     }
                 }
             }
@@ -90,20 +90,17 @@ namespace NPRPlusProviderService
             return res;
         }
 
-        public RevokedByThirdPartyRequestResponse RevokedByThirdParty(RevokedByThirdPartyRequestRequest request)
-        {
+        public RevokedByThirdPartyRequestResponse RevokedByThirdParty(RevokedByThirdPartyRequestRequest request) {
             RevokedByThirdPartyRequestResponseData data = new RevokedByThirdPartyRequestResponseData();
             RevokedByThirdPartyRequestResponseError error = null;
             
-            //data.RemarkId = "string";
-            //data.Remark = "string";
             data.PaymentAuthorisationId = request.RevokedByThirdPartyRequestRequestData.PaymentAuthorisationId;
 
             UpdateRegistration(request.RevokedByThirdPartyRequestRequestData);
             return new RevokedByThirdPartyRequestResponse(data, error);
         }
 
-        private void CreateRegistration(ActivateEnrollRequestRequestData req, string AuthorisationId)
+        private void CreateRegistration(ActivateEnrollRequestRequestData req, long AuthorisationId)
         {
             if (ConfigurationManager.AppSettings["AVG"].ToLower() == "false")
                 return;

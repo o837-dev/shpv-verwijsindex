@@ -99,7 +99,11 @@ namespace Denion.WebService.VerwijsIndex
             }
             return sb.ToString();
         }
-        
+
+        public static long GenerateUniqueId() {
+            Random r = new Random();
+            return long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss") + r.Next());
+        }
     }
 
     public struct DateTimeRange

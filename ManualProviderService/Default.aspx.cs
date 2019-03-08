@@ -74,7 +74,7 @@ namespace ManualProviderService
                 PaymentStartRequest req = reqlist[uid];
                 PaymentStartResponse res = new PaymentStartResponse();
 
-                res.PaymentAuthorisationId = txtPaymentAuthorisationId.Text;
+                res.PaymentAuthorisationId = long.Parse(txtPaymentAuthorisationId.Text);
                 res.ProviderId = lblProviderId.Text;
                 res.Remark = "none";
                 res.RemarkId = "0";

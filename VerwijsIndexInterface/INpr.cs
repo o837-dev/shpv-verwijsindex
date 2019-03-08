@@ -1501,20 +1501,17 @@
     public partial class PSRightRevokeRequestData : object, System.ComponentModel.INotifyPropertyChanged
     {
 
-        private string pSRightIdField;
+        private long pSRightIdField;
 
         private System.DateTime endTimePSRightField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType = "nonNegativeInteger", Order = 0)]
-        public string PSRightId
-        {
-            get
-            {
+        public long PSRightId {
+            get {
                 return this.pSRightIdField;
             }
-            set
-            {
+            set {
                 this.pSRightIdField = value;
                 this.RaisePropertyChanged("PSRightId");
             }
