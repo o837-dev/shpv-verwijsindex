@@ -45,11 +45,11 @@ namespace AutonomousConsumerService
                 DataTable dt = Database.ExecuteQuery(cmd);
 
 
-                if (dt != null && dt.Rows.Count > 0)
-                {
+                if (dt != null && dt.Rows.Count > 0) {
                     DataRow dr = dt.Rows[0];
                     res.Granted = true;
-                    res.PaymentAuthorisationId = Guid.NewGuid().ToString();
+                    if(req.PaymentAuthorisationId != null)
+                        res.PaymentAuthorisationId = req.PaymentAuthorisationId.ToString();
 
                     if (dr["AMOUNT"] != DBNull.Value)
                         res.Amount = Double.Parse(dr["AMOUNT"].ToString());

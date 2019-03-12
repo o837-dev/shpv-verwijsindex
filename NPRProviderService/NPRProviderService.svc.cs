@@ -109,7 +109,7 @@ namespace Denion.WebService
                     {
                         Database.Database.Log("RDWINF; CODE: " + RDWres.InformationalMessage.ErrorCode + "; DESC: " + RDWres.InformationalMessage.ErrorDesc);
 
-                        res.PaymentAuthorisationId = Functions.GenerateUniqueId();
+                        res.PaymentAuthorisationId = Functions.GenerateUniqueId().ToString();
                         res.Remark = "NPR provider service message; " + RDWres.InformationalMessage.ErrorDesc;
                         res.RemarkId = "90";
                     }
@@ -123,9 +123,9 @@ namespace Denion.WebService
                         else if (right.EndTimePSRight.HasValue)
                             res.AuthorisationValidUntil = Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
 
-                        res.PaymentAuthorisationId = long.Parse(DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId);
+                        res.PaymentAuthorisationId = DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId;
 
-                        CreateRegistration(req, res.PaymentAuthorisationId.Value);
+                        CreateRegistration(req, res.PaymentAuthorisationId);
                     }
                 }
             }
@@ -317,7 +317,7 @@ namespace Denion.WebService
             return check;
         }
       
-        private void CreateRegistration(PaymentStartRequest req, long AuthorisationId)
+        private void CreateRegistration(PaymentStartRequest req, string AuthorisationId)
         {
             if (!Settings.Default.AVG) return;
 

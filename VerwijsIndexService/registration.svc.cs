@@ -240,8 +240,8 @@ namespace Denion.WebService.VerwijsIndex
                 };
                 return;
             }
-            long paymentAuthorisationId = Functions.GenerateUniqueId();
-            _requestid = DatabaseFunctions.RegisterRequest(null, _request.VehicleId, _request.CountryCodeVehicle.ToString(), gi.AreaManagerId, _request.StartTimePSright, gi.AreaId, null, paymentAuthorisationId);
+            int paymentAuthorisationId = Functions.GenerateUniqueId();
+            _requestid = DatabaseFunctions.RegisterRequest(null, _request.VehicleId, _request.CountryCodeVehicle.ToString(), gi.AreaManagerId, _request.StartTimePSright, gi.AreaId, null, paymentAuthorisationId.ToString());
 
             ActivateAuthorisationRequest req = new ActivateAuthorisationRequest();
             ActivateAuthorisationResponse res = null;
@@ -292,7 +292,7 @@ namespace Denion.WebService.VerwijsIndex
 
                                 Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, startDateTimeAdjusted, endDateTime, null, req.AreaId, req.VehicleIdType, null);
 
-                                DatabaseFunctions.UpdateAuthorisation(req.ProviderId, paymentAuthorisationId, null, _requestid, link, startDateTimeAdjusted);
+                                DatabaseFunctions.UpdateAuthorisation(req.ProviderId, paymentAuthorisationId.ToString(), null, _requestid, link, startDateTimeAdjusted);
 
                                 clnt.Close();
                                 break;
@@ -424,7 +424,7 @@ namespace Denion.WebService.VerwijsIndex
                     req.AreaManagerId = dr["AreaManagerId"] as string;
                     req.CancelDateTime = _request.EndTimePSRight;
                     req.CountryCode = dr["CountryCode"] as string;
-                    req.PaymentAuthorisationId = _request.PSRightId;
+                    req.PaymentAuthorisationId = int.Parse(_request.PSRightId);
                     req.ProviderId = dr["ProviderId"] as string;
                     req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
                     req.VehicleIdType = dr["VehicleIdType"] as string;

@@ -113,7 +113,7 @@ namespace ConsolApp
                 Amount = 12.34,
                 CountryCode = startreq.CountryCodeVehicle.ToString(),
                 EndDateTime = DateTime.Now,
-                PaymentAuthorisationId = long.Parse(startres.PSRightId),
+                PaymentAuthorisationId = startres.PSRightId,
                 ProviderId = "HarmPS",
                 VAT = 2.56,
                 VehicleId = startreq.VehicleId,
@@ -207,7 +207,7 @@ namespace ConsolApp
             PSRightRevokeResponseData res = null;
             PSRightRevokeResponseError err = null;
 
-            req.PSRightId = PSRightId;
+            req.PSRightId = PSRightId.ToString();
             req.EndTimePSRight = DateTime.Now;
 
             try

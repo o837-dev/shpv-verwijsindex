@@ -141,9 +141,10 @@ namespace Denion.WebService
             return right;
         }
 
-        public static long GenerateUniqueId() {
-            Random r = new Random();
-            return long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss") + r.Next());
+        public static int GenerateUniqueId() {
+            var now = DateTime.Now;
+            var zeroDate = DateTime.MinValue.AddHours(now.Hour).AddMinutes(now.Minute).AddSeconds(now.Second).AddMilliseconds(now.Millisecond);
+            return (int)(zeroDate.Ticks / 10000) % int.MaxValue - 1;
         }
 
         public static string RDWRevokeRight(string providerID, string PSRightID, DateTime endDateTime)

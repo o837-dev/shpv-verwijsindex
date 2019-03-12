@@ -80,8 +80,8 @@ namespace AutonomousProviderService
                     res.TokenType = dr["TOKENTYPE"].ToString();
 
                     if (string.IsNullOrEmpty(res.Remark)) {
-                        long paymentAuthorisationId = Functions.GenerateUniqueId();
-                        res.PaymentAuthorisationId = paymentAuthorisationId;
+                        int paymentAuthorisationId = Functions.GenerateUniqueId();
+                        res.PaymentAuthorisationId = paymentAuthorisationId.ToString();
                         CreateRegistration(req, paymentAuthorisationId);
                     }
                     
@@ -168,7 +168,7 @@ namespace AutonomousProviderService
         }
         #endregion
 
-        private void CreateRegistration(PaymentStartRequest req, long AuthorisationId)
+        private void CreateRegistration(PaymentStartRequest req, int AuthorisationId)
         {
             if (ConfigurationManager.AppSettings["AVG"] == null || !bool.Parse(ConfigurationManager.AppSettings["AVG"])) return;
 

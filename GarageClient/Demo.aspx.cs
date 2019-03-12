@@ -26,7 +26,7 @@ namespace GarageClient
         protected void imgPark_Click(object sender, ImageClickEventArgs e){
             VerwijsIndexClient clnt = Service.PaymentClient(ConfigurationManager.AppSettings["VerwijsIndexURL"]);
 
-            long? antwoord = null; string err = null;
+            string antwoord = null; string err = null;
             string direction; string state;
             getState(out direction, out state);
             if (direction == "in") {
@@ -62,7 +62,7 @@ namespace GarageClient
                         res = clnt.PaymentStart(req);
 
                         if (res.PaymentAuthorisationId != null)
-                            antwoord = res.PaymentAuthorisationId.Value;
+                            antwoord = res.PaymentAuthorisationId;
                         else if (res.Remark != null)
                             err = res.Remark;
                     }
@@ -81,7 +81,7 @@ namespace GarageClient
                 req.EndDateTime = DateTime.Now;
                 req.CountryCode = txtLandcode.Value;
                 req.ProviderId = txtProviderId.Text;
-                req.PaymentAuthorisationId = long.Parse(txtPaymentAuthorisationId.Text);
+                req.PaymentAuthorisationId = txtPaymentAuthorisationId.Text;
                 req.Amount = 0.79;
                 req.VAT = 0.21;
                 res = clnt.PaymentEnd(req);

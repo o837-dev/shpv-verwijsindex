@@ -4,8 +4,6 @@ using Denion.WebService.Database;
 using System.Data.SqlClient;
 using System.Data;
 using System.Threading;
-using System.Net;
-using System.Threading;
 using System.Configuration;
 
 namespace Denion.WebService.VerwijsIndex
@@ -56,11 +54,13 @@ namespace Denion.WebService.VerwijsIndex
                 }
 
                 if (string.IsNullOrEmpty(res.Remark)) {
-                    res.Remark = "No PaymentServiceProvider for this VehicleId";
-                    res.RemarkId = "10";
+                    if(string.IsNullOrEmpty(res.PaymentAuthorisationId)) {
+                        res.Remark = "No PaymentServiceProvider for this VehicleId";
+                        res.RemarkId = "10";
 
-                    if (psw.AuthorisationRecordId != null)
-                        DatabaseFunctions.UnregisterRequest(psw.AuthorisationRecordId);
+                        if(psw.AuthorisationRecordId != null)
+                            DatabaseFunctions.UnregisterRequest(psw.AuthorisationRecordId);
+                    }
                 }
             }
             t.Finish();
@@ -195,7 +195,7 @@ namespace Denion.WebService.VerwijsIndex
                                     res.Remark = "Problem with NPR registration; " + r.Remark;
                                 }
                             }
-                            AuthorisationSettled(request.PaymentAuthorisationId, PSRightID);
+                            AuthorisationSettled(request.PaymentAuthorisationId.ToString(), PSRightID);
                             res.PaymentAuthorisationId = request.PaymentAuthorisationId;
                             break;
                         }
@@ -216,7 +216,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Update Autorisation request in the database, mark the record as settled
         /// </summary>
         /// <param name="PaymentAuthorisationId">Provider authorisation ID</param>
-        private static void AuthorisationSettled(long? PaymentAuthorisationId, object PSRightId)
+        private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
@@ -295,8 +295,7 @@ namespace Denion.WebService.VerwijsIndex
             /// </summary>
             public override void Settle() {
                 try {
-                    long paymentAuthorisationId = Functions.GenerateUniqueId();
-                    _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode, _request.AreaManagerId, _request.StartDateTime, _request.AreaId, _request.VehicleIdType, paymentAuthorisationId);
+                    _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode, _request.AreaManagerId, _request.StartDateTime, _request.AreaId, _request.VehicleIdType, "");
 
                     Providers providers = DatabaseFunctions.ListOfProvider(_request.AreaManagerId, _request.StartDateTime);
                     if (providers.Count > 0) {
@@ -345,9 +344,7 @@ namespace Denion.WebService.VerwijsIndex
                             }
                         }
 
-                        if (_response.PaymentAuthorisationId == null) {
-                            DatabaseFunctions.UnregisterRequest(_requestid);
-                        } else if (_aborted) {
+                        if (_aborted) {
                             UnSettle();
                         }
                     }
@@ -736,7 +733,7 @@ namespace Denion.WebService.VerwijsIndex
                     Amount = request.Amount,
                     CountryCode = request.CountryCode,
                     EndDateTime = request.EndDateTime,
-                    PaymentAuthorisationId = request.PaymentAuthorisationId,
+                    PaymentAuthorisationId = int.Parse(request.PaymentAuthorisationId),
                     ProviderId = request.ProviderId,
                     VAT = request.VAT,
                     VehicleId = request.VehicleId,
@@ -754,7 +751,7 @@ namespace Denion.WebService.VerwijsIndex
                 // fill the response
                 response = new PaymentEndResponse
                 {
-                    PaymentAuthorisationId = res.PaymentAuthorisationId,
+                    PaymentAuthorisationId = res.PaymentAuthorisationId.ToString(),
                     Remark = res.Remark,
                     RemarkId = res.RemarkId,
                 };

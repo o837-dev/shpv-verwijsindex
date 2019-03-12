@@ -1501,13 +1501,13 @@
     public partial class PSRightRevokeRequestData : object, System.ComponentModel.INotifyPropertyChanged
     {
 
-        private long pSRightIdField;
+        private string pSRightIdField;
 
         private System.DateTime endTimePSRightField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType = "nonNegativeInteger", Order = 0)]
-        public long PSRightId {
+        public string PSRightId {
             get {
                 return this.pSRightIdField;
             }
