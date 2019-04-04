@@ -95,7 +95,7 @@ namespace Denion.WebService.VerwijsIndex
                         res.Remark = "Information; link overruled, message send to other provider: " + l.PROVIDERID;
                         res.RemarkId = "136";
                     }
-                    else if (l.PROVIDERID == req.ProviderId)
+                    else if (l.PROVIDERID == req.ProviderId && l.AREAID == req.AreaId)
                     {
                         UpdateLink(req.CountryCode, null, req.ValidFrom, req.ValidUntil, null, l.ID, req.VehicleIdType, null);
                         res.Remark = "Information; update link";
@@ -193,11 +193,12 @@ namespace Denion.WebService.VerwijsIndex
                             from Contract as c 
                             join Provider as p on  c.Providerid2 = p.PID
                             where p.ID = @PROVIDERID) as cs on c.AREAMANAGERID = cs.AREAMANAGERID and c.PRIORITY = cs.PRIORITY ) as pla on pla.ID = l.PROVIDERID
-                where l.VEHICLEID = @VEHICLEID
+                where l.VEHICLEID = @VEHICLEID && l.AREAID = @AREAID 
                 and (@STARTDATE between STARTDATE and ENDDATE OR @ENDDATE between STARTDATE and ENDDATE)"))
                 
             {
                 com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = req.ProviderId;
+                com.Parameters.Add("@AREAID", SqlDbType.NVarChar, 200).Value = req.AreaId;
                 com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Rijndael.Encrypt(req.VehicleId);
                 com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = req.ValidFrom;
                 com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = req.ValidUntil;
