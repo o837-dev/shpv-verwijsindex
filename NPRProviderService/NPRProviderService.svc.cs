@@ -338,7 +338,7 @@ namespace Denion.WebService
             else
                 com.Parameters.Add("@ACCESSID", SqlDbType.NVarChar, 50).Value = "";
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = AuthorisationId;
-            com.Parameters.Add("@STARTDATETIME", SqlDbType.DateTime).Value = req.StartDateTime;
+            com.Parameters.Add("@STARTDATETIME", SqlDbType.DateTime).Value = req.StartDateTime.ToLocalTime();
 
             //Database.ExecuteScalar(com, true, ConfigurationManager.ConnectionStrings["Denion.WebService.Database.SqlServer.AVG"].ConnectionString);
             DatabaseQueue.Add(new QueueObject(com, true, string.Format(ConfigurationManager.ConnectionStrings["Denion.WebService.Database.SqlServer.AVG"].ConnectionString, Environment.MachineName)));
@@ -353,7 +353,7 @@ namespace Denion.WebService
                 "Update Administration set UPDATED=@UPDATED, ENDDATETIME=@ENDDATETIME where VEHICLEID=@VEHICLEID and COUNTRYCODE=@COUNTRYCODE and AUTHORISATIONID=@AUTHORISATIONID";
 
             com.Parameters.Add("@UPDATED", SqlDbType.DateTime).Value = DateTime.Now;
-            com.Parameters.Add("@ENDDATETIME", SqlDbType.DateTime).Value = req.EndDateTime;
+            com.Parameters.Add("@ENDDATETIME", SqlDbType.DateTime).Value = req.EndDateTime.ToLocalTime();
 
             com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Rijndael.Encrypt(req.VehicleId);
             if (!string.IsNullOrEmpty(req.CountryCode))
