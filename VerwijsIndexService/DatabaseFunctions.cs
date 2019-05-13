@@ -458,7 +458,6 @@ namespace Denion.WebService.VerwijsIndex
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set PROVIDERID=@PROVIDERID, AUTHORISATIONID=@AUTHORISATIONID, REMARK=@REMARK {0} where REQUESTID=@REQUESTID";
             com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = providerId;
-
             if (!string.IsNullOrEmpty(paymentAuthorisationId))
                 com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = paymentAuthorisationId;
             else
@@ -536,16 +535,17 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// Create Authorisation record in the database and stores the inserted id in the _requestid value
         /// </summary>
-        internal static object RegisterRequest(string accessId, string vehicleId, string countryCode, string areaManagerId, DateTime startDateTime, string areaId, string vehicleIdType)
+        internal static object RegisterRequest(string accessId, string vehicleId, string countryCode, string areaManagerId, DateTime startDateTime, string areaId, string vehicleIdType, string paymentAuthorisationId)
         {
             SqlCommand com = new SqlCommand();
-            com.CommandText = "INSERT INTO Authorisation ([ACCESSID], [VEHICLEID], [COUNTRYCODE], [AREAMANAGERID], [STARTDATE], [SETTLED], [AREAID], [VEHICLEIDTYPE]) OUTPUT INSERTED.REQUESTID VALUES (@ACCESSID, @VEHICLEID, @COUNTRYCODE, @AREAMANAGERID, @STARTDATE, @SETTLED, @AREAID, @VEHICLEIDTYPE)";
+            com.CommandText = "INSERT INTO Authorisation ([ACCESSID], [VEHICLEID], [COUNTRYCODE], [AREAMANAGERID], [STARTDATE], [SETTLED], [AREAID], [VEHICLEIDTYPE], [AUTHORISATIONID]) OUTPUT INSERTED.REQUESTID VALUES (@ACCESSID, @VEHICLEID, @COUNTRYCODE, @AREAMANAGERID, @STARTDATE, @SETTLED, @AREAID, @VEHICLEIDTYPE, @AUTHORISATIONID)";
 
             if (!string.IsNullOrEmpty(accessId))
                 com.Parameters.Add("@ACCESSID", SqlDbType.NVarChar, 200).Value = accessId;
             else
                 com.Parameters.Add("@ACCESSID", SqlDbType.NVarChar, 200).Value = "";
-
+            
+            com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = paymentAuthorisationId;
             com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Rijndael.Encrypt(vehicleId);
 
             if (!string.IsNullOrEmpty(countryCode))

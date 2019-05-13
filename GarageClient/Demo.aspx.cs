@@ -23,15 +23,13 @@ namespace GarageClient
             }
         }
 
-        protected void imgPark_Click(object sender, ImageClickEventArgs e)
-        {
+        protected void imgPark_Click(object sender, ImageClickEventArgs e){
             VerwijsIndexClient clnt = Service.PaymentClient(ConfigurationManager.AppSettings["VerwijsIndexURL"]);
 
             string antwoord = null; string err = null;
             string direction; string state;
             getState(out direction, out state);
-            if (direction == "in")// && state == "closed")
-            {
+            if (direction == "in") {
                 state = "opened";
 
                 PaymentCheckRequest pcreq = new PaymentCheckRequest();

@@ -86,7 +86,7 @@ namespace ConsolApp
                 //method 2a, provider nprplus, garage nprplus
                 PSRightEnrollResponseData res = EnrollPSRight(nprclnt, pereq);
                 
-                PSRightRevokeResponseData res2 = RevokePSRight(nprclnt, res.PSRightId);
+                PSRightRevokeResponseData res2 = RevokePSRight(nprclnt, long.Parse(res.PSRightId));
                 Debug.Write(res2.AmountPSRightCalculated);
                 //method 2b, provider nprplus, garage vwx
                 //PSRightEnrollResponseData res = EnrollPSRight(nprclnt, pereq);
@@ -96,13 +96,9 @@ namespace ConsolApp
                 //StatusRequest(nprclnt);
                 //RetrieveAreasByLocation(nprclnt);
 
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Debug.WriteLine(ex);
-            }
-            finally
-            {
+            } finally {
                 if (vwxclnt != null && vwxclnt.State != CommunicationState.Closing && vwxclnt.State != CommunicationState.Closed)
                     vwxclnt.Close();
                 if (nprclnt != null && nprclnt.State != CommunicationState.Closing && nprclnt.State != CommunicationState.Closed)
@@ -205,13 +201,13 @@ namespace ConsolApp
             return res;
         }
 
-        public PSRightRevokeResponseData RevokePSRight(RegistrationClient clnt, string PSRightId)
+        public PSRightRevokeResponseData RevokePSRight(RegistrationClient clnt, long PSRightId)
         {
             PSRightRevokeRequestData req = new PSRightRevokeRequestData();
             PSRightRevokeResponseData res = null;
             PSRightRevokeResponseError err = null;
 
-            req.PSRightId = PSRightId;
+            req.PSRightId = PSRightId.ToString();
             req.EndTimePSRight = DateTime.Now;
 
             try

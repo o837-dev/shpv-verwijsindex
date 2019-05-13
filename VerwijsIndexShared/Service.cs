@@ -44,7 +44,11 @@ namespace Denion.WebService.VerwijsIndex
         public static WSHttpBinding GetBinding(string url)
         {
             WSHttpBinding myBinding = new WSHttpBinding();
-            if (url.StartsWith("https"))
+
+            if (url.Contains("ipcontrol")) {
+                myBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
+                myBinding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
+            } else if (url.StartsWith("https"))
                 myBinding.Security.Mode = SecurityMode.Transport;
             else
                 myBinding.Security.Mode = SecurityMode.None;
@@ -117,6 +121,11 @@ namespace Denion.WebService.VerwijsIndex
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
 
             ConsumerClient clnt = new ConsumerClient(GetBinding(url), GetEndPoint(url));
+            if (url.Contains("ipcontrol"))
+            {
+                clnt.ClientCredentials.UserName.UserName = "ShpvService";
+                clnt.ClientCredentials.UserName.Password = "jgpt%^35";
+            }
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
             return clnt;
         }

@@ -15,71 +15,71 @@ namespace NPRPlusProviderService.RDW {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://rdw.nl/rpv/1.0", ConfigurationName="RDW.IRegistration")]
     public interface IRegistration {
         
-        // CODEGEN: Generating message contract since the wrapper name (PSRightEnrollRequest) of message PSRightEnrollRequest does not match the default value (EnrollPSRight)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRightResponse")]
+        // CODEGEN: Generating message contract since the wrapper name (CalculatePriceRequest) of message CalculatePriceRequest does not match the default value (CalculatePrice)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/CalculatePrice", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.PSRightEnrollResponse EnrollPSRight(NPRPlusProviderService.RDW.PSRightEnrollRequest request);
-        
-        // CODEGEN: Generating message contract since the wrapper name (PSRightRevokeRequest) of message PSRightRevokeRequest does not match the default value (RevokePSRight)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRight", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRightResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.PSRightRevokeResponse RevokePSRight(NPRPlusProviderService.RDW.PSRightRevokeRequest request);
+        NPRPlusProviderService.RDW.CalculatePriceResponse CalculatePrice(NPRPlusProviderService.RDW.CalculatePriceRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (PSRightCheckRequest) of message PSRightCheckRequest does not match the default value (CheckPSRight)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/CheckPSRightResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         NPRPlusProviderService.RDW.PSRightCheckResponse CheckPSRight(NPRPlusProviderService.RDW.PSRightCheckRequest request);
         
-        // CODEGEN: Generating message contract since the wrapper name (RetrieveCheckInfoRequest) of message RetrieveCheckInfoRequest does not match the default value (RetrieveCheckInfo)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveCheckInfo", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveCheckInfoResponse")]
+        // CODEGEN: Generating message contract since the wrapper name (PSRightEnrollRequest) of message PSRightEnrollRequest does not match the default value (EnrollPSRight)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.RetrieveCheckInfoResponse RetrieveCheckInfo(NPRPlusProviderService.RDW.RetrieveCheckInfoRequest request);
+        NPRPlusProviderService.RDW.PSRightEnrollResponse EnrollPSRight(NPRPlusProviderService.RDW.PSRightEnrollRequest request);
         
-        // CODEGEN: Generating message contract since the wrapper name (RetrieveRightInfoRequest) of message RetrieveRightInfoRequest does not match the default value (RetrieveRightInfo)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfo", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoResponse")]
+        // CODEGEN: Generating message contract since the wrapper name (ReplyPSPhotoInfoRequest) of message ReplyPSPhotoInfoRequest does not match the default value (ReplyPSPhotoInfo)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.RetrieveRightInfoResponse RetrieveRightInfo(NPRPlusProviderService.RDW.RetrieveRightInfoRequest request);
-        
-        // CODEGEN: Generating message contract since the wrapper name (RetrieveRightInfoForProviderRequest) of message RetrieveRightInfoForProviderRequest does not match the default value (RetrieveRightInfoForProvider)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoForProvider", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoForProviderResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.RetrieveRightInfoForProviderResponse RetrieveRightInfoForProvider(NPRPlusProviderService.RDW.RetrieveRightInfoForProviderRequest request);
+        NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponse ReplyPSPhotoInfo(NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (RetrieveAreaRegulationFareInfoRequest) of message RetrieveAreaRegulationFareInfoRequest does not match the default value (RetrieveAreaRegulationFareInfo)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfo", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponse RetrieveAreaRegulationFareInfo(NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (RetrieveAreasByLocationRequest) of message RetrieveAreasByLocationRequest does not match the default value (RetrieveAreasByLocation)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreasByLocation", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreasByLocationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreasByLocation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         NPRPlusProviderService.RDW.RetrieveAreasByLocationResponse RetrieveAreasByLocation(NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest request);
         
-        // CODEGEN: Generating message contract since the wrapper name (ReplyPSPhotoInfoRequest) of message ReplyPSPhotoInfoRequest does not match the default value (ReplyPSPhotoInfo)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfo", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfoResponse")]
+        // CODEGEN: Generating message contract since the wrapper name (RetrieveCheckInfoRequest) of message RetrieveCheckInfoRequest does not match the default value (RetrieveCheckInfo)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveCheckInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponse ReplyPSPhotoInfo(NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest request);
+        NPRPlusProviderService.RDW.RetrieveCheckInfoResponse RetrieveCheckInfo(NPRPlusProviderService.RDW.RetrieveCheckInfoRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (RetrieveRightInfoRequest) of message RetrieveRightInfoRequest does not match the default value (RetrieveRightInfo)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        NPRPlusProviderService.RDW.RetrieveRightInfoResponse RetrieveRightInfo(NPRPlusProviderService.RDW.RetrieveRightInfoRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (RetrieveRightInfoForProviderRequest) of message RetrieveRightInfoForProviderRequest does not match the default value (RetrieveRightInfoForProvider)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoForProvider", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        NPRPlusProviderService.RDW.RetrieveRightInfoForProviderResponse RetrieveRightInfoForProvider(NPRPlusProviderService.RDW.RetrieveRightInfoForProviderRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (PSRightRevokeRequest) of message PSRightRevokeRequest does not match the default value (RevokePSRight)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRight", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        NPRPlusProviderService.RDW.PSRightRevokeResponse RevokePSRight(NPRPlusProviderService.RDW.PSRightRevokeRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (StatusRequestRequest) of message StatusRequestRequest does not match the default value (StatusRequest)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/StatusRequest", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/StatusRequestResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/StatusRequest", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         NPRPlusProviderService.RDW.StatusRequestResponse StatusRequest(NPRPlusProviderService.RDW.StatusRequestRequest request);
-        
-        // CODEGEN: Generating message contract since the wrapper name (CalculatePriceRequest) of message CalculatePriceRequest does not match the default value (CalculatePrice)
-        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/CalculatePrice", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/CalculatePriceResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
-        NPRPlusProviderService.RDW.CalculatePriceResponse CalculatePrice(NPRPlusProviderService.RDW.CalculatePriceRequest request);
     }
     
     /// <remarks/>
@@ -88,7 +88,7 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class PSRightEnrollRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CalculatePriceRequestData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string vehicleIdField;
         
@@ -100,7 +100,7 @@ namespace NPRPlusProviderService.RDW {
         
         private string areaIdField;
         
-        private PSRightEnrollRequestDataLocationPSRight locationPSRightField;
+        private CalculatePriceRequestDataLocationPSRight locationPSRightField;
         
         private string sellingPointIdField;
         
@@ -121,8 +121,6 @@ namespace NPRPlusProviderService.RDW {
         private System.Nullable<decimal> vATPSrightField;
         
         private bool vATPSrightFieldSpecified;
-        
-        private string referencePSRightField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -186,7 +184,7 @@ namespace NPRPlusProviderService.RDW {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public PSRightEnrollRequestDataLocationPSRight LocationPSRight {
+        public CalculatePriceRequestDataLocationPSRight LocationPSRight {
             get {
                 return this.locationPSRightField;
             }
@@ -209,7 +207,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string UsageId {
             get {
                 return this.usageIdField;
@@ -313,18 +311,6 @@ namespace NPRPlusProviderService.RDW {
             set {
                 this.vATPSrightFieldSpecified = value;
                 this.RaisePropertyChanged("VATPSrightSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
-        public string ReferencePSRight {
-            get {
-                return this.referencePSRightField;
-            }
-            set {
-                this.referencePSRightField = value;
-                this.RaisePropertyChanged("ReferencePSRight");
             }
         }
         
@@ -885,7 +871,7 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class PSRightEnrollRequestDataLocationPSRight : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CalculatePriceRequestDataLocationPSRight : object, System.ComponentModel.INotifyPropertyChanged {
         
         private decimal latitudeField;
         
@@ -931,19 +917,121 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class CalculatePriceResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class StatusRequestResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string areaManagerIdField;
+        private System.DateTime statusTimeField;
         
-        private string areaIdField;
+        private string statusRPVField;
         
-        private string sellingPointIdField;
+        private string statusReferenceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime StatusTime {
+            get {
+                return this.statusTimeField;
+            }
+            set {
+                this.statusTimeField = value;
+                this.RaisePropertyChanged("StatusTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string StatusRPV {
+            get {
+                return this.statusRPVField;
+            }
+            set {
+                this.statusRPVField = value;
+                this.RaisePropertyChanged("StatusRPV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string StatusReference {
+            get {
+                return this.statusReferenceField;
+            }
+            set {
+                this.statusReferenceField = value;
+                this.RaisePropertyChanged("StatusReference");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class StatusRequestRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<System.DateTime> statusTimeField;
+        
+        private string statusReferenceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<System.DateTime> StatusTime {
+            get {
+                return this.statusTimeField;
+            }
+            set {
+                this.statusTimeField = value;
+                this.RaisePropertyChanged("StatusTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string StatusReference {
+            get {
+                return this.statusReferenceField;
+            }
+            set {
+                this.statusReferenceField = value;
+                this.RaisePropertyChanged("StatusReference");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightRevokeResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Nullable<System.DateTime> endTimePSRightAdjustedField;
         
         private bool endTimePSRightAdjustedFieldSpecified;
         
-        private decimal amountPSRightCalculatedField;
+        private System.Nullable<decimal> amountPSRightCalculatedField;
+        
+        private bool amountPSRightCalculatedFieldSpecified;
         
         private System.Nullable<decimal> vATPSRightCalculatedField;
         
@@ -954,43 +1042,7 @@ namespace NPRPlusProviderService.RDW {
         private PSRightRemarkData[] pSRightRemarkListField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
-        public string AreaManagerId {
-            get {
-                return this.areaManagerIdField;
-            }
-            set {
-                this.areaManagerIdField = value;
-                this.RaisePropertyChanged("AreaManagerId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string AreaId {
-            get {
-                return this.areaIdField;
-            }
-            set {
-                this.areaIdField = value;
-                this.RaisePropertyChanged("AreaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
-        public string SellingPointId {
-            get {
-                return this.sellingPointIdField;
-            }
-            set {
-                this.sellingPointIdField = value;
-                this.RaisePropertyChanged("SellingPointId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
             get {
                 return this.endTimePSRightAdjustedField;
@@ -1014,8 +1066,8 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public decimal AmountPSRightCalculated {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> AmountPSRightCalculated {
             get {
                 return this.amountPSRightCalculatedField;
             }
@@ -1026,7 +1078,19 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountPSRightCalculatedSpecified {
+            get {
+                return this.amountPSRightCalculatedFieldSpecified;
+            }
+            set {
+                this.amountPSRightCalculatedFieldSpecified = value;
+                this.RaisePropertyChanged("AmountPSRightCalculatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public System.Nullable<decimal> VATPSRightCalculated {
             get {
                 return this.vATPSRightCalculatedField;
@@ -1050,7 +1114,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
         public SpecifCalcAmountData[] SpecifCalcAmountList {
             get {
                 return this.specifCalcAmountListField;
@@ -1062,7 +1126,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
         public PSRightRemarkData[] PSRightRemarkList {
             get {
                 return this.pSRightRemarkListField;
@@ -1298,2183 +1362,33 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class CalculatePriceRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class PSRightRevokeRequestData : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string vehicleIdField;
+        private string pSRightIdField;
         
-        private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
-        
-        private bool countryCodeVehicleFieldSpecified;
-        
-        private string areaManagerIdField;
-        
-        private string areaIdField;
-        
-        private CalculatePriceRequestDataLocationPSRight locationPSRightField;
-        
-        private string sellingPointIdField;
-        
-        private string usageIdField;
-        
-        private System.DateTime startTimePSrightField;
-        
-        private System.Nullable<System.DateTime> endTimePSrightField;
-        
-        private bool endTimePSrightFieldSpecified;
-        
-        private PSRightWindowData[] pSRightWindowListField;
-        
-        private System.Nullable<decimal> amountPSrightField;
-        
-        private bool amountPSrightFieldSpecified;
-        
-        private System.Nullable<decimal> vATPSrightField;
-        
-        private bool vATPSrightFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string VehicleId {
-            get {
-                return this.vehicleIdField;
-            }
-            set {
-                this.vehicleIdField = value;
-                this.RaisePropertyChanged("VehicleId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
-            get {
-                return this.countryCodeVehicleField;
-            }
-            set {
-                this.countryCodeVehicleField = value;
-                this.RaisePropertyChanged("CountryCodeVehicle");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CountryCodeVehicleSpecified {
-            get {
-                return this.countryCodeVehicleFieldSpecified;
-            }
-            set {
-                this.countryCodeVehicleFieldSpecified = value;
-                this.RaisePropertyChanged("CountryCodeVehicleSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
-        public string AreaManagerId {
-            get {
-                return this.areaManagerIdField;
-            }
-            set {
-                this.areaManagerIdField = value;
-                this.RaisePropertyChanged("AreaManagerId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public string AreaId {
-            get {
-                return this.areaIdField;
-            }
-            set {
-                this.areaIdField = value;
-                this.RaisePropertyChanged("AreaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public CalculatePriceRequestDataLocationPSRight LocationPSRight {
-            get {
-                return this.locationPSRightField;
-            }
-            set {
-                this.locationPSRightField = value;
-                this.RaisePropertyChanged("LocationPSRight");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=5)]
-        public string SellingPointId {
-            get {
-                return this.sellingPointIdField;
-            }
-            set {
-                this.sellingPointIdField = value;
-                this.RaisePropertyChanged("SellingPointId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string UsageId {
-            get {
-                return this.usageIdField;
-            }
-            set {
-                this.usageIdField = value;
-                this.RaisePropertyChanged("UsageId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public System.DateTime StartTimePSright {
-            get {
-                return this.startTimePSrightField;
-            }
-            set {
-                this.startTimePSrightField = value;
-                this.RaisePropertyChanged("StartTimePSright");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
-        public System.Nullable<System.DateTime> EndTimePSright {
-            get {
-                return this.endTimePSrightField;
-            }
-            set {
-                this.endTimePSrightField = value;
-                this.RaisePropertyChanged("EndTimePSright");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EndTimePSrightSpecified {
-            get {
-                return this.endTimePSrightFieldSpecified;
-            }
-            set {
-                this.endTimePSrightFieldSpecified = value;
-                this.RaisePropertyChanged("EndTimePSrightSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
-        public PSRightWindowData[] PSRightWindowList {
-            get {
-                return this.pSRightWindowListField;
-            }
-            set {
-                this.pSRightWindowListField = value;
-                this.RaisePropertyChanged("PSRightWindowList");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
-        public System.Nullable<decimal> AmountPSright {
-            get {
-                return this.amountPSrightField;
-            }
-            set {
-                this.amountPSrightField = value;
-                this.RaisePropertyChanged("AmountPSright");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AmountPSrightSpecified {
-            get {
-                return this.amountPSrightFieldSpecified;
-            }
-            set {
-                this.amountPSrightFieldSpecified = value;
-                this.RaisePropertyChanged("AmountPSrightSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
-        public System.Nullable<decimal> VATPSright {
-            get {
-                return this.vATPSrightField;
-            }
-            set {
-                this.vATPSrightField = value;
-                this.RaisePropertyChanged("VATPSright");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool VATPSrightSpecified {
-            get {
-                return this.vATPSrightFieldSpecified;
-            }
-            set {
-                this.vATPSrightFieldSpecified = value;
-                this.RaisePropertyChanged("VATPSrightSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class CalculatePriceRequestDataLocationPSRight : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private decimal latitudeField;
-        
-        private decimal longitudeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public decimal Latitude {
-            get {
-                return this.latitudeField;
-            }
-            set {
-                this.latitudeField = value;
-                this.RaisePropertyChanged("Latitude");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal Longitude {
-            get {
-                return this.longitudeField;
-            }
-            set {
-                this.longitudeField = value;
-                this.RaisePropertyChanged("Longitude");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class PSRightWindowData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Nullable<DaysOfTheWeekType> startTimePSrightDayWindowField;
-        
-        private bool startTimePSrightDayWindowFieldSpecified;
-        
-        private System.Nullable<DaysOfTheWeekType> endTimePSrightDayWindowField;
-        
-        private bool endTimePSrightDayWindowFieldSpecified;
-        
-        private string startTimePSrightWindowField;
-        
-        private string endTimePSrightWindowField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public System.Nullable<DaysOfTheWeekType> StartTimePSrightDayWindow {
-            get {
-                return this.startTimePSrightDayWindowField;
-            }
-            set {
-                this.startTimePSrightDayWindowField = value;
-                this.RaisePropertyChanged("StartTimePSrightDayWindow");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool StartTimePSrightDayWindowSpecified {
-            get {
-                return this.startTimePSrightDayWindowFieldSpecified;
-            }
-            set {
-                this.startTimePSrightDayWindowFieldSpecified = value;
-                this.RaisePropertyChanged("StartTimePSrightDayWindowSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<DaysOfTheWeekType> EndTimePSrightDayWindow {
-            get {
-                return this.endTimePSrightDayWindowField;
-            }
-            set {
-                this.endTimePSrightDayWindowField = value;
-                this.RaisePropertyChanged("EndTimePSrightDayWindow");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EndTimePSrightDayWindowSpecified {
-            get {
-                return this.endTimePSrightDayWindowFieldSpecified;
-            }
-            set {
-                this.endTimePSrightDayWindowFieldSpecified = value;
-                this.RaisePropertyChanged("EndTimePSrightDayWindowSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
-        public string StartTimePSrightWindow {
-            get {
-                return this.startTimePSrightWindowField;
-            }
-            set {
-                this.startTimePSrightWindowField = value;
-                this.RaisePropertyChanged("StartTimePSrightWindow");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
-        public string EndTimePSrightWindow {
-            get {
-                return this.endTimePSrightWindowField;
-            }
-            set {
-                this.endTimePSrightWindowField = value;
-                this.RaisePropertyChanged("EndTimePSrightWindow");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public enum DaysOfTheWeekType {
-        
-        /// <remarks/>
-        ZONDAG,
-        
-        /// <remarks/>
-        MAANDAG,
-        
-        /// <remarks/>
-        DINSDAG,
-        
-        /// <remarks/>
-        WOENSDAG,
-        
-        /// <remarks/>
-        DONDERDAG,
-        
-        /// <remarks/>
-        VRIJDAG,
-        
-        /// <remarks/>
-        ZATERDAG,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class StatusRequestResponseData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.DateTime statusTimeField;
-        
-        private string statusRPVField;
-        
-        private string statusReferenceField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public System.DateTime StatusTime {
-            get {
-                return this.statusTimeField;
-            }
-            set {
-                this.statusTimeField = value;
-                this.RaisePropertyChanged("StatusTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string StatusRPV {
-            get {
-                return this.statusRPVField;
-            }
-            set {
-                this.statusRPVField = value;
-                this.RaisePropertyChanged("StatusRPV");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public string StatusReference {
-            get {
-                return this.statusReferenceField;
-            }
-            set {
-                this.statusReferenceField = value;
-                this.RaisePropertyChanged("StatusReference");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class StatusRequestRequestData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Nullable<System.DateTime> statusTimeField;
-        
-        private string statusReferenceField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public System.Nullable<System.DateTime> StatusTime {
-            get {
-                return this.statusTimeField;
-            }
-            set {
-                this.statusTimeField = value;
-                this.RaisePropertyChanged("StatusTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string StatusReference {
-            get {
-                return this.statusReferenceField;
-            }
-            set {
-                this.statusReferenceField = value;
-                this.RaisePropertyChanged("StatusReference");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class ReplyPSPhotoInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string referencePSPhotoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string ReferencePSPhoto {
-            get {
-                return this.referencePSPhotoField;
-            }
-            set {
-                this.referencePSPhotoField = value;
-                this.RaisePropertyChanged("ReferencePSPhoto");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class ReplyPSPhotoInfoRequestData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string vehicleIdField;
-        
-        private string referencePSPhotoField;
-        
-        private byte[] pSPhotoField;
-        
-        private System.DateTime dateTimePSPhotoField;
-        
-        private ReplyPSPhotoInfoRequestDataLocationPSPhoto locationPSPhotoField;
-        
-        private AddressDataRequest checkAddressField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string VehicleId {
-            get {
-                return this.vehicleIdField;
-            }
-            set {
-                this.vehicleIdField = value;
-                this.RaisePropertyChanged("VehicleId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ReferencePSPhoto {
-            get {
-                return this.referencePSPhotoField;
-            }
-            set {
-                this.referencePSPhotoField = value;
-                this.RaisePropertyChanged("ReferencePSPhoto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=2)]
-        public byte[] PSPhoto {
-            get {
-                return this.pSPhotoField;
-            }
-            set {
-                this.pSPhotoField = value;
-                this.RaisePropertyChanged("PSPhoto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public System.DateTime DateTimePSPhoto {
-            get {
-                return this.dateTimePSPhotoField;
-            }
-            set {
-                this.dateTimePSPhotoField = value;
-                this.RaisePropertyChanged("DateTimePSPhoto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public ReplyPSPhotoInfoRequestDataLocationPSPhoto LocationPSPhoto {
-            get {
-                return this.locationPSPhotoField;
-            }
-            set {
-                this.locationPSPhotoField = value;
-                this.RaisePropertyChanged("LocationPSPhoto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public AddressDataRequest CheckAddress {
-            get {
-                return this.checkAddressField;
-            }
-            set {
-                this.checkAddressField = value;
-                this.RaisePropertyChanged("CheckAddress");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class ReplyPSPhotoInfoRequestDataLocationPSPhoto : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private decimal latitudeField;
-        
-        private decimal longitudeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public decimal Latitude {
-            get {
-                return this.latitudeField;
-            }
-            set {
-                this.latitudeField = value;
-                this.RaisePropertyChanged("Latitude");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal Longitude {
-            get {
-                return this.longitudeField;
-            }
-            set {
-                this.longitudeField = value;
-                this.RaisePropertyChanged("Longitude");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class AddressDataRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string streetCodeField;
-        
-        private string streetNameField;
-        
-        private string houseNumberField;
-        
-        private string houseNumberAdditionsField;
-        
-        private string placeOfResidenceField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public string StreetCode {
-            get {
-                return this.streetCodeField;
-            }
-            set {
-                this.streetCodeField = value;
-                this.RaisePropertyChanged("StreetCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string StreetName {
-            get {
-                return this.streetNameField;
-            }
-            set {
-                this.streetNameField = value;
-                this.RaisePropertyChanged("StreetName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
-        public string HouseNumber {
-            get {
-                return this.houseNumberField;
-            }
-            set {
-                this.houseNumberField = value;
-                this.RaisePropertyChanged("HouseNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public string HouseNumberAdditions {
-            get {
-                return this.houseNumberAdditionsField;
-            }
-            set {
-                this.houseNumberAdditionsField = value;
-                this.RaisePropertyChanged("HouseNumberAdditions");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string PlaceOfResidence {
-            get {
-                return this.placeOfResidenceField;
-            }
-            set {
-                this.placeOfResidenceField = value;
-                this.RaisePropertyChanged("PlaceOfResidence");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveAreasByLocationResponseData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string areaManagerIdField;
-        
-        private AreaData[] areaTableField;
-        
-        private AddressDataResponse locationAddressField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
-        public string AreaManagerId {
-            get {
-                return this.areaManagerIdField;
-            }
-            set {
-                this.areaManagerIdField = value;
-                this.RaisePropertyChanged("AreaManagerId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public AreaData[] AreaTable {
-            get {
-                return this.areaTableField;
-            }
-            set {
-                this.areaTableField = value;
-                this.RaisePropertyChanged("AreaTable");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public AddressDataResponse LocationAddress {
-            get {
-                return this.locationAddressField;
-            }
-            set {
-                this.locationAddressField = value;
-                this.RaisePropertyChanged("LocationAddress");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class AreaData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string areaIdField;
-        
-        private string areaDescField;
-        
-        private string startDateAreaField;
-        
-        private string endDateAreaField;
-        
-        private string usageIdField;
-        
-        private string usageDescField;
-        
-        private string gracePeriodBeforeField;
-        
-        private string gracePeriodAfterField;
-        
-        private System.Nullable<decimal> priceOneHourParkingField;
-        
-        private bool priceOneHourParkingFieldSpecified;
-        
-        private AreaRegulationData[] areaRegulationTableField;
-        
-        private string geometryField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string AreaId {
-            get {
-                return this.areaIdField;
-            }
-            set {
-                this.areaIdField = value;
-                this.RaisePropertyChanged("AreaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string AreaDesc {
-            get {
-                return this.areaDescField;
-            }
-            set {
-                this.areaDescField = value;
-                this.RaisePropertyChanged("AreaDesc");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
-        public string StartDateArea {
-            get {
-                return this.startDateAreaField;
-            }
-            set {
-                this.startDateAreaField = value;
-                this.RaisePropertyChanged("StartDateArea");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
-        public string EndDateArea {
-            get {
-                return this.endDateAreaField;
-            }
-            set {
-                this.endDateAreaField = value;
-                this.RaisePropertyChanged("EndDateArea");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
-        public string UsageId {
-            get {
-                return this.usageIdField;
-            }
-            set {
-                this.usageIdField = value;
-                this.RaisePropertyChanged("UsageId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
-        public string UsageDesc {
-            get {
-                return this.usageDescField;
-            }
-            set {
-                this.usageDescField = value;
-                this.RaisePropertyChanged("UsageDesc");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=6)]
-        public string GracePeriodBefore {
-            get {
-                return this.gracePeriodBeforeField;
-            }
-            set {
-                this.gracePeriodBeforeField = value;
-                this.RaisePropertyChanged("GracePeriodBefore");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=7)]
-        public string GracePeriodAfter {
-            get {
-                return this.gracePeriodAfterField;
-            }
-            set {
-                this.gracePeriodAfterField = value;
-                this.RaisePropertyChanged("GracePeriodAfter");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
-        public System.Nullable<decimal> PriceOneHourParking {
-            get {
-                return this.priceOneHourParkingField;
-            }
-            set {
-                this.priceOneHourParkingField = value;
-                this.RaisePropertyChanged("PriceOneHourParking");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PriceOneHourParkingSpecified {
-            get {
-                return this.priceOneHourParkingFieldSpecified;
-            }
-            set {
-                this.priceOneHourParkingFieldSpecified = value;
-                this.RaisePropertyChanged("PriceOneHourParkingSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
-        public AreaRegulationData[] AreaRegulationTable {
-            get {
-                return this.areaRegulationTableField;
-            }
-            set {
-                this.areaRegulationTableField = value;
-                this.RaisePropertyChanged("AreaRegulationTable");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
-        public string Geometry {
-            get {
-                return this.geometryField;
-            }
-            set {
-                this.geometryField = value;
-                this.RaisePropertyChanged("Geometry");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class AreaRegulationData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string regulationIdAreaField;
-        
-        private System.Nullable<System.DateTime> startDateAreaRegulationField;
-        
-        private bool startDateAreaRegulationFieldSpecified;
-        
-        private System.Nullable<System.DateTime> endDateAreaRegulationField;
-        
-        private bool endDateAreaRegulationFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string RegulationIdArea {
-            get {
-                return this.regulationIdAreaField;
-            }
-            set {
-                this.regulationIdAreaField = value;
-                this.RaisePropertyChanged("RegulationIdArea");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<System.DateTime> StartDateAreaRegulation {
-            get {
-                return this.startDateAreaRegulationField;
-            }
-            set {
-                this.startDateAreaRegulationField = value;
-                this.RaisePropertyChanged("StartDateAreaRegulation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool StartDateAreaRegulationSpecified {
-            get {
-                return this.startDateAreaRegulationFieldSpecified;
-            }
-            set {
-                this.startDateAreaRegulationFieldSpecified = value;
-                this.RaisePropertyChanged("StartDateAreaRegulationSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public System.Nullable<System.DateTime> EndDateAreaRegulation {
-            get {
-                return this.endDateAreaRegulationField;
-            }
-            set {
-                this.endDateAreaRegulationField = value;
-                this.RaisePropertyChanged("EndDateAreaRegulation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EndDateAreaRegulationSpecified {
-            get {
-                return this.endDateAreaRegulationFieldSpecified;
-            }
-            set {
-                this.endDateAreaRegulationFieldSpecified = value;
-                this.RaisePropertyChanged("EndDateAreaRegulationSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class AddressDataResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string streetCodeField;
-        
-        private string streetNameField;
-        
-        private string houseNumberField;
-        
-        private string houseNumberAdditionsField;
-        
-        private string placeOfResidenceField;
-        
-        private AddressDataResponseLocation locationField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public string StreetCode {
-            get {
-                return this.streetCodeField;
-            }
-            set {
-                this.streetCodeField = value;
-                this.RaisePropertyChanged("StreetCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string StreetName {
-            get {
-                return this.streetNameField;
-            }
-            set {
-                this.streetNameField = value;
-                this.RaisePropertyChanged("StreetName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
-        public string HouseNumber {
-            get {
-                return this.houseNumberField;
-            }
-            set {
-                this.houseNumberField = value;
-                this.RaisePropertyChanged("HouseNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public string HouseNumberAdditions {
-            get {
-                return this.houseNumberAdditionsField;
-            }
-            set {
-                this.houseNumberAdditionsField = value;
-                this.RaisePropertyChanged("HouseNumberAdditions");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string PlaceOfResidence {
-            get {
-                return this.placeOfResidenceField;
-            }
-            set {
-                this.placeOfResidenceField = value;
-                this.RaisePropertyChanged("PlaceOfResidence");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public AddressDataResponseLocation Location {
-            get {
-                return this.locationField;
-            }
-            set {
-                this.locationField = value;
-                this.RaisePropertyChanged("Location");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class AddressDataResponseLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private decimal latitudeField;
-        
-        private decimal longitudeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public decimal Latitude {
-            get {
-                return this.latitudeField;
-            }
-            set {
-                this.latitudeField = value;
-                this.RaisePropertyChanged("Latitude");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal Longitude {
-            get {
-                return this.longitudeField;
-            }
-            set {
-                this.longitudeField = value;
-                this.RaisePropertyChanged("Longitude");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveAreasByLocationRequestData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private RetrieveAreasByLocationRequestDataAreaLocation areaLocationField;
-        
-        private AddressDataRequest requestAddressField;
-        
-        private string sellingPointIdField;
-        
-        private string areaManagerIdField;
-        
-        private string areaIdField;
-        
-        private System.Nullable<System.DateTime> referenceTimeField;
-        
-        private bool referenceTimeFieldSpecified;
-        
-        private string usageIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public RetrieveAreasByLocationRequestDataAreaLocation AreaLocation {
-            get {
-                return this.areaLocationField;
-            }
-            set {
-                this.areaLocationField = value;
-                this.RaisePropertyChanged("AreaLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AddressDataRequest RequestAddress {
-            get {
-                return this.requestAddressField;
-            }
-            set {
-                this.requestAddressField = value;
-                this.RaisePropertyChanged("RequestAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
-        public string SellingPointId {
-            get {
-                return this.sellingPointIdField;
-            }
-            set {
-                this.sellingPointIdField = value;
-                this.RaisePropertyChanged("SellingPointId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public string AreaManagerId {
-            get {
-                return this.areaManagerIdField;
-            }
-            set {
-                this.areaManagerIdField = value;
-                this.RaisePropertyChanged("AreaManagerId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
-        public string AreaId {
-            get {
-                return this.areaIdField;
-            }
-            set {
-                this.areaIdField = value;
-                this.RaisePropertyChanged("AreaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
-        public System.Nullable<System.DateTime> ReferenceTime {
-            get {
-                return this.referenceTimeField;
-            }
-            set {
-                this.referenceTimeField = value;
-                this.RaisePropertyChanged("ReferenceTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ReferenceTimeSpecified {
-            get {
-                return this.referenceTimeFieldSpecified;
-            }
-            set {
-                this.referenceTimeFieldSpecified = value;
-                this.RaisePropertyChanged("ReferenceTimeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
-        public string UsageId {
-            get {
-                return this.usageIdField;
-            }
-            set {
-                this.usageIdField = value;
-                this.RaisePropertyChanged("UsageId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveAreasByLocationRequestDataAreaLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private decimal latitudeField;
-        
-        private decimal longitudeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public decimal Latitude {
-            get {
-                return this.latitudeField;
-            }
-            set {
-                this.latitudeField = value;
-                this.RaisePropertyChanged("Latitude");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal Longitude {
-            get {
-                return this.longitudeField;
-            }
-            set {
-                this.longitudeField = value;
-                this.RaisePropertyChanged("Longitude");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class SpecialDay : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string specialDayNameField;
-        
-        private string specialDayDateField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string SpecialDayName {
-            get {
-                return this.specialDayNameField;
-            }
-            set {
-                this.specialDayNameField = value;
-                this.RaisePropertyChanged("SpecialDayName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
-        public string SpecialDayDate {
-            get {
-                return this.specialDayDateField;
-            }
-            set {
-                this.specialDayDateField = value;
-                this.RaisePropertyChanged("SpecialDayDate");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class FarePartData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string startDateFarePartField;
-        
-        private string endDateFarePartField;
-        
-        private string startDurationFarePartField;
-        
-        private string endDurationFarePartField;
-        
-        private decimal totalAmountPartsField;
-        
-        private decimal amountFarePartField;
-        
-        private string stepSizeFarePartField;
+        private System.DateTime endTimePSRightField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string StartDateFarePart {
+        public string PSRightId {
             get {
-                return this.startDateFarePartField;
+                return this.pSRightIdField;
             }
             set {
-                this.startDateFarePartField = value;
-                this.RaisePropertyChanged("StartDateFarePart");
+                this.pSRightIdField = value;
+                this.RaisePropertyChanged("PSRightId");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=1)]
-        public string EndDateFarePart {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime EndTimePSRight {
             get {
-                return this.endDateFarePartField;
+                return this.endTimePSRightField;
             }
             set {
-                this.endDateFarePartField = value;
-                this.RaisePropertyChanged("EndDateFarePart");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
-        public string StartDurationFarePart {
-            get {
-                return this.startDurationFarePartField;
-            }
-            set {
-                this.startDurationFarePartField = value;
-                this.RaisePropertyChanged("StartDurationFarePart");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=3)]
-        public string EndDurationFarePart {
-            get {
-                return this.endDurationFarePartField;
-            }
-            set {
-                this.endDurationFarePartField = value;
-                this.RaisePropertyChanged("EndDurationFarePart");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public decimal TotalAmountParts {
-            get {
-                return this.totalAmountPartsField;
-            }
-            set {
-                this.totalAmountPartsField = value;
-                this.RaisePropertyChanged("TotalAmountParts");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public decimal AmountFarePart {
-            get {
-                return this.amountFarePartField;
-            }
-            set {
-                this.amountFarePartField = value;
-                this.RaisePropertyChanged("AmountFarePart");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=6)]
-        public string StepSizeFarePart {
-            get {
-                return this.stepSizeFarePartField;
-            }
-            set {
-                this.stepSizeFarePartField = value;
-                this.RaisePropertyChanged("StepSizeFarePart");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class FareData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string fareCalculationCodeField;
-        
-        private string fareCalculationDescField;
-        
-        private string startDateFareField;
-        
-        private string endDateFareField;
-        
-        private System.Nullable<decimal> vATPercentageField;
-        
-        private bool vATPercentageFieldSpecified;
-        
-        private FarePartData[] farePartTableField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string FareCalculationCode {
-            get {
-                return this.fareCalculationCodeField;
-            }
-            set {
-                this.fareCalculationCodeField = value;
-                this.RaisePropertyChanged("FareCalculationCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string FareCalculationDesc {
-            get {
-                return this.fareCalculationDescField;
-            }
-            set {
-                this.fareCalculationDescField = value;
-                this.RaisePropertyChanged("FareCalculationDesc");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
-        public string StartDateFare {
-            get {
-                return this.startDateFareField;
-            }
-            set {
-                this.startDateFareField = value;
-                this.RaisePropertyChanged("StartDateFare");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
-        public string EndDateFare {
-            get {
-                return this.endDateFareField;
-            }
-            set {
-                this.endDateFareField = value;
-                this.RaisePropertyChanged("EndDateFare");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
-        public System.Nullable<decimal> VATPercentage {
-            get {
-                return this.vATPercentageField;
-            }
-            set {
-                this.vATPercentageField = value;
-                this.RaisePropertyChanged("VATPercentage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool VATPercentageSpecified {
-            get {
-                return this.vATPercentageFieldSpecified;
-            }
-            set {
-                this.vATPercentageFieldSpecified = value;
-                this.RaisePropertyChanged("VATPercentageSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=5)]
-        public FarePartData[] FarePartTable {
-            get {
-                return this.farePartTableField;
-            }
-            set {
-                this.farePartTableField = value;
-                this.RaisePropertyChanged("FarePartTable");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class TimeFrameData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string dayTimeFrameField;
-        
-        private System.Nullable<System.DateTime> startDateTimeFrameField;
-        
-        private bool startDateTimeFrameFieldSpecified;
-        
-        private string startTimeTimeFrameField;
-        
-        private System.Nullable<System.DateTime> endDateTimeFrameField;
-        
-        private bool endDateTimeFrameFieldSpecified;
-        
-        private string endTimeTimeFrameField;
-        
-        private IndicatorYNType claimRightPossibleField;
-        
-        private string maxDurationRightField;
-        
-        private string minParkingInterruptionField;
-        
-        private string fareTimeFrameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string DayTimeFrame {
-            get {
-                return this.dayTimeFrameField;
-            }
-            set {
-                this.dayTimeFrameField = value;
-                this.RaisePropertyChanged("DayTimeFrame");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<System.DateTime> StartDateTimeFrame {
-            get {
-                return this.startDateTimeFrameField;
-            }
-            set {
-                this.startDateTimeFrameField = value;
-                this.RaisePropertyChanged("StartDateTimeFrame");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool StartDateTimeFrameSpecified {
-            get {
-                return this.startDateTimeFrameFieldSpecified;
-            }
-            set {
-                this.startDateTimeFrameFieldSpecified = value;
-                this.RaisePropertyChanged("StartDateTimeFrameSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
-        public string StartTimeTimeFrame {
-            get {
-                return this.startTimeTimeFrameField;
-            }
-            set {
-                this.startTimeTimeFrameField = value;
-                this.RaisePropertyChanged("StartTimeTimeFrame");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public System.Nullable<System.DateTime> EndDateTimeFrame {
-            get {
-                return this.endDateTimeFrameField;
-            }
-            set {
-                this.endDateTimeFrameField = value;
-                this.RaisePropertyChanged("EndDateTimeFrame");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EndDateTimeFrameSpecified {
-            get {
-                return this.endDateTimeFrameFieldSpecified;
-            }
-            set {
-                this.endDateTimeFrameFieldSpecified = value;
-                this.RaisePropertyChanged("EndDateTimeFrameSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=4)]
-        public string EndTimeTimeFrame {
-            get {
-                return this.endTimeTimeFrameField;
-            }
-            set {
-                this.endTimeTimeFrameField = value;
-                this.RaisePropertyChanged("EndTimeTimeFrame");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public IndicatorYNType ClaimRightPossible {
-            get {
-                return this.claimRightPossibleField;
-            }
-            set {
-                this.claimRightPossibleField = value;
-                this.RaisePropertyChanged("ClaimRightPossible");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=6)]
-        public string MaxDurationRight {
-            get {
-                return this.maxDurationRightField;
-            }
-            set {
-                this.maxDurationRightField = value;
-                this.RaisePropertyChanged("MaxDurationRight");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=7)]
-        public string MinParkingInterruption {
-            get {
-                return this.minParkingInterruptionField;
-            }
-            set {
-                this.minParkingInterruptionField = value;
-                this.RaisePropertyChanged("MinParkingInterruption");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
-        public string FareTimeFrame {
-            get {
-                return this.fareTimeFrameField;
-            }
-            set {
-                this.fareTimeFrameField = value;
-                this.RaisePropertyChanged("FareTimeFrame");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public enum IndicatorYNType {
-        
-        /// <remarks/>
-        Y,
-        
-        /// <remarks/>
-        N,
-        
-        /// <remarks/>
-        y,
-        
-        /// <remarks/>
-        n,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RegulationData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string regulationIdField;
-        
-        private string regulationDescField;
-        
-        private System.Nullable<TypeOfRegulationType> regulationTypeField;
-        
-        private bool regulationTypeFieldSpecified;
-        
-        private string startDateRegulationField;
-        
-        private string endDateRegulationField;
-        
-        private TimeFrameData[] timeFrameTableField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string RegulationId {
-            get {
-                return this.regulationIdField;
-            }
-            set {
-                this.regulationIdField = value;
-                this.RaisePropertyChanged("RegulationId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string RegulationDesc {
-            get {
-                return this.regulationDescField;
-            }
-            set {
-                this.regulationDescField = value;
-                this.RaisePropertyChanged("RegulationDesc");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public System.Nullable<TypeOfRegulationType> RegulationType {
-            get {
-                return this.regulationTypeField;
-            }
-            set {
-                this.regulationTypeField = value;
-                this.RaisePropertyChanged("RegulationType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool RegulationTypeSpecified {
-            get {
-                return this.regulationTypeFieldSpecified;
-            }
-            set {
-                this.regulationTypeFieldSpecified = value;
-                this.RaisePropertyChanged("RegulationTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
-        public string StartDateRegulation {
-            get {
-                return this.startDateRegulationField;
-            }
-            set {
-                this.startDateRegulationField = value;
-                this.RaisePropertyChanged("StartDateRegulation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=4)]
-        public string EndDateRegulation {
-            get {
-                return this.endDateRegulationField;
-            }
-            set {
-                this.endDateRegulationField = value;
-                this.RaisePropertyChanged("EndDateRegulation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=5)]
-        public TimeFrameData[] TimeFrameTable {
-            get {
-                return this.timeFrameTableField;
-            }
-            set {
-                this.timeFrameTableField = value;
-                this.RaisePropertyChanged("TimeFrameTable");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public enum TypeOfRegulationType {
-        
-        /// <remarks/>
-        A,
-        
-        /// <remarks/>
-        B,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveAreaRegulationFareInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private AreaData[] areaTableField;
-        
-        private RegulationData[] regulationTableField;
-        
-        private FareData[] fareTableField;
-        
-        private SpecialDay[] specialDaysTableField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        public AreaData[] AreaTable {
-            get {
-                return this.areaTableField;
-            }
-            set {
-                this.areaTableField = value;
-                this.RaisePropertyChanged("AreaTable");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public RegulationData[] RegulationTable {
-            get {
-                return this.regulationTableField;
-            }
-            set {
-                this.regulationTableField = value;
-                this.RaisePropertyChanged("RegulationTable");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        public FareData[] FareTable {
-            get {
-                return this.fareTableField;
-            }
-            set {
-                this.fareTableField = value;
-                this.RaisePropertyChanged("FareTable");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
-        public SpecialDay[] SpecialDaysTable {
-            get {
-                return this.specialDaysTableField;
-            }
-            set {
-                this.specialDaysTableField = value;
-                this.RaisePropertyChanged("SpecialDaysTable");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveAreaRegulationFareInfoRequestData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string areaManagerIdField;
-        
-        private string areaIdField;
-        
-        private System.Nullable<System.DateTime> checkTimeField;
-        
-        private bool checkTimeFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string AreaManagerId {
-            get {
-                return this.areaManagerIdField;
-            }
-            set {
-                this.areaManagerIdField = value;
-                this.RaisePropertyChanged("AreaManagerId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public string AreaId {
-            get {
-                return this.areaIdField;
-            }
-            set {
-                this.areaIdField = value;
-                this.RaisePropertyChanged("AreaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public System.Nullable<System.DateTime> CheckTime {
-            get {
-                return this.checkTimeField;
-            }
-            set {
-                this.checkTimeField = value;
-                this.RaisePropertyChanged("CheckTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CheckTimeSpecified {
-            get {
-                return this.checkTimeFieldSpecified;
-            }
-            set {
-                this.checkTimeFieldSpecified = value;
-                this.RaisePropertyChanged("CheckTimeSpecified");
+                this.endTimePSRightField = value;
+                this.RaisePropertyChanged("EndTimePSRight");
             }
         }
         
@@ -4075,6 +1989,136 @@ namespace NPRPlusProviderService.RDW {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightWindowData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<DaysOfTheWeekType> startTimePSrightDayWindowField;
+        
+        private bool startTimePSrightDayWindowFieldSpecified;
+        
+        private System.Nullable<DaysOfTheWeekType> endTimePSrightDayWindowField;
+        
+        private bool endTimePSrightDayWindowFieldSpecified;
+        
+        private string startTimePSrightWindowField;
+        
+        private string endTimePSrightWindowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<DaysOfTheWeekType> StartTimePSrightDayWindow {
+            get {
+                return this.startTimePSrightDayWindowField;
+            }
+            set {
+                this.startTimePSrightDayWindowField = value;
+                this.RaisePropertyChanged("StartTimePSrightDayWindow");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartTimePSrightDayWindowSpecified {
+            get {
+                return this.startTimePSrightDayWindowFieldSpecified;
+            }
+            set {
+                this.startTimePSrightDayWindowFieldSpecified = value;
+                this.RaisePropertyChanged("StartTimePSrightDayWindowSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<DaysOfTheWeekType> EndTimePSrightDayWindow {
+            get {
+                return this.endTimePSrightDayWindowField;
+            }
+            set {
+                this.endTimePSrightDayWindowField = value;
+                this.RaisePropertyChanged("EndTimePSrightDayWindow");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimePSrightDayWindowSpecified {
+            get {
+                return this.endTimePSrightDayWindowFieldSpecified;
+            }
+            set {
+                this.endTimePSrightDayWindowFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimePSrightDayWindowSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string StartTimePSrightWindow {
+            get {
+                return this.startTimePSrightWindowField;
+            }
+            set {
+                this.startTimePSrightWindowField = value;
+                this.RaisePropertyChanged("StartTimePSrightWindow");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string EndTimePSrightWindow {
+            get {
+                return this.endTimePSrightWindowField;
+            }
+            set {
+                this.endTimePSrightWindowField = value;
+                this.RaisePropertyChanged("EndTimePSrightWindow");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public enum DaysOfTheWeekType {
+        
+        /// <remarks/>
+        ZONDAG,
+        
+        /// <remarks/>
+        MAANDAG,
+        
+        /// <remarks/>
+        DINSDAG,
+        
+        /// <remarks/>
+        WOENSDAG,
+        
+        /// <remarks/>
+        DONDERDAG,
+        
+        /// <remarks/>
+        VRIJDAG,
+        
+        /// <remarks/>
+        ZATERDAG,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
     public partial class PSRightInfoDataLocationPSRight : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4583,10 +2627,177 @@ namespace NPRPlusProviderService.RDW {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public enum IndicatorYNType {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        y,
+        
+        /// <remarks/>
+        n,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
     public partial class CheckInfoDataCheckLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal latitudeField;
+        
+        private decimal longitudeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public decimal Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+                this.RaisePropertyChanged("Latitude");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+                this.RaisePropertyChanged("Longitude");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class AddressDataResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string streetCodeField;
+        
+        private string streetNameField;
+        
+        private string houseNumberField;
+        
+        private string houseNumberAdditionsField;
+        
+        private string placeOfResidenceField;
+        
+        private AddressDataResponseLocation locationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string StreetCode {
+            get {
+                return this.streetCodeField;
+            }
+            set {
+                this.streetCodeField = value;
+                this.RaisePropertyChanged("StreetCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string StreetName {
+            get {
+                return this.streetNameField;
+            }
+            set {
+                this.streetNameField = value;
+                this.RaisePropertyChanged("StreetName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string HouseNumber {
+            get {
+                return this.houseNumberField;
+            }
+            set {
+                this.houseNumberField = value;
+                this.RaisePropertyChanged("HouseNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string HouseNumberAdditions {
+            get {
+                return this.houseNumberAdditionsField;
+            }
+            set {
+                this.houseNumberAdditionsField = value;
+                this.RaisePropertyChanged("HouseNumberAdditions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string PlaceOfResidence {
+            get {
+                return this.placeOfResidenceField;
+            }
+            set {
+                this.placeOfResidenceField = value;
+                this.RaisePropertyChanged("PlaceOfResidence");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AddressDataResponseLocation Location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+                this.RaisePropertyChanged("Location");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class AddressDataResponseLocation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private decimal latitudeField;
         
@@ -4747,6 +2958,1999 @@ namespace NPRPlusProviderService.RDW {
             set {
                 this.indicatorTimeFieldSpecified = value;
                 this.RaisePropertyChanged("IndicatorTimeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreasByLocationResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private AreaData[] areaTableField;
+        
+        private AddressDataResponse locationAddressField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public AreaData[] AreaTable {
+            get {
+                return this.areaTableField;
+            }
+            set {
+                this.areaTableField = value;
+                this.RaisePropertyChanged("AreaTable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public AddressDataResponse LocationAddress {
+            get {
+                return this.locationAddressField;
+            }
+            set {
+                this.locationAddressField = value;
+                this.RaisePropertyChanged("LocationAddress");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class AreaData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaIdField;
+        
+        private string areaDescField;
+        
+        private string startDateAreaField;
+        
+        private string endDateAreaField;
+        
+        private string usageIdField;
+        
+        private string usageDescField;
+        
+        private string gracePeriodBeforeField;
+        
+        private string gracePeriodAfterField;
+        
+        private System.Nullable<decimal> priceOneHourParkingField;
+        
+        private bool priceOneHourParkingFieldSpecified;
+        
+        private AreaRegulationData[] areaRegulationTableField;
+        
+        private string geometryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaDesc {
+            get {
+                return this.areaDescField;
+            }
+            set {
+                this.areaDescField = value;
+                this.RaisePropertyChanged("AreaDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string StartDateArea {
+            get {
+                return this.startDateAreaField;
+            }
+            set {
+                this.startDateAreaField = value;
+                this.RaisePropertyChanged("StartDateArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string EndDateArea {
+            get {
+                return this.endDateAreaField;
+            }
+            set {
+                this.endDateAreaField = value;
+                this.RaisePropertyChanged("EndDateArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string UsageDesc {
+            get {
+                return this.usageDescField;
+            }
+            set {
+                this.usageDescField = value;
+                this.RaisePropertyChanged("UsageDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=6)]
+        public string GracePeriodBefore {
+            get {
+                return this.gracePeriodBeforeField;
+            }
+            set {
+                this.gracePeriodBeforeField = value;
+                this.RaisePropertyChanged("GracePeriodBefore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=7)]
+        public string GracePeriodAfter {
+            get {
+                return this.gracePeriodAfterField;
+            }
+            set {
+                this.gracePeriodAfterField = value;
+                this.RaisePropertyChanged("GracePeriodAfter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> PriceOneHourParking {
+            get {
+                return this.priceOneHourParkingField;
+            }
+            set {
+                this.priceOneHourParkingField = value;
+                this.RaisePropertyChanged("PriceOneHourParking");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PriceOneHourParkingSpecified {
+            get {
+                return this.priceOneHourParkingFieldSpecified;
+            }
+            set {
+                this.priceOneHourParkingFieldSpecified = value;
+                this.RaisePropertyChanged("PriceOneHourParkingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
+        public AreaRegulationData[] AreaRegulationTable {
+            get {
+                return this.areaRegulationTableField;
+            }
+            set {
+                this.areaRegulationTableField = value;
+                this.RaisePropertyChanged("AreaRegulationTable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public string Geometry {
+            get {
+                return this.geometryField;
+            }
+            set {
+                this.geometryField = value;
+                this.RaisePropertyChanged("Geometry");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class AreaRegulationData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string regulationIdAreaField;
+        
+        private System.Nullable<System.DateTime> startDateAreaRegulationField;
+        
+        private bool startDateAreaRegulationFieldSpecified;
+        
+        private System.Nullable<System.DateTime> endDateAreaRegulationField;
+        
+        private bool endDateAreaRegulationFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string RegulationIdArea {
+            get {
+                return this.regulationIdAreaField;
+            }
+            set {
+                this.regulationIdAreaField = value;
+                this.RaisePropertyChanged("RegulationIdArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> StartDateAreaRegulation {
+            get {
+                return this.startDateAreaRegulationField;
+            }
+            set {
+                this.startDateAreaRegulationField = value;
+                this.RaisePropertyChanged("StartDateAreaRegulation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartDateAreaRegulationSpecified {
+            get {
+                return this.startDateAreaRegulationFieldSpecified;
+            }
+            set {
+                this.startDateAreaRegulationFieldSpecified = value;
+                this.RaisePropertyChanged("StartDateAreaRegulationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> EndDateAreaRegulation {
+            get {
+                return this.endDateAreaRegulationField;
+            }
+            set {
+                this.endDateAreaRegulationField = value;
+                this.RaisePropertyChanged("EndDateAreaRegulation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateAreaRegulationSpecified {
+            get {
+                return this.endDateAreaRegulationFieldSpecified;
+            }
+            set {
+                this.endDateAreaRegulationFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateAreaRegulationSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreasByLocationRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private RetrieveAreasByLocationRequestDataAreaLocation areaLocationField;
+        
+        private AddressDataRequest requestAddressField;
+        
+        private string sellingPointIdField;
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private System.Nullable<System.DateTime> referenceTimeField;
+        
+        private bool referenceTimeFieldSpecified;
+        
+        private string usageIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RetrieveAreasByLocationRequestDataAreaLocation AreaLocation {
+            get {
+                return this.areaLocationField;
+            }
+            set {
+                this.areaLocationField = value;
+                this.RaisePropertyChanged("AreaLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public AddressDataRequest RequestAddress {
+            get {
+                return this.requestAddressField;
+            }
+            set {
+                this.requestAddressField = value;
+                this.RaisePropertyChanged("RequestAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string SellingPointId {
+            get {
+                return this.sellingPointIdField;
+            }
+            set {
+                this.sellingPointIdField = value;
+                this.RaisePropertyChanged("SellingPointId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> ReferenceTime {
+            get {
+                return this.referenceTimeField;
+            }
+            set {
+                this.referenceTimeField = value;
+                this.RaisePropertyChanged("ReferenceTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReferenceTimeSpecified {
+            get {
+                return this.referenceTimeFieldSpecified;
+            }
+            set {
+                this.referenceTimeFieldSpecified = value;
+                this.RaisePropertyChanged("ReferenceTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreasByLocationRequestDataAreaLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal latitudeField;
+        
+        private decimal longitudeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public decimal Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+                this.RaisePropertyChanged("Latitude");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+                this.RaisePropertyChanged("Longitude");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class AddressDataRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string streetCodeField;
+        
+        private string streetNameField;
+        
+        private string houseNumberField;
+        
+        private string houseNumberAdditionsField;
+        
+        private string placeOfResidenceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string StreetCode {
+            get {
+                return this.streetCodeField;
+            }
+            set {
+                this.streetCodeField = value;
+                this.RaisePropertyChanged("StreetCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string StreetName {
+            get {
+                return this.streetNameField;
+            }
+            set {
+                this.streetNameField = value;
+                this.RaisePropertyChanged("StreetName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string HouseNumber {
+            get {
+                return this.houseNumberField;
+            }
+            set {
+                this.houseNumberField = value;
+                this.RaisePropertyChanged("HouseNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string HouseNumberAdditions {
+            get {
+                return this.houseNumberAdditionsField;
+            }
+            set {
+                this.houseNumberAdditionsField = value;
+                this.RaisePropertyChanged("HouseNumberAdditions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string PlaceOfResidence {
+            get {
+                return this.placeOfResidenceField;
+            }
+            set {
+                this.placeOfResidenceField = value;
+                this.RaisePropertyChanged("PlaceOfResidence");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class SpecialDay : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string specialDayNameField;
+        
+        private string specialDayDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string SpecialDayName {
+            get {
+                return this.specialDayNameField;
+            }
+            set {
+                this.specialDayNameField = value;
+                this.RaisePropertyChanged("SpecialDayName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
+        public string SpecialDayDate {
+            get {
+                return this.specialDayDateField;
+            }
+            set {
+                this.specialDayDateField = value;
+                this.RaisePropertyChanged("SpecialDayDate");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class FarePartData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string startDateFarePartField;
+        
+        private string endDateFarePartField;
+        
+        private string startDurationFarePartField;
+        
+        private string endDurationFarePartField;
+        
+        private decimal totalAmountPartsField;
+        
+        private decimal amountFarePartField;
+        
+        private string stepSizeFarePartField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string StartDateFarePart {
+            get {
+                return this.startDateFarePartField;
+            }
+            set {
+                this.startDateFarePartField = value;
+                this.RaisePropertyChanged("StartDateFarePart");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=1)]
+        public string EndDateFarePart {
+            get {
+                return this.endDateFarePartField;
+            }
+            set {
+                this.endDateFarePartField = value;
+                this.RaisePropertyChanged("EndDateFarePart");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string StartDurationFarePart {
+            get {
+                return this.startDurationFarePartField;
+            }
+            set {
+                this.startDurationFarePartField = value;
+                this.RaisePropertyChanged("StartDurationFarePart");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=3)]
+        public string EndDurationFarePart {
+            get {
+                return this.endDurationFarePartField;
+            }
+            set {
+                this.endDurationFarePartField = value;
+                this.RaisePropertyChanged("EndDurationFarePart");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal TotalAmountParts {
+            get {
+                return this.totalAmountPartsField;
+            }
+            set {
+                this.totalAmountPartsField = value;
+                this.RaisePropertyChanged("TotalAmountParts");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal AmountFarePart {
+            get {
+                return this.amountFarePartField;
+            }
+            set {
+                this.amountFarePartField = value;
+                this.RaisePropertyChanged("AmountFarePart");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=6)]
+        public string StepSizeFarePart {
+            get {
+                return this.stepSizeFarePartField;
+            }
+            set {
+                this.stepSizeFarePartField = value;
+                this.RaisePropertyChanged("StepSizeFarePart");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class FareData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string fareCalculationCodeField;
+        
+        private string fareCalculationDescField;
+        
+        private string startDateFareField;
+        
+        private string endDateFareField;
+        
+        private System.Nullable<decimal> vATPercentageField;
+        
+        private bool vATPercentageFieldSpecified;
+        
+        private FarePartData[] farePartTableField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FareCalculationCode {
+            get {
+                return this.fareCalculationCodeField;
+            }
+            set {
+                this.fareCalculationCodeField = value;
+                this.RaisePropertyChanged("FareCalculationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string FareCalculationDesc {
+            get {
+                return this.fareCalculationDescField;
+            }
+            set {
+                this.fareCalculationDescField = value;
+                this.RaisePropertyChanged("FareCalculationDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string StartDateFare {
+            get {
+                return this.startDateFareField;
+            }
+            set {
+                this.startDateFareField = value;
+                this.RaisePropertyChanged("StartDateFare");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string EndDateFare {
+            get {
+                return this.endDateFareField;
+            }
+            set {
+                this.endDateFareField = value;
+                this.RaisePropertyChanged("EndDateFare");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> VATPercentage {
+            get {
+                return this.vATPercentageField;
+            }
+            set {
+                this.vATPercentageField = value;
+                this.RaisePropertyChanged("VATPercentage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATPercentageSpecified {
+            get {
+                return this.vATPercentageFieldSpecified;
+            }
+            set {
+                this.vATPercentageFieldSpecified = value;
+                this.RaisePropertyChanged("VATPercentageSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=5)]
+        public FarePartData[] FarePartTable {
+            get {
+                return this.farePartTableField;
+            }
+            set {
+                this.farePartTableField = value;
+                this.RaisePropertyChanged("FarePartTable");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class TimeFrameData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string dayTimeFrameField;
+        
+        private System.Nullable<System.DateTime> startDateTimeFrameField;
+        
+        private bool startDateTimeFrameFieldSpecified;
+        
+        private string startTimeTimeFrameField;
+        
+        private System.Nullable<System.DateTime> endDateTimeFrameField;
+        
+        private bool endDateTimeFrameFieldSpecified;
+        
+        private string endTimeTimeFrameField;
+        
+        private IndicatorYNType claimRightPossibleField;
+        
+        private string maxDurationRightField;
+        
+        private string minParkingInterruptionField;
+        
+        private string fareTimeFrameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DayTimeFrame {
+            get {
+                return this.dayTimeFrameField;
+            }
+            set {
+                this.dayTimeFrameField = value;
+                this.RaisePropertyChanged("DayTimeFrame");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> StartDateTimeFrame {
+            get {
+                return this.startDateTimeFrameField;
+            }
+            set {
+                this.startDateTimeFrameField = value;
+                this.RaisePropertyChanged("StartDateTimeFrame");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartDateTimeFrameSpecified {
+            get {
+                return this.startDateTimeFrameFieldSpecified;
+            }
+            set {
+                this.startDateTimeFrameFieldSpecified = value;
+                this.RaisePropertyChanged("StartDateTimeFrameSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string StartTimeTimeFrame {
+            get {
+                return this.startTimeTimeFrameField;
+            }
+            set {
+                this.startTimeTimeFrameField = value;
+                this.RaisePropertyChanged("StartTimeTimeFrame");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> EndDateTimeFrame {
+            get {
+                return this.endDateTimeFrameField;
+            }
+            set {
+                this.endDateTimeFrameField = value;
+                this.RaisePropertyChanged("EndDateTimeFrame");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateTimeFrameSpecified {
+            get {
+                return this.endDateTimeFrameFieldSpecified;
+            }
+            set {
+                this.endDateTimeFrameFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateTimeFrameSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=4)]
+        public string EndTimeTimeFrame {
+            get {
+                return this.endTimeTimeFrameField;
+            }
+            set {
+                this.endTimeTimeFrameField = value;
+                this.RaisePropertyChanged("EndTimeTimeFrame");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public IndicatorYNType ClaimRightPossible {
+            get {
+                return this.claimRightPossibleField;
+            }
+            set {
+                this.claimRightPossibleField = value;
+                this.RaisePropertyChanged("ClaimRightPossible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=6)]
+        public string MaxDurationRight {
+            get {
+                return this.maxDurationRightField;
+            }
+            set {
+                this.maxDurationRightField = value;
+                this.RaisePropertyChanged("MaxDurationRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=7)]
+        public string MinParkingInterruption {
+            get {
+                return this.minParkingInterruptionField;
+            }
+            set {
+                this.minParkingInterruptionField = value;
+                this.RaisePropertyChanged("MinParkingInterruption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public string FareTimeFrame {
+            get {
+                return this.fareTimeFrameField;
+            }
+            set {
+                this.fareTimeFrameField = value;
+                this.RaisePropertyChanged("FareTimeFrame");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RegulationData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string regulationIdField;
+        
+        private string regulationDescField;
+        
+        private System.Nullable<TypeOfRegulationType> regulationTypeField;
+        
+        private bool regulationTypeFieldSpecified;
+        
+        private string startDateRegulationField;
+        
+        private string endDateRegulationField;
+        
+        private TimeFrameData[] timeFrameTableField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string RegulationId {
+            get {
+                return this.regulationIdField;
+            }
+            set {
+                this.regulationIdField = value;
+                this.RaisePropertyChanged("RegulationId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string RegulationDesc {
+            get {
+                return this.regulationDescField;
+            }
+            set {
+                this.regulationDescField = value;
+                this.RaisePropertyChanged("RegulationDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<TypeOfRegulationType> RegulationType {
+            get {
+                return this.regulationTypeField;
+            }
+            set {
+                this.regulationTypeField = value;
+                this.RaisePropertyChanged("RegulationType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RegulationTypeSpecified {
+            get {
+                return this.regulationTypeFieldSpecified;
+            }
+            set {
+                this.regulationTypeFieldSpecified = value;
+                this.RaisePropertyChanged("RegulationTypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string StartDateRegulation {
+            get {
+                return this.startDateRegulationField;
+            }
+            set {
+                this.startDateRegulationField = value;
+                this.RaisePropertyChanged("StartDateRegulation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=4)]
+        public string EndDateRegulation {
+            get {
+                return this.endDateRegulationField;
+            }
+            set {
+                this.endDateRegulationField = value;
+                this.RaisePropertyChanged("EndDateRegulation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=5)]
+        public TimeFrameData[] TimeFrameTable {
+            get {
+                return this.timeFrameTableField;
+            }
+            set {
+                this.timeFrameTableField = value;
+                this.RaisePropertyChanged("TimeFrameTable");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public enum TypeOfRegulationType {
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        B,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreaRegulationFareInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AreaData[] areaTableField;
+        
+        private RegulationData[] regulationTableField;
+        
+        private FareData[] fareTableField;
+        
+        private SpecialDay[] specialDaysTableField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public AreaData[] AreaTable {
+            get {
+                return this.areaTableField;
+            }
+            set {
+                this.areaTableField = value;
+                this.RaisePropertyChanged("AreaTable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public RegulationData[] RegulationTable {
+            get {
+                return this.regulationTableField;
+            }
+            set {
+                this.regulationTableField = value;
+                this.RaisePropertyChanged("RegulationTable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public FareData[] FareTable {
+            get {
+                return this.fareTableField;
+            }
+            set {
+                this.fareTableField = value;
+                this.RaisePropertyChanged("FareTable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        public SpecialDay[] SpecialDaysTable {
+            get {
+                return this.specialDaysTableField;
+            }
+            set {
+                this.specialDaysTableField = value;
+                this.RaisePropertyChanged("SpecialDaysTable");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreaRegulationFareInfoRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private System.Nullable<System.DateTime> checkTimeField;
+        
+        private bool checkTimeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> CheckTime {
+            get {
+                return this.checkTimeField;
+            }
+            set {
+                this.checkTimeField = value;
+                this.RaisePropertyChanged("CheckTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CheckTimeSpecified {
+            get {
+                return this.checkTimeFieldSpecified;
+            }
+            set {
+                this.checkTimeFieldSpecified = value;
+                this.RaisePropertyChanged("CheckTimeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class ReplyPSPhotoInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string referencePSPhotoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ReferencePSPhoto {
+            get {
+                return this.referencePSPhotoField;
+            }
+            set {
+                this.referencePSPhotoField = value;
+                this.RaisePropertyChanged("ReferencePSPhoto");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class ReplyPSPhotoInfoRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdField;
+        
+        private string referencePSPhotoField;
+        
+        private byte[] pSPhotoField;
+        
+        private System.DateTime dateTimePSPhotoField;
+        
+        private ReplyPSPhotoInfoRequestDataLocationPSPhoto locationPSPhotoField;
+        
+        private AddressDataRequest checkAddressField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ReferencePSPhoto {
+            get {
+                return this.referencePSPhotoField;
+            }
+            set {
+                this.referencePSPhotoField = value;
+                this.RaisePropertyChanged("ReferencePSPhoto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=2)]
+        public byte[] PSPhoto {
+            get {
+                return this.pSPhotoField;
+            }
+            set {
+                this.pSPhotoField = value;
+                this.RaisePropertyChanged("PSPhoto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime DateTimePSPhoto {
+            get {
+                return this.dateTimePSPhotoField;
+            }
+            set {
+                this.dateTimePSPhotoField = value;
+                this.RaisePropertyChanged("DateTimePSPhoto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public ReplyPSPhotoInfoRequestDataLocationPSPhoto LocationPSPhoto {
+            get {
+                return this.locationPSPhotoField;
+            }
+            set {
+                this.locationPSPhotoField = value;
+                this.RaisePropertyChanged("LocationPSPhoto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AddressDataRequest CheckAddress {
+            get {
+                return this.checkAddressField;
+            }
+            set {
+                this.checkAddressField = value;
+                this.RaisePropertyChanged("CheckAddress");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class ReplyPSPhotoInfoRequestDataLocationPSPhoto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal latitudeField;
+        
+        private decimal longitudeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public decimal Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+                this.RaisePropertyChanged("Latitude");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+                this.RaisePropertyChanged("Longitude");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightEnrollResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string pSRightIdField;
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string sellingPointIdField;
+        
+        private System.Nullable<System.DateTime> endTimePSRightAdjustedField;
+        
+        private bool endTimePSRightAdjustedFieldSpecified;
+        
+        private System.Nullable<decimal> amountPSRightCalculatedField;
+        
+        private bool amountPSRightCalculatedFieldSpecified;
+        
+        private System.Nullable<decimal> vATPSRightCalculatedField;
+        
+        private bool vATPSRightCalculatedFieldSpecified;
+        
+        private SpecifCalcAmountData[] specifCalcAmountListField;
+        
+        private PSRightRemarkData[] pSRightRemarkListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string PSRightId {
+            get {
+                return this.pSRightIdField;
+            }
+            set {
+                this.pSRightIdField = value;
+                this.RaisePropertyChanged("PSRightId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=1)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string SellingPointId {
+            get {
+                return this.sellingPointIdField;
+            }
+            set {
+                this.sellingPointIdField = value;
+                this.RaisePropertyChanged("SellingPointId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
+            get {
+                return this.endTimePSRightAdjustedField;
+            }
+            set {
+                this.endTimePSRightAdjustedField = value;
+                this.RaisePropertyChanged("EndTimePSRightAdjusted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimePSRightAdjustedSpecified {
+            get {
+                return this.endTimePSRightAdjustedFieldSpecified;
+            }
+            set {
+                this.endTimePSRightAdjustedFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimePSRightAdjustedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> AmountPSRightCalculated {
+            get {
+                return this.amountPSRightCalculatedField;
+            }
+            set {
+                this.amountPSRightCalculatedField = value;
+                this.RaisePropertyChanged("AmountPSRightCalculated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountPSRightCalculatedSpecified {
+            get {
+                return this.amountPSRightCalculatedFieldSpecified;
+            }
+            set {
+                this.amountPSRightCalculatedFieldSpecified = value;
+                this.RaisePropertyChanged("AmountPSRightCalculatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> VATPSRightCalculated {
+            get {
+                return this.vATPSRightCalculatedField;
+            }
+            set {
+                this.vATPSRightCalculatedField = value;
+                this.RaisePropertyChanged("VATPSRightCalculated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATPSRightCalculatedSpecified {
+            get {
+                return this.vATPSRightCalculatedFieldSpecified;
+            }
+            set {
+                this.vATPSRightCalculatedFieldSpecified = value;
+                this.RaisePropertyChanged("VATPSRightCalculatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        public SpecifCalcAmountData[] SpecifCalcAmountList {
+            get {
+                return this.specifCalcAmountListField;
+            }
+            set {
+                this.specifCalcAmountListField = value;
+                this.RaisePropertyChanged("SpecifCalcAmountList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
+        public PSRightRemarkData[] PSRightRemarkList {
+            get {
+                return this.pSRightRemarkListField;
+            }
+            set {
+                this.pSRightRemarkListField = value;
+                this.RaisePropertyChanged("PSRightRemarkList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightEnrollRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdField;
+        
+        private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
+        
+        private bool countryCodeVehicleFieldSpecified;
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private PSRightEnrollRequestDataLocationPSRight locationPSRightField;
+        
+        private string sellingPointIdField;
+        
+        private string usageIdField;
+        
+        private System.DateTime startTimePSrightField;
+        
+        private System.Nullable<System.DateTime> endTimePSrightField;
+        
+        private bool endTimePSrightFieldSpecified;
+        
+        private PSRightWindowData[] pSRightWindowListField;
+        
+        private System.Nullable<decimal> amountPSrightField;
+        
+        private bool amountPSrightFieldSpecified;
+        
+        private System.Nullable<decimal> vATPSrightField;
+        
+        private bool vATPSrightFieldSpecified;
+        
+        private string referencePSRightField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
+            get {
+                return this.countryCodeVehicleField;
+            }
+            set {
+                this.countryCodeVehicleField = value;
+                this.RaisePropertyChanged("CountryCodeVehicle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountryCodeVehicleSpecified {
+            get {
+                return this.countryCodeVehicleFieldSpecified;
+            }
+            set {
+                this.countryCodeVehicleFieldSpecified = value;
+                this.RaisePropertyChanged("CountryCodeVehicleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public PSRightEnrollRequestDataLocationPSRight LocationPSRight {
+            get {
+                return this.locationPSRightField;
+            }
+            set {
+                this.locationPSRightField = value;
+                this.RaisePropertyChanged("LocationPSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=5)]
+        public string SellingPointId {
+            get {
+                return this.sellingPointIdField;
+            }
+            set {
+                this.sellingPointIdField = value;
+                this.RaisePropertyChanged("SellingPointId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public System.DateTime StartTimePSright {
+            get {
+                return this.startTimePSrightField;
+            }
+            set {
+                this.startTimePSrightField = value;
+                this.RaisePropertyChanged("StartTimePSright");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<System.DateTime> EndTimePSright {
+            get {
+                return this.endTimePSrightField;
+            }
+            set {
+                this.endTimePSrightField = value;
+                this.RaisePropertyChanged("EndTimePSright");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimePSrightSpecified {
+            get {
+                return this.endTimePSrightFieldSpecified;
+            }
+            set {
+                this.endTimePSrightFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimePSrightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
+        public PSRightWindowData[] PSRightWindowList {
+            get {
+                return this.pSRightWindowListField;
+            }
+            set {
+                this.pSRightWindowListField = value;
+                this.RaisePropertyChanged("PSRightWindowList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public System.Nullable<decimal> AmountPSright {
+            get {
+                return this.amountPSrightField;
+            }
+            set {
+                this.amountPSrightField = value;
+                this.RaisePropertyChanged("AmountPSright");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountPSrightSpecified {
+            get {
+                return this.amountPSrightFieldSpecified;
+            }
+            set {
+                this.amountPSrightFieldSpecified = value;
+                this.RaisePropertyChanged("AmountPSrightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<decimal> VATPSright {
+            get {
+                return this.vATPSrightField;
+            }
+            set {
+                this.vATPSrightField = value;
+                this.RaisePropertyChanged("VATPSright");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATPSrightSpecified {
+            get {
+                return this.vATPSrightFieldSpecified;
+            }
+            set {
+                this.vATPSrightFieldSpecified = value;
+                this.RaisePropertyChanged("VATPSrightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public string ReferencePSRight {
+            get {
+                return this.referencePSRightField;
+            }
+            set {
+                this.referencePSRightField = value;
+                this.RaisePropertyChanged("ReferencePSRight");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightEnrollRequestDataLocationPSRight : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal latitudeField;
+        
+        private decimal longitudeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public decimal Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+                this.RaisePropertyChanged("Latitude");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+                this.RaisePropertyChanged("Longitude");
             }
         }
         
@@ -5559,182 +5763,6 @@ namespace NPRPlusProviderService.RDW {
             set {
                 this.longitudeField = value;
                 this.RaisePropertyChanged("Longitude");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class PSRightRevokeResponseData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Nullable<System.DateTime> endTimePSRightAdjustedField;
-        
-        private bool endTimePSRightAdjustedFieldSpecified;
-        
-        private System.Nullable<decimal> amountPSRightCalculatedField;
-        
-        private bool amountPSRightCalculatedFieldSpecified;
-        
-        private System.Nullable<decimal> vATPSRightCalculatedField;
-        
-        private bool vATPSRightCalculatedFieldSpecified;
-        
-        private SpecifCalcAmountData[] specifCalcAmountListField;
-        
-        private PSRightRemarkData[] pSRightRemarkListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
-            get {
-                return this.endTimePSRightAdjustedField;
-            }
-            set {
-                this.endTimePSRightAdjustedField = value;
-                this.RaisePropertyChanged("EndTimePSRightAdjusted");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EndTimePSRightAdjustedSpecified {
-            get {
-                return this.endTimePSRightAdjustedFieldSpecified;
-            }
-            set {
-                this.endTimePSRightAdjustedFieldSpecified = value;
-                this.RaisePropertyChanged("EndTimePSRightAdjustedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<decimal> AmountPSRightCalculated {
-            get {
-                return this.amountPSRightCalculatedField;
-            }
-            set {
-                this.amountPSRightCalculatedField = value;
-                this.RaisePropertyChanged("AmountPSRightCalculated");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AmountPSRightCalculatedSpecified {
-            get {
-                return this.amountPSRightCalculatedFieldSpecified;
-            }
-            set {
-                this.amountPSRightCalculatedFieldSpecified = value;
-                this.RaisePropertyChanged("AmountPSRightCalculatedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public System.Nullable<decimal> VATPSRightCalculated {
-            get {
-                return this.vATPSRightCalculatedField;
-            }
-            set {
-                this.vATPSRightCalculatedField = value;
-                this.RaisePropertyChanged("VATPSRightCalculated");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool VATPSRightCalculatedSpecified {
-            get {
-                return this.vATPSRightCalculatedFieldSpecified;
-            }
-            set {
-                this.vATPSRightCalculatedFieldSpecified = value;
-                this.RaisePropertyChanged("VATPSRightCalculatedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
-        public SpecifCalcAmountData[] SpecifCalcAmountList {
-            get {
-                return this.specifCalcAmountListField;
-            }
-            set {
-                this.specifCalcAmountListField = value;
-                this.RaisePropertyChanged("SpecifCalcAmountList");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
-        public PSRightRemarkData[] PSRightRemarkList {
-            get {
-                return this.pSRightRemarkListField;
-            }
-            set {
-                this.pSRightRemarkListField = value;
-                this.RaisePropertyChanged("PSRightRemarkList");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class PSRightRevokeRequestData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string pSRightIdField;
-        
-        private System.DateTime endTimePSRightField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string PSRightId {
-            get {
-                return this.pSRightIdField;
-            }
-            set {
-                this.pSRightIdField = value;
-                this.RaisePropertyChanged("PSRightId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public System.DateTime EndTimePSRight {
-            get {
-                return this.endTimePSRightField;
-            }
-            set {
-                this.endTimePSRightField = value;
-                this.RaisePropertyChanged("EndTimePSRight");
             }
         }
         
@@ -6710,9 +6738,7 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class PSRightEnrollResponseData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string pSRightIdField;
+    public partial class CalculatePriceResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string areaManagerIdField;
         
@@ -6724,9 +6750,7 @@ namespace NPRPlusProviderService.RDW {
         
         private bool endTimePSRightAdjustedFieldSpecified;
         
-        private System.Nullable<decimal> amountPSRightCalculatedField;
-        
-        private bool amountPSRightCalculatedFieldSpecified;
+        private decimal amountPSRightCalculatedField;
         
         private System.Nullable<decimal> vATPSRightCalculatedField;
         
@@ -6737,19 +6761,7 @@ namespace NPRPlusProviderService.RDW {
         private PSRightRemarkData[] pSRightRemarkListField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string PSRightId {
-            get {
-                return this.pSRightIdField;
-            }
-            set {
-                this.pSRightIdField = value;
-                this.RaisePropertyChanged("PSRightId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
         public string AreaManagerId {
             get {
                 return this.areaManagerIdField;
@@ -6761,7 +6773,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string AreaId {
             get {
                 return this.areaIdField;
@@ -6773,7 +6785,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
         public string SellingPointId {
             get {
                 return this.sellingPointIdField;
@@ -6785,7 +6797,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
             get {
                 return this.endTimePSRightAdjustedField;
@@ -6809,8 +6821,8 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
-        public System.Nullable<decimal> AmountPSRightCalculated {
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal AmountPSRightCalculated {
             get {
                 return this.amountPSRightCalculatedField;
             }
@@ -6821,19 +6833,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AmountPSRightCalculatedSpecified {
-            get {
-                return this.amountPSRightCalculatedFieldSpecified;
-            }
-            set {
-                this.amountPSRightCalculatedFieldSpecified = value;
-                this.RaisePropertyChanged("AmountPSRightCalculatedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public System.Nullable<decimal> VATPSRightCalculated {
             get {
                 return this.vATPSRightCalculatedField;
@@ -6857,7 +6857,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
         public SpecifCalcAmountData[] SpecifCalcAmountList {
             get {
                 return this.specifCalcAmountListField;
@@ -6869,7 +6869,7 @@ namespace NPRPlusProviderService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
         public PSRightRemarkData[] PSRightRemarkList {
             get {
                 return this.pSRightRemarkListField;
@@ -6887,6 +6887,90 @@ namespace NPRPlusProviderService.RDW {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CalculatePriceRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class CalculatePriceRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRPlusProviderService.RDW.CalculatePriceRequestData CalculatePriceRequestData;
+        
+        public CalculatePriceRequest() {
+        }
+        
+        public CalculatePriceRequest(string PIN, NPRPlusProviderService.RDW.CalculatePriceRequestData CalculatePriceRequestData) {
+            this.PIN = PIN;
+            this.CalculatePriceRequestData = CalculatePriceRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CalculatePriceResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class CalculatePriceResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRPlusProviderService.RDW.CalculatePriceResponseData CalculatePriceResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public NPRPlusProviderService.RDW.CalculatePriceResponseError CalculatePriceResponseError;
+        
+        public CalculatePriceResponse() {
+        }
+        
+        public CalculatePriceResponse(NPRPlusProviderService.RDW.CalculatePriceResponseData CalculatePriceResponseData, NPRPlusProviderService.RDW.CalculatePriceResponseError CalculatePriceResponseError) {
+            this.CalculatePriceResponseData = CalculatePriceResponseData;
+            this.CalculatePriceResponseError = CalculatePriceResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightCheckRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PSRightCheckRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRPlusProviderService.RDW.PSRightCheckRequestData PSRightCheckRequestData;
+        
+        public PSRightCheckRequest() {
+        }
+        
+        public PSRightCheckRequest(string PIN, NPRPlusProviderService.RDW.PSRightCheckRequestData PSRightCheckRequestData) {
+            this.PIN = PIN;
+            this.PSRightCheckRequestData = PSRightCheckRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightCheckResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PSRightCheckResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRPlusProviderService.RDW.PSRightCheckResponseData PSRightCheckResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public NPRPlusProviderService.RDW.PSRightCheckResponseError PSRightCheckResponseError;
+        
+        public PSRightCheckResponse() {
+        }
+        
+        public PSRightCheckResponse(NPRPlusProviderService.RDW.PSRightCheckResponseData PSRightCheckResponseData, NPRPlusProviderService.RDW.PSRightCheckResponseError PSRightCheckResponseError) {
+            this.PSRightCheckResponseData = PSRightCheckResponseData;
+            this.PSRightCheckResponseError = PSRightCheckResponseError;
         }
     }
     
@@ -6935,84 +7019,126 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightRevokeRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class PSRightRevokeRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReplyPSPhotoInfoRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class ReplyPSPhotoInfoRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
         public string PIN;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.PSRightRevokeRequestData PSRightRevokeRequestData;
+        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequestData ReplyPSPhotoInfoRequestData;
         
-        public PSRightRevokeRequest() {
+        public ReplyPSPhotoInfoRequest() {
         }
         
-        public PSRightRevokeRequest(string PIN, NPRPlusProviderService.RDW.PSRightRevokeRequestData PSRightRevokeRequestData) {
+        public ReplyPSPhotoInfoRequest(string PIN, NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequestData ReplyPSPhotoInfoRequestData) {
             this.PIN = PIN;
-            this.PSRightRevokeRequestData = PSRightRevokeRequestData;
+            this.ReplyPSPhotoInfoRequestData = ReplyPSPhotoInfoRequestData;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightRevokeResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class PSRightRevokeResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReplyPSPhotoInfoResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class ReplyPSPhotoInfoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.PSRightRevokeResponseData PSRightRevokeResponseData;
+        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfoResponseData;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
-        public NPRPlusProviderService.RDW.PSRightRevokeResponseError PSRightRevokeResponseError;
+        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError;
         
-        public PSRightRevokeResponse() {
+        public ReplyPSPhotoInfoResponse() {
         }
         
-        public PSRightRevokeResponse(NPRPlusProviderService.RDW.PSRightRevokeResponseData PSRightRevokeResponseData, NPRPlusProviderService.RDW.PSRightRevokeResponseError PSRightRevokeResponseError) {
-            this.PSRightRevokeResponseData = PSRightRevokeResponseData;
-            this.PSRightRevokeResponseError = PSRightRevokeResponseError;
+        public ReplyPSPhotoInfoResponse(NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfoResponseData, NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError) {
+            this.ReplyPSPhotoInfoResponseData = ReplyPSPhotoInfoResponseData;
+            this.ReplyPSPhotoInfoResponseError = ReplyPSPhotoInfoResponseError;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightCheckRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class PSRightCheckRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreaRegulationFareInfoRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveAreaRegulationFareInfoRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
         public string PIN;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.PSRightCheckRequestData PSRightCheckRequestData;
+        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequestData AreaArrangeAccountInfoRequestData;
         
-        public PSRightCheckRequest() {
+        public RetrieveAreaRegulationFareInfoRequest() {
         }
         
-        public PSRightCheckRequest(string PIN, NPRPlusProviderService.RDW.PSRightCheckRequestData PSRightCheckRequestData) {
+        public RetrieveAreaRegulationFareInfoRequest(string PIN, NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequestData AreaArrangeAccountInfoRequestData) {
             this.PIN = PIN;
-            this.PSRightCheckRequestData = PSRightCheckRequestData;
+            this.AreaArrangeAccountInfoRequestData = AreaArrangeAccountInfoRequestData;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightCheckResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class PSRightCheckResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreaRegulationFareInfoResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveAreaRegulationFareInfoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.PSRightCheckResponseData PSRightCheckResponseData;
+        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData AreaRegulationFareInfoResponseData;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
-        public NPRPlusProviderService.RDW.PSRightCheckResponseError PSRightCheckResponseError;
+        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError AreaRegulationFareInfoResponseError;
         
-        public PSRightCheckResponse() {
+        public RetrieveAreaRegulationFareInfoResponse() {
         }
         
-        public PSRightCheckResponse(NPRPlusProviderService.RDW.PSRightCheckResponseData PSRightCheckResponseData, NPRPlusProviderService.RDW.PSRightCheckResponseError PSRightCheckResponseError) {
-            this.PSRightCheckResponseData = PSRightCheckResponseData;
-            this.PSRightCheckResponseError = PSRightCheckResponseError;
+        public RetrieveAreaRegulationFareInfoResponse(NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData AreaRegulationFareInfoResponseData, NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError AreaRegulationFareInfoResponseError) {
+            this.AreaRegulationFareInfoResponseData = AreaRegulationFareInfoResponseData;
+            this.AreaRegulationFareInfoResponseError = AreaRegulationFareInfoResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreasByLocationRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveAreasByLocationRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRPlusProviderService.RDW.RetrieveAreasByLocationRequestData RetrieveAreasByLocationRequestData;
+        
+        public RetrieveAreasByLocationRequest() {
+        }
+        
+        public RetrieveAreasByLocationRequest(string PIN, NPRPlusProviderService.RDW.RetrieveAreasByLocationRequestData RetrieveAreasByLocationRequestData) {
+            this.PIN = PIN;
+            this.RetrieveAreasByLocationRequestData = RetrieveAreasByLocationRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreasByLocationResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveAreasByLocationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData RetrieveAreasByLocationResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError RetrieveAreasByLocationResponseError;
+        
+        public RetrieveAreasByLocationResponse() {
+        }
+        
+        public RetrieveAreasByLocationResponse(NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData RetrieveAreasByLocationResponseData, NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError RetrieveAreasByLocationResponseError) {
+            this.RetrieveAreasByLocationResponseData = RetrieveAreasByLocationResponseData;
+            this.RetrieveAreasByLocationResponseError = RetrieveAreasByLocationResponseError;
         }
     }
     
@@ -7145,126 +7271,42 @@ namespace NPRPlusProviderService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreaRegulationFareInfoRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class RetrieveAreaRegulationFareInfoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightRevokeRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PSRightRevokeRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
         public string PIN;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequestData AreaArrangeAccountInfoRequestData;
+        public NPRPlusProviderService.RDW.PSRightRevokeRequestData PSRightRevokeRequestData;
         
-        public RetrieveAreaRegulationFareInfoRequest() {
+        public PSRightRevokeRequest() {
         }
         
-        public RetrieveAreaRegulationFareInfoRequest(string PIN, NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequestData AreaArrangeAccountInfoRequestData) {
+        public PSRightRevokeRequest(string PIN, NPRPlusProviderService.RDW.PSRightRevokeRequestData PSRightRevokeRequestData) {
             this.PIN = PIN;
-            this.AreaArrangeAccountInfoRequestData = AreaArrangeAccountInfoRequestData;
+            this.PSRightRevokeRequestData = PSRightRevokeRequestData;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreaRegulationFareInfoResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class RetrieveAreaRegulationFareInfoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightRevokeResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PSRightRevokeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData AreaRegulationFareInfoResponseData;
+        public NPRPlusProviderService.RDW.PSRightRevokeResponseData PSRightRevokeResponseData;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
-        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError AreaRegulationFareInfoResponseError;
+        public NPRPlusProviderService.RDW.PSRightRevokeResponseError PSRightRevokeResponseError;
         
-        public RetrieveAreaRegulationFareInfoResponse() {
+        public PSRightRevokeResponse() {
         }
         
-        public RetrieveAreaRegulationFareInfoResponse(NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData AreaRegulationFareInfoResponseData, NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError AreaRegulationFareInfoResponseError) {
-            this.AreaRegulationFareInfoResponseData = AreaRegulationFareInfoResponseData;
-            this.AreaRegulationFareInfoResponseError = AreaRegulationFareInfoResponseError;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreasByLocationRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class RetrieveAreasByLocationRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-        public string PIN;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.RetrieveAreasByLocationRequestData RetrieveAreasByLocationRequestData;
-        
-        public RetrieveAreasByLocationRequest() {
-        }
-        
-        public RetrieveAreasByLocationRequest(string PIN, NPRPlusProviderService.RDW.RetrieveAreasByLocationRequestData RetrieveAreasByLocationRequestData) {
-            this.PIN = PIN;
-            this.RetrieveAreasByLocationRequestData = RetrieveAreasByLocationRequestData;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreasByLocationResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class RetrieveAreasByLocationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData RetrieveAreasByLocationResponseData;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
-        public NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError RetrieveAreasByLocationResponseError;
-        
-        public RetrieveAreasByLocationResponse() {
-        }
-        
-        public RetrieveAreasByLocationResponse(NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData RetrieveAreasByLocationResponseData, NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError RetrieveAreasByLocationResponseError) {
-            this.RetrieveAreasByLocationResponseData = RetrieveAreasByLocationResponseData;
-            this.RetrieveAreasByLocationResponseError = RetrieveAreasByLocationResponseError;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ReplyPSPhotoInfoRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class ReplyPSPhotoInfoRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-        public string PIN;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequestData ReplyPSPhotoInfoRequestData;
-        
-        public ReplyPSPhotoInfoRequest() {
-        }
-        
-        public ReplyPSPhotoInfoRequest(string PIN, NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequestData ReplyPSPhotoInfoRequestData) {
-            this.PIN = PIN;
-            this.ReplyPSPhotoInfoRequestData = ReplyPSPhotoInfoRequestData;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ReplyPSPhotoInfoResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class ReplyPSPhotoInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfoResponseData;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
-        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError;
-        
-        public ReplyPSPhotoInfoResponse() {
-        }
-        
-        public ReplyPSPhotoInfoResponse(NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfoResponseData, NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError) {
-            this.ReplyPSPhotoInfoResponseData = ReplyPSPhotoInfoResponseData;
-            this.ReplyPSPhotoInfoResponseError = ReplyPSPhotoInfoResponseError;
+        public PSRightRevokeResponse(NPRPlusProviderService.RDW.PSRightRevokeResponseData PSRightRevokeResponseData, NPRPlusProviderService.RDW.PSRightRevokeResponseError PSRightRevokeResponseError) {
+            this.PSRightRevokeResponseData = PSRightRevokeResponseData;
+            this.PSRightRevokeResponseError = PSRightRevokeResponseError;
         }
     }
     
@@ -7310,48 +7352,6 @@ namespace NPRPlusProviderService.RDW {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CalculatePriceRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class CalculatePriceRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-        public string PIN;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.CalculatePriceRequestData CalculatePriceRequestData;
-        
-        public CalculatePriceRequest() {
-        }
-        
-        public CalculatePriceRequest(string PIN, NPRPlusProviderService.RDW.CalculatePriceRequestData CalculatePriceRequestData) {
-            this.PIN = PIN;
-            this.CalculatePriceRequestData = CalculatePriceRequestData;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CalculatePriceResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
-    public partial class CalculatePriceResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
-        public NPRPlusProviderService.RDW.CalculatePriceResponseData CalculatePriceResponseData;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
-        public NPRPlusProviderService.RDW.CalculatePriceResponseError CalculatePriceResponseError;
-        
-        public CalculatePriceResponse() {
-        }
-        
-        public CalculatePriceResponse(NPRPlusProviderService.RDW.CalculatePriceResponseData CalculatePriceResponseData, NPRPlusProviderService.RDW.CalculatePriceResponseError CalculatePriceResponseError) {
-            this.CalculatePriceResponseData = CalculatePriceResponseData;
-            this.CalculatePriceResponseError = CalculatePriceResponseError;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IRegistrationChannel : NPRPlusProviderService.RDW.IRegistration, System.ServiceModel.IClientChannel {
     }
@@ -7380,31 +7380,17 @@ namespace NPRPlusProviderService.RDW {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        NPRPlusProviderService.RDW.PSRightEnrollResponse NPRPlusProviderService.RDW.IRegistration.EnrollPSRight(NPRPlusProviderService.RDW.PSRightEnrollRequest request) {
-            return base.Channel.EnrollPSRight(request);
+        NPRPlusProviderService.RDW.CalculatePriceResponse NPRPlusProviderService.RDW.IRegistration.CalculatePrice(NPRPlusProviderService.RDW.CalculatePriceRequest request) {
+            return base.Channel.CalculatePrice(request);
         }
         
-        public NPRPlusProviderService.RDW.PSRightEnrollResponseData EnrollPSRight(string PIN, NPRPlusProviderService.RDW.PSRightEnrollRequestData PSRightEnrollRequestData, out NPRPlusProviderService.RDW.PSRightEnrollResponseError PSRightEnrollResponseError) {
-            NPRPlusProviderService.RDW.PSRightEnrollRequest inValue = new NPRPlusProviderService.RDW.PSRightEnrollRequest();
+        public NPRPlusProviderService.RDW.CalculatePriceResponseData CalculatePrice(string PIN, NPRPlusProviderService.RDW.CalculatePriceRequestData CalculatePriceRequestData, out NPRPlusProviderService.RDW.CalculatePriceResponseError CalculatePriceResponseError) {
+            NPRPlusProviderService.RDW.CalculatePriceRequest inValue = new NPRPlusProviderService.RDW.CalculatePriceRequest();
             inValue.PIN = PIN;
-            inValue.PSRightEnrollRequestData = PSRightEnrollRequestData;
-            NPRPlusProviderService.RDW.PSRightEnrollResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).EnrollPSRight(inValue);
-            PSRightEnrollResponseError = retVal.PSRightEnrollResponseError;
-            return retVal.PSRightEnrollResponseData;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        NPRPlusProviderService.RDW.PSRightRevokeResponse NPRPlusProviderService.RDW.IRegistration.RevokePSRight(NPRPlusProviderService.RDW.PSRightRevokeRequest request) {
-            return base.Channel.RevokePSRight(request);
-        }
-        
-        public NPRPlusProviderService.RDW.PSRightRevokeResponseData RevokePSRight(string PIN, NPRPlusProviderService.RDW.PSRightRevokeRequestData PSRightRevokeRequestData, out NPRPlusProviderService.RDW.PSRightRevokeResponseError PSRightRevokeResponseError) {
-            NPRPlusProviderService.RDW.PSRightRevokeRequest inValue = new NPRPlusProviderService.RDW.PSRightRevokeRequest();
-            inValue.PIN = PIN;
-            inValue.PSRightRevokeRequestData = PSRightRevokeRequestData;
-            NPRPlusProviderService.RDW.PSRightRevokeResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).RevokePSRight(inValue);
-            PSRightRevokeResponseError = retVal.PSRightRevokeResponseError;
-            return retVal.PSRightRevokeResponseData;
+            inValue.CalculatePriceRequestData = CalculatePriceRequestData;
+            NPRPlusProviderService.RDW.CalculatePriceResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).CalculatePrice(inValue);
+            CalculatePriceResponseError = retVal.CalculatePriceResponseError;
+            return retVal.CalculatePriceResponseData;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7419,6 +7405,62 @@ namespace NPRPlusProviderService.RDW {
             NPRPlusProviderService.RDW.PSRightCheckResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).CheckPSRight(inValue);
             PSRightCheckResponseError = retVal.PSRightCheckResponseError;
             return retVal.PSRightCheckResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        NPRPlusProviderService.RDW.PSRightEnrollResponse NPRPlusProviderService.RDW.IRegistration.EnrollPSRight(NPRPlusProviderService.RDW.PSRightEnrollRequest request) {
+            return base.Channel.EnrollPSRight(request);
+        }
+        
+        public NPRPlusProviderService.RDW.PSRightEnrollResponseData EnrollPSRight(string PIN, NPRPlusProviderService.RDW.PSRightEnrollRequestData PSRightEnrollRequestData, out NPRPlusProviderService.RDW.PSRightEnrollResponseError PSRightEnrollResponseError) {
+            NPRPlusProviderService.RDW.PSRightEnrollRequest inValue = new NPRPlusProviderService.RDW.PSRightEnrollRequest();
+            inValue.PIN = PIN;
+            inValue.PSRightEnrollRequestData = PSRightEnrollRequestData;
+            NPRPlusProviderService.RDW.PSRightEnrollResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).EnrollPSRight(inValue);
+            PSRightEnrollResponseError = retVal.PSRightEnrollResponseError;
+            return retVal.PSRightEnrollResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponse NPRPlusProviderService.RDW.IRegistration.ReplyPSPhotoInfo(NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest request) {
+            return base.Channel.ReplyPSPhotoInfo(request);
+        }
+        
+        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfo(string PIN, NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequestData ReplyPSPhotoInfoRequestData, out NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError) {
+            NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest inValue = new NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest();
+            inValue.PIN = PIN;
+            inValue.ReplyPSPhotoInfoRequestData = ReplyPSPhotoInfoRequestData;
+            NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).ReplyPSPhotoInfo(inValue);
+            ReplyPSPhotoInfoResponseError = retVal.ReplyPSPhotoInfoResponseError;
+            return retVal.ReplyPSPhotoInfoResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponse NPRPlusProviderService.RDW.IRegistration.RetrieveAreaRegulationFareInfo(NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest request) {
+            return base.Channel.RetrieveAreaRegulationFareInfo(request);
+        }
+        
+        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData RetrieveAreaRegulationFareInfo(string PIN, NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequestData AreaArrangeAccountInfoRequestData, out NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError AreaRegulationFareInfoResponseError) {
+            NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest inValue = new NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest();
+            inValue.PIN = PIN;
+            inValue.AreaArrangeAccountInfoRequestData = AreaArrangeAccountInfoRequestData;
+            NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).RetrieveAreaRegulationFareInfo(inValue);
+            AreaRegulationFareInfoResponseError = retVal.AreaRegulationFareInfoResponseError;
+            return retVal.AreaRegulationFareInfoResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        NPRPlusProviderService.RDW.RetrieveAreasByLocationResponse NPRPlusProviderService.RDW.IRegistration.RetrieveAreasByLocation(NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest request) {
+            return base.Channel.RetrieveAreasByLocation(request);
+        }
+        
+        public NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData RetrieveAreasByLocation(string PIN, NPRPlusProviderService.RDW.RetrieveAreasByLocationRequestData RetrieveAreasByLocationRequestData, out NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError RetrieveAreasByLocationResponseError) {
+            NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest inValue = new NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest();
+            inValue.PIN = PIN;
+            inValue.RetrieveAreasByLocationRequestData = RetrieveAreasByLocationRequestData;
+            NPRPlusProviderService.RDW.RetrieveAreasByLocationResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).RetrieveAreasByLocation(inValue);
+            RetrieveAreasByLocationResponseError = retVal.RetrieveAreasByLocationResponseError;
+            return retVal.RetrieveAreasByLocationResponseData;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7464,45 +7506,17 @@ namespace NPRPlusProviderService.RDW {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponse NPRPlusProviderService.RDW.IRegistration.RetrieveAreaRegulationFareInfo(NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest request) {
-            return base.Channel.RetrieveAreaRegulationFareInfo(request);
+        NPRPlusProviderService.RDW.PSRightRevokeResponse NPRPlusProviderService.RDW.IRegistration.RevokePSRight(NPRPlusProviderService.RDW.PSRightRevokeRequest request) {
+            return base.Channel.RevokePSRight(request);
         }
         
-        public NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData RetrieveAreaRegulationFareInfo(string PIN, NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequestData AreaArrangeAccountInfoRequestData, out NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError AreaRegulationFareInfoResponseError) {
-            NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest inValue = new NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoRequest();
+        public NPRPlusProviderService.RDW.PSRightRevokeResponseData RevokePSRight(string PIN, NPRPlusProviderService.RDW.PSRightRevokeRequestData PSRightRevokeRequestData, out NPRPlusProviderService.RDW.PSRightRevokeResponseError PSRightRevokeResponseError) {
+            NPRPlusProviderService.RDW.PSRightRevokeRequest inValue = new NPRPlusProviderService.RDW.PSRightRevokeRequest();
             inValue.PIN = PIN;
-            inValue.AreaArrangeAccountInfoRequestData = AreaArrangeAccountInfoRequestData;
-            NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).RetrieveAreaRegulationFareInfo(inValue);
-            AreaRegulationFareInfoResponseError = retVal.AreaRegulationFareInfoResponseError;
-            return retVal.AreaRegulationFareInfoResponseData;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        NPRPlusProviderService.RDW.RetrieveAreasByLocationResponse NPRPlusProviderService.RDW.IRegistration.RetrieveAreasByLocation(NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest request) {
-            return base.Channel.RetrieveAreasByLocation(request);
-        }
-        
-        public NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData RetrieveAreasByLocation(string PIN, NPRPlusProviderService.RDW.RetrieveAreasByLocationRequestData RetrieveAreasByLocationRequestData, out NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError RetrieveAreasByLocationResponseError) {
-            NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest inValue = new NPRPlusProviderService.RDW.RetrieveAreasByLocationRequest();
-            inValue.PIN = PIN;
-            inValue.RetrieveAreasByLocationRequestData = RetrieveAreasByLocationRequestData;
-            NPRPlusProviderService.RDW.RetrieveAreasByLocationResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).RetrieveAreasByLocation(inValue);
-            RetrieveAreasByLocationResponseError = retVal.RetrieveAreasByLocationResponseError;
-            return retVal.RetrieveAreasByLocationResponseData;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponse NPRPlusProviderService.RDW.IRegistration.ReplyPSPhotoInfo(NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest request) {
-            return base.Channel.ReplyPSPhotoInfo(request);
-        }
-        
-        public NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfo(string PIN, NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequestData ReplyPSPhotoInfoRequestData, out NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError) {
-            NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest inValue = new NPRPlusProviderService.RDW.ReplyPSPhotoInfoRequest();
-            inValue.PIN = PIN;
-            inValue.ReplyPSPhotoInfoRequestData = ReplyPSPhotoInfoRequestData;
-            NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).ReplyPSPhotoInfo(inValue);
-            ReplyPSPhotoInfoResponseError = retVal.ReplyPSPhotoInfoResponseError;
-            return retVal.ReplyPSPhotoInfoResponseData;
+            inValue.PSRightRevokeRequestData = PSRightRevokeRequestData;
+            NPRPlusProviderService.RDW.PSRightRevokeResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).RevokePSRight(inValue);
+            PSRightRevokeResponseError = retVal.PSRightRevokeResponseError;
+            return retVal.PSRightRevokeResponseData;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7517,20 +7531,6 @@ namespace NPRPlusProviderService.RDW {
             NPRPlusProviderService.RDW.StatusRequestResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).StatusRequest(inValue);
             StatusRequestResponseError = retVal.StatusRequestResponseError;
             return retVal.StatusRequestResponseData;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        NPRPlusProviderService.RDW.CalculatePriceResponse NPRPlusProviderService.RDW.IRegistration.CalculatePrice(NPRPlusProviderService.RDW.CalculatePriceRequest request) {
-            return base.Channel.CalculatePrice(request);
-        }
-        
-        public NPRPlusProviderService.RDW.CalculatePriceResponseData CalculatePrice(string PIN, NPRPlusProviderService.RDW.CalculatePriceRequestData CalculatePriceRequestData, out NPRPlusProviderService.RDW.CalculatePriceResponseError CalculatePriceResponseError) {
-            NPRPlusProviderService.RDW.CalculatePriceRequest inValue = new NPRPlusProviderService.RDW.CalculatePriceRequest();
-            inValue.PIN = PIN;
-            inValue.CalculatePriceRequestData = CalculatePriceRequestData;
-            NPRPlusProviderService.RDW.CalculatePriceResponse retVal = ((NPRPlusProviderService.RDW.IRegistration)(this)).CalculatePrice(inValue);
-            CalculatePriceResponseError = retVal.CalculatePriceResponseError;
-            return retVal.CalculatePriceResponseData;
         }
     }
 }

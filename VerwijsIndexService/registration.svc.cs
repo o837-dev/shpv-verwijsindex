@@ -240,7 +240,8 @@ namespace Denion.WebService.VerwijsIndex
                 };
                 return;
             }
-            _requestid = DatabaseFunctions.RegisterRequest(null, _request.VehicleId, _request.CountryCodeVehicle.ToString(), gi.AreaManagerId, _request.StartTimePSright, gi.AreaId, null);
+            int paymentAuthorisationId = Functions.GenerateUniqueId();
+            _requestid = DatabaseFunctions.RegisterRequest(null, _request.VehicleId, _request.CountryCodeVehicle.ToString(), gi.AreaManagerId, _request.StartTimePSright, gi.AreaId, null, paymentAuthorisationId.ToString());
 
             ActivateAuthorisationRequest req = new ActivateAuthorisationRequest();
             ActivateAuthorisationResponse res = null;
@@ -251,7 +252,9 @@ namespace Denion.WebService.VerwijsIndex
                 req.CountryCode = _request.CountryCodeVehicle.Value.ToString();
             if (_request.EndTimePSright.HasValue)
                 req.EndDateTime = _request.EndTimePSright.Value;
-            //req.PaymentAuthorisationId = _request.
+
+            
+            req.PaymentAuthorisationId = paymentAuthorisationId;
             req.ProviderId = _request.ProviderId;
             req.VehicleId = _request.VehicleId;
             req.VehicleIdType = _request.VehicleIdType;
@@ -289,38 +292,29 @@ namespace Denion.WebService.VerwijsIndex
 
                                 Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, startDateTimeAdjusted, endDateTime, null, req.AreaId, req.VehicleIdType, null);
 
-                                DatabaseFunctions.UpdateAuthorisation(req.ProviderId, relayRes.PaymentAuthorisationId, null, _requestid, link, startDateTimeAdjusted);
+                                DatabaseFunctions.UpdateAuthorisation(req.ProviderId, paymentAuthorisationId.ToString(), null, _requestid, link, startDateTimeAdjusted);
 
                                 clnt.Close();
                                 break;
                             }
                         }
-                    }
-                    catch (Exception ex)
-                    {
+                    } catch (Exception ex) {
                         Database.Database.Log(string.Format("Exception on ActivateAuthorisation from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
-                    }
-                    finally
-                    {
+                    } finally {
                         if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
                             clnt.Close();
                     }
                 }
-            }
-            else
-            {
+            } else {
                 //_responsebase._responsebase.Log(string.Format("No contract found; area: {0}; startdate: {1}", gi.AreaManagerId, _request.StartDateTime));
                 //res.RemarkId = "115";
                 //_response.Remark = "No available contract";
             }
             
             // translate answer back
-            if (res != null)
-            {
-                if (res.Granted.HasValue)
-                {
-                    _response.PSRightEnrollResponseData = new PSRightEnrollResponseData
-                    {
+            if (res != null) {
+                if (res.Granted.HasValue) {
+                    _response.PSRightEnrollResponseData = new PSRightEnrollResponseData {
                         AmountPSright = _request.AmountPSright,
                         AmountPSrightSpecified = _request.AmountPSrightSpecified,
 
@@ -355,10 +349,8 @@ namespace Denion.WebService.VerwijsIndex
                         VATPSRightCalculatedSpecified = res.VAT.HasValue,
                     };
                 }
-                if (!string.IsNullOrEmpty(res.Remark))
-                {
-                    _response.PSRightEnrollResponseError = new PSRightEnrollResponseError
-                    {
+                if (!string.IsNullOrEmpty(res.Remark)) {
+                    _response.PSRightEnrollResponseError = new PSRightEnrollResponseError {
                         //AreaManagerId = "string",
                         //AreaTable = new Area_response[] { new Area_response() { UsageDesc = "string" } },
                         //CountryCodeVehicle = null,
@@ -374,28 +366,23 @@ namespace Denion.WebService.VerwijsIndex
             }
         }
 
-        public override void UnSettle()
-        {
+        public override void UnSettle() {
             throw new NotImplementedException();
         }
     }
 
-    class RevokePSRightWorker : Worker
-    {
+    class RevokePSRightWorker : Worker {
         /// <summary>
         /// Verzoek bericht
         /// </summary>
         private PSRightRevokeRequestData _request;
 
-        public override object Request
-        {
-            get
-            {
+        public override object Request {
+            get {
                 return _request;
             }
 
-            set
-            {
+            set {
                 _request = value as PSRightRevokeRequestData;
             }
         }
@@ -405,24 +392,19 @@ namespace Denion.WebService.VerwijsIndex
         /// </summary>
         private PSRightRevokeResponse _response;
 
-        public RevokePSRightWorker(PSRightRevokeRequestData pSRightRevokeRequestData)
-        {
+        public RevokePSRightWorker(PSRightRevokeRequestData pSRightRevokeRequestData) {
             _request = pSRightRevokeRequestData;
             _response = new PSRightRevokeResponse();
         }
 
-        public override object Result
-        {
-            get
-            {
+        public override object Result {
+            get {
                 return _response;
             }
         }
 
-        public override void Settle()
-        {
-            try
-            {
+        public override void Settle() {
+            try {
                 CancelAuthorisationRequest req = new CancelAuthorisationRequest();
                 CancelAuthorisationResponse res = null;
 
@@ -435,39 +417,33 @@ namespace Denion.WebService.VerwijsIndex
 
                 com.Parameters.Add("@AUTHORISATIONID", System.Data.SqlDbType.NVarChar, 50).Value = _request.PSRightId;
                 DataTable dt = Database.Database.ExecuteQuery(com);
-                if (dt != null && dt.Rows.Count == 1)
-                {
+                if (dt != null && dt.Rows.Count == 1) {
                     DataRow dr = dt.Rows[0];
 
                     req.AreaId = dr["AreaId"] as string;
                     req.AreaManagerId = dr["AreaManagerId"] as string;
                     req.CancelDateTime = _request.EndTimePSRight;
                     req.CountryCode = dr["CountryCode"] as string;
-                    req.PaymentAuthorisationId = _request.PSRightId;
+                    req.PaymentAuthorisationId = int.Parse(_request.PSRightId);
                     req.ProviderId = dr["ProviderId"] as string;
                     req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
                     req.VehicleIdType = dr["VehicleIdType"] as string;
 
                     // select parkingfacility from DB
                     Providers providers = DatabaseFunctions.ListOfParkingFacilities(req.AreaManagerId, req.AreaId, _request.EndTimePSRight);
-                    if (providers.Count > 0)
-                    {
-                        foreach (Provider p in providers)
-                        {
+                    if (providers.Count > 0) {
+                        foreach (Provider p in providers) {
                             ConsumerClient clnt = null;
-                            try
-                            {
+                            try {
                                 Timing t = new Timing("RegistrationService", "CancelAuthorisation", p.url);
                                 clnt = Service.Consumer(p.url);
 
                                 CancelAuthorisationResponse relayRes = clnt.CancelAuthorisation(req);
                                 t.Finish();
 
-                                if (relayRes != null)
-                                {
+                                if (relayRes != null) {
                                     res = relayRes;
-                                    if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId))
-                                    {
+                                    if (res.PaymentAuthorisationId != null) {
                                         bool nprRegistration = getNprRegistration(req.ProviderId, req.AreaManagerId);
                                         Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
 
@@ -483,7 +459,7 @@ namespace Denion.WebService.VerwijsIndex
                                             }
 
                                             res.Amount = res.Amount == null ? 0 : res.Amount;
-                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, startTime, endTime , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), res.PaymentAuthorisationId);
+                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, startTime, endTime , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), "" + res.PaymentAuthorisationId.Value);
                                             if (r.PSRightId != null)
                                                 PSRightID = r.PSRightId;
                                             if (!string.IsNullOrEmpty(r.Remark)) {
@@ -491,42 +467,33 @@ namespace Denion.WebService.VerwijsIndex
                                                 res.Remark = "Problem with NPR registration; " + r.Remark;
                                             }
                                         }
-                                        AuthorisationSettled(res.PaymentAuthorisationId, PSRightID);
+                                        AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);
 
                                         clnt.Close();
                                         break;
                                     }
                                 }
-                            }
-                            catch (Exception ex)
-                            {
+                            } catch (Exception ex) {
                                 Database.Database.Log(string.Format("Exception on CancelAuthorisation from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
-                            }
-                            finally
-                            {
+                            } finally {
                                 if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
                                     clnt.Close();
                             }
                         }
-                    }
-                    else
-                    {
+                    } else {
                         //_responsebase._responsebase.Log(string.Format("No contract found; area: {0}; startdate: {1}", _request.AreaManagerId, _request.StartDateTime));
                         //res.RemarkId = "115";
                         //_response.Remark = "No available contract";
                     }
 
                     // translate answer back
-                    if (res != null)
-                    {
+                    if (res != null) {
                         //res.CanceledDateTime
                         //res.Granted
                         //res.PaymentAuthorisationId
                         //res.ProviderId
-                        if (res.Granted.HasValue)
-                        {
-                            _response.PSRightRevokeResponseData = new PSRightRevokeResponseData
-                            {
+                        if (res.Granted.HasValue) {
+                            _response.PSRightRevokeResponseData = new PSRightRevokeResponseData {
                                 EndTimePSRightAdjusted = res.EndTimeAdjusted,
                                 EndTimePSRightAdjustedSpecified = res.EndTimeAdjusted.HasValue,
                                 StartTimePSRightAdjusted = res.StartTimeAdjusted,
@@ -534,44 +501,34 @@ namespace Denion.WebService.VerwijsIndex
                                 //PSRightRemarkList = new PSRightRemarkData[] { new PSRightRemarkData { PSRightRemarkType = KindOfRemarksType.Item2 } },
                                 //SpecifCalcAmountList = new SpecifCalcAmountData[] { new SpecifCalcAmountData { RegulationId = "string" } },
                             };
-                            if (res.Amount.HasValue)
-                            {
+                            if (res.Amount.HasValue) {
                                 _response.PSRightRevokeResponseData.AmountPSRightCalculated = new decimal(res.Amount.Value);
                                 _response.PSRightRevokeResponseData.AmountPSRightCalculatedSpecified = res.Amount.HasValue;
                             }
-                            if (res.VAT.HasValue)
-                            {
+                            if (res.VAT.HasValue) {
                                 _response.PSRightRevokeResponseData.VATPSRightCalculated = new decimal(res.VAT.Value);
                                 _response.PSRightRevokeResponseData.VATPSRightCalculatedSpecified = res.VAT.HasValue;
                             }
                         }
                         //res.Remark
                         //res.RemarkId
-                        if (!string.IsNullOrEmpty(res.Remark))
-                        {
-                            _response.PSRightRevokeResponseError = new PSRightRevokeResponseError
-                            {
+                        if (!string.IsNullOrEmpty(res.Remark)) {
+                            _response.PSRightRevokeResponseError = new PSRightRevokeResponseError {
                                 ErrorCode = res.RemarkId,
                                 ErrorDesc = res.Remark,
                             };
                         }
                     }
-                }
-                else
-                {
-                    _response.PSRightRevokeResponseError = new PSRightRevokeResponseError
-                    {
+                } else {
+                    _response.PSRightRevokeResponseError = new PSRightRevokeResponseError {
                         ErrorCode = "155",
                         ErrorDesc = "Authorisation was not found in the system"
                     };
                 }
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Database.Database.Log("RevokePSRightWorker error; " + ex.Message + "; " + ex.StackTrace);
 
-                _response.PSRightRevokeResponseError = new PSRightRevokeResponseError
-                {
+                _response.PSRightRevokeResponseError = new PSRightRevokeResponseError {
                     ErrorCode = "100",
                     ErrorDesc = "Internal error"
                 };
@@ -597,8 +554,7 @@ namespace Denion.WebService.VerwijsIndex
             return false;
         }
 
-        private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
-        {
+        private static void AuthorisationSettled(long PaymentAuthorisationId, object PSRightId) {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
@@ -608,8 +564,7 @@ namespace Denion.WebService.VerwijsIndex
             Database.Database.ExecuteQuery(com);
         }
 
-        public override void UnSettle()
-        {
+        public override void UnSettle() {
             throw new NotImplementedException();
         }
     }

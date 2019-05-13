@@ -601,8 +601,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de provider, verplicht
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = false, Order = 0)]
-
-        public string PaymentAuthorisationId { get; set; }
+        public int PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Code van de foutmelding of opmerking, optioneel
@@ -636,7 +635,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = false, Order = 1)]
-        public string PaymentAuthorisationId { get; set; }
+        public int PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht
