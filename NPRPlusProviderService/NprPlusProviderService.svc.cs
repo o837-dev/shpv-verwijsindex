@@ -32,7 +32,6 @@ namespace NPRPlusProviderService
             PSRightCheckResponseError RDWerr = checkRes.PSRightCheckResponseError;
             PSRightCheckResponseData RDWres = checkRes.PSRightCheckResponseData;
 
-
             // Handle the response
             if (RDWerr != null) {
                 Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
@@ -40,7 +39,7 @@ namespace NPRPlusProviderService
                 Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
                 data.Remark = "NPR provider service error";
                 data.RemarkId = "20";
-            } else if (RDWres != null) {
+            } else if (RDWres != null) {    
                 if (RDWres.CheckAnswer == IndicatorYNType.y || RDWres.CheckAnswer == IndicatorYNType.Y) {
                     if (RDWres.InformationalMessage != null) {
                         Database.Log("RDWINF; CODE: " + RDWres.InformationalMessage.ErrorCode + "; DESC: " + RDWres.InformationalMessage.ErrorDesc);
@@ -57,7 +56,8 @@ namespace NPRPlusProviderService
                         else if (right.EndTimePSRight.HasValue)
                             data.AuthorisationValidUntil = Denion.WebService.Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
 
-                        data.PaymentAuthorisationId = right.PSRightId;
+                        // Generate unique ID
+                        data.PaymentAuthorisationId = Denion.WebService.Functions.GenerateUniqueId().ToString();
 
                         CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId);
                     }
