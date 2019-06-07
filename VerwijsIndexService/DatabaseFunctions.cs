@@ -57,9 +57,18 @@ namespace Denion.WebService.VerwijsIndex
                     }
                     else
                     {
-                        CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, req.ValidFrom, req.ValidUntil, null, req.AreaId, req.VehicleIdType, null);
-                        res.Remark = "Information; new link";
-                        res.RemarkId = "134";
+                        //Meedere overlappende links update laatste?
+                        Link lastLink = ls.Last();
+                        if (lastLink != null) {
+                            UpdateLink(req.CountryCode, null, req.ValidFrom, req.ValidUntil, null, lastLink.ID, req.VehicleIdType, null);
+                            res.Remark = "Information; update link";
+                            res.RemarkId = "137";
+                        } else { 
+                            //Zou niet voor mogen komen maar just in case 
+                            CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, req.ValidFrom, req.ValidUntil, null, req.AreaId, req.VehicleIdType, null);
+                            res.Remark = "Information; new link";
+                            res.RemarkId = "134";
+                        }
                     }
                 }
                 else if (ls.Count == 1)
