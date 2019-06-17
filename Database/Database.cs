@@ -57,6 +57,14 @@ namespace Denion.WebService.Database
             return rv;
         }
 
+        public static string LoggingServerConnectionString() {
+            if(ConfigurationManager.ConnectionStrings["Denion.WebService.Database.LoggingServer"] == null) {
+                return ConfigurationManager.ConnectionStrings["Denion.WebService.Database.SQLServer"].ConnectionString;
+            }
+
+            return ConfigurationManager.ConnectionStrings["Denion.WebService.Database.LoggingServer"].ConnectionString;
+        }
+
         public static object ExecuteScalar(string query)
         {
             SqlCommand com = new SqlCommand();
@@ -89,7 +97,7 @@ namespace Denion.WebService.Database
             com.Parameters.Add("@WEBSERVICE", SqlDbType.NVarChar, 200).Value = WebSerivceName;
 
             //Database.ExecuteScalar(com, true);
-            DatabaseQueue.Add(new QueueObject(com, true));
+            DatabaseQueue.Add(new QueueObject(com, true, LoggingServerConnectionString()));
         }
 
         public static void Log(string Message)
@@ -99,7 +107,7 @@ namespace Denion.WebService.Database
             com.Parameters.Add("@MESSAGE", SqlDbType.NVarChar, 4000).Value = Message.Substring(0, Math.Min(Message.Length, 3999));
             com.Parameters.Add("@RECEIVED", SqlDbType.DateTime, 100).Value = DateTime.Now;
 
-            DatabaseQueue.Add(new QueueObject(com, false));
+            DatabaseQueue.Add(new QueueObject(com, false, LoggingServerConnectionString()));
         }
 
         public static object GetProperty(string PropertyName)
@@ -119,7 +127,18 @@ namespace Denion.WebService.Database
             return ExecuteQuery(com);
         }
 
-        public static DataTable ExecuteQuery(SqlCommand com)
+        public static DataTable ExecuteQuery(string query, string connectionString) {
+            SqlCommand com = new SqlCommand();
+            com.CommandText = query;
+
+            return ExecuteQuery(com, connectionString);
+        }
+
+        public static DataTable ExecuteQuery(SqlCommand com) {
+            return ExecuteQuery(com, ConfigurationManager.ConnectionStrings["Denion.WebService.Database.SqlServer"].ConnectionString);
+        }
+
+        public static DataTable ExecuteQuery(SqlCommand com, string connectionString)
         {
             SqlConnection con = new SqlConnection();
             DataTable rv = null;
@@ -133,7 +152,7 @@ namespace Denion.WebService.Database
                 //    }
                 //}
 
-                con.ConnectionString = string.Format(ConfigurationManager.ConnectionStrings["Denion.WebService.Database.SqlServer"].ConnectionString, Environment.MachineName);
+                con.ConnectionString = string.Format(connectionString, Environment.MachineName);
                 con.Open();
 
                 DataSet ds = new DataSet();
@@ -173,6 +192,10 @@ namespace Denion.WebService.Database
         public static DataTable DescTable(string table)
         {
             return ExecuteQuery("Select top 0 * FROM " + table);
+        }
+
+        public static DataTable DescTable(string table, string connectionString) {
+            return ExecuteQuery("Select top 0 * FROM " + table, connectionString);
         }
 
         public static int CountRecords(string table)
