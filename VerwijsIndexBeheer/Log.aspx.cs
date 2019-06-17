@@ -52,13 +52,13 @@ namespace Denion.WebService.Beheer
                     DataView dv = null;
                     if (descOnly)
                     {
-                        dv = new DataView(Database.Database.DescTable(table));
+                        dv = new DataView(Database.Database.DescTable(table, Database.Database.LoggingServerConnectionString()));
                         dv.AddNew();
                     }
                     else
                     {
                         string SQL = "Select top 1000 * FROM " + table + ((!string.IsNullOrEmpty(filter)) ? " WHERE " + filter : string.Empty) + " ORDER BY RECEIVED DESC ";
-                        dv = new DataView(Database.Database.ExecuteQuery(SQL));
+                        dv = new DataView(Database.Database.ExecuteQuery(SQL, Database.Database.LoggingServerConnectionString()));
 
                         /*
                         DataTable dt = Denion.WebService.Database.Database.ShowTable(table);
