@@ -168,6 +168,9 @@ namespace Denion.WebService.VerwijsIndex
             //Handle unsigned certificates
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
 
+            if (System.Net.ServicePointManager.SecurityProtocol == (SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls))
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
             //HttpsTransportBindingElement httpsBinding = new HttpsTransportBindingElement();
             //httpsBinding.RequireClientCertificate = true;
             TransportBindingElement binder = GetTransportBinding(url);
