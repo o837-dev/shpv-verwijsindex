@@ -31,7 +31,7 @@ namespace Denion.WebService.VerwijsIndex
 
         private string vehicleIdType;
 
-        private int? psRightId;
+        private System.Nullable<int> psRightId;
 
         ///// <remarks/>
         //[System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 98)]
@@ -92,7 +92,7 @@ namespace Denion.WebService.VerwijsIndex
         }
 
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 101)]
-        public int? PSRightId {
+        public System.Nullable<int> PSRightId {
             get {
                 return this.psRightId;
             }

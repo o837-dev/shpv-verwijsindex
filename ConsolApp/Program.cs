@@ -14,7 +14,7 @@ namespace ConsolApp
         static void Main(string[] args)
         {
             //new ClassDesc();
-            new NPRPlusTest();
+            
             Environment.Exit(-2);
             //Debug.WriteLine(Denion.WebService.Cryptography.Rijndael.Decrypt("Pc44Um+B9AzSEwA5ANNkxQ=="));
 

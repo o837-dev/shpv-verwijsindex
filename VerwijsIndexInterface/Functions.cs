@@ -59,6 +59,7 @@ namespace Denion.WebService.VerwijsIndex
         {
             return ValidAreaManagerIds.Contains(areaManagerId.ToUpper());
         }
+        
         /// <summary>
         /// returns smallest date
         /// </summary>

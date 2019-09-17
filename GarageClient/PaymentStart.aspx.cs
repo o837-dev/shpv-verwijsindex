@@ -15,7 +15,13 @@ namespace GarageClient
         {
             try
             {
-                VerwijsIndexClient clnt = Service.PaymentClient(ConfigurationManager.AppSettings["VerwijsIndexURL"]);
+                Provider provider = new Provider {
+                    url = ConfigurationManager.AppSettings["VerwijsIndexURL"],
+                    NPRRegistration = true,
+                    id = "verwijsindex"
+                };
+
+                VerwijsIndexClient clnt = Service.PaymentClient(provider);
                 PaymentStartRequest req = request.Values as PaymentStartRequest;
                 PaymentStartResponse res = clnt.PaymentStart(req);
                 response.Data = res;

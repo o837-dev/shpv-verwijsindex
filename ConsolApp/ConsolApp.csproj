@@ -101,10 +101,8 @@
     <Compile Include="DataDing.cs" />
     <Compile Include="DateTimeDing.cs" />
     <Compile Include="DB.cs" />
-    <Compile Include="NPRPlusTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

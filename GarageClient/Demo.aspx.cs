@@ -24,7 +24,13 @@ namespace GarageClient
         }
 
         protected void imgPark_Click(object sender, ImageClickEventArgs e){
-            VerwijsIndexClient clnt = Service.PaymentClient(ConfigurationManager.AppSettings["VerwijsIndexURL"]);
+            Provider provider = new Provider {
+                url = ConfigurationManager.AppSettings["VerwijsIndexURL"],
+                NPRRegistration = true,
+                id = "verwijsindex"
+            };
+
+            VerwijsIndexClient clnt = Service.PaymentClient(provider);
 
             string antwoord = null; string err = null;
             string direction; string state;

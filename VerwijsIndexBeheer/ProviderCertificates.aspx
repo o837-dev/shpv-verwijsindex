@@ -50,6 +50,21 @@
                 <ControlStyle Width="95%" />
             </asp:TemplateField>
 
+            <asp:TemplateField HeaderText="NPRREGISTRATION">
+                <ItemTemplate>
+                    <center>
+                        <asp:CheckBox ID="chkNPRREGISTRATION" Enabled="false" Checked='<%# Bind("NPRREGISTRATION") %>' runat="server" /></center>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <center>
+                        <asp:CheckBox ID="chkNPRREGISTRATION" Checked='<%# Bind("NPRREGISTRATION") %>' runat="server" /></center>
+                </EditItemTemplate>
+                <FooterTemplate>
+                    <center>
+                        <asp:CheckBox ID="chkNPRREGISTRATION" runat="server" /></center>
+                </FooterTemplate>
+            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="CERTPIN">
                 <ItemTemplate>
                     <center>

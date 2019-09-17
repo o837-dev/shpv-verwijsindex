@@ -301,6 +301,7 @@ namespace Denion.WebService.VerwijsIndex
                     if (providers.Count > 0) {
                         foreach (Provider p in providers) {
                             if (_aborted) break;
+                            
 
                             Link link = DatabaseFunctions.GetLink(p.id, _request.VehicleId, _request.StartDateTime, _request.EndDateTime, _request.Amount, _request.AreaId, true, _request.VehicleIdType);
                             //if (linkid != null)
@@ -318,7 +319,7 @@ namespace Denion.WebService.VerwijsIndex
                             }
 
                             //Database.Database.Log("[PaymentStart] Checking: " + p.description);
-
+                            Database.Database.Log("[Provider]: " + p.id);
                             PaymentStartResponse relayRes = WorkerFunctions.PaymentStartWrapper(p, _request);
 
                             if (relayRes != null) {
@@ -546,7 +547,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentStart", p.url);
-                clnt = Service.PaymentClient(p.url);
+                clnt = Service.PaymentClient(p);
 
                 response = clnt.PaymentStart(request);
                 t.Finish();
@@ -575,7 +576,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentCheck", p.url);
-                clnt = Service.PaymentClient(p.url);
+                clnt = Service.PaymentClient(p);
 
                 response = clnt.PaymentCheck(request);
                 t.Finish();
@@ -603,7 +604,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentEnd", p.url);
-                clnt = Service.PaymentClient(p.url);
+                clnt = Service.PaymentClient(p);
 
                 response = clnt.PaymentEnd(request);
                 t.Finish();
@@ -652,7 +653,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 // make the call
                 Timing t = new Timing("VerwijsIndexService", "ActivateEnroll", p.url);
-                clnt = Service.NPRPlusClient(p.url);
+                clnt = Service.NPRPlusClient(p);
                 res = clnt.ActivateEnroll("", req, out err);
                 t.Finish();
 
@@ -701,7 +702,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 // make the call
                 Timing t = new Timing("VerwijsIndexService", "CheckPSRight", p.url);
-                clnt = Service.NPRPlusClient(p.url);
+                clnt = Service.NPRPlusClient(p);
                 res = clnt.CheckPSRight("", req, out err);
                 t.Finish();
 
@@ -744,7 +745,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 // make the call
                 Timing t = new Timing("VerwijsIndexService", "RevokedByThirdParty", p.url);
-                clnt = Service.NPRPlusClient(p.url);
+                clnt = Service.NPRPlusClient(p);
                 res = clnt.RevokedByThirdParty("", req, out err);
                 t.Finish();
 

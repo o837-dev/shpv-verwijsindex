@@ -252,12 +252,13 @@ namespace Denion.WebService
             return client;
         }
 
-        internal static X509Certificate2 GetCertificate(string provider)
+        internal static X509Certificate2 GetCertificate(string provider, Boolean nprRegistration = true)
         {
             X509Certificate2 cert = null;
             SqlCommand com = new SqlCommand();
-            com.CommandText = "SELECT top 1 [CERTIFICATE], [CERTPIN] FROM [ProviderNPRCertificate] where PROVIDER=@PROVIDER and CURRENT_TIMESTAMP between  [VALIDFROM] and [VALIDUNTIL]";
+            com.CommandText = "SELECT top 1 [CERTIFICATE], [CERTPIN] FROM [ProviderNPRCertificate] where PROVIDER=@PROVIDER and NPRREGISTRATION=@NPRREGISTRATION and CURRENT_TIMESTAMP between  [VALIDFROM] and [VALIDUNTIL]";
             com.Parameters.Add("@PROVIDER", SqlDbType.NVarChar, 100).Value = provider;
+            com.Parameters.Add("@NPRREGISTRATION", SqlDbType.Bit).Value = nprRegistration;
 
             DataTable dt = Database.Database.ExecuteQuery(com);
             if (dt != null && dt.Rows.Count > 0)
