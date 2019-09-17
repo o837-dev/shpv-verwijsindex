@@ -10,40 +10,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>08/14/2019 10:28:29</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>08/14/2019 10:28:29</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>09/17/2019 11:07:42</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>09/17/2019 11:07:42</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.dll">
-      <publishTime>03/13/2019 13:11:51</publishTime>
+      <publishTime>09/17/2019 15:37:10</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.pdb">
-      <publishTime>03/13/2019 13:11:51</publishTime>
+      <publishTime>09/17/2019 15:37:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>03/13/2019 13:11:50</publishTime>
+      <publishTime>09/17/2019 14:36:09</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>03/06/2019 15:26:36</publishTime>
+      <publishTime>06/07/2019 13:44:08</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>03/13/2019 13:11:50</publishTime>
+      <publishTime>09/17/2019 14:36:09</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>03/13/2019 13:11:50</publishTime>
+      <publishTime>09/17/2019 15:09:46</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>03/13/2019 13:11:50</publishTime>
+      <publishTime>09/17/2019 15:09:46</publishTime>
     </File>
     <File Include="Functions.cs">
       <publishTime>11/09/2018 12:06:18</publishTime>
@@ -169,7 +169,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/13/2019 13:04:34</publishTime>
+      <publishTime>09/17/2019 15:37:10</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
