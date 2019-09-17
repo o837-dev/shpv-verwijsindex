@@ -225,10 +225,11 @@ namespace Denion.WebService.VerwijsIndex
         private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
-            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
+            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID, LINKID=@LINKID where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.VarChar, 50).Value = PaymentAuthorisationId;
             com.Parameters.Add("@PSRIGHTID", SqlDbType.NVarChar, 50).Value = PSRightId;
+            com.Parameters.Add("@LINKID", SqlDbType.Int).Value = null;
 
             Database.Database.ExecuteQuery(com);
         }

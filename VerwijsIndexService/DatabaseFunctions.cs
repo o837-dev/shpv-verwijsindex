@@ -23,27 +23,31 @@ namespace Denion.WebService.VerwijsIndex
             Providers provs = GetProviders2(req);
             if (provs.Count > 0) //if (VerifyProvider(req))
             {
-                Links ls = GetLinks2(req);
+                Links overlappingLinks = GetLinks2(req);
 
-                for (int i = ls.Count-1; i >= 0; i--)
+                for (int i = overlappingLinks.Count-1; i >= 0; i--)
                 {
-                    Link l = ls[i];
+                    Link l = overlappingLinks[i];
                     TimeRange rLink = new TimeRange(l.STARTDATE, l.ENDDATE);
                     TimeRange rReq = new TimeRange(req.ValidFrom, req.ValidUntil);
+                    //Database.Database.Log("overlap link " + l.STARTDATE + " - " + l.ENDDATE);
+                    //Database.Database.Log("request link " + req.ValidFrom + " - " + req.ValidUntil);
+                    //Database.Database.Log("Overlap? = " + rLink.OverlapsWith(rReq));
+                    //Database.Database.Log("----------------------------------------------");
                     if (!rLink.OverlapsWith(rReq))
                     {
-                        ls.Remove(l);
+                        overlappingLinks.Remove(l);
                     }
                 }
 
 
-                if (ls.Count == 0)
+                if (overlappingLinks.Count == 0)
                 {
                     CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, req.ValidFrom, req.ValidUntil, null, req.AreaId, req.VehicleIdType, null);
                     res.Remark = "Information; new link";
                     res.RemarkId = "131";
                 }
-                else if (ls.Count > 1)
+                else if (overlappingLinks.Count > 1)
                 {
                     if (provs.Where(s => s.linkType == Provider.LinkType.eXclusive).Count() > 0)
                     {
@@ -54,13 +58,14 @@ namespace Denion.WebService.VerwijsIndex
                     {
                         res.Remark = "Exception; Multiple candidates with Overrule LinkType";
                         res.RemarkId = "133";
+                        //TODO Overrule zou oude moeten vervangen
                     }
                     else
                     {
                         //Meedere overlappende links update laatste?
-                        Link lastLink = ls.Last();
-                        if (lastLink != null) {
-                            UpdateLink(req.CountryCode, null, req.ValidFrom, req.ValidUntil, null, lastLink.ID, req.VehicleIdType, null);
+                        Link existingLink = overlappingLinks.Last();
+                        if (existingLink != null) {
+                            UpdateLink(req.CountryCode, null, req.ValidFrom, req.ValidUntil, null, existingLink.ID, req.VehicleIdType, null);
                             res.Remark = "Information; update link";
                             res.RemarkId = "137";
                         } else { 
@@ -71,11 +76,11 @@ namespace Denion.WebService.VerwijsIndex
                         }
                     }
                 }
-                else if (ls.Count == 1)
+                else if (overlappingLinks.Count == 1)
                 {
-                    Link l = ls.First();
+                    Link l = overlappingLinks.First();
 
-                    if (l.PROVIDERID != req.ProviderId && provs.Where(s => s.linkType == Provider.LinkType.eXclusive).Count() > 0)
+                    if (provs.Where(s => s.linkType == Provider.LinkType.eXclusive && s.id != req.ProviderId).Count() > 0)
                     {
                         // overlap, doe niets
                         res.Remark = "Exception; eXclusive LinkType, no update";
@@ -112,7 +117,7 @@ namespace Denion.WebService.VerwijsIndex
                     }
                     else
                     {
-                        //oude verloopt vanzelf, maak een nieuwe aan
+                        //een andere provider zonder exclusiviteit
                         CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, req.ValidFrom, req.ValidUntil, null, req.AreaId, req.VehicleIdType, null);
                         res.Remark = "Information; new link";
                         res.RemarkId = "138";
@@ -202,7 +207,7 @@ namespace Denion.WebService.VerwijsIndex
                             from Contract as c 
                             join Provider as p on  c.Providerid2 = p.PID
                             where p.ID = @PROVIDERID) as cs on c.AREAMANAGERID = cs.AREAMANAGERID and c.PRIORITY = cs.PRIORITY ) as pla on pla.ID = l.PROVIDERID
-                where l.VEHICLEID = @VEHICLEID && l.AREAID = @AREAID 
+                where l.VEHICLEID = @VEHICLEID and l.AREAID = @AREAID 
                 and (@STARTDATE between STARTDATE and ENDDATE OR @ENDDATE between STARTDATE and ENDDATE)"))
                 
             {
