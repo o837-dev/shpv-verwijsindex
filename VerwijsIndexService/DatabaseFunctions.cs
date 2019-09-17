@@ -561,6 +561,13 @@ namespace Denion.WebService.VerwijsIndex
             return Database.Database.ExecuteScalar(com);
         }
 
+        internal static Boolean checkForUniqueness(string paymentAuthorisationId) {
+            SqlCommand com = new SqlCommand();
+            com.CommandText = "SELECT count(*) from Authorisation where [AUTHORISATIONID] = @AUTHORISATIONID";
+            com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = paymentAuthorisationId;
+            return (int)Database.Database.ExecuteScalar(com) == 0;
+        }
+
         /// <summary>
         /// Remove unsettled registrations
         /// </summary>

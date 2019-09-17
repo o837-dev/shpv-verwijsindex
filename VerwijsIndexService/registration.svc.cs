@@ -240,7 +240,21 @@ namespace Denion.WebService.VerwijsIndex
                 };
                 return;
             }
-            int paymentAuthorisationId = Functions.GenerateUniqueId();
+            int? paymentAuthorisationId = _request.PSRightId;
+            //If PSRightId not send by provider than generate one 
+            if(paymentAuthorisationId == null) {
+                paymentAuthorisationId = Functions.GenerateUniqueId();
+            } else {
+                //Provider filled psRightId so check if not already exists
+                if(!DatabaseFunctions.checkForUniqueness(paymentAuthorisationId.ToString())) {
+                    _response.PSRightEnrollResponseError = new PSRightEnrollResponseError() {
+                        ErrorCode = "156",
+                        ErrorDesc = "PSRightId already exists in our system"
+                    };
+                    return;
+                }
+            }
+
             _requestid = DatabaseFunctions.RegisterRequest(null, _request.VehicleId, _request.CountryCodeVehicle.ToString(), gi.AreaManagerId, _request.StartTimePSright, gi.AreaId, null, paymentAuthorisationId.ToString());
 
             ActivateAuthorisationRequest req = new ActivateAuthorisationRequest();
