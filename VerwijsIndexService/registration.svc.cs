@@ -423,7 +423,7 @@ namespace Denion.WebService.VerwijsIndex
                 CancelAuthorisationResponse res = null;
 
                 SqlCommand com = new SqlCommand();
-                com.CommandText = @"Select c.id, a.ProviderId, c.DESCRIPTION, c.URL, a.STARTDATE, a.AREAID, a.AREAMANAGERID, a.VehicleId, a.CountryCode, a.VehicleIdType
+                com.CommandText = @"Select c.id, a.ProviderId, c.DESCRIPTION, c.URL, a.STARTDATE, a.AREAID, a.AREAMANAGERID, a.VehicleId, a.CountryCode, a.VehicleIdType, a.SETTLED
                     from Authorisation a 
                     join ConsumerContract cc on a.AREAMANAGERID= cc.AREAMANAGERID and a.AreaId = cc.AreaId and a.STARTDATE between cc.STARTDATE and cc.ENDDATE
                     join Consumer c on cc.CONSUMERID = c.CID 
@@ -434,103 +434,110 @@ namespace Denion.WebService.VerwijsIndex
                 if (dt != null && dt.Rows.Count == 1) {
                     DataRow dr = dt.Rows[0];
 
-                    req.AreaId = dr["AreaId"] as string;
-                    req.AreaManagerId = dr["AreaManagerId"] as string;
-                    req.CancelDateTime = _request.EndTimePSRight;
-                    req.CountryCode = dr["CountryCode"] as string;
-                    req.PaymentAuthorisationId = int.Parse(_request.PSRightId);
-                    req.ProviderId = dr["ProviderId"] as string;
-                    req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
-                    req.VehicleIdType = dr["VehicleIdType"] as string;
-
-                    // select parkingfacility from DB
-                    Providers providers = DatabaseFunctions.ListOfParkingFacilities(req.AreaManagerId, req.AreaId, _request.EndTimePSRight);
-                    if (providers.Count > 0) {
-                        foreach (Provider p in providers) {
-                            ConsumerClient clnt = null;
-                            try {
-                                Timing t = new Timing("RegistrationService", "CancelAuthorisation", p.url);
-                                clnt = Service.Consumer(p.url);
-
-                                CancelAuthorisationResponse relayRes = clnt.CancelAuthorisation(req);
-                                t.Finish();
-
-                                if (relayRes != null) {
-                                    res = relayRes;
-                                    if (res.PaymentAuthorisationId != null) {
-                                        bool nprRegistration = getNprRegistration(req.ProviderId, req.AreaManagerId);
-                                        Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
-
-                                        object PSRightID = DBNull.Value;
-                                        Database.Database.Log("NPR Registration? " + nprRegistration);
-                                        if (nprRegistration) {
-                                            DateTime endTime = res.EndTimeAdjusted != null? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
-                                            DateTime startTime = (DateTime)dr["STARTDATE"];
-                                       
-                                            if (endTime == null || endTime <= startTime)
-                                            {
-                                                endTime = startTime;
-                                            }
-
-                                            res.Amount = res.Amount == null ? 0 : res.Amount;
-                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, startTime, endTime , req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), "" + res.PaymentAuthorisationId.Value);
-                                            if (r.PSRightId != null)
-                                                PSRightID = r.PSRightId;
-                                            if (!string.IsNullOrEmpty(r.Remark)) {
-                                                res.RemarkId = "120";
-                                                res.Remark = "Problem with NPR registration; " + r.Remark;
-                                            }
-                                        }
-                                        AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);
-
-                                        clnt.Close();
-                                        break;
-                                    }
-                                }
-                            } catch (Exception ex) {
-                                Database.Database.Log(string.Format("Exception on CancelAuthorisation from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
-                            } finally {
-                                if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
-                                    clnt.Close();
-                            }
-                        }
+                    if ((Boolean)dr["SETTLED"] == true) {
+                        _response.PSRightRevokeResponseError = new PSRightRevokeResponseError {
+                            ErrorCode = "110",
+                            ErrorDesc = "Authorisation already settled"
+                        };
                     } else {
-                        //_responsebase._responsebase.Log(string.Format("No contract found; area: {0}; startdate: {1}", _request.AreaManagerId, _request.StartDateTime));
-                        //res.RemarkId = "115";
-                        //_response.Remark = "No available contract";
-                    }
 
-                    // translate answer back
-                    if (res != null) {
-                        //res.CanceledDateTime
-                        //res.Granted
-                        //res.PaymentAuthorisationId
-                        //res.ProviderId
-                        if (res.Granted.HasValue) {
-                            _response.PSRightRevokeResponseData = new PSRightRevokeResponseData {
-                                EndTimePSRightAdjusted = res.EndTimeAdjusted,
-                                EndTimePSRightAdjustedSpecified = res.EndTimeAdjusted.HasValue,
-                                StartTimePSRightAdjusted = res.StartTimeAdjusted,
-                                StartTimePSRightAdjustedSpecified = res.StartTimeAdjusted.HasValue,
-                                //PSRightRemarkList = new PSRightRemarkData[] { new PSRightRemarkData { PSRightRemarkType = KindOfRemarksType.Item2 } },
-                                //SpecifCalcAmountList = new SpecifCalcAmountData[] { new SpecifCalcAmountData { RegulationId = "string" } },
-                            };
-                            if (res.Amount.HasValue) {
-                                _response.PSRightRevokeResponseData.AmountPSRightCalculated = new decimal(res.Amount.Value);
-                                _response.PSRightRevokeResponseData.AmountPSRightCalculatedSpecified = res.Amount.HasValue;
+                        req.AreaId = dr["AreaId"] as string;
+                        req.AreaManagerId = dr["AreaManagerId"] as string;
+                        req.CancelDateTime = _request.EndTimePSRight;
+                        req.CountryCode = dr["CountryCode"] as string;
+                        req.PaymentAuthorisationId = int.Parse(_request.PSRightId);
+                        req.ProviderId = dr["ProviderId"] as string;
+                        req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
+                        req.VehicleIdType = dr["VehicleIdType"] as string;
+
+                        // select parkingfacility from DB
+                        Providers providers = DatabaseFunctions.ListOfParkingFacilities(req.AreaManagerId, req.AreaId, _request.EndTimePSRight);
+                        if (providers.Count > 0) {
+                            foreach (Provider p in providers) {
+                                ConsumerClient clnt = null;
+                                try {
+                                    Timing t = new Timing("RegistrationService", "CancelAuthorisation", p.url);
+                                    clnt = Service.Consumer(p.url);
+
+                                    CancelAuthorisationResponse relayRes = clnt.CancelAuthorisation(req);
+                                    t.Finish();
+
+                                    if (relayRes != null) {
+                                        res = relayRes;
+                                        if (res.PaymentAuthorisationId != null) {
+                                            bool nprRegistration = getNprRegistration(req.ProviderId, req.AreaManagerId);
+                                            Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
+
+                                            object PSRightID = DBNull.Value;
+                                            Database.Database.Log("NPR Registration? " + nprRegistration);
+                                            if (nprRegistration) {
+                                                DateTime endTime = res.EndTimeAdjusted != null ? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
+                                                DateTime startTime = (DateTime)dr["STARTDATE"];
+
+                                                if (endTime == null || endTime <= startTime) {
+                                                    endTime = startTime;
+                                                }
+
+                                                res.Amount = res.Amount == null ? 0 : res.Amount;
+                                                RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, startTime, endTime, req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), "" + res.PaymentAuthorisationId.Value);
+                                                if (r.PSRightId != null)
+                                                    PSRightID = r.PSRightId;
+                                                if (!string.IsNullOrEmpty(r.Remark)) {
+                                                    res.RemarkId = "120";
+                                                    res.Remark = "Problem with NPR registration; " + r.Remark;
+                                                }
+                                            }
+                                            AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);
+
+                                            clnt.Close();
+                                            break;
+                                        }
+                                    }
+                                } catch (Exception ex) {
+                                    Database.Database.Log(string.Format("Exception on CancelAuthorisation from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
+                                } finally {
+                                    if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
+                                        clnt.Close();
+                                }
                             }
-                            if (res.VAT.HasValue) {
-                                _response.PSRightRevokeResponseData.VATPSRightCalculated = new decimal(res.VAT.Value);
-                                _response.PSRightRevokeResponseData.VATPSRightCalculatedSpecified = res.VAT.HasValue;
-                            }
+                        } else {
+                            //_responsebase._responsebase.Log(string.Format("No contract found; area: {0}; startdate: {1}", _request.AreaManagerId, _request.StartDateTime));
+                            //res.RemarkId = "115";
+                            //_response.Remark = "No available contract";
                         }
-                        //res.Remark
-                        //res.RemarkId
-                        if (!string.IsNullOrEmpty(res.Remark)) {
-                            _response.PSRightRevokeResponseError = new PSRightRevokeResponseError {
-                                ErrorCode = res.RemarkId,
-                                ErrorDesc = res.Remark,
-                            };
+
+                        // translate answer back
+                        if (res != null) {
+                            //res.CanceledDateTime
+                            //res.Granted
+                            //res.PaymentAuthorisationId
+                            //res.ProviderId
+                            if (res.Granted.HasValue) {
+                                _response.PSRightRevokeResponseData = new PSRightRevokeResponseData {
+                                    EndTimePSRightAdjusted = res.EndTimeAdjusted,
+                                    EndTimePSRightAdjustedSpecified = res.EndTimeAdjusted.HasValue,
+                                    StartTimePSRightAdjusted = res.StartTimeAdjusted,
+                                    StartTimePSRightAdjustedSpecified = res.StartTimeAdjusted.HasValue,
+                                    //PSRightRemarkList = new PSRightRemarkData[] { new PSRightRemarkData { PSRightRemarkType = KindOfRemarksType.Item2 } },
+                                    //SpecifCalcAmountList = new SpecifCalcAmountData[] { new SpecifCalcAmountData { RegulationId = "string" } },
+                                };
+                                if (res.Amount.HasValue) {
+                                    _response.PSRightRevokeResponseData.AmountPSRightCalculated = new decimal(res.Amount.Value);
+                                    _response.PSRightRevokeResponseData.AmountPSRightCalculatedSpecified = res.Amount.HasValue;
+                                }
+                                if (res.VAT.HasValue) {
+                                    _response.PSRightRevokeResponseData.VATPSRightCalculated = new decimal(res.VAT.Value);
+                                    _response.PSRightRevokeResponseData.VATPSRightCalculatedSpecified = res.VAT.HasValue;
+                                }
+                            }
+                            //res.Remark
+                            //res.RemarkId
+                            if (!string.IsNullOrEmpty(res.Remark)) {
+                                _response.PSRightRevokeResponseError = new PSRightRevokeResponseError {
+                                    ErrorCode = res.RemarkId,
+                                    ErrorDesc = res.Remark,
+                                };
+                            }
                         }
                     }
                 } else {

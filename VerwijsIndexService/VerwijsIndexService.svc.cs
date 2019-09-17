@@ -155,7 +155,7 @@ namespace Denion.WebService.VerwijsIndex
                 res.RemarkId = err.RemarkId;
             } else {
                 SqlCommand com = new SqlCommand();
-                com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL 
+                com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL, a.SETTLED
                     from Authorisation a join Provider p on a.PROVIDERID=p.ID
                     join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID and c.PROVIDERID2 = p.PID and a.STARTDATE between c.STARTDATE and c.ENDDATE
                     where a.AUTHORISATIONID=@AUTHORISATIONID and a.VEHICLEID=@VEHICLEID and a.PROVIDERID=@PROVIDERID"; //and a.SETTLED=@SETTLED";
@@ -174,30 +174,36 @@ namespace Denion.WebService.VerwijsIndex
                     foreach (DataRow dr in dt.Rows) {
                         Provider p = new Provider(dr);
 
-                        new Thread(() => {
-                            Thread.CurrentThread.IsBackground = true;
-                            //Bericht naar provider
-                            WorkerFunctions.PaymentEndWrapper(p, request);
-                        }).Start();
+                        if((Boolean)dr["SETTLED"] == true) {
+                            res.Remark = "Authorisation already settled";
+                            res.RemarkId = "110";
+                        } else { 
 
-                        if (request.PaymentAuthorisationId != null) {
-                            object PSRightID = DBNull.Value;
-                            Database.Database.Log("Payment end reg? " + p.NPRRegistration);
+                            new Thread(() => {
+                                Thread.CurrentThread.IsBackground = true;
+                                //Bericht naar provider
+                                WorkerFunctions.PaymentEndWrapper(p, request);
+                            }).Start();
 
-                            //Registratie in NPR
-                            if (p.NPRRegistration) {
-                                RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
-                                if (r.PSRightId != null)
-                                    PSRightID = r.PSRightId;
-                                if (!string.IsNullOrEmpty(r.Remark))
-                                {
-                                    res.RemarkId = "120";
-                                    res.Remark = "Problem with NPR registration; " + r.Remark;
+                            if (request.PaymentAuthorisationId != null) {
+                                object PSRightID = DBNull.Value;
+                                Database.Database.Log("Payment end reg? " + p.NPRRegistration);
+
+                                //Registratie in NPR
+                                if (p.NPRRegistration) {
+                                    RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
+                                    if (r.PSRightId != null)
+                                        PSRightID = r.PSRightId;
+                                    if (!string.IsNullOrEmpty(r.Remark))
+                                    {
+                                        res.RemarkId = "120";
+                                        res.Remark = "Problem with NPR registration; " + r.Remark;
+                                    }
                                 }
+                                AuthorisationSettled(request.PaymentAuthorisationId.ToString(), PSRightID);
+                                res.PaymentAuthorisationId = request.PaymentAuthorisationId;
+                                break;
                             }
-                            AuthorisationSettled(request.PaymentAuthorisationId.ToString(), PSRightID);
-                            res.PaymentAuthorisationId = request.PaymentAuthorisationId;
-                            break;
                         }
                     }
                 }
