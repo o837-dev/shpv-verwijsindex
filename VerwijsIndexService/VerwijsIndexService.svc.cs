@@ -229,7 +229,7 @@ namespace Denion.WebService.VerwijsIndex
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.VarChar, 50).Value = PaymentAuthorisationId;
             com.Parameters.Add("@PSRIGHTID", SqlDbType.NVarChar, 50).Value = PSRightId;
-            com.Parameters.Add("@LINKID", SqlDbType.Int).Value = null;
+            com.Parameters.Add("@LINKID", SqlDbType.Int).Value = DBNull.Value;
 
             Database.Database.ExecuteQuery(com);
         }

@@ -84,8 +84,10 @@ namespace Denion.WebService.VerwijsIndex
             VerwijsIndexClient clnt = new VerwijsIndexClient(GetBinding(provider.url), GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
 
-            //Add certificate to request/client if it is set in the ProviderCertificates management screen
-            clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+            if(!provider.url.Contains("localhost")) { 
+                //Add certificate to request/client if it is set in the ProviderCertificates management screen
+                clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+            }
 
             return clnt;
         }
@@ -189,8 +191,10 @@ namespace Denion.WebService.VerwijsIndex
             RegistrationPlusClient clnt = new RegistrationPlusClient(binding, GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
 
-            //Add certificate to request/client if it is set in the ProviderCertificates management screen
-            clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+            if (!provider.url.Contains("localhost")) {
+                //Add certificate to request/client if it is set in the ProviderCertificates management screen
+                clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+            }
 
             return clnt;
         }
