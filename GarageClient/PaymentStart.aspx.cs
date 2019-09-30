@@ -8,7 +8,9 @@ namespace GarageClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            request.Data = new PaymentStartRequest();
+            PaymentStartRequest data = new PaymentStartRequest();
+            data.StartDateTime = DateTime.UtcNow;
+            request.Data = data;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
