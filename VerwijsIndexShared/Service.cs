@@ -135,8 +135,16 @@ namespace Denion.WebService.VerwijsIndex
             ConsumerClient clnt = new ConsumerClient(GetBinding(url), GetEndPoint(url));
             if (url.Contains("ipcontrol"))
             {
-                clnt.ClientCredentials.UserName.UserName = "ShpvService";
-                clnt.ClientCredentials.UserName.Password = "jgpt%^35";
+                if (url.Contains("ext")) {
+                    //Production
+                    clnt.ClientCredentials.UserName.UserName = "Ext-FlintSHPV";
+                    clnt.ClientCredentials.UserName.Password = "c6e?qDBD*x";
+                } else {
+                    //Test
+                    clnt.ClientCredentials.UserName.UserName = "ShpvService";
+                    clnt.ClientCredentials.UserName.Password = "jgpt%^35";
+                }
+              
             }
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
             return clnt;
