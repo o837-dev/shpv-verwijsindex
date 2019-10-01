@@ -10,6 +10,14 @@ using System.Data.SqlClient;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 
+using System.Diagnostics;
+using System.Net.Mail;
+using System.Configuration;
+using System.Net.Mime;
+using System.Text;
+using System.Reflection;
+using System.ServiceModel;
+
 namespace NPRPlusProviderService
 {
     [LogBehavior]
@@ -32,7 +40,6 @@ namespace NPRPlusProviderService
             PSRightCheckResponseError RDWerr = checkRes.PSRightCheckResponseError;
             PSRightCheckResponseData RDWres = checkRes.PSRightCheckResponseData;
 
-
             // Handle the response
             if (RDWerr != null) {
                 Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
@@ -40,7 +47,7 @@ namespace NPRPlusProviderService
                 Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
                 data.Remark = "NPR provider service error";
                 data.RemarkId = "20";
-            } else if (RDWres != null) {
+            } else if (RDWres != null) {    
                 if (RDWres.CheckAnswer == IndicatorYNType.y || RDWres.CheckAnswer == IndicatorYNType.Y) {
                     if (RDWres.InformationalMessage != null) {
                         Database.Log("RDWINF; CODE: " + RDWres.InformationalMessage.ErrorCode + "; DESC: " + RDWres.InformationalMessage.ErrorDesc);
@@ -57,7 +64,8 @@ namespace NPRPlusProviderService
                         else if (right.EndTimePSRight.HasValue)
                             data.AuthorisationValidUntil = Denion.WebService.Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
 
-                        data.PaymentAuthorisationId = right.PSRightId;
+                        // Generate unique ID
+                        data.PaymentAuthorisationId = Denion.WebService.Functions.GenerateUniqueId().ToString();
 
                         CreateRegistration(request.ActivateEnrollRequestRequestData, data.PaymentAuthorisationId);
                     }
@@ -96,9 +104,162 @@ namespace NPRPlusProviderService
             
             data.PaymentAuthorisationId = request.RevokedByThirdPartyRequestRequestData.PaymentAuthorisationId;
 
+
             UpdateRegistration(request.RevokedByThirdPartyRequestRequestData);
+            SendEmail("RevokedByThirdPartyRequest Received", BuildObjectGrid(request.RevokedByThirdPartyRequestRequestData), ConfigurationManager.AppSettings["BezwaarBeroep.QNPRProviderEmail"]);
             return new RevokedByThirdPartyRequestResponse(data, error);
         }
+
+        public static void SendEmail(string subject, string message, string to) {
+            if (string.IsNullOrEmpty(ConfigurationManager.AppSettings["BezwaarBeroep.SMTPHost"]))
+                Log.Write("BezwaarBeroep.SMTPHost empty, not sending email", EventLogEntryType.Warning);
+            else {
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = ConfigurationManager.AppSettings["BezwaarBeroep.SMTPHost"];
+                smtp.Port = ConfigurationManager.AppSettings["BezwaarBeroep.SMTPPort"] != "" ? int.Parse(ConfigurationManager.AppSettings["BezwaarBeroep.SMTPPort"]) : 25;
+
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(String.Format(ConfigurationManager.AppSettings["BezwaarBeroep.SMTPFrom"], Environment.MachineName), "Parkeerregister.nl");
+                mail.To.Add(to);
+
+                mail.Subject = subject;
+                mail.IsBodyHtml = true;
+                message = message.Replace(Environment.NewLine, "<br />");
+                AlternateView htmlView = AlternateView.CreateAlternateViewFromString(message, new ContentType("text/html"));
+
+                mail.AlternateViews.Add(htmlView);
+
+                //mail.Body = message;
+
+                try {
+                    smtp.Send(mail);
+                } catch (Exception ex) {
+                    Log.Write(ex.ToString(), EventLogEntryType.Error);
+                }
+            }
+        }
+
+        public string BuildObjectGrid(Object o) {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<table class='childTable'>");
+
+            if (o.GetType().BaseType == typeof(Array)) {
+                sb.Append("<tr>");
+                sb.Append("<td>");
+
+                Array array = (Array)o;
+                foreach (var item in array) {
+                    sb.Append(BuildObjectGrid(item));
+                }
+
+                sb.Append("</td>");
+                sb.Append("</tr>");
+
+            } else {
+                // print all properties of object
+                foreach (PropertyInfo prop in o.GetType().GetProperties()) {
+                    // 11-04-2012 ADJ hide all fields ending with specified to save space
+                    if (!prop.ToString().EndsWith("Specified")) // header check
+                    {
+                        object value = prop.GetValue(o, null);
+                        if (value != null)  // empty prop value => don't show
+                        {
+                            // only print properties with values
+                            sb.Append(BuildMyObjectRow(o, prop));
+                        } else {
+                        }
+                    }
+                }
+            }
+
+            sb.Append("</table>");
+
+            return sb.ToString();
+        }
+
+        protected string BuildMyObjectRow(object o, PropertyInfo prop) {
+            StringBuilder sb = new StringBuilder();
+            int cntr = 0;
+            sb.Append("<tr>");
+
+            object value = prop.GetValue(o, null);
+            if ((prop.PropertyType.BaseType == typeof(Array)) && (value != null)) {
+                int id = cntr++;
+                sb.Append("<td class='simhead' onclick=\"expand(this, 'cell_" + id + "');\">" + prop.Name + " [+]</td>");
+
+                sb.Append("<td id='cell_" + id + "'  style='display: none;' >");
+                sb.Append(BuildObjectGrid(value));
+            } else if ((prop.PropertyType.BaseType == typeof(Object)) && (prop.PropertyType.Namespace.StartsWith("RDW")) && (value != null)) {
+                int id = cntr++;
+                sb.Append("<td class='simhead' onclick=\"expand(this, 'cell_" + id + "');\">" + prop.Name + " [+]</td>");
+
+                sb.Append("<td id='cell_" + id + "'  style='display: none;' >");
+                sb.Append(BuildObjectGrid(value));
+            } else {
+                string name = prop.Name;
+                sb.Append("<td class='simhead'>" + name + "</td>");
+
+                sb.Append("<td class='simbody'>");
+                if (value == null) value = "";
+                sb.Append(ObjectToString(value));
+            }
+            sb.Append("</td>");
+            sb.Append("</tr>");
+            return sb.ToString();
+        }
+
+        protected string BuildMyObjectRow(string key, object value) {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<tr>");
+
+            string name = name = key;
+            sb.Append("<td class='simhead'>" + name + "</td>");
+
+            sb.Append("<td class='simbody'>");
+            if (value == null) value = "";
+            sb.Append(ObjectToString(value));
+
+            sb.Append("</td>");
+            sb.Append("</tr>");
+            return sb.ToString();
+        }
+
+        protected string ObjectToString(object o) {
+            string localValue = null;
+            if (o.GetType() == typeof(DateTime)) {
+                DateTime currentUTC = Denion.WebService.Functions.DateTimeToLocalTimeZone(DateTime.Parse(o.ToString()));
+                localValue = currentUTC.ToShortDateString() + " " + currentUTC.ToShortTimeString();
+            } else {
+                localValue = o.ToString();
+            }
+            return localValue;
+        }
+
+        internal static class Log {
+            private static EventLog _eventLog;
+
+            static Log() {
+                string source = "QNPR service";
+                string logName = "Application";
+                _eventLog = new EventLog();
+                if (!EventLog.SourceExists(source)) {
+                    EventLog.CreateEventSource(source, logName);
+                }
+                _eventLog.Source = source;
+                _eventLog.Log = logName;
+            }
+
+            public static void Write(string text, EventLogEntryType type) {
+                if (Debugger.IsAttached) {
+                    Debug.WriteLine(DateTime.Now.ToLongTimeString() + " [" + type.ToString().Substring(0, 1) + "] " + text);
+                }
+                //Alert.Notify("[" + type.ToString().Substring(0, 1) + "] Uw aandacht voor het volgende", text, "h.tenhave@ictspirit.nl");
+                _eventLog.WriteEntry(text, type);
+
+            }
+
+        }
+
 
         private void CreateRegistration(ActivateEnrollRequestRequestData req, string AuthorisationId)
         {

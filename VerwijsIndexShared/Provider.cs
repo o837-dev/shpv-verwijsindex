@@ -55,7 +55,7 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// het id van de provider in kwestie
         /// </summary>
-        public string id { get; private set; }
+        public string id { get;  set; }
 
         /// <summary>
         /// prioriteit in koppeling
@@ -81,12 +81,12 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// omschrijving van de provider
         /// </summary>
-        public string description { get; private set; }
+        public string description { get;  set; }
 
         /// <summary>
         /// provider URL
         /// </summary>
-        public string url { get; private set; }
+        public string url { get;  set; }
 
         /// <summary>
         /// type koppeling
@@ -96,7 +96,7 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// Make a NPR registration if provider granted
         /// </summary>
-        public bool NPRRegistration { get; private set; }
+        public bool NPRRegistration { get;  set; }
         
         public LinkType linkType { get; private set; }
 
@@ -200,6 +200,9 @@ namespace Denion.WebService.VerwijsIndex
                 }
 
             }
+        }
+
+        public Provider() {
         }
 
         /// <summary>

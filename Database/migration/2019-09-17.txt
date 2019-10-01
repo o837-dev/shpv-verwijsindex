@@ -1,0 +1,2 @@
+﻿alter table [VerwijsIndex].[dbo].[ProviderNPRCertificate] add NPRREGISTRATION BIT default 0;
+update [VerwijsIndex].[dbo].[ProviderNPRCertificate] set NPRREGISTRATION = 0;

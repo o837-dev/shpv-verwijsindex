@@ -155,7 +155,7 @@ namespace Denion.WebService.VerwijsIndex
                 res.RemarkId = err.RemarkId;
             } else {
                 SqlCommand com = new SqlCommand();
-                com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL 
+                com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL, a.SETTLED
                     from Authorisation a join Provider p on a.PROVIDERID=p.ID
                     join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID and c.PROVIDERID2 = p.PID and a.STARTDATE between c.STARTDATE and c.ENDDATE
                     where a.AUTHORISATIONID=@AUTHORISATIONID and a.VEHICLEID=@VEHICLEID and a.PROVIDERID=@PROVIDERID"; //and a.SETTLED=@SETTLED";
@@ -174,30 +174,36 @@ namespace Denion.WebService.VerwijsIndex
                     foreach (DataRow dr in dt.Rows) {
                         Provider p = new Provider(dr);
 
-                        new Thread(() => {
-                            Thread.CurrentThread.IsBackground = true;
-                            //Bericht naar provider
-                            WorkerFunctions.PaymentEndWrapper(p, request);
-                        }).Start();
+                        if((Boolean)dr["SETTLED"] == true) {
+                            res.Remark = "Authorisation already settled";
+                            res.RemarkId = "110";
+                        } else { 
 
-                        if (request.PaymentAuthorisationId != null) {
-                            object PSRightID = DBNull.Value;
-                            Database.Database.Log("Payment end reg? " + p.NPRRegistration);
+                            new Thread(() => {
+                                Thread.CurrentThread.IsBackground = true;
+                                //Bericht naar provider
+                                WorkerFunctions.PaymentEndWrapper(p, request);
+                            }).Start();
 
-                            //Registratie in NPR
-                            if (p.NPRRegistration) {
-                                RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
-                                if (r.PSRightId != null)
-                                    PSRightID = r.PSRightId;
-                                if (!string.IsNullOrEmpty(r.Remark))
-                                {
-                                    res.RemarkId = "120";
-                                    res.Remark = "Problem with NPR registration; " + r.Remark;
+                            if (request.PaymentAuthorisationId != null) {
+                                object PSRightID = DBNull.Value;
+                                Database.Database.Log("Payment end reg? " + p.NPRRegistration);
+
+                                //Registratie in NPR
+                                if (p.NPRRegistration) {
+                                    RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
+                                    if (r.PSRightId != null)
+                                        PSRightID = r.PSRightId;
+                                    if (!string.IsNullOrEmpty(r.Remark))
+                                    {
+                                        res.RemarkId = "120";
+                                        res.Remark = "Problem with NPR registration; " + r.Remark;
+                                    }
                                 }
+                                AuthorisationSettled(request.PaymentAuthorisationId.ToString(), PSRightID);
+                                res.PaymentAuthorisationId = request.PaymentAuthorisationId;
+                                break;
                             }
-                            AuthorisationSettled(request.PaymentAuthorisationId.ToString(), PSRightID);
-                            res.PaymentAuthorisationId = request.PaymentAuthorisationId;
-                            break;
                         }
                     }
                 }
@@ -219,10 +225,11 @@ namespace Denion.WebService.VerwijsIndex
         private static void AuthorisationSettled(string PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
-            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
+            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID, LINKID=@LINKID where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.VarChar, 50).Value = PaymentAuthorisationId;
             com.Parameters.Add("@PSRIGHTID", SqlDbType.NVarChar, 50).Value = PSRightId;
+            com.Parameters.Add("@LINKID", SqlDbType.Int).Value = DBNull.Value;
 
             Database.Database.ExecuteQuery(com);
         }
@@ -301,6 +308,7 @@ namespace Denion.WebService.VerwijsIndex
                     if (providers.Count > 0) {
                         foreach (Provider p in providers) {
                             if (_aborted) break;
+                            
 
                             Link link = DatabaseFunctions.GetLink(p.id, _request.VehicleId, _request.StartDateTime, _request.EndDateTime, _request.Amount, _request.AreaId, true, _request.VehicleIdType);
                             //if (linkid != null)
@@ -318,7 +326,7 @@ namespace Denion.WebService.VerwijsIndex
                             }
 
                             //Database.Database.Log("[PaymentStart] Checking: " + p.description);
-
+                            Database.Database.Log("[Provider]: " + p.id);
                             PaymentStartResponse relayRes = WorkerFunctions.PaymentStartWrapper(p, _request);
 
                             if (relayRes != null) {
@@ -546,7 +554,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentStart", p.url);
-                clnt = Service.PaymentClient(p.url);
+                clnt = Service.PaymentClient(p);
 
                 response = clnt.PaymentStart(request);
                 t.Finish();
@@ -575,7 +583,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentCheck", p.url);
-                clnt = Service.PaymentClient(p.url);
+                clnt = Service.PaymentClient(p);
 
                 response = clnt.PaymentCheck(request);
                 t.Finish();
@@ -603,7 +611,7 @@ namespace Denion.WebService.VerwijsIndex
             try
             {
                 Timing t = new Timing("VerwijsIndexService", "PaymentEnd", p.url);
-                clnt = Service.PaymentClient(p.url);
+                clnt = Service.PaymentClient(p);
 
                 response = clnt.PaymentEnd(request);
                 t.Finish();
@@ -652,7 +660,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 // make the call
                 Timing t = new Timing("VerwijsIndexService", "ActivateEnroll", p.url);
-                clnt = Service.NPRPlusClient(p.url);
+                clnt = Service.NPRPlusClient(p);
                 res = clnt.ActivateEnroll("", req, out err);
                 t.Finish();
 
@@ -701,7 +709,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 // make the call
                 Timing t = new Timing("VerwijsIndexService", "CheckPSRight", p.url);
-                clnt = Service.NPRPlusClient(p.url);
+                clnt = Service.NPRPlusClient(p);
                 res = clnt.CheckPSRight("", req, out err);
                 t.Finish();
 
@@ -744,7 +752,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 // make the call
                 Timing t = new Timing("VerwijsIndexService", "RevokedByThirdParty", p.url);
-                clnt = Service.NPRPlusClient(p.url);
+                clnt = Service.NPRPlusClient(p);
                 res = clnt.RevokedByThirdParty("", req, out err);
                 t.Finish();
 

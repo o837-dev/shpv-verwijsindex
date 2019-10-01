@@ -6,6 +6,12 @@ using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading;
+using Denion.WebService;
+
+using System.Security.Cryptography.X509Certificates;
+using System.Data.SqlClient;
+using System.Data;
+using Denion.WebService.Cryptography;
 
 namespace Denion.WebService.VerwijsIndex
 {
@@ -70,13 +76,19 @@ namespace Denion.WebService.VerwijsIndex
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static VerwijsIndexClient PaymentClient(string url)
+        public static VerwijsIndexClient PaymentClient(Provider provider)
         {
             //Handle unsigned certificates
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
 
-            VerwijsIndexClient clnt = new VerwijsIndexClient(GetBinding(url), GetEndPoint(url));
+            VerwijsIndexClient clnt = new VerwijsIndexClient(GetBinding(provider.url), GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
+
+            if(!provider.url.Contains("localhost")) { 
+                //Add certificate to request/client if it is set in the ProviderCertificates management screen
+                clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+            }
+
             return clnt;
         }
 
@@ -123,8 +135,16 @@ namespace Denion.WebService.VerwijsIndex
             ConsumerClient clnt = new ConsumerClient(GetBinding(url), GetEndPoint(url));
             if (url.Contains("ipcontrol"))
             {
-                clnt.ClientCredentials.UserName.UserName = "ShpvService";
-                clnt.ClientCredentials.UserName.Password = "jgpt%^35";
+                if (url.Contains("ext")) {
+                    //Production
+                    clnt.ClientCredentials.UserName.UserName = "Ext-FlintSHPV";
+                    clnt.ClientCredentials.UserName.Password = "c6e?qDBD*x";
+                } else {
+                    //Test
+                    clnt.ClientCredentials.UserName.UserName = "ShpvService";
+                    clnt.ClientCredentials.UserName.Password = "jgpt%^35";
+                }
+              
             }
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
             return clnt;
@@ -163,7 +183,7 @@ namespace Denion.WebService.VerwijsIndex
             return clnt;
         }
 
-        public static RegistrationPlusClient NPRPlusClient(string url)
+        public static RegistrationPlusClient NPRPlusClient(Provider provider)
         {
             //Handle unsigned certificates
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
@@ -173,15 +193,42 @@ namespace Denion.WebService.VerwijsIndex
 
             //HttpsTransportBindingElement httpsBinding = new HttpsTransportBindingElement();
             //httpsBinding.RequireClientCertificate = true;
-            TransportBindingElement binder = GetTransportBinding(url);
+            TransportBindingElement binder = GetTransportBinding(provider.url);
 
             TextMessageEncodingBindingElement encoding = new TextMessageEncodingBindingElement();
             encoding.MessageVersion = MessageVersion.Soap11WSAddressing10;
             CustomBinding binding = new CustomBinding(encoding, binder);
 
-            RegistrationPlusClient clnt = new RegistrationPlusClient(binding, GetEndPoint(url));
+            RegistrationPlusClient clnt = new RegistrationPlusClient(binding, GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
+
+            if (!provider.url.Contains("localhost")) {
+                //Add certificate to request/client if it is set in the ProviderCertificates management screen
+                clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+            }
+
             return clnt;
+        }
+
+        internal static X509Certificate2 GetCertificate(string provider, Boolean nprRegistration = true) {
+            X509Certificate2 cert = null;
+            SqlCommand com = new SqlCommand();
+            com.CommandText = "SELECT top 1 [FILENAME], [CERTIFICATE], [CERTPIN] FROM [ProviderNPRCertificate] where PROVIDER=@PROVIDER and NPRREGISTRATION=@NPRREGISTRATION and CURRENT_TIMESTAMP between  [VALIDFROM] and [VALIDUNTIL]";
+            com.Parameters.Add("@PROVIDER", SqlDbType.NVarChar, 100).Value = provider;
+            com.Parameters.Add("@NPRREGISTRATION", SqlDbType.Bit).Value = nprRegistration;
+
+            DataTable dt = Database.Database.ExecuteQuery(com);
+            if (dt != null && dt.Rows.Count > 0) {
+                DataRow dr = dt.Rows[0];
+                byte[] certificate = dr["CERTIFICATE"] as byte[];
+                string certPin = dr["CERTPIN"] as string;
+                string filename = dr["FILENAME"] as string;
+
+                Database.Database.Log("Getcert: " + filename);
+
+                cert = new X509Certificate2(certificate, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);
+            }
+            return cert;
         }
 
         public static StatusResponse ServiceStatus()

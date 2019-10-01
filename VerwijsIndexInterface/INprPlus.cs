@@ -31,6 +31,8 @@ namespace Denion.WebService.VerwijsIndex
 
         private string vehicleIdType;
 
+        private System.Nullable<int> psRightId;
+
         ///// <remarks/>
         //[System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 98)]
         //public System.Nullable<System.DateTime> StartTimeAdjusted
@@ -86,6 +88,17 @@ namespace Denion.WebService.VerwijsIndex
             {
                 this.providerId = value;
                 this.RaisePropertyChanged("ProviderId");
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 101)]
+        public System.Nullable<int> PSRightId {
+            get {
+                return this.psRightId;
+            }
+            set {
+                this.psRightId = value;
+                this.RaisePropertyChanged("PSRightId");
             }
         }
     }

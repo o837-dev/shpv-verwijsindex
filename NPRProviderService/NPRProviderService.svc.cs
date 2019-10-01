@@ -123,7 +123,8 @@ namespace Denion.WebService
                         else if (right.EndTimePSRight.HasValue)
                             res.AuthorisationValidUntil = Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
 
-                        res.PaymentAuthorisationId = DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId;
+                        res.PaymentAuthorisationId = Functions.GenerateUniqueId().ToString();
+                        // res.PaymentAuthorisationId = DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId; Generaties kind of GUID
 
                         CreateRegistration(req, res.PaymentAuthorisationId);
                     }

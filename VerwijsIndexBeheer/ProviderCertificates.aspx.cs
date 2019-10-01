@@ -55,16 +55,24 @@ namespace Denion.WebService.Beheer
             GridViewRow row = grd.Rows[grd.EditIndex];
             Dictionary<string, object> dic = ValuesFromRow(row);
 
-            string sql = "update ProviderNPRCertificate set PROVIDER=@PROVIDER, VALIDFROM=@VALIDFROM, VALIDUNTIL=@VALIDUNTIL where ID=@ID";
+            string sql = "update ProviderNPRCertificate set PROVIDER=@PROVIDER, VALIDFROM=@VALIDFROM, VALIDUNTIL=@VALIDUNTIL, NPRREGISTRATION=@NPRREGISTRATION where ID=@ID";
             TextBox tbCertPin = (TextBox)row.FindControl("ProviderCERTPIN");
             if (tbCertPin != null && !string.IsNullOrEmpty(tbCertPin.Text) && tbCertPin.Text != "********")
             {
-                sql = "update ProviderNPRCertificate set PROVIDER=@PROVIDER, CERTPIN=@CERTPIN, VALIDFROM=@VALIDFROM, VALIDUNTIL=@VALIDUNTIL where ID=@ID";
+                sql = "update ProviderNPRCertificate set PROVIDER=@PROVIDER, CERTPIN=@CERTPIN, VALIDFROM=@VALIDFROM, VALIDUNTIL=@VALIDUNTIL, NPRREGISTRATION=@NPRREGISTRATION where ID=@ID";
             }
             SqlCommand com = new SqlCommand(sql);
             ArgumentsFromDictionary(com, dic);
 
             com.Parameters.Add("@ID", System.Data.SqlDbType.Int).Value = grd.DataKeys[grd.EditIndex].Value;
+
+            string query = com.CommandText;
+            foreach (SqlParameter p in com.Parameters) {
+                query = query.Replace(p.ParameterName, p.Value.ToString());
+            }
+            Database.Database.Log(query);
+
+
             Database.Database.ExecuteScalar(com);
 
             RefreshPage();
@@ -97,7 +105,10 @@ namespace Denion.WebService.Beheer
                     else if (c.GetType().BaseType == typeof(Denion.WebService.Beheer.Controls.TimePicker))
                     {
                         dic.Add(grd.Columns[i].HeaderText, ((Controls.TimePicker)c).Value);
-                    }
+                    } 
+                    else if (c.GetType() == typeof(CheckBox)) {
+                        dic.Add(grd.Columns[i].HeaderText, ((CheckBox)c).Checked);
+                    } 
                     else if (c.GetType() == typeof(FileUpload))
                     {
                         dic.Add("FILENAME", ((FileUpload)c).FileName);
@@ -122,6 +133,8 @@ namespace Denion.WebService.Beheer
                 com.Parameters.Add("@VALIDFROM", SqlDbType.DateTime).Value = dic["VALIDFROM"];
             if (dic.ContainsKey("VALIDUNTIL"))
                 com.Parameters.Add("@VALIDUNTIL", SqlDbType.DateTime).Value = dic["VALIDUNTIL"];
+            if (dic.ContainsKey("NPRREGISTRATION"))
+                com.Parameters.Add("@NPRREGISTRATION", SqlDbType.Bit).Value = dic["NPRREGISTRATION"];
         }
 
         protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -129,7 +142,7 @@ namespace Denion.WebService.Beheer
             if (e.CommandName == "Insert")
             {
                 Dictionary<string, object> dic = ValuesFromRow(grd.FooterRow);
-                SqlCommand com = new SqlCommand("INSERT INTO ProviderNPRCertificate (PROVIDER, FILENAME, CERTIFICATE, CERTPIN, VALIDFROM, VALIDUNTIL) values (@PROVIDER, @FILENAME,  @CERTIFICATE, @CERTPIN, @VALIDFROM, @VALIDUNTIL)");
+                SqlCommand com = new SqlCommand("INSERT INTO ProviderNPRCertificate (PROVIDER, FILENAME, CERTIFICATE, CERTPIN, VALIDFROM, VALIDUNTIL, NPRREGISTRATION) values (@PROVIDER, @FILENAME,  @CERTIFICATE, @CERTPIN, @VALIDFROM, @VALIDUNTIL, @NPRREGISTRATION)");
                 ArgumentsFromDictionary(com, dic);
 
                 Database.Database.ExecuteScalar(com);

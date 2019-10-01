@@ -8,14 +8,22 @@ namespace GarageClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            request.Data = new PaymentStartRequest();
+            PaymentStartRequest data = new PaymentStartRequest();
+            data.StartDateTime = DateTime.UtcNow;
+            request.Data = data;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
-                VerwijsIndexClient clnt = Service.PaymentClient(ConfigurationManager.AppSettings["VerwijsIndexURL"]);
+                Provider provider = new Provider {
+                    url = ConfigurationManager.AppSettings["VerwijsIndexURL"],
+                    NPRRegistration = true,
+                    id = "verwijsindex"
+                };
+
+                VerwijsIndexClient clnt = Service.PaymentClient(provider);
                 PaymentStartRequest req = request.Values as PaymentStartRequest;
                 PaymentStartResponse res = clnt.PaymentStart(req);
                 response.Data = res;

@@ -8,7 +8,10 @@ namespace Denion.Web.ProviderClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            request.Data = new PSRightEnrollRequestData();
+            PSRightEnrollRequestData data = new PSRightEnrollRequestData();
+            data.StartTimePSright = DateTime.Now;
+
+            request.Data = data;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
