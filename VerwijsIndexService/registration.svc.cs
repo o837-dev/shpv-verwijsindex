@@ -239,7 +239,28 @@ namespace Denion.WebService.VerwijsIndex
                     ErrorDesc = "Location unkown"
                 };
                 return;
+            } else
+            {
+                //Locatie aanwezig controleer geldigheid contract
+                Providers validContracts = DatabaseFunctions.ListOfProvider(gi.AreaManagerId, _request.StartTimePSright);
+                //Database.Database.Log("validContracts");
+                //foreach (Provider p in validContracts)
+                //{
+                //    Database.Database.Log(string.Format("Id: {0}, priority: {1}, ", p.id, p.priority));
+                //}
+
+                if (!validContracts.Exists(provider => provider.id == _request.ProviderId))
+                {
+                    _response.PSRightEnrollResponseError = new PSRightEnrollResponseError()
+                    {
+                        ErrorCode = "115",
+                        ErrorDesc = "No contract available"
+                    };
+                    return;
+                }
             }
+
+
             int? paymentAuthorisationId = _request.PSRightId;
             //If PSRightId not send by provider than generate one 
             if(paymentAuthorisationId == null) {
@@ -376,6 +397,12 @@ namespace Denion.WebService.VerwijsIndex
                         //UsageId = "string",
                         //VehicleId = "string",
                     };
+                }
+
+                //Als geen antwoord van de garage of er is een error gooi authorisatie weg
+                if(res == null || !res.Granted.HasValue || res.Granted.Value == false)
+                {
+                    DatabaseFunctions.UnregisterRequest(_requestid);
                 }
             }
         }

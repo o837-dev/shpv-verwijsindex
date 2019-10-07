@@ -259,6 +259,9 @@ namespace Denion.WebService.VerwijsIndex
             else if (string.IsNullOrEmpty(req.ProviderId))
             {
                 return new Err60("ProviderId");
+            } else if(!Functions.IsValidProviderId(req.ProviderId))
+            {
+                return new Err130("ProviderId");
             }
             else if (string.IsNullOrEmpty(req.VehicleId))
             {
@@ -271,7 +274,7 @@ namespace Denion.WebService.VerwijsIndex
             else if (!(hasAmi || hasSp || hasLatLon))
             {
                 return new Err("145", "Location information incomplete");
-            }
+            } 
 
             PSRightEnrollRequestData.VehicleId = PSRightEnrollRequestData.VehicleId.StripVehicleId();
             return null;

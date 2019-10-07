@@ -624,6 +624,19 @@ namespace Denion.WebService.VerwijsIndex
                     }
                 }
             }
+
+            dt = Database.Database.ExecuteQuery("Select ID FROM Provider");
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                lock (Functions.ValidProviderIds)
+                {
+                    Functions.ValidProviderIds.Clear();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        Functions.ValidProviderIds.Add(dr["ID"].ToString().ToUpper());
+                    }
+                }
+            }
         }
 
         internal static Providers ListOfParkingFacilities(string areaManagerId, string AreaId, DateTime dateTime)

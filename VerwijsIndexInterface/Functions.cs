@@ -59,7 +59,13 @@ namespace Denion.WebService.VerwijsIndex
         {
             return ValidAreaManagerIds.Contains(areaManagerId.ToUpper());
         }
-        
+
+        public static List<string> ValidProviderIds = new List<string>();
+        public static bool IsValidProviderId(string providerId)
+        {
+            return ValidProviderIds.Contains(providerId.ToUpper());
+        }
+
         /// <summary>
         /// returns smallest date
         /// </summary>

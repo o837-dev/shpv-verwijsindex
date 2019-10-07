@@ -26,7 +26,16 @@ namespace Denion.WebService.VerwijsIndex
             : base("60", String.Format(msg, field))
         { }
     }
-    
+
+    public class Err130 : Err
+    {
+        private const String msg = "ProviderId invalid or expired";
+
+        public Err130(string field)
+            : base("130", String.Format(msg, field))
+        { }
+    }
+
     public class Err65 : Err
     {
         private const String msg = "EndTime Before StartTime";
