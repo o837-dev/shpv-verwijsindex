@@ -261,7 +261,7 @@ namespace Denion.WebService.VerwijsIndex
             }
 
 
-            int? paymentAuthorisationId = _request.PSRightId;
+            ulong? paymentAuthorisationId = _request.PSRightId;
             //If PSRightId not send by provider than generate one 
             if(paymentAuthorisationId == null) {
                 paymentAuthorisationId = Functions.GenerateUniqueId();
@@ -472,7 +472,7 @@ namespace Denion.WebService.VerwijsIndex
                         req.AreaManagerId = dr["AreaManagerId"] as string;
                         req.CancelDateTime = _request.EndTimePSRight;
                         req.CountryCode = dr["CountryCode"] as string;
-                        req.PaymentAuthorisationId = int.Parse(_request.PSRightId);
+                        req.PaymentAuthorisationId = ulong.Parse(_request.PSRightId);
                         req.ProviderId = dr["ProviderId"] as string;
                         req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
                         req.VehicleIdType = dr["VehicleIdType"] as string;
@@ -619,7 +619,7 @@ namespace Denion.WebService.VerwijsIndex
             return false;
         }
 
-        private static void AuthorisationSettled(long PaymentAuthorisationId, object PSRightId)
+        private static void AuthorisationSettled(ulong PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID, LINKID=@LINKID where AUTHORISATIONID=@AUTHORISATIONID";

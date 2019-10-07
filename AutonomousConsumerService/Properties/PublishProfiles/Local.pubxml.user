@@ -16,46 +16,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/15/2018 09:15:52</publishTime>
     </File>
     <File Include="AutonomousConsumerService.svc">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="AutonomousConsumerService.svc.cs">
       <publishTime>11/15/2018 09:15:44</publishTime>
     </File>
     <File Include="bin/AutonomousConsumerService.dll">
-      <publishTime>03/13/2019 10:16:08</publishTime>
+      <publishTime>10/07/2019 14:37:50</publishTime>
     </File>
     <File Include="bin/AutonomousConsumerService.pdb">
-      <publishTime>03/13/2019 10:16:08</publishTime>
+      <publishTime>10/07/2019 14:06:59</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>10/07/2019 13:59:41</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>05/15/2019 16:49:47</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>10/07/2019 13:59:41</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
-      <publishTime>03/07/2019 16:53:13</publishTime>
+      <publishTime>10/01/2019 11:30:45</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>03/13/2019 10:16:06</publishTime>
+      <publishTime>10/07/2019 14:18:27</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>03/06/2019 15:26:36</publishTime>
+      <publishTime>05/13/2019 14:22:18</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>03/13/2019 10:16:06</publishTime>
+      <publishTime>10/07/2019 14:18:27</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>03/13/2019 10:16:06</publishTime>
+      <publishTime>10/07/2019 14:18:28</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>03/13/2019 10:16:06</publishTime>
+      <publishTime>10/07/2019 14:18:28</publishTime>
     </File>
     <File Include="Properties/AssemblyInfo.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/12/2019 16:07:48</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>

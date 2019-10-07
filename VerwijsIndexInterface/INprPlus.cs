@@ -31,7 +31,7 @@ namespace Denion.WebService.VerwijsIndex
 
         private string vehicleIdType;
 
-        private System.Nullable<int> psRightId;
+        private System.Nullable<ulong> psRightId;
 
         ///// <remarks/>
         //[System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 98)]
@@ -92,7 +92,7 @@ namespace Denion.WebService.VerwijsIndex
         }
 
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true, Order = 101)]
-        public System.Nullable<int> PSRightId {
+        public System.Nullable<ulong> PSRightId {
             get {
                 return this.psRightId;
             }
@@ -617,7 +617,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de provider, verplicht
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = false, Order = 0)]
-        public int PaymentAuthorisationId { get; set; }
+        public ulong PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Code van de foutmelding of opmerking, optioneel
@@ -651,7 +651,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = false, Order = 1)]
-        public int PaymentAuthorisationId { get; set; }
+        public ulong PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht

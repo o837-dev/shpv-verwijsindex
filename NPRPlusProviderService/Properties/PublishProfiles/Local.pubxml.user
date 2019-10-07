@@ -25,25 +25,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2019 11:30:45</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.dll">
-      <publishTime>10/07/2019 13:25:29</publishTime>
+      <publishTime>10/07/2019 14:50:03</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.pdb">
-      <publishTime>10/07/2019 13:25:29</publishTime>
+      <publishTime>10/07/2019 14:50:03</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>10/07/2019 11:37:27</publishTime>
+      <publishTime>10/07/2019 14:50:02</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
       <publishTime>05/13/2019 14:22:18</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>10/07/2019 11:37:27</publishTime>
+      <publishTime>10/07/2019 14:50:02</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>10/07/2019 12:57:28</publishTime>
+      <publishTime>10/07/2019 14:50:03</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>10/07/2019 12:57:28</publishTime>
+      <publishTime>10/07/2019 14:50:03</publishTime>
     </File>
     <File Include="Functions.cs">
       <publishTime>11/09/2018 12:06:18</publishTime>

@@ -737,7 +737,7 @@ namespace Denion.WebService.VerwijsIndex
                     Amount = request.Amount,
                     CountryCode = request.CountryCode,
                     EndDateTime = request.EndDateTime,
-                    PaymentAuthorisationId = int.Parse(request.PaymentAuthorisationId),
+                    PaymentAuthorisationId = ulong.Parse(request.PaymentAuthorisationId),
                     ProviderId = request.ProviderId,
                     VAT = request.VAT,
                     VehicleId = request.VehicleId,

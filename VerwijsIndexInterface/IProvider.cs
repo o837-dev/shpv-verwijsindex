@@ -294,7 +294,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public int? PaymentAuthorisationId { get; set; }
+        public ulong? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht
@@ -382,7 +382,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public int? PaymentAuthorisationId { get; set; }
+        public ulong? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Wordt er toegang verleend (of juist niet), optioneel
@@ -451,7 +451,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Betalingskenmerk van de Provider,verplicht
         /// </summary>
         [DataMember(Order = 1, IsRequired = true)]
-        public int? PaymentAuthorisationId { get; set; }
+        public ulong? PaymentAuthorisationId { get; set; }
 
         /// <summary>
         /// Voertuigkenteken, verplicht
