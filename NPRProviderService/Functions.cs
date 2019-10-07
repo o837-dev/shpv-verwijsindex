@@ -33,7 +33,7 @@ namespace Denion.WebService
             RDWRight right = new RDWRight();
 
             // init RDW Client
-            RDW.RegistrationClient client = RDWClient(providerID);
+            RDW.RegistrationClient client = RDWClient(providerID, true);
             if (client == null)
             {
                 right.Remark = "Failed to init RegistrationClient";
@@ -147,9 +147,10 @@ namespace Denion.WebService
             return (int)(zeroDate.Ticks / 10000) % int.MaxValue - 1;
         }
 
+        //Wordt NIET gebruikt, Voor verwijderen van een recht.
         public static string RDWRevokeRight(string providerID, string PSRightID, DateTime endDateTime)
         {
-            RDW.RegistrationClient client = RDWClient(providerID);
+            RDW.RegistrationClient client = RDWClient(providerID, true);
             if (client == null)
             {
                 return "Failed to init RegistrationClient";
@@ -198,10 +199,10 @@ namespace Denion.WebService
             return null;
         }
 
-        internal static RDW.RegistrationClient RDWClient(string provider)
+        internal static RDW.RegistrationClient RDWClient(string provider, bool nprRegistration)
         {
 
-            return CustomRDWClient(GetCertificate(provider));
+            return CustomRDWClient(GetCertificate(provider, nprRegistration));
         }
 
         internal static RDW.RegistrationClient RDWClient(X509Certificate2 cert)
@@ -242,7 +243,12 @@ namespace Denion.WebService
 
                 client = new RDW.RegistrationClient(binding, Service.GetEndPoint(url ?? Properties.Settings.Default.EndPoint));
                 client.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
-                client.ClientCredentials.ClientCertificate.Certificate = cert;
+                if (!client.Endpoint.Address.Uri.ToString().Contains("localhost"))
+                {
+                    //Add certificate to request/client if it is set in the ProviderCertificates management screen
+                    client.ClientCredentials.ClientCertificate.Certificate = cert;
+                }
+
             }
             catch (Exception ex)
             {
@@ -256,14 +262,18 @@ namespace Denion.WebService
         {
             X509Certificate2 cert = null;
             SqlCommand com = new SqlCommand();
-            com.CommandText = "SELECT top 1 [CERTIFICATE], [CERTPIN] FROM [ProviderNPRCertificate] where PROVIDER=@PROVIDER and NPRREGISTRATION=@NPRREGISTRATION and CURRENT_TIMESTAMP between  [VALIDFROM] and [VALIDUNTIL]";
+            com.CommandText = "SELECT top 1 [CERTIFICATE], [CERTPIN], [FILENAME] FROM [ProviderNPRCertificate] where PROVIDER=@PROVIDER and NPRREGISTRATION=@NPRREGISTRATION and CURRENT_TIMESTAMP between  [VALIDFROM] and [VALIDUNTIL]";
             com.Parameters.Add("@PROVIDER", SqlDbType.NVarChar, 100).Value = provider;
             com.Parameters.Add("@NPRREGISTRATION", SqlDbType.Bit).Value = nprRegistration;
+
+            Database.Database.Log(String.Format("GetCertificate provider {0} NPRREG {1}", provider, nprRegistration));
 
             DataTable dt = Database.Database.ExecuteQuery(com);
             if (dt != null && dt.Rows.Count > 0)
             {
                 DataRow dr = dt.Rows[0];
+                Database.Database.Log(String.Format("GetCertificate {0} provider {1} NPRREG {2}", dr["FILENAME"], provider, nprRegistration));
+
                 byte[] certificate = dr["CERTIFICATE"] as byte[];
                 string certPin = dr["CERTPIN"] as string;
                 cert = new X509Certificate2(certificate, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);

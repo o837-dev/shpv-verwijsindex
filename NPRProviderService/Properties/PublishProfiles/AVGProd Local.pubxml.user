@@ -4,4 +4,108 @@ This file is used by the publish/package process of your Web project. You can cu
 by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Temp\VerwijsIndex\AVGProd</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Denion.WebService.Cryptography.dll">
+      <publishTime>05/13/2019 14:30:44</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll">
+      <publishTime>10/07/2019 12:57:13</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll.config">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="bin/NPRProviderService.dll">
+      <publishTime>10/07/2019 12:57:14</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll">
+      <publishTime>10/07/2019 12:57:13</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll.config">
+      <publishTime>05/13/2019 14:22:18</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.dll">
+      <publishTime>10/07/2019 12:57:13</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexShared.pdb">
+      <publishTime>10/07/2019 12:57:13</publishTime>
+    </File>
+    <File Include="NPRProviderService.cd">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="NPRProviderService.svc">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.CalculatePriceResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.CalculatePriceResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.PSRightCheckResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.PSRightCheckResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.PSRightEnrollResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.PSRightEnrollResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.PSRightRevokeResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.PSRightRevokeResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.ReplyPSPhotoInfoResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.ReplyPSPhotoInfoResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreasByLocationResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreasByLocationResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveCheckInfoResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveCheckInfoResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoForProviderResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoForProviderResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.StatusRequestResponseData.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Service References/RDW/Denion.WebService.RDW.StatusRequestResponseError.datasource">
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/07/2019 12:57:14</publishTime>
+    </File>
+  </ItemGroup>
 </Project>
