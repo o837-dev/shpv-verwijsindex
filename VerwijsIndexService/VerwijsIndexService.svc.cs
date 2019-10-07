@@ -156,14 +156,10 @@ namespace Denion.WebService.VerwijsIndex
             } else {
                 SqlCommand com = new SqlCommand();
                 com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL, a.SETTLED
-                    from Authorisation a join Provider p on a.PROVIDERID=p.ID
-                    join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID and c.PROVIDERID2 = p.PID and a.STARTDATE between c.STARTDATE and c.ENDDATE
-                    where a.AUTHORISATIONID=@AUTHORISATIONID and a.VEHICLEID=@VEHICLEID and a.PROVIDERID=@PROVIDERID"; //and a.SETTLED=@SETTLED";
+                    from Authorisation a join Provider p on a.PROVIDERID=p.ID join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID
+                    where a.AUTHORISATIONID=@AUTHORISATIONID";
 
                 com.Parameters.Add("@AUTHORISATIONID", System.Data.SqlDbType.NVarChar, 50).Value = request.PaymentAuthorisationId;
-                com.Parameters.Add("@VEHICLEID", System.Data.SqlDbType.NVarChar, 100).Value = Cryptography.Rijndael.Encrypt(request.VehicleId);
-                com.Parameters.Add("@PROVIDERID", System.Data.SqlDbType.NVarChar, 200).Value = request.ProviderId;
-                //com.Parameters.Add("@SETTLED", System.Data.SqlDbType.Bit).Value = false;
                 if (!string.IsNullOrEmpty(request.VehicleIdType)) {
                     com.CommandText += " AND (a.VEHICLEIDTYPE=@VEHICLEIDTYPE OR a.VEHICLEIDTYPE IS NULL)";
                     com.Parameters.Add("@VEHICLEIDTYPE", System.Data.SqlDbType.NVarChar, 50).Value = request.VehicleIdType;

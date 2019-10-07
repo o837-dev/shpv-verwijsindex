@@ -79,9 +79,9 @@ namespace Denion.WebService.VerwijsIndex
         public string ProviderId { get; set; }
 
         /// <summary>
-        /// kenmerk van de provider, verplicht
+        /// kenmerk van de provider
         /// </summary>
-        [DataMember(Order = 1, IsRequired = true)]
+        [DataMember(Order = 1, IsRequired = false)]
         public string LinkId { get; set; }
 
         /// <summary>
@@ -127,10 +127,6 @@ namespace Denion.WebService.VerwijsIndex
             if (string.IsNullOrEmpty(ProviderId))
             {
                 return new Err60("ProviderId");
-            }
-            else if (string.IsNullOrEmpty(LinkId))
-            {
-                return new Err60("LinkId");
             }
             else if (string.IsNullOrEmpty(VehicleId))
             {
