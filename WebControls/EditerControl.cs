@@ -187,7 +187,7 @@ namespace WebControls
 
             if (o.GetType() == typeof(DateTime))
             {
-                localValue = $"<input id='{localid}' name='{localname}' type='text' value='{ DateTimeToLocalTimeZone(o)}' hiddenValue='{((DateTime)o).ToLongDateString()}' />";
+                localValue = $"<input id='{localid}' name='{localname}' type='text' value='{ DateTimeToLocalTimeZone(o)}'/>";
             }
             else if (type == typeof(Enum))
             {
