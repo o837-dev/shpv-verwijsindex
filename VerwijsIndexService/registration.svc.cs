@@ -471,7 +471,12 @@ namespace Denion.WebService.VerwijsIndex
                                             object PSRightID = DBNull.Value;
                                             Database.Database.Log("NPR Registration? " + nprRegistration);
                                             if (nprRegistration) {
-                                                DateTime endTime = res.EndTimeAdjusted != null ? res.EndTimeAdjusted.Value : req.CancelDateTime.Value;
+                                                DateTime endTime = _request.EndTimePSRight;
+                                                //Garage wijzigd eindtijd?
+                                                if (res.EndTimeAdjusted != null)
+                                                {
+                                                    endTime = res.EndTimeAdjusted.Value;
+                                                }
                                                 DateTime startTime = (DateTime)dr["STARTDATE"];
 
                                                 if (endTime == null || endTime <= startTime) {
@@ -513,9 +518,21 @@ namespace Denion.WebService.VerwijsIndex
                             //res.PaymentAuthorisationId
                             //res.ProviderId
                             if (res.Granted.HasValue) {
+                                DateTime endTime = _request.EndTimePSRight;
+                                //Garage wijzigd eindtijd?
+                                if (res.EndTimeAdjusted != null)
+                                {
+                                    endTime = res.EndTimeAdjusted.Value;
+                                }
+                                DateTime startTime = (DateTime)dr["STARTDATE"];
+                                if (endTime == null || endTime <= startTime)
+                                {
+                                    endTime = startTime;
+                                }
+
                                 _response.PSRightRevokeResponseData = new PSRightRevokeResponseData {
-                                    EndTimePSRightAdjusted = res.EndTimeAdjusted,
-                                    EndTimePSRightAdjustedSpecified = res.EndTimeAdjusted.HasValue,
+                                    EndTimePSRightAdjusted = WebService.Functions.ToUTC(endTime),
+                                    EndTimePSRightAdjustedSpecified = endTime != null,
                                     StartTimePSRightAdjusted = res.StartTimeAdjusted,
                                     StartTimePSRightAdjustedSpecified = res.StartTimeAdjusted.HasValue,
                                     //PSRightRemarkList = new PSRightRemarkData[] { new PSRightRemarkData { PSRightRemarkType = KindOfRemarksType.Item2 } },
@@ -575,12 +592,14 @@ namespace Denion.WebService.VerwijsIndex
             return false;
         }
 
-        private static void AuthorisationSettled(long PaymentAuthorisationId, object PSRightId) {
+        private static void AuthorisationSettled(long PaymentAuthorisationId, object PSRightId)
+        {
             SqlCommand com = new SqlCommand();
-            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID where AUTHORISATIONID=@AUTHORISATIONID";
+            com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID, LINKID=@LINKID where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@SETTLED", SqlDbType.Bit).Value = true;
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.VarChar, 50).Value = PaymentAuthorisationId;
             com.Parameters.Add("@PSRIGHTID", SqlDbType.NVarChar, 50).Value = PSRightId;
+            com.Parameters.Add("@LINKID", SqlDbType.Int).Value = DBNull.Value;
 
             Database.Database.ExecuteQuery(com);
         }
