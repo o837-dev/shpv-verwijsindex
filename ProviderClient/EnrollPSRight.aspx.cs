@@ -23,7 +23,7 @@ namespace Denion.Web.ProviderClient
                 PSRightEnrollResponseError err = null;
                 PSRightEnrollResponseData res = clnt.EnrollPSRight(null, req, out err);
 
-                if (err != null)
+                if (err == null)
                     response.Data = err;
                 else
                     response.Data = res;

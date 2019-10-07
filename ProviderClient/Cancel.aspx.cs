@@ -85,7 +85,7 @@ namespace Denion.Web.ProviderClient
 
                 CancelAuthorisationRequest req = new CancelAuthorisationRequest();
 
-                req.PaymentAuthorisationId = int.Parse(dic["PAYMENTAUTHORISATIONID"]);
+                req.PaymentAuthorisationId = ulong.Parse(dic["PAYMENTAUTHORISATIONID"]);
                 req.ProviderId = dic["PROVIDERID"];
                 req.VehicleId = dic["VEHICLEID"];
                 req.CountryCode = dic["COUNTRYCODE"];

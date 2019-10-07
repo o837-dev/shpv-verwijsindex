@@ -22,10 +22,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="bin/Denion.Web.ProviderClient.dll">
-      <publishTime>10/07/2019 14:02:34</publishTime>
+      <publishTime>10/07/2019 15:56:19</publishTime>
     </File>
     <File Include="bin/Denion.Web.ProviderClient.pdb">
-      <publishTime>10/07/2019 14:02:34</publishTime>
+      <publishTime>10/07/2019 15:56:19</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.dll">
       <publishTime>10/07/2019 13:59:41</publishTime>
@@ -52,22 +52,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>10/07/2019 13:59:41</publishTime>
+      <publishTime>10/07/2019 14:44:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
       <publishTime>05/13/2019 14:22:18</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>10/07/2019 13:59:41</publishTime>
+      <publishTime>10/07/2019 14:44:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>10/07/2019 13:59:42</publishTime>
+      <publishTime>10/07/2019 14:44:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>10/07/2019 13:59:42</publishTime>
+      <publishTime>10/07/2019 14:44:17</publishTime>
     </File>
     <File Include="bin/WebControls.dll">
-      <publishTime>10/07/2019 13:59:42</publishTime>
+      <publishTime>10/07/2019 15:50:48</publishTime>
     </File>
     <File Include="bin/WebControls.dll.config">
       <publishTime>06/12/2018 13:56:32</publishTime>

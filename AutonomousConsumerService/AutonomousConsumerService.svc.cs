@@ -70,6 +70,12 @@ namespace AutonomousConsumerService
 
                 res.ProviderId = req.ProviderId;
 
+                //if(req.VehicleId != null && req.VehicleId.ToLower().Contains("leo"))
+                //{
+                //    res.Remark = "Test remark voor leo";
+                //    res.RemarkId = "666";
+                //}
+
                 //res.Amount = null;
                 //res.EndDateTime = null;
                 //res.Remark = null;
