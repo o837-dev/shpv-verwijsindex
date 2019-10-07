@@ -92,7 +92,7 @@ namespace Denion.WebService
             X509Certificate2 cert = null;
             try
             {
-                Database.Database.Log("GetCert Local config " + certFile + "; pin: " + Rijndael.Decrypt(certPin));
+                Database.Database.Log("GetCert Local config " + certFile);
                 cert = new X509Certificate2(certFile, Rijndael.Decrypt(certPin), X509KeyStorageFlags.MachineKeySet);
             }
             catch (Exception ex)
