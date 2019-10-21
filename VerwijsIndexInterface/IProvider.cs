@@ -290,7 +290,7 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// De provider die voor de betaling instaat, verplicht
         /// </summary>
-        [DataMember(Order = 0, IsRequired = true)]
+        [DataMember(Order = 0, IsRequired = false)]
         public string ProviderId { get; set; }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Voertuigkenteken, verplicht
         /// Redundant maar ter controle, in combinatie met ProviderId en PaymentAuthorisationId
         /// </summary>
-        [DataMember(Order = 2, IsRequired = true)]
+        [DataMember(Order = 2, IsRequired = false)]
         public string VehicleId { get; set; }
 
         /// <summary>
@@ -321,13 +321,13 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// Gebiedscode van de stad, verplicht
         /// </summary>
-        [DataMember(Order = 5, IsRequired = true)]
+        [DataMember(Order = 5, IsRequired = false)]
         public string AreaManagerId { get; set; }
 
         /// <summary>
         /// Gebiedscode van de parkeerplaats, verplicht
         /// </summary>
-        [DataMember(Order = 6, IsRequired = true)]
+        [DataMember(Order = 6, IsRequired = false)]
         public string AreaId { get; set; }
 
         /// <summary>
@@ -341,25 +341,9 @@ namespace Denion.WebService.VerwijsIndex
         {
             VehicleId = VehicleId.StripVehicleId();
 
-            if (string.IsNullOrEmpty(ProviderId))
-            {
-                return new Err60("ProviderId");
-            }
-            else if (PaymentAuthorisationId == null)
+            if (PaymentAuthorisationId == null)
             {
                 return new Err60("PaymentAuthorisationId");
-            }
-            else if (string.IsNullOrEmpty(VehicleId))
-            {
-                return new Err60("VehicleId");
-            }
-            else if (string.IsNullOrEmpty(AreaManagerId))
-            {
-                return new Err60("AreaManagerId");
-            }
-            else if (string.IsNullOrEmpty(AreaId))
-            {
-                return new Err60("AreaId");
             }
             else if (!string.IsNullOrEmpty(VehicleIdType) && !Functions.IsValidType(VehicleIdType))
             {
@@ -506,10 +490,6 @@ namespace Denion.WebService.VerwijsIndex
             if (string.IsNullOrEmpty(ProviderId))
             {
                 return new Err60("ProviderId");
-            }
-            else if (PaymentAuthorisationId == null)
-            {
-                return new Err60("PaymentAuthorisationId");
             }
             else if (string.IsNullOrEmpty(VehicleId))
             {

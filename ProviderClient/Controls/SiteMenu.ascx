@@ -8,7 +8,6 @@
 <a href="LinkRegistration.aspx">LinkRegistration</a>
 <a href="ActivateAuthorisation.aspx">ActivateAuthorisation</a>
 <a href="CancelAuthorisation.aspx">CancelAuthorisation</a>
-<a href="Cancel.aspx">Cancel</a>
 <a href="EnrollPSRight.aspx">EnrollPSRight</a>
 <a href="RevokePSRight.aspx">RevokePSRight</a>
 <br />

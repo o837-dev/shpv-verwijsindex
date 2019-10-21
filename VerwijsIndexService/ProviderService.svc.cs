@@ -49,6 +49,29 @@ namespace Denion.WebService.VerwijsIndex
                 res.RemarkId = err.RemarkId;
                 res.Remark = err.Remark;
             } else {
+                Providers validContracts = DatabaseFunctions.ListOfProvider(req.AreaManagerId, req.StartDateTime);
+
+                if (!validContracts.Exists(provider => provider.id == req.ProviderId)) {
+                    res.RemarkId = "115";
+                    res.Remark = "No contract available";
+                    return res;
+                }
+
+
+                ulong? paymentAuthorisationId = req.PaymentAuthorisationId;
+                //If PSRightId not send by provider than generate one 
+                if (paymentAuthorisationId == null) {
+                    req.PaymentAuthorisationId = Functions.GenerateUniqueId();
+                }  else {
+                    //Provider filled psRightId so check if not already exists
+                    if (!DatabaseFunctions.checkForUniqueness(paymentAuthorisationId.ToString()))  {
+                        res.RemarkId = "156";
+                        res.Remark = "PaymentAuthorisationId already exists in our system";
+                        return res;
+                    }
+                }
+
+
                 // select parkingfacility from DB
                 Providers parkingFacility = DatabaseFunctions.ListOfParkingFacilities(req.AreaManagerId, req.AreaId, req.StartDateTime);
                 if (parkingFacility.Count > 0) {
@@ -145,19 +168,63 @@ namespace Denion.WebService.VerwijsIndex
                             {
                                 DateTime contractStart = dr["ContractStartDate"] as DateTime? ?? DateTime.MinValue;
                                 DateTime contractEnd = dr["ContractEndDate"] as DateTime? ?? DateTime.MaxValue;
-                                DateTime start = DateTime.Now; //dr["AuthorisationStartDate"] as DateTime? ?? DateTime.Now;
+                                DateTime start = DateTime.Now;
                                 URL = dr["URL"] as string ?? null;
-
-                                contractAvailable = (start > contractStart && start <= contractEnd && !string.IsNullOrEmpty(URL)) ;
-                                //Database.Database.Log("contractAvailable: " + contractAvailable + ", start: " + start + ", contractStart: " + contractStart + ", contractEnd: " + contractEnd);
-
-                                if (!contractAvailable)
-                                    continue;
                                 
                                 Timing t = new Timing("ProviderService", "CancelAuthorisation", URL);
                                 clnt = Service.Consumer(URL);
+
+                                req.AreaId = dr["AreaId"] as string;
+                                req.AreaManagerId = dr["AreaManagerId"] as string;
+                                req.CountryCode = dr["CountryCode"] as string;
+                                req.ProviderId = dr["ProviderId"] as string;
+                                req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
+                                req.VehicleIdType = dr["VehicleIdType"] as string;
+
                                 CancelAuthorisationResponse relayRes = clnt.CancelAuthorisation(req);
                                 t.Finish();
+
+                                if (relayRes != null)
+                                {
+                                    res = relayRes;
+                                    if (res.PaymentAuthorisationId != null)
+                                    {
+                                        bool nprRegistration = RevokePSRightWorker.getNprRegistration(req.ProviderId, req.AreaManagerId);
+                                        Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
+
+                                        object PSRightID = DBNull.Value;
+                                        Database.Database.Log("NPR Registration? " + nprRegistration);
+                                        if (nprRegistration)
+                                        {
+                                            DateTime endTime = req.CancelDateTime.Value;
+                                            //Garage wijzigd eindtijd?
+                                            if (res.EndTimeAdjusted != null)
+                                            {
+                                                endTime = res.EndTimeAdjusted.Value;
+                                            }
+                                            DateTime startTime = (DateTime)dr["STARTDATE"];
+
+                                            if (endTime == null || endTime <= startTime)
+                                            {
+                                                endTime = startTime;
+                                            }
+
+                                            res.Amount = res.Amount == null ? 0 : res.Amount;
+                                            RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", req.VehicleId, startTime, endTime, req.CountryCode, Convert.ToDecimal(res.Amount), Convert.ToDecimal(res.VAT), "" + res.PaymentAuthorisationId.Value);
+                                            if (r.PSRightId != null)
+                                                PSRightID = r.PSRightId;
+                                            if (!string.IsNullOrEmpty(r.Remark))
+                                            {
+                                                res.RemarkId = "120";
+                                                res.Remark = "Problem with NPR registration; " + r.Remark;
+                                            }
+                                        }
+                                        RevokePSRightWorker.AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);
+
+                                        clnt.Close();
+                                        break;
+                                    }
+                                }
 
                                 if (relayRes != null)
                                 {

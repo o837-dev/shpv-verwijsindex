@@ -253,67 +253,17 @@ namespace Denion.WebService.VerwijsIndex
 
         internal static DataTable GetConsumer(CancelAuthorisationRequest req)
         {
-
-            // in basis hebben we geen gegevens/ constrole nodig uit/in de lokale administratie
-            // we zouden 'vandaag' ook kunnen gebruiken voor het betpalen van het actuele consumer contract.
-            //AREAMANAGERID uit contract of uit de AUTHORISATION tabel ??
-
-            /*            using (SqlCommand com = new SqlCommand(
-                            " Select c.DESCRIPTION, c.URL, a.SETTLED, a.StartDate as [AuthorisationStartDate], cc.StartDate as [ContractStartDate], cc.EndDate as [ContractEndDate] " +
-                            " from Authorisation a " +
-                            " join ConsumerContract cc on a.AREAMANAGERID = cc.AreaManagerId and a.AREAID = cc.AreaId "+ // and a.STARTDATE between cc.StartDate and cc.enddate " +
-                            " join Consumer c on cc.ConsumerId=c.CID " +
-                            " where a.AUTHORISATIONID=@AUTHORISATIONID and a.VEHICLEID=@VEHICLEID and a.PROVIDERID=@PROVIDERID and cc.AREAMANAGERID=@AREAMANAGERID and cc.AREAID=@AREAID")) // and a.SETTLED=@SETTLED "))
-                            */
-            /*
-                        string sql = 
-                            "Select auth.SETTLED, auth.AuthorisationStartDate, co.URL, co.ContractStartDate, co.ContractEndDate " +
-                            " from AreaManager as am " +
-                            " left outer join (Select a.SETTLED, a.StartDate as [AuthorisationStartDate], a.AREAMANAGERID from  " +
-                            " Authorisation a where a.AUTHORISATIONID=@AUTHORISATIONID and a.VEHICLEID=@VEHICLEID and a.PROVIDERID=@PROVIDERID  " +
-                            " and a.AREAMANAGERID=@AREAMANAGERID and a.AREAID=@AREAID {0}) as auth " +
-                            " on auth.AREAMANAGERID = am.ID " +
-                            " left outer join  " +
-                            " (Select c.URL, cc.StartDate as [ContractStartDate], cc.EndDate as [ContractEndDate], cc.AREAMANAGERID  " +
-                            " from ConsumerContract cc join Consumer c on cc.ConsumerId=c.CID where cc.AREAMANAGERID=@AREAMANAGERID and cc.AREAID=@AREAID) as co  " +
-                            " on am.ID = co.AREAMANAGERID " +
-                            " where am.ID = @AREAMANAGERID ";*/
             string sql =
-                " Select a.SETTLED, a.STARTDATE as [AuthorisationStartDate], co.URL, co.ContractStartDate, co.ContractEndDate " +
+                " Select a.SETTLED, a.STARTDATE as [AuthorisationStartDate], c.URL, cc.STARTDATE as [ContractStartDate], cc.ENDDATE as [ContractEndDate], a.ProviderId, a.STARTDATE, a.AREAID, a.AREAMANAGERID, a.VehicleId, a.CountryCode, a.VehicleIdType " +
                 " from Authorisation a  " +
-                " left outer join  " +
-                " (Select c.URL, cc.StartDate as [ContractStartDate], cc.EndDate as [ContractEndDate], cc.AREAMANAGERID from  " +
-                " ConsumerContract cc join Consumer c on cc.ConsumerId=c.CID where cc.AREAMANAGERID=@AREAMANAGERID and cc.AREAID=@AREAID) as co  " +
-                " on a.AREAMANAGERID = co.AREAMANAGERID " +
-                " where a.AUTHORISATIONID=@AUTHORISATIONID and a.VEHICLEID=@VEHICLEID and a.PROVIDERID=@PROVIDERID " +
-                " and a.AREAMANAGERID=@AREAMANAGERID and a.AREAID=@AREAID ";
+                " left outer join ConsumerContract cc on cc.AREAMANAGERID = a.AREAMANAGERID and cc.AREAID = a.AREAID join Consumer c on cc.ConsumerId = c.CID " +
+                " where a.AUTHORISATIONID=@AUTHORISATIONID";
 
             string sqlDynWhere = "";
             using (SqlCommand com = new SqlCommand())
             {
                 com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = req.PaymentAuthorisationId;
-                com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Cryptography.Rijndael.Encrypt(req.VehicleId);
-                com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = req.ProviderId;
-                com.Parameters.Add("@AREAMANAGERID", SqlDbType.NVarChar, 200).Value = req.AreaManagerId;
-                // Authorisation heeft geen paraplu gebieden, alleeen maar concrete garages (anders hadden we een join met AreaGroups moeten maken)
-                com.Parameters.Add("@AREAID", SqlDbType.NVarChar, 100).Value = req.AreaId;
-                if (!string.IsNullOrEmpty(req.CountryCode))
-                {
-                    //com.CommandText += " and [COUNTRYCODE]=@COUNTRYCODE";
-                    sqlDynWhere = " AND (a.COUNTRYCODE = @COUNTRYCODE or a.COUNTRYCODE IS NULL) ";
-                    com.Parameters.Add("@COUNTRYCODE", SqlDbType.NVarChar, 10).Value = req.CountryCode;
-                }
-
-                //settled handelen we later af (zodat we een specifiekere fout kunnen geven, (indien gesetteled))
-                //com.Parameters.Add("@SETTLED", System.Data.SqlDbType.Bit).Value = false;
-
-                if (!string.IsNullOrEmpty(req.VehicleIdType))
-                {
-                    //com.CommandText += " AND a.VEHICLEIDTYPE=@VEHICLEIDTYPE";
-                    sqlDynWhere = " AND (a.VEHICLEIDTYPE = @VEHICLEIDTYPE or a.VEHICLEIDTYPE is null) ";
-                    com.Parameters.Add("@VEHICLEIDTYPE", SqlDbType.NVarChar, 50).Value = req.VehicleIdType;
-                }
-                //Database.Database.Log(Database.Database.PrintExecutableCommand(com));
+     
                 com.CommandText = string.Format(sql, sqlDynWhere);
                 return Database.Database.ExecuteQuery(com);
             }

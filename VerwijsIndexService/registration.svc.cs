@@ -413,7 +413,7 @@ namespace Denion.WebService.VerwijsIndex
         }
     }
 
-    class RevokePSRightWorker : Worker {
+    public class RevokePSRightWorker : Worker {
         /// <summary>
         /// Verzoek bericht
         /// </summary>
@@ -601,7 +601,7 @@ namespace Denion.WebService.VerwijsIndex
             }
         }
 
-        private bool getNprRegistration(object providerId, object areaManagerId) {
+        public static bool getNprRegistration(object providerId, object areaManagerId) {
             SqlCommand com = new SqlCommand();
             com.CommandText = @"Select c.NPRREGISTRATION
                     from [Provider] as p 
@@ -620,7 +620,7 @@ namespace Denion.WebService.VerwijsIndex
             return false;
         }
 
-        private static void AuthorisationSettled(ulong PaymentAuthorisationId, object PSRightId)
+        public static void AuthorisationSettled(ulong PaymentAuthorisationId, object PSRightId)
         {
             SqlCommand com = new SqlCommand();
             com.CommandText = "Update Authorisation set SETTLED=@SETTLED, PSRIGHTID=@PSRIGHTID, LINKID=@LINKID where AUTHORISATIONID=@AUTHORISATIONID";
