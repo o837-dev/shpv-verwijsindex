@@ -201,6 +201,9 @@ namespace Denion.WebService.VerwijsIndex
     [DataContract(Namespace = "https://verwijsindex.shpv.nl/messages/")]
     public class PaymentEndRequest
     {
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "http://rdw.nl/rpv/1.0")]
+        public string PIN;
+
         /// <summary>
         /// De provider die voor de betaling instaat, verplicht
         /// </summary>

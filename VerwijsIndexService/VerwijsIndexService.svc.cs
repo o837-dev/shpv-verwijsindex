@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Threading;
 using System.Configuration;
+using System.Text.RegularExpressions;
+using System.ServiceModel.Channels;
 
 namespace Denion.WebService.VerwijsIndex
 {
@@ -609,7 +611,20 @@ namespace Denion.WebService.VerwijsIndex
                 Timing t = new Timing("VerwijsIndexService", "PaymentEnd", p.url);
                 clnt = Service.PaymentClient(p);
 
-                response = clnt.PaymentEnd(request);
+                //Set Pin if there is a certeificate
+                if (clnt.ClientCredentials.ClientCertificate.Certificate != null) { 
+                    System.Security.Cryptography.X509Certificates.X509Certificate2 cert = clnt.ClientCredentials.ClientCertificate.Certificate;
+                    string pin = Regex.Match(cert.Subject, @"O\s?=(.*),\s").Groups[1].ToString();
+                    request.PIN = pin;
+                    using (new OperationContextScope(clnt.InnerChannel)) {
+                        // Add a SOAP Header to an outgoing request
+                        MessageHeader aMessageHeader = MessageHeader.CreateHeader("PIN", "http://rdw.nl/rpv/1.0", pin);
+                        OperationContext.Current.OutgoingMessageHeaders.Add(aMessageHeader);
+                        response = clnt.PaymentEnd(request);
+                    }
+                } else { 
+                    response = clnt.PaymentEnd(request);
+                }
                 t.Finish();
             }
             catch (Exception ex)

@@ -84,9 +84,10 @@ namespace Denion.WebService.VerwijsIndex
             VerwijsIndexClient clnt = new VerwijsIndexClient(GetBinding(provider.url), GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
 
-            if(!provider.url.Contains("localhost")) { 
+            if(!provider.url.Contains("localhost")) {
                 //Add certificate to request/client if it is set in the ProviderCertificates management screen
-                clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
+                X509Certificate2 cert = GetCertificate(provider.id, false);
+                clnt.ClientCredentials.ClientCertificate.Certificate = cert;
             }
 
             return clnt;
