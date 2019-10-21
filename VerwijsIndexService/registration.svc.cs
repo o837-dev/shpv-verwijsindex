@@ -293,6 +293,7 @@ namespace Denion.WebService.VerwijsIndex
             req.ProviderId = _request.ProviderId;
             req.VehicleId = _request.VehicleId;
             req.VehicleIdType = _request.VehicleIdType;
+            req.StartDateTime = _request.StartTimePSright;
 
             // select parkingfacility from DB
             Providers parkingFacility = DatabaseFunctions.ListOfParkingFacilities(gi.AreaManagerId, gi.AreaId, _request.StartTimePSright);

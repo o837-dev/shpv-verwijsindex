@@ -41,6 +41,80 @@ namespace Denion.WebService.VerwijsIndex
             return res;
         }
 
+        ActivateAuthorisationResponse IProvider.ActivateAuthorisation(ActivateAuthorisationRequest req) {
+            Timing t1 = new Timing("ActivateAuthorisation", Service.IncomingAddress(), Service.OperationContextAddress());
+            ActivateAuthorisationResponse res = new ActivateAuthorisationResponse();
+            Err err = req.IsValid();
+            if (err != null) {
+                res.RemarkId = err.RemarkId;
+                res.Remark = err.Remark;
+            } else {
+                // select parkingfacility from DB
+                Providers parkingFacility = DatabaseFunctions.ListOfParkingFacilities(req.AreaManagerId, req.AreaId, req.StartDateTime);
+                if (parkingFacility.Count > 0) {
+                    foreach (Provider p in parkingFacility) {
+                        ConsumerClient clnt = null;
+                        try {
+                            Timing t = new Timing("RegistrationService", "ActivateAuthorisation", p.url);
+                            clnt = Service.Consumer(p.url);
+
+                            object _requestid = DatabaseFunctions.RegisterRequest(null, req.VehicleId, req.CountryCode, req.AreaManagerId, req.StartDateTime, req.AreaId, null, req.PaymentAuthorisationId.ToString());
+
+                            ActivateAuthorisationResponse relayRes = clnt.ActivateAuthorisation(req);
+                            t.Finish();
+
+                            if (relayRes != null)
+                            {
+                                res = relayRes;
+                                if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId)) {
+                                    DateTime startDateTimeAdjusted = DateTime.Now;
+                                    if (relayRes.StartDateTimeAdjusted.HasValue)
+                                    {
+                                        startDateTimeAdjusted = relayRes.StartDateTimeAdjusted.Value;
+                                    }  else if (req.StartDateTime != null) {
+                                        startDateTimeAdjusted = req.StartDateTime;
+                                    }
+
+                                    DateTime endDateTime = DateTime.Now;
+                                    if (relayRes.EndDateTime.HasValue)  {
+                                        //Als garage antwoordt
+                                        endDateTime = relayRes.EndDateTime.Value;
+                                    } else if (req.EndDateTime.HasValue) {
+                                        //Garage heeft niets gestuurd dus kijken we of provider een eindtijd heeft gestuurd
+                                        endDateTime = req.EndDateTime.Value;
+                                    }
+
+                                    Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, startDateTimeAdjusted, endDateTime, null, req.AreaId, req.VehicleIdType, null);
+
+                                    DatabaseFunctions.UpdateAuthorisation(req.ProviderId, req.PaymentAuthorisationId.ToString(), null, _requestid, link, startDateTimeAdjusted);
+
+                                    clnt.Close();
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Database.Database.Log(string.Format("Exception on ActivateAuthorisation from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
+                        }
+                        finally
+                        {
+                            if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
+                                clnt.Close();
+                        }
+                    }
+                }
+                else
+                {
+                    //_responsebase._responsebase.Log(string.Format("No contract found; area: {0}; startdate: {1}", gi.AreaManagerId, _request.StartDateTime));
+                    //res.RemarkId = "115";
+                    //_response.Remark = "No available contract";
+                }
+            }
+            t1.Finish();
+            return res;
+        }
+
         CancelAuthorisationResponse IProvider.CancelAuthorisation(CancelAuthorisationRequest req)
         {
             Timing t1 = new Timing("CancelAuthorisation", Service.IncomingAddress(), Service.OperationContextAddress());

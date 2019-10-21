@@ -17,6 +17,9 @@ namespace Denion.WebService.VerwijsIndex
         LinkRegistrationBatchResponse BatchRegistration(LinkRegistrationBatchRequest req);
 
         [OperationContract]
+        ActivateAuthorisationResponse ActivateAuthorisation(ActivateAuthorisationRequest activateAuthorisationRequest);
+
+        [OperationContract]
         CancelAuthorisationResponse CancelAuthorisation(CancelAuthorisationRequest CancelAuthorisationRequest);
 
         [OperationContract]
@@ -485,10 +488,47 @@ namespace Denion.WebService.VerwijsIndex
         public string AreaId { get; set; }
 
         /// <summary>
-        /// Eindtijd bekend = start + afrekenen, optioneel
+        /// Eindtijd bekend = start optioneel
         /// </summary>
         [DataMember(Order = 7, IsRequired = false)]
+        public DateTime StartDateTime { get; set; }
+
+        /// <summary>
+        /// Eindtijd bekend = start + afrekenen, optioneel
+        /// </summary>
+        [DataMember(Order = 8, IsRequired = false)]
         public DateTime? EndDateTime { get; set; }
+
+        public Err IsValid()
+        {
+            VehicleId = VehicleId.StripVehicleId();
+
+            if (string.IsNullOrEmpty(ProviderId))
+            {
+                return new Err60("ProviderId");
+            }
+            else if (PaymentAuthorisationId == null)
+            {
+                return new Err60("PaymentAuthorisationId");
+            }
+            else if (string.IsNullOrEmpty(VehicleId))
+            {
+                return new Err60("VehicleId");
+            }
+            else if (string.IsNullOrEmpty(AreaManagerId))
+            {
+                return new Err60("AreaManagerId");
+            }
+            else if (string.IsNullOrEmpty(AreaId))
+            {
+                return new Err60("AreaId");
+            }
+            else if (!string.IsNullOrEmpty(VehicleIdType) && !Functions.IsValidType(VehicleIdType))
+            {
+                return new Err105("VehicleIdType");
+            }
+            return null;
+        }
     }
 
     /// <summary>

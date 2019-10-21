@@ -6,6 +6,7 @@
 <a href="Demo.aspx">Demo</a>
 <a href="Raw.aspx">Raw</a>--%>
 <a href="LinkRegistration.aspx">LinkRegistration</a>
+<a href="ActivateAuthorisation.aspx">ActivateAuthorisation</a>
 <a href="CancelAuthorisation.aspx">CancelAuthorisation</a>
 <a href="Cancel.aspx">Cancel</a>
 <a href="EnrollPSRight.aspx">EnrollPSRight</a>

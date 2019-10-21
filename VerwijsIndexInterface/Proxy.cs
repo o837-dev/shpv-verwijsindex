@@ -85,6 +85,11 @@ namespace Denion.WebService.VerwijsIndex
             return base.Channel.BatchRegistration(req);
         }
 
+        public ActivateAuthorisationResponse ActivateAuthorisation(ActivateAuthorisationRequest req)
+        {
+            return base.Channel.ActivateAuthorisation(req);
+        }
+
         public CancelAuthorisationResponse CancelAuthorisation(CancelAuthorisationRequest req)
         {
             return base.Channel.CancelAuthorisation(req);
