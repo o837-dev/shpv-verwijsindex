@@ -207,7 +207,7 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// De provider die voor de betaling instaat, verplicht
         /// </summary>
-        [DataMember(Order = 0, IsRequired = true)]
+        [DataMember(Order = 0, IsRequired = false)]
         public string ProviderId { get; set; }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Voertuigkenteken, verplicht
         /// Redundant maar ter controle, in combinatie met ProviderId en PaymentAuthorisationId
         /// </summary>
-        [DataMember(Order = 2, IsRequired = true)]
+        [DataMember(Order = 2, IsRequired = false)]
         public string VehicleId { get; set; }
 
         /// <summary>
@@ -264,14 +264,6 @@ namespace Denion.WebService.VerwijsIndex
             else if (string.IsNullOrEmpty(PaymentAuthorisationId))
             {
                 return new Err60("PaymentAuthorisationId");
-            }
-            else if (string.IsNullOrEmpty(ProviderId))
-            {
-                return new Err60("ProviderId");
-            }
-            else if (string.IsNullOrEmpty(VehicleId))
-            {
-                return new Err60("VehicleId");
             }
             else if (!string.IsNullOrEmpty(VehicleIdType) && !Functions.IsValidType(VehicleIdType))
             {

@@ -179,6 +179,9 @@ namespace Denion.WebService.VerwijsIndex
 
                             new Thread(() => {
                                 Thread.CurrentThread.IsBackground = true;
+
+                                request.ProviderId = (string)dr["PROVIDERID"];
+
                                 //Bericht naar provider
                                 WorkerFunctions.PaymentEndWrapper(p, request);
                             }).Start();
