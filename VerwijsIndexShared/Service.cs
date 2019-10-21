@@ -47,11 +47,18 @@ namespace Denion.WebService.VerwijsIndex
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static WSHttpBinding GetBinding(string url)
+        public static Binding GetBinding(string url)
         {
             WSHttpBinding myBinding = new WSHttpBinding();
 
-            if (url.Contains("ipcontrol")) {
+            if (url.Contains("rdw.nl"))  {
+                HttpsTransportBindingElement httpsBinding = new HttpsTransportBindingElement();
+                httpsBinding.RequireClientCertificate = true;
+
+                TextMessageEncodingBindingElement encoding = new TextMessageEncodingBindingElement();
+                encoding.MessageVersion = MessageVersion.Soap11WSAddressing10;
+                return new CustomBinding(encoding, httpsBinding);
+            } else if (url.Contains("ipcontrol")) {
                 myBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
                 myBinding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
             } else if (url.StartsWith("https"))
@@ -84,7 +91,7 @@ namespace Denion.WebService.VerwijsIndex
             VerwijsIndexClient clnt = new VerwijsIndexClient(GetBinding(provider.url), GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
 
-            if(!provider.url.Contains("localhost")) {
+            if (!provider.url.Contains("localhost")) {
                 //Add certificate to request/client if it is set in the ProviderCertificates management screen
                 X509Certificate2 cert = GetCertificate(provider.id, false);
                 clnt.ClientCredentials.ClientCertificate.Certificate = cert;
