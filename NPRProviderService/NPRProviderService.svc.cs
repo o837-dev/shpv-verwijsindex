@@ -161,6 +161,13 @@ namespace Denion.WebService
                 NPRRightCheck check = RDWCheck(req.AreaId, req.AreaManagerId, req.CheckDateTime, req.CountryCode, null, req.VehicleId);
                 if (!string.IsNullOrEmpty(check.Remark))
                 {
+                    //Voor AVG wel granted true omdat als we hier aankomen iig een geldig link hebben, dus voordeel van de twijfel bij afwezigheid RDW (code = 80)
+                    if (check.RemarkId != null && check.RemarkId.Equals("80") && !Settings.Default.AVG)
+                    {
+                        res.Granted = true;
+                        res.AreaId = check.AreaId;
+                    }
+
                     res.Remark = check.Remark;
                     res.RemarkId = check.RemarkId;
                 }
