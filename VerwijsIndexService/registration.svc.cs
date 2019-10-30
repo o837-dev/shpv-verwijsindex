@@ -249,7 +249,7 @@ namespace Denion.WebService.VerwijsIndex
                 //    Database.Database.Log(string.Format("Id: {0}, priority: {1}, ", p.id, p.priority));
                 //}
 
-                if (!validContracts.Exists(provider => provider.id == _request.ProviderId))
+                if (!validContracts.Exists(provider => provider.id.Equals(_request.ProviderId, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     _response.PSRightEnrollResponseError = new PSRightEnrollResponseError()
                     {
