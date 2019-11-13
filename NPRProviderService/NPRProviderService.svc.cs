@@ -99,6 +99,13 @@ namespace Denion.WebService
                 Database.Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
                 res.Remark = "NPR provider service error";
                 res.RemarkId = "80";
+
+                if (Settings.Default.AVG)
+                {
+                    //Voordeel van de twijfel, als we hier al aankomen dan is kenteken aanwezig in het kentekenfilter 
+                    res.PaymentAuthorisationId = Functions.GenerateUniqueId().ToString();
+                    CreateRegistration(req, res.PaymentAuthorisationId);
+                }
             }
             else if (RDWres != null)
             {
@@ -161,7 +168,7 @@ namespace Denion.WebService
                 if (!string.IsNullOrEmpty(check.Remark))
                 {
                     //Voor AVG wel granted true omdat als we hier aankomen iig een geldig link hebben, dus voordeel van de twijfel bij afwezigheid RDW (code = 80)
-                    if (check.RemarkId != null && check.RemarkId.Equals("80") && !Settings.Default.AVG)
+                    if (check.RemarkId != null && check.RemarkId.Equals("80") && Settings.Default.AVG)
                     {
                         res.Granted = true;
                         res.AreaId = check.AreaId;
