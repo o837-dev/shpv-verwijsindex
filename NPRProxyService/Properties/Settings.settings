@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Denion.WebService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CertPin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">REPLACE</Value>
+    </Setting>
+    <Setting Name="MsgPin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">REPLACE</Value>
+    </Setting>
+    <Setting Name="UsageId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">REPLACE</Value>
+    </Setting>
+    <Setting Name="ProviderId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">REPLACE</Value>
+    </Setting>
+    <Setting Name="CertFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">REPLACE</Value>
+    </Setting>
+    <Setting Name="AVG" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EndPoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://psb.rdw.nl:443/bevraging/rpv/201511/registration.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://rdw.nl/rpv/1.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Registration" targetNamespace="http://rdw.nl/rpv/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IRegistration_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://rdw.nl/rpv/1.0/Imports">
+      <xsd:import schemaLocation="https://psb.gatrdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=d7ab60857f6195922f83d0de11d36612" namespace="http://rdw.nl/rpv/1.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PSRightEnrollRequest">
+    <wsdl:part name="parameters" element="tns:PSRightEnrollRequest" />
+  </wsdl:message>
+  <wsdl:message name="PSRightEnrollRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="PSRightEnrollResponse">
+    <wsdl:part name="parameters" element="tns:PSRightEnrollResponse" />
+  </wsdl:message>
+  <wsdl:message name="PSRightRevokeRequest">
+    <wsdl:part name="parameters" element="tns:PSRightRevokeRequest" />
+  </wsdl:message>
+  <wsdl:message name="PSRightRevokeRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="PSRightRevokeResponse">
+    <wsdl:part name="parameters" element="tns:PSRightRevokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PSRightCheckRequest">
+    <wsdl:part name="parameters" element="tns:PSRightCheckRequest" />
+  </wsdl:message>
+  <wsdl:message name="PSRightCheckRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="PSRightCheckResponse">
+    <wsdl:part name="parameters" element="tns:PSRightCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCheckInfoRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveCheckInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCheckInfoRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCheckInfoResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRightInfoRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveRightInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRightInfoRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRightInfoResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveRightInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRightInfoForProviderRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveRightInfoForProviderRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRightInfoForProviderRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRightInfoForProviderResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveRightInfoForProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreaRegulationFareInfoRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveAreaRegulationFareInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreaRegulationFareInfoRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreaRegulationFareInfoResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveAreaRegulationFareInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreasByLocationRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveAreasByLocationRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreasByLocationRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreasByLocationResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveAreasByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplyPSPhotoInfoRequest">
+    <wsdl:part name="parameters" element="tns:ReplyPSPhotoInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="ReplyPSPhotoInfoRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="ReplyPSPhotoInfoResponse">
+    <wsdl:part name="parameters" element="tns:ReplyPSPhotoInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreaManagersRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveAreaManagersRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreaManagersRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAreaManagersResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveAreaManagersResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentEndRequest">
+    <wsdl:part name="parameters" element="tns:PaymentEndRequest" />
+  </wsdl:message>
+  <wsdl:message name="PaymentEndRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="PaymentEndResponse">
+    <wsdl:part name="parameters" element="tns:PaymentEndResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatusRequestRequest">
+    <wsdl:part name="parameters" element="tns:StatusRequestRequest" />
+  </wsdl:message>
+  <wsdl:message name="StatusRequestRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="StatusRequestResponse">
+    <wsdl:part name="parameters" element="tns:StatusRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePriceRequest">
+    <wsdl:part name="parameters" element="tns:CalculatePriceRequest" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePriceRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePriceResponse">
+    <wsdl:part name="parameters" element="tns:CalculatePriceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRegistration">
+    <wsdl:operation name="EnrollPSRight">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight" name="PSRightEnrollRequest" message="tns:PSRightEnrollRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRightResponse" name="PSRightEnrollResponse" message="tns:PSRightEnrollResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokePSRight">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRight" name="PSRightRevokeRequest" message="tns:PSRightRevokeRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRightResponse" name="PSRightRevokeResponse" message="tns:PSRightRevokeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPSRight">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight" name="PSRightCheckRequest" message="tns:PSRightCheckRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/CheckPSRightResponse" name="PSRightCheckResponse" message="tns:PSRightCheckResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCheckInfo">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveCheckInfo" name="RetrieveCheckInfoRequest" message="tns:RetrieveCheckInfoRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveCheckInfoResponse" name="RetrieveCheckInfoResponse" message="tns:RetrieveCheckInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRightInfo">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfo" name="RetrieveRightInfoRequest" message="tns:RetrieveRightInfoRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoResponse" name="RetrieveRightInfoResponse" message="tns:RetrieveRightInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRightInfoForProvider">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoForProvider" name="RetrieveRightInfoForProviderRequest" message="tns:RetrieveRightInfoForProviderRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoForProviderResponse" name="RetrieveRightInfoForProviderResponse" message="tns:RetrieveRightInfoForProviderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAreaRegulationFareInfo">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfo" name="RetrieveAreaRegulationFareInfoRequest" message="tns:RetrieveAreaRegulationFareInfoRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfoResponse" name="RetrieveAreaRegulationFareInfoResponse" message="tns:RetrieveAreaRegulationFareInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAreasByLocation">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreasByLocation" name="RetrieveAreasByLocationRequest" message="tns:RetrieveAreasByLocationRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreasByLocationResponse" name="RetrieveAreasByLocationResponse" message="tns:RetrieveAreasByLocationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplyPSPhotoInfo">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfo" name="ReplyPSPhotoInfoRequest" message="tns:ReplyPSPhotoInfoRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfoResponse" name="ReplyPSPhotoInfoResponse" message="tns:ReplyPSPhotoInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAreaManagers">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaManagers" name="RetrieveAreaManagersRequest" message="tns:RetrieveAreaManagersRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaManagersResponse" name="RetrieveAreaManagersResponse" message="tns:RetrieveAreaManagersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentEnd">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/PaymentEnd" name="PaymentEndRequest" message="tns:PaymentEndRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/PaymentEndResponse" name="PaymentEndResponse" message="tns:PaymentEndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusRequest">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/StatusRequest" name="StatusRequestRequest" message="tns:StatusRequestRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/StatusRequestResponse" name="StatusRequestResponse" message="tns:StatusRequestResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePrice">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/CalculatePrice" name="CalculatePriceRequest" message="tns:CalculatePriceRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/CalculatePriceResponse" name="CalculatePriceResponse" message="tns:CalculatePriceResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IRegistration" type="tns:IRegistration">
+    <wsp:PolicyReference URI="#CustomBinding_IRegistration_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EnrollPSRight">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight" style="document" />
+      <wsdl:input name="PSRightEnrollRequest">
+        <soap:header message="tns:PSRightEnrollRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PSRightEnrollResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokePSRight">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRight" style="document" />
+      <wsdl:input name="PSRightRevokeRequest">
+        <soap:header message="tns:PSRightRevokeRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PSRightRevokeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPSRight">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/CheckPSRight" style="document" />
+      <wsdl:input name="PSRightCheckRequest">
+        <soap:header message="tns:PSRightCheckRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PSRightCheckResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCheckInfo">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveCheckInfo" style="document" />
+      <wsdl:input name="RetrieveCheckInfoRequest">
+        <soap:header message="tns:RetrieveCheckInfoRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveCheckInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRightInfo">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfo" style="document" />
+      <wsdl:input name="RetrieveRightInfoRequest">
+        <soap:header message="tns:RetrieveRightInfoRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveRightInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRightInfoForProvider">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfoForProvider" style="document" />
+      <wsdl:input name="RetrieveRightInfoForProviderRequest">
+        <soap:header message="tns:RetrieveRightInfoForProviderRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveRightInfoForProviderResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAreaRegulationFareInfo">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfo" style="document" />
+      <wsdl:input name="RetrieveAreaRegulationFareInfoRequest">
+        <soap:header message="tns:RetrieveAreaRegulationFareInfoRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveAreaRegulationFareInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAreasByLocation">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreasByLocation" style="document" />
+      <wsdl:input name="RetrieveAreasByLocationRequest">
+        <soap:header message="tns:RetrieveAreasByLocationRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveAreasByLocationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplyPSPhotoInfo">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfo" style="document" />
+      <wsdl:input name="ReplyPSPhotoInfoRequest">
+        <soap:header message="tns:ReplyPSPhotoInfoRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ReplyPSPhotoInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAreaManagers">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaManagers" style="document" />
+      <wsdl:input name="RetrieveAreaManagersRequest">
+        <soap:header message="tns:RetrieveAreaManagersRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveAreaManagersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentEnd">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/PaymentEnd" style="document" />
+      <wsdl:input name="PaymentEndRequest">
+        <soap:header message="tns:PaymentEndRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaymentEndResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusRequest">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/StatusRequest" style="document" />
+      <wsdl:input name="StatusRequestRequest">
+        <soap:header message="tns:StatusRequestRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StatusRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePrice">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/CalculatePrice" style="document" />
+      <wsdl:input name="CalculatePriceRequest">
+        <soap:header message="tns:CalculatePriceRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CalculatePriceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Registration">
+    <wsdl:port name="CustomBinding_IRegistration" binding="tns:CustomBinding_IRegistration">
+      <soap:address location="https://psb.gatrdw.nl/bevraging/rpv/201511/Registration.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://xsbsvc201511-o.ot.tld/Registration.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
