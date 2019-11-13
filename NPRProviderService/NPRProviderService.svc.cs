@@ -24,7 +24,6 @@ namespace Denion.WebService
             res.ProviderId = Settings.Default.ProviderId;
             res.Remark = "";
             res.RemarkId = "";
-            res.Token = "RDW";
 
             // init RDW Client
             RDW.RegistrationClient client = Functions.RDWClient(Settings.Default.ProviderId, false);
