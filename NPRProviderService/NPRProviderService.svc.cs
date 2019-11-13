@@ -99,6 +99,14 @@ namespace Denion.WebService
                 Database.Database.Log("RDWERR; CODE: " + RDWerr.ErrorCode + "; DESC: " + RDWerr.ErrorDesc);
                 res.Remark = "NPR provider service error";
                 res.RemarkId = "80";
+
+
+                if (Settings.Default.AVG)
+                {
+                    //Voordeel van de twijfel, als we hier al aankomen dan is kenteken aanwezig in het kentekenfilter 
+                    res.PaymentAuthorisationId = Functions.GenerateUniqueId().ToString();
+                    CreateRegistration(req, res.PaymentAuthorisationId);
+                }
             }
             else if (RDWres != null)
             {
@@ -123,8 +131,6 @@ namespace Denion.WebService
                             res.AuthorisationValidUntil = Functions.DateTimeToLocalTimeZone(right.EndTimePSRight.Value);
 
                         res.PaymentAuthorisationId = Functions.GenerateUniqueId().ToString();
-                        // res.PaymentAuthorisationId = DateTime.Now.ToFileTime().ToString() + "_" + right.PSRightId; Generaties kind of GUID
-
                         CreateRegistration(req, res.PaymentAuthorisationId);
                     }
                 }
@@ -161,7 +167,7 @@ namespace Denion.WebService
                 if (!string.IsNullOrEmpty(check.Remark))
                 {
                     //Voor AVG wel granted true omdat als we hier aankomen iig een geldig link hebben, dus voordeel van de twijfel bij afwezigheid RDW (code = 80)
-                    if (check.RemarkId != null && check.RemarkId.Equals("80") && !Settings.Default.AVG)
+                    if (check.RemarkId != null && check.RemarkId.Equals("80") && Settings.Default.AVG)
                     {
                         res.Granted = true;
                         res.AreaId = check.AreaId;
@@ -346,7 +352,7 @@ namespace Denion.WebService
                 com.Parameters.Add("@ACCESSID", SqlDbType.NVarChar, 50).Value = "";
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = AuthorisationId;
 
-            com.Parameters.Add("@STARTDATETIME", SqlDbType.DateTime).Value = getCorrectDateTime(req.StartDateTime);
+            com.Parameters.Add("@STARTDATETIME", SqlDbType.DateTime).Value = Functions.DateTimeToLocalTimeZone(req.StartDateTime);
 
             
      
@@ -363,7 +369,7 @@ namespace Denion.WebService
                 "Update Administration set UPDATED=@UPDATED, ENDDATETIME=@ENDDATETIME where VEHICLEID=@VEHICLEID and COUNTRYCODE=@COUNTRYCODE and AUTHORISATIONID=@AUTHORISATIONID";
    
             com.Parameters.Add("@UPDATED", SqlDbType.DateTime).Value = DateTime.Now;
-            com.Parameters.Add("@ENDDATETIME", SqlDbType.DateTime).Value = getCorrectDateTime(req.EndDateTime);
+            com.Parameters.Add("@ENDDATETIME", SqlDbType.DateTime).Value = Functions.DateTimeToLocalTimeZone(req.EndDateTime);
 
             com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Rijndael.Encrypt(req.VehicleId);
             if (!string.IsNullOrEmpty(req.CountryCode))
