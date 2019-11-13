@@ -69,6 +69,7 @@ namespace Denion.WebService.VerwijsIndex
                 if (newThread.Join(DatabaseFunctions.GetProperty("StartRequestTimeout", 2000))) {
                     res = worker.Result as PSRightEnrollResponse;
                 } else {
+                    //Time-out
                     worker.Abort();
                     if (worker.Result != null) {
                         res = worker.Result as PSRightEnrollResponse;
@@ -82,10 +83,22 @@ namespace Denion.WebService.VerwijsIndex
 
                 if (res.PSRightEnrollResponseError == null) {
                     if (res.PSRightEnrollResponseData == null || string.IsNullOrEmpty(res.PSRightEnrollResponseData.PSRightId)) {
-                        res.PSRightEnrollResponseError = new PSRightEnrollResponseError {
-                            ErrorDesc = "VehicleId not found at ParkingFacility",
-                            ErrorCode = "150",
-                        };
+                        if (res.PSRightEnrollResponseData == null)
+                        {
+                            res.PSRightEnrollResponseError = new PSRightEnrollResponseError
+                            {
+                                ErrorDesc = "ParkingFacility does not respond",
+                                ErrorCode = "15",
+                            };
+                        }
+                        else
+                        {
+                            res.PSRightEnrollResponseError = new PSRightEnrollResponseError
+                            {
+                                ErrorDesc = "VehicleId not found at ParkingFacility",
+                                ErrorCode = "150",
+                            };
+                        }
 
                         if (worker.AuthorisationRecordId != null)
                             DatabaseFunctions.UnregisterRequest(worker.AuthorisationRecordId);
