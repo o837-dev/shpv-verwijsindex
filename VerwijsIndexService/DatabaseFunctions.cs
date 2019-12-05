@@ -23,22 +23,26 @@ namespace Denion.WebService.VerwijsIndex
             Providers provs = GetProviders2(req);
             if (provs.Count > 0) //if (VerifyProvider(req))
             {
+                //Links voor:
+                //Zelfde provider
+                //Zelfde gebied/areaid
+                //
                 Links overlappingLinks = GetLinks2(req);
 
-                for (int i = overlappingLinks.Count-1; i >= 0; i--)
-                {
-                    Link l = overlappingLinks[i];
-                    TimeRange rLink = new TimeRange(l.STARTDATE, l.ENDDATE);
-                    TimeRange rReq = new TimeRange(req.ValidFrom, req.ValidUntil);
-                    //Database.Database.Log("overlap link " + l.STARTDATE + " - " + l.ENDDATE);
-                    //Database.Database.Log("request link " + req.ValidFrom + " - " + req.ValidUntil);
-                    //Database.Database.Log("Overlap? = " + rLink.OverlapsWith(rReq));
-                    //Database.Database.Log("----------------------------------------------");
-                    if (!rLink.OverlapsWith(rReq))
-                    {
-                        overlappingLinks.Remove(l);
-                    }
-                }
+                //for (int i = overlappingLinks.Count-1; i >= 0; i--)
+                //{
+                //Link l = overlappingLinks[i];
+                //    TimeRange rLink = new TimeRange(l.STARTDATE, l.ENDDATE);
+                //    TimeRange rReq = new TimeRange(req.ValidFrom.ToLocalTime(), req.ValidUntil.ToLocalTime());
+                //    Database.Database.Log("overlap link " + l.STARTDATE + " - " + l.ENDDATE);
+                //    Database.Database.Log("request link " + req.ValidFrom.ToLocalTime() + " - " + req.ValidUntil.ToLocalTime());
+                //    Database.Database.Log("Overlap? = " + rLink.OverlapsWith(rReq));
+
+                //    if (!rLink.OverlapsWith(rReq))
+                //    {
+                //        overlappingLinks.Remove(l);
+                //    }
+                //}
 
 
                 if (overlappingLinks.Count == 0)
@@ -211,11 +215,12 @@ namespace Denion.WebService.VerwijsIndex
                 and (@STARTDATE between STARTDATE and ENDDATE OR @ENDDATE between STARTDATE and ENDDATE)"))
                 
             {
+                String encVehicleID = Rijndael.Encrypt(req.VehicleId);
                 com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = req.ProviderId;
                 com.Parameters.Add("@AREAID", SqlDbType.NVarChar, 200).Value = req.AreaId;
-                com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = Rijndael.Encrypt(req.VehicleId);
-                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = req.ValidFrom;
-                com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = req.ValidUntil;
+                com.Parameters.Add("@VEHICLEID", SqlDbType.NVarChar, 100).Value = encVehicleID;
+                com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = req.ValidFrom.ToLocalTime();
+                com.Parameters.Add("@ENDDATE", SqlDbType.DateTime).Value = req.ValidUntil.ToLocalTime();
 
                 DataTable dt = Database.Database.ExecuteQuery(com);
                 return new Links(dt);

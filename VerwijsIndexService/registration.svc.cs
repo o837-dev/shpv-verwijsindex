@@ -529,8 +529,7 @@ namespace Denion.WebService.VerwijsIndex
                                                 if (r.PSRightId != null)
                                                     PSRightID = r.PSRightId;
                                                 if (!string.IsNullOrEmpty(r.Remark)) {
-                                                    res.RemarkId = "120";
-                                                    res.Remark = "Problem with NPR registration; " + r.Remark;
+                                                    Database.Database.Log("Problem with NPR registration; " + r.Remark + "; PSRIGHTID: " + PSRightID);
                                                 }
                                             }
                                             AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);

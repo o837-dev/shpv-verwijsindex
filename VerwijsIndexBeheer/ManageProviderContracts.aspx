@@ -56,7 +56,7 @@
 
             <asp:TemplateField HeaderText="PROVIDERID2">
                 <HeaderTemplate>
-                    <center>PROVIDERID2<br />
+                    <center>PROVIDER DESCRIPTION<br />
                         <asp:DropDownList ID="fltrPROVIDERID2" DataTextField="DESCRIPTION" DataValueField="PID" AutoPostBack="true" OnSelectedIndexChanged="fltrPROVIDERID2_SelectedIndexChanged" runat="server" /></center>
                 </HeaderTemplate>
                 <ItemTemplate>
