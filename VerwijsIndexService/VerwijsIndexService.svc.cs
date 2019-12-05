@@ -332,24 +332,27 @@ namespace Denion.WebService.VerwijsIndex
 
                             if (relayRes != null) {
                                 _response = relayRes;
-                                _settled = true;
 
-                                if (link != null)
-                                {
-                                    if (p.sendlinkrequest != Provider.SendLinkRequest.NO)
+                                if(relayRes.PaymentAuthorisationId != null) { 
+                                    _settled = true;
+
+                                    if (link != null)
                                     {
-                                        // don't update records of a static provider
-                                        DatabaseFunctions.UpdateLink(_request.CountryCode, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, link.ID, null, _response.TokenType);
+                                        if (p.sendlinkrequest != Provider.SendLinkRequest.NO)
+                                        {
+                                            // don't update records of a static provider
+                                            DatabaseFunctions.UpdateLink(_request.CountryCode, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, link.ID, null, _response.TokenType);
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    link = DatabaseFunctions.CreateLink(_request.VehicleId, _request.CountryCode, _response.ProviderId, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, _request.AreaId, _request.VehicleIdType, _response.TokenType);
-                                }
+                                    else
+                                    {
+                                        link = DatabaseFunctions.CreateLink(_request.VehicleId, _request.CountryCode, _response.ProviderId, _response.AuthorisationMaxAmount, _request.StartDateTime, _response.AuthorisationValidUntil, _response.Token, _request.AreaId, _request.VehicleIdType, _response.TokenType);
+                                    }
 
-                                DatabaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link, null);
+                                    DatabaseFunctions.UpdateAuthorisation(_response.ProviderId, _response.PaymentAuthorisationId, _response.Remark, _requestid, link, null);
 
-                                break;
+                                    break;
+                                }
                             }
                         }
 
