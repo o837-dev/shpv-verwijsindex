@@ -158,7 +158,7 @@ namespace Denion.WebService.VerwijsIndex
             } else {
                 SqlCommand com = new SqlCommand();
                 com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL, a.SETTLED
-                    from Authorisation a join Provider p on a.PROVIDERID=p.ID join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID
+                    from Authorisation a join Provider p on a.PROVIDERID=p.ID join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID and c.PROVIDERID2 = p.PID
                     where a.AUTHORISATIONID=@AUTHORISATIONID";
 
                 com.Parameters.Add("@AUTHORISATIONID", System.Data.SqlDbType.NVarChar, 50).Value = request.PaymentAuthorisationId;
