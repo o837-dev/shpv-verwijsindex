@@ -157,7 +157,7 @@ namespace Denion.WebService.VerwijsIndex
                 res.RemarkId = err.RemarkId;
             } else {
                 SqlCommand com = new SqlCommand();
-                com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL, a.SETTLED
+                com.CommandText = @"Select p.id as [PROVIDERID], p.DESCRIPTION, p.URL, c.NPRREGISTRATION, a.STARTDATE, a.AREAID, a.AREAMANAGERID, p.PROTOCOLL, a.SETTLED, a.VEHICLEID
                     from Authorisation a join Provider p on a.PROVIDERID=p.ID join Contract c on  a.AREAMANAGERID= c.AREAMANAGERID and c.PROVIDERID2 = p.PID
                     where a.AUTHORISATIONID=@AUTHORISATIONID";
 
@@ -192,7 +192,7 @@ namespace Denion.WebService.VerwijsIndex
 
                                 //Registratie in NPR
                                 if (p.NPRRegistration) {
-                                    RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", request.VehicleId, (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
+                                    RDWRight r = WebService.Functions.RDWEnrollRight((string)dr["PROVIDERID"], (string)dr["AreaManagerId"], (string)dr["AreaId"], "BETAALDP", Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string), (DateTime)dr["STARTDATE"], request.EndDateTime, request.CountryCode, Convert.ToDecimal(request.Amount), Convert.ToDecimal(request.VAT), "" + request.PaymentAuthorisationId);
                                     if (r.PSRightId != null)
                                         PSRightID = r.PSRightId;
                                     if (!string.IsNullOrEmpty(r.Remark))
