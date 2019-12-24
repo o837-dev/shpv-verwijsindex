@@ -214,7 +214,7 @@ namespace Denion.WebService.VerwijsIndex
             RegistrationPlusClient clnt = new RegistrationPlusClient(binding, GetEndPoint(provider.url));
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
 
-            if (!provider.url.Contains("localhost")) {
+            if (!provider.url.Contains("localhost") && !provider.id.Contains("QNPR")) {
                 //Add certificate to request/client if it is set in the ProviderCertificates management screen
                 clnt.ClientCredentials.ClientCertificate.Certificate = GetCertificate(provider.id, false);
             }
