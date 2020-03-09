@@ -44,6 +44,7 @@ namespace Denion.WebService.VerwijsIndex
         ActivateAuthorisationResponse IProvider.ActivateAuthorisation(ActivateAuthorisationRequest req) {
             Timing t1 = new Timing("ActivateAuthorisation", Service.IncomingAddress(), Service.OperationContextAddress());
             ActivateAuthorisationResponse res = new ActivateAuthorisationResponse();
+            res.Granted = false;
             Err err = req.IsValid();
             if (err != null) {
                 res.RemarkId = err.RemarkId;
@@ -126,6 +127,13 @@ namespace Denion.WebService.VerwijsIndex
                                 clnt.Close();
                         }
                     }
+
+                    if(res.RemarkId == null && res.PaymentAuthorisationId == null)
+                    {
+                        res.RemarkId = "15";
+                        res.Remark = "ParkingFacility does not respond";
+                    }
+
                 }
                 else
                 {
@@ -223,6 +231,14 @@ namespace Denion.WebService.VerwijsIndex
 
                                         clnt.Close();
                                         break;
+                                    }
+                                } else
+                                {
+                                    //Should not be filled at this point
+                                    if (res.RemarkId == null && res.PaymentAuthorisationId == null)
+                                    {
+                                        res.RemarkId = "15";
+                                        res.Remark = "ParkingFacility does not respond";
                                     }
                                 }
 
