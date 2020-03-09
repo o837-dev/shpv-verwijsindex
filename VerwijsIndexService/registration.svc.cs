@@ -306,6 +306,9 @@ namespace Denion.WebService.VerwijsIndex
             req.ProviderId = _request.ProviderId;
             req.VehicleId = _request.VehicleId;
             req.VehicleIdType = _request.VehicleIdType;
+            if(req.VehicleIdType == null || req.VehicleIdType.Equals("")) {
+                req.VehicleIdType = "LICENSE_PLATE";
+            }
             req.StartDateTime = _request.StartTimePSright;
 
             // select parkingfacility from DB
