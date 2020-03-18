@@ -535,7 +535,10 @@ namespace Denion.WebService.VerwijsIndex
                                                     Database.Database.Log("Problem with NPR registration; " + r.Remark + "; PSRIGHTID: " + PSRightID);
                                                 }
                                             }
-                                            AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);
+
+                                            if(res.Granted == true) {
+                                                AuthorisationSettled(res.PaymentAuthorisationId.Value, PSRightID);
+                                            }
 
                                             clnt.Close();
                                             break;
