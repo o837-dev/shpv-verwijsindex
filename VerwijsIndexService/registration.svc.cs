@@ -493,6 +493,9 @@ namespace Denion.WebService.VerwijsIndex
                         req.ProviderId = dr["ProviderId"] as string;
                         req.VehicleId = Cryptography.Rijndael.Decrypt(dr["VehicleId"] as string);
                         req.VehicleIdType = dr["VehicleIdType"] as string;
+                        if(req.VehicleIdType == null || req.VehicleIdType.Equals("")) {
+                            req.VehicleIdType = "LICENSE_PLATE";
+                        }
 
                         // select parkingfacility from DB
                         Providers providers = DatabaseFunctions.ListOfParkingFacilities(req.AreaManagerId, req.AreaId, _request.EndTimePSRight);
