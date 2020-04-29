@@ -95,6 +95,9 @@ namespace Denion.WebService.VerwijsIndex
                 //Add certificate to request/client if it is set in the ProviderCertificates management screen
                 X509Certificate2 cert = GetCertificate(provider.id, false);
                 clnt.ClientCredentials.ClientCertificate.Certificate = cert;
+
+                //Force tls 1.2
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             }
 
             return clnt;
@@ -156,7 +159,7 @@ namespace Denion.WebService.VerwijsIndex
             }
 
             if (System.Net.ServicePointManager.SecurityProtocol == (SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls))
-                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             clnt.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
             return clnt;
