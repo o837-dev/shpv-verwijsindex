@@ -1,7 +1,7 @@
 ﻿using Denion.WebService;
 using Denion.WebService.Cryptography;
 using Denion.WebService.Database;
-using Denion.WebService.Properties;
+using NPRPlusProviderService.Properties;
 using Denion.WebService.VerwijsIndex;
 using System;
 using System.Configuration;

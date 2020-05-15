@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using NPRPlusProviderService.Properties;
 using System.Web;
 
 namespace Denion.WebService
@@ -31,7 +32,7 @@ namespace Denion.WebService
 
         internal static RegistrationClient RDWClient()
         {
-            return RDWClient(GetCertificate(Properties.Settings.Default.CertFile, Properties.Settings.Default.CertPin));
+            return RDWClient(GetCertificate(NPRPlusProviderService.Properties.Settings.Default.CertFile, NPRPlusProviderService.Properties.Settings.Default.CertPin));
         }
         internal static RegistrationClient RDWClient(string provider)
         {
@@ -47,7 +48,7 @@ namespace Denion.WebService
             try
             {
                 client = new RegistrationClient();
-                client.Endpoint.Address = new EndpointAddress(Properties.Settings.Default.EndPoint);
+                client.Endpoint.Address = new EndpointAddress(NPRPlusProviderService.Properties.Settings.Default.EndPoint);
                 client.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
                 client.ClientCredentials.ClientCertificate.Certificate = cert;
             }
@@ -75,7 +76,7 @@ namespace Denion.WebService
                 encoding.MessageVersion = MessageVersion.Soap11WSAddressing10;
                 CustomBinding binding = new CustomBinding(encoding, httpsBinding);
 
-                client = new RegistrationClient(binding, Service.GetEndPoint(url ?? Properties.Settings.Default.EndPoint));
+                client = new RegistrationClient(binding, Service.GetEndPoint(url ?? NPRPlusProviderService.Properties.Settings.Default.EndPoint));
                 client.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
                 client.ClientCredentials.ClientCertificate.Certificate = cert;
             }
@@ -129,7 +130,7 @@ namespace Denion.WebService
 
         internal static string GetPinFromCert()
         {
-            return GetPinFromCert(GetCertificate(Properties.Settings.Default.CertFile, Properties.Settings.Default.CertPin));
+            return GetPinFromCert(GetCertificate(NPRPlusProviderService.Properties.Settings.Default.CertFile, NPRPlusProviderService.Properties.Settings.Default.CertPin));
         }
 
         internal static string GetPinFromCert(X509Certificate2 CERT)
