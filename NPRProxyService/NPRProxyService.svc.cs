@@ -59,13 +59,13 @@ namespace NPRProxyService
                 {
                     Database.Log(Settings.Default.ProviderId + "; Amount: " + req.Amount);
                     data.AmountSpecified = true;
-                    data.Amount = (decimal)req.Amount;
+                    data.Amount = decimal.Truncate((decimal)req.Amount * 100)/100;
                 }
                 if (req.VAT != null)
                 {
                     Database.Log(Settings.Default.ProviderId + "; VAT: " + req.VAT);
                     data.VATSpecified = true;
-                    data.VAT = (decimal)req.VAT;
+                    data.VAT = decimal.Truncate((decimal)req.VAT*100)/100;
                 }
                 //data.ProviderId = providerId;
                 RDWreq.PaymentEndRequestData = data;
