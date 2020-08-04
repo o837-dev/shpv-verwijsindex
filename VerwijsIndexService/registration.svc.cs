@@ -353,7 +353,7 @@ namespace Denion.WebService.VerwijsIndex
                     } catch (Exception ex) {
                         Database.Database.Log(string.Format("Exception on ActivateAuthorisation from ({2}); {0}; {1}", ex.Message, ex.StackTrace, p.url));
                     } finally {
-                        if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed)
+                        if (clnt != null && clnt.State != CommunicationState.Closing && clnt.State != CommunicationState.Closed && clnt.State != CommunicationState.Faulted)
                             clnt.Close();
                     }
                 }

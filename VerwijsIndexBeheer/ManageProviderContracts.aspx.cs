@@ -300,78 +300,7 @@ namespace Denion.WebService.Beheer
         
         private string Validate(Dictionary<string, object> dic)
         {
-            return null; //not now
-
-            //N: Niet exclusieve koppelingen: er mogen op hettzelfde prioriteitsniveau meerdere koppelingen bestaan. Bij autorisatie vragen wordt de volgorde door loting bepaald. 
-            //X: (eXclusieve koppelingen): Een koppelingsverzoek van een provider wordt afgewezen (met anonieme vermelding van de reden), als er reeds een koppeling bestaat van een andere provider
-            //O: Overneembare koppelingen: Een koppelingsverzoek van een provider vervangt een eventuele koppeling van een andere provider op hetzelfde niveau
-
-            // database integriteit controleren
-            SqlCommand com = new SqlCommand("Select * from CONTRACT where AREAMANAGERID=@AREAMANAGERID");
-
-            //where += " and @STARTDATE BETWEEN [STARTDATE] and [ENDDATE]";
-            //com.Parameters.Add("@STARTDATE", SqlDbType.DateTime).Value = startDateTime;
-
-            ArgumentsFromDictionary(com, dic);
-            //, PROVIDERID2, PRIORITY, SENDLINKREQUEST, LINKTYPE, RELAYINDICATOR, STARTDATE, ENDDATE)
-            //values (@AREAMANAGERID, @PROVIDERID2, @PRIORITY, @SENDLINKREQUEST, @LINKTYPE, @RELAYINDICATOR, @STARTDATE, @ENDDATE)");
-            DataTable dt = Database.Database.ExecuteQuery(com);
-
-            Page.Controls.Add(new LiteralControl("PreUpdate <br />"));
-            Contracts rows = new Contracts(dt);
-            //if (dt != null && dt.Rows.Count > 0)
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        rows.Add(DataRowToObject<Contract>(dr));
-            //    }
-            //}
-            Contract cr = DictionaryToObject<Contract>(dic);
-            if (dic.ContainsKey("ID"))
-            {
-                rows.RemoveAll(x => x.ID == (int)dic["ID"]);
-            }
-            rows.Add(cr);
-            rows.Sort();
-
-            var prios = rows.Select(p => p.PRIORITY).Distinct();
-            var rs = rows.GroupBy(r => new { prio = r.PRIORITY, link = r.LINKTYPE });
-            if (rs.Count() != prios.Count())
-            {
-                foreach (var crs in rs)
-                {
-                    Page.Controls.Add(new LiteralControl(Functions.ToLongString(crs) + "<br />"));
-                }
-                return "Opslaan NIET mogelijk! Er zijn meerdere providers met gelijke prioriteit met verschillende linktypen";
-            }
-
-
-            var rs2 = rows.Where(t => t.LINKTYPE == "eXclusive");
-            if (rs2.Count() > 0)
-            {
-                foreach (var crs in rs2)
-                {
-                    //com = new SqlCommand("Select l.PROVIDERID, l.VEHICLEID, l.AREAID, count(*) from Link as l where ProviderId = (select p.ID from Provider as p where p.PID=@PId2) group by l.PROVIDERID, l.VEHICLEID, l.AREAID  having count(*) > 1");
-                    com = new SqlCommand(@"
-                    Select p.id, 
-	(select count(distinct l.id) from Contract as c 
-		join link as l on l.PROVIDERID = p.ID
-			and l.STARTDATE between c.STARTDATE and c.ENDDATE
-			and l.ENDDATE between  c.STARTDATE and c.ENDDATE 
-	where  c.PROVIDERID2 = p.PID) as [Links]
-  from Provider as p where p.PID = @PId2");
-                    //ArgumentsFromDictionary(com, dic);
-                    com.Parameters.Add("@PId2", SqlDbType.Int).Value = crs.PROVIDERID2;
-
-                    DataTable dt2 = Database.Database.ExecuteQuery(com);
-                    if (dt2 != null && dt2.Rows.Count == 1)
-                    {
-                        if ((int)dt2.Rows[0]["Links"] > 1)
-                            return "Opslaan NIET mogelijk! Er zijn meerdere Links..";
-                    }
-                }
-            }
-            return null;
+            return null; 
         }
 
         protected void grd_RowDataBound(object sender, GridViewRowEventArgs e)

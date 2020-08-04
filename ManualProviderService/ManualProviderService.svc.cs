@@ -183,6 +183,10 @@ namespace ManualProviderService
         {
             throw new NotImplementedException();
         }
+
+        public ActivateAuthorisationResponse ActivateAuthorisation(ActivateAuthorisationRequest activateAuthorisationRequest) {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
