@@ -7,18 +7,16 @@ using System.Data.SqlClient;
 using System.Data;
 
 
-namespace NPRProxyService
-{
+namespace NPRProxyService {
+
     [LogBehavior]
     [ServiceBehavior(Name = "NPRProxy", Namespace = "https://verwijsindex.shpv.nl/service/")]
-    public class ProxyService : IVerwijsIndex
-    {
-        PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest req)
-        {
+    public class ProxyService12 : IVerwijsIndex {
+        PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest req) {
             PaymentStartResponse res = new PaymentStartResponse();
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient("02065", false);
+            RDW.RegistrationClient client = Functions.RDWClient("02065", false, false);
             if(client == null) {
                 res.RemarkId = "70";
                 res.Remark = "NPR Provider server error";
@@ -73,28 +71,23 @@ namespace NPRProxyService
             return res;
         }
 
-        PaymentEndResponse IVerwijsIndex.PaymentEnd(PaymentEndRequest req)
-        {
+        PaymentEndResponse IVerwijsIndex.PaymentEnd(PaymentEndRequest req) {
             PaymentEndResponse res = new PaymentEndResponse();
             res.PaymentAuthorisationId = req.PaymentAuthorisationId;
 
             String providerId = findProviderByAuthorisationId(req.PaymentAuthorisationId);
-            if (providerId == null)
-            {
+            if(providerId == null) {
                 res.Remark = "Proxy kan geen providerId vinden voor " + req.PaymentAuthorisationId;
                 res.RemarkId = "PROXY002";
             }
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient(providerId, false);
-            if (client == null)
-            {
+            RDW.RegistrationClient client = Functions.RDWClient(providerId, false, false);
+            if(client == null) {
                 res.RemarkId = "70";
                 res.Remark = "NPR Provider server error";
-            }
-            else
-            {
-                
+            } else {
+
                 //Omzetten vwx paymentEnd naar NPR paymentEnd
                 //TODO pin?
                 RDW.PaymentEndRequest RDWreq = new RDW.PaymentEndRequest();
@@ -104,50 +97,42 @@ namespace NPRProxyService
                 RDW.PaymentEndRequestData data = new RDW.PaymentEndRequestData();
                 data.PaymentAuthorisationId = req.PaymentAuthorisationId;
                 data.EndDateTime = req.EndDateTime;
-                
-                if (req.Amount != null)
-                {
+
+                if(req.Amount != null) {
                     Database.Log(Settings.Default.ProviderId + "; Amount: " + req.Amount);
                     data.AmountSpecified = true;
-                    data.Amount = decimal.Truncate((decimal)req.Amount * 100)/100;
+                    data.Amount = decimal.Truncate((decimal)req.Amount * 100) / 100;
                 }
-                if (req.VAT != null)
-                {
+                if(req.VAT != null) {
                     Database.Log(Settings.Default.ProviderId + "; VAT: " + req.VAT);
                     data.VATSpecified = true;
-                    data.VAT = decimal.Truncate((decimal)req.VAT*100)/100;
+                    data.VAT = decimal.Truncate((decimal)req.VAT * 100) / 100;
                 }
                 //data.ProviderId = providerId;
                 RDWreq.PaymentEndRequestData = data;
 
                 // Payment end naar NPR
-                try
-                {
+                try {
                     // send the request to the RDW
                     RDWres = client.PaymentEnd(Functions.GetPinFromCert(client.ClientCredentials.ClientCertificate.Certificate), data, out RDWerr);
 
-                }
-                catch (Exception ex)
-                {
+                } catch(Exception ex) {
                     Database.Log(Settings.Default.ProviderId + "; Exception: " + ex.Message);
                     Database.Log(ex.StackTrace);
                 }
             }
-            
+
             return res;
         }
 
-        private string findProviderByAuthorisationId(string authorisationId)
-        {
+        private string findProviderByAuthorisationId(string authorisationId) {
             SqlCommand com = new SqlCommand();
             com.CommandText = "SELECT PROVIDERID from Authorisation where AUTHORISATIONID=@AUTHORISATIONID";
             com.Parameters.Add("@AUTHORISATIONID", SqlDbType.NVarChar, 50).Value = authorisationId;
 
             DataTable dt = Database.ExecuteQuery(com);
-            if (dt != null)
-            {
-                if (dt.Rows.Count > 0)
-                {
+            if(dt != null) {
+                if(dt.Rows.Count > 0) {
                     DataRow dr = dt.Rows[0];
                     Provider p = new Provider(dr);
 
@@ -157,14 +142,13 @@ namespace NPRProxyService
             return null;
         }
 
-       
 
-        PaymentCheckResponse IVerwijsIndex.PaymentCheck(PaymentCheckRequest req)
-        {
+
+        PaymentCheckResponse IVerwijsIndex.PaymentCheck(PaymentCheckRequest req) {
             PaymentCheckResponse res = new PaymentCheckResponse();
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient(req.Provider, false);
+            RDW.RegistrationClient client = Functions.RDWClient(req.Provider, false, false);
             if(client == null) {
                 res.RemarkId = "70";
                 res.Remark = "NPR Provider server error";
@@ -187,7 +171,7 @@ namespace NPRProxyService
                 }
                 data.CountryCodeSpecified = req.CountryCode != null;
                 data.CheckDateTime = req.CheckDateTime;
-              
+
                 RDWreq.PaymentCheckRequestData = data;
 
                 // Payment check naar NPR
@@ -207,8 +191,7 @@ namespace NPRProxyService
             return res;
         }
 
-        StatusResponse IVerwijsIndex.ServiceStatus()
-        {
+        StatusResponse IVerwijsIndex.ServiceStatus() {
             return Service.ServiceStatus();
         }
     }
