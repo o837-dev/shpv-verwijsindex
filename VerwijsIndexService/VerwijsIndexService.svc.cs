@@ -172,7 +172,7 @@ namespace Denion.WebService.VerwijsIndex
                     foreach (DataRow dr in dt.Rows) {
                         Provider p = new Provider(dr);
 
-                        if((Boolean)dr["SETTLED"] == true) {
+                        if((Boolean)dr["SETTLED"] == true && p.NPRRegistration) {
                             res.Remark = "Authorisation already settled";
                             res.RemarkId = "110";
                         } else { 

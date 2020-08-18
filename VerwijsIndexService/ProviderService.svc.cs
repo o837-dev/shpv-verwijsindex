@@ -176,8 +176,9 @@ namespace Denion.WebService.VerwijsIndex
                         {
                             DataRow dr = dt.Rows[i];
                             settled = (bool)dr["SETTLED"];
-                            
-                            if (!settled)
+                            bool nprRegistration = RevokePSRightWorker.getNprRegistration(req.ProviderId, req.AreaManagerId);
+
+                            if (!(settled && nprRegistration))
                             {
                                 DateTime contractStart = dr["ContractStartDate"] as DateTime? ?? DateTime.MinValue;
                                 DateTime contractEnd = dr["ContractEndDate"] as DateTime? ?? DateTime.MaxValue;
@@ -202,7 +203,7 @@ namespace Denion.WebService.VerwijsIndex
                                     res = relayRes;
                                     if (res.PaymentAuthorisationId != null)
                                     {
-                                        bool nprRegistration = RevokePSRightWorker.getNprRegistration(req.ProviderId, req.AreaManagerId);
+                                        
                                         Database.Database.Log("providerId:" + req.ProviderId + ", AreaManagerId " + req.AreaManagerId);
 
                                         object PSRightID = DBNull.Value;
