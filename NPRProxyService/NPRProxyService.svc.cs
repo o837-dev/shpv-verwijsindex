@@ -58,7 +58,7 @@ namespace NPRProxyService
                     // send the request to the RDW
                     RDWres = client.PaymentStart(Functions.GetPinFromCert(client.ClientCredentials.ClientCertificate.Certificate), data, out RDWerr);
 
-                    res.ProviderId = RDWres.ProviderId;
+                    res.ProviderId = RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
                     res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount;
                     res.AuthorisationValidUntil = RDWres.EndDateTimeAdjusted;
@@ -164,7 +164,7 @@ namespace NPRProxyService
             PaymentCheckResponse res = new PaymentCheckResponse();
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient(req.Provider, false);
+            RDW.RegistrationClient client = Functions.RDWClient("02065", false);
             if(client == null) {
                 res.RemarkId = "70";
                 res.Remark = "NPR Provider server error";
@@ -197,7 +197,7 @@ namespace NPRProxyService
 
                     res.AreaId = RDWres.AreaId;
                     res.Granted = RDWres.Granted == RDW.IndicatorYNType.Y;
-                    res.ProviderId = RDWres.ProviderId;
+                    res.ProviderId = RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                 } catch(Exception ex) {
                     Database.Log(Settings.Default.ProviderId + "; Exception: " + ex.Message);
                     Database.Log(ex.StackTrace);
