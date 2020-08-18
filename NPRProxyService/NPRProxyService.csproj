@@ -190,12 +190,60 @@
     <Content Include="Connected Services\RDW\NPRProxyService.RDW.StatusRequestResponseError.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.EnrollLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.EnrollLinkResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.EnrollLinkResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.PaymentCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.PaymentCheckResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.PaymentCheckResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.PaymentStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.PaymentStartResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.PaymentStartResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RetrieveSellingPointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RetrieveSellingPointsResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RetrieveSellingPointsResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RevokeLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RevokeLinkResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RevokeLinkResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\RDW\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="NPRProxyService12.svc" />
     <Content Include="NPRProxyService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\RDW\Reference.cs">
@@ -204,6 +252,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="NPRProxyService12.svc.cs" />
     <Compile Include="NPRProxyService.svc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -214,7 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\RDW\Registration.wsdl" />
-    <None Include="Connected Services\RDW\Registration.xsd">
+    <None Include="Connected Services\RDW\Registration1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

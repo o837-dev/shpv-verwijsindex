@@ -16,11 +16,11 @@ namespace Denion.WebService.VerwijsIndex
         PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest request)
         {
             Denion.WebService.Database.Database.Log("[PaymentStart] Provider: " + Settings.Default.ProviderId + "; Received: " + request.VehicleId);
-            Prod.VerwijsIndexClient clnt = null;
+            VerwijsIndexClient clnt = null;
             PaymentStartResponse psr = null;
             try
             {
-                clnt = new Prod.VerwijsIndexClient();
+                clnt = new VerwijsIndexClient();
                 psr = clnt.PaymentStart(request);
             }
             catch (Exception ex)
@@ -38,11 +38,11 @@ namespace Denion.WebService.VerwijsIndex
         PaymentEndResponse IVerwijsIndex.PaymentEnd(PaymentEndRequest request)
         {
             Denion.WebService.Database.Database.Log("[PaymentEnd] Provider: " + Settings.Default.ProviderId + "; Received: " + request.VehicleId);
-            Prod.VerwijsIndexClient clnt = null ;
+            VerwijsIndexClient clnt = null ;
             PaymentEndResponse per = null;
             try
             {
-                clnt = new Prod.VerwijsIndexClient();
+                clnt = new VerwijsIndexClient();
                 per = clnt.PaymentEnd(request);
             }
             catch (Exception ex)
@@ -60,11 +60,11 @@ namespace Denion.WebService.VerwijsIndex
         PaymentCheckResponse IVerwijsIndex.PaymentCheck(PaymentCheckRequest request)
         {
             Denion.WebService.Database.Database.Log("[PaymentCheck] Provider: " + Settings.Default.ProviderId + "; Received: " + request.VehicleId);
-            Prod.VerwijsIndexClient clnt = null;
+            VerwijsIndexClient clnt = null;
             PaymentCheckResponse pcr = null;
             try
             {
-                clnt = new Prod.VerwijsIndexClient();
+                clnt = new VerwijsIndexClient();
                 pcr = clnt.PaymentCheck(request);
             }
             catch (Exception ex)

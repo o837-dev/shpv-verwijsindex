@@ -200,10 +200,10 @@ namespace NPRProxyService
             return null;
         }
 
-        internal static RDW.RegistrationClient RDWClient(string provider, bool nprRegistration)
+        internal static RDW.RegistrationClient RDWClient(string provider, bool nprRegistration, bool useSoap11 = true)
         {
 
-            return CustomRDWClient(GetCertificate(provider, nprRegistration));
+            return CustomRDWClient(GetCertificate(provider, nprRegistration), useSoap11);
         }
 
         internal static RDW.RegistrationClient RDWClient(X509Certificate2 cert)
@@ -226,7 +226,7 @@ namespace NPRProxyService
             return client;
         }
 
-        internal static RDW.RegistrationClient CustomRDWClient(X509Certificate2 cert)
+        internal static RDW.RegistrationClient CustomRDWClient(X509Certificate2 cert, bool useSoap11)
         {
             RDW.RegistrationClient client = null;
 
@@ -239,7 +239,13 @@ namespace NPRProxyService
                 httpsBinding.RequireClientCertificate = true;
 
                 TextMessageEncodingBindingElement encoding = new TextMessageEncodingBindingElement();
-                encoding.MessageVersion = MessageVersion.Soap11WSAddressing10;
+                if(useSoap11) {
+                    encoding.MessageVersion = MessageVersion.Soap11WSAddressing10;
+                } else {
+                    url = url + "/soap12";
+                    encoding.MessageVersion = MessageVersion.Soap12WSAddressing10;
+                }
+                Database.Log("CLNT; url: " + url + "; encoding: " + (useSoap11? "Soap11": "Soap12"));
                 CustomBinding binding = new CustomBinding(encoding, httpsBinding);
 
                 client = new RDW.RegistrationClient(binding, Service.GetEndPoint(url ?? Denion.WebService.Properties.Settings.Default.EndPoint));

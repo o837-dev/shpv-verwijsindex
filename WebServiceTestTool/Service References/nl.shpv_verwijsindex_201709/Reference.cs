@@ -944,7 +944,7 @@ namespace WebServiceTestTool.nl.shpv_verwijsindex_201709 {
     public interface VerwijsIndexChannel : WebServiceTestTool.nl.shpv_verwijsindex_201709.VerwijsIndex, System.ServiceModel.IClientChannel {
     }
     
-    //[System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class VerwijsIndexClient : System.ServiceModel.ClientBase<WebServiceTestTool.nl.shpv_verwijsindex_201709.VerwijsIndex>, WebServiceTestTool.nl.shpv_verwijsindex_201709.VerwijsIndex {
         

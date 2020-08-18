@@ -90,23 +90,28 @@ namespace Denion.WebService.VerwijsIndex
                             if (relayRes != null)
                             {
                                 res = relayRes;
-                                if (!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId)) {
+                                if(!string.IsNullOrEmpty(relayRes.PaymentAuthorisationId)) {
                                     DateTime startDateTimeAdjusted = DateTime.Now;
-                                    if (relayRes.StartDateTimeAdjusted.HasValue)
-                                    {
+                                    if(relayRes.StartDateTimeAdjusted.HasValue) {
                                         startDateTimeAdjusted = relayRes.StartDateTimeAdjusted.Value;
-                                    }  else if (req.StartDateTime != null) {
+                                    } else if(req.StartDateTime != null) {
                                         startDateTimeAdjusted = req.StartDateTime;
                                     }
 
                                     DateTime endDateTime = DateTime.Now;
-                                    if (relayRes.EndDateTime.HasValue)  {
+                                    if(relayRes.EndDateTime.HasValue) {
                                         //Als garage antwoordt
                                         endDateTime = relayRes.EndDateTime.Value;
-                                    } else if (req.EndDateTime.HasValue) {
+                                    } else if(req.EndDateTime.HasValue) {
                                         //Garage heeft niets gestuurd dus kijken we of provider een eindtijd heeft gestuurd
                                         endDateTime = req.EndDateTime.Value;
                                     }
+
+                                    //Remak id = 0, dan weglaten
+                                    if(relayRes.RemarkId == "0") {
+                                        relayRes.RemarkId = null;
+                                    }
+                            
 
                                     Link link = DatabaseFunctions.CreateLink(req.VehicleId, req.CountryCode, req.ProviderId, null, startDateTimeAdjusted, endDateTime, null, req.AreaId, req.VehicleIdType, null);
 
