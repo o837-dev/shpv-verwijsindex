@@ -201,6 +201,12 @@ namespace Denion.WebService.VerwijsIndex
                                 if (relayRes != null)
                                 {
                                     res = relayRes;
+
+                                    //Remak id = 0, dan weglaten
+                                    if(res.RemarkId == "0") {
+                                        res.RemarkId = null;
+                                    }
+
                                     if (res.PaymentAuthorisationId != null)
                                     {
                                         
