@@ -58,7 +58,7 @@ namespace NPRProxyService
                     // send the request to the RDW
                     RDWres = client.PaymentStart(Functions.GetPinFromCert(client.ClientCredentials.ClientCertificate.Certificate), data, out RDWerr);
 
-                    res.ProviderId = RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
+                    res.ProviderId = RDWres.ProviderId != null && RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
                     res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount;
                     res.AuthorisationValidUntil = RDWres.EndDateTimeAdjusted;
