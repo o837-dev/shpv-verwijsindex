@@ -146,16 +146,8 @@ namespace Denion.WebService.VerwijsIndex
             ConsumerClient clnt = new ConsumerClient(GetBinding(url), GetEndPoint(url));
             if (url.Contains("ipcontrol"))
             {
-                if (url.Contains("ext")) {
-                    //Production
-                    clnt.ClientCredentials.UserName.UserName = "Ext-FlintSHPV";
-                    clnt.ClientCredentials.UserName.Password = "c6e?qDBD*x";
-                } else {
-                    //Test
-                    clnt.ClientCredentials.UserName.UserName = "ShpvService";
-                    clnt.ClientCredentials.UserName.Password = "jgpt%^35";
-                }
-              
+                clnt.ClientCredentials.UserName.UserName = "ShpvService";
+                clnt.ClientCredentials.UserName.Password = "jgpt%^35";
             }
 
             if (System.Net.ServicePointManager.SecurityProtocol == (SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls))
