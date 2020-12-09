@@ -65,6 +65,9 @@ namespace Denion.WebService.VerwijsIndex
                     }
                 }
             }
+
+            res.ProviderId = FixProviderId(request.AreaId, res.ProviderId);
+
             t.Finish();
             return res;
         }
@@ -132,8 +135,27 @@ namespace Denion.WebService.VerwijsIndex
                     }
                 }
             }
+
+
+            res.ProviderId = FixProviderId(res.AreaId, res.ProviderId);
+
+
             t.Finish();
             return res;
+        }
+
+        private string FixProviderId(string areaId, string providerId) {
+            //GA-32 workaround voor PMS
+            if(providerId != null) {
+
+                if(areaId != null) {
+                    //Get possible name change for current area id en provider
+                    string correctedProviderId = DatabaseFunctions.GetProviderIdCorrection(res.AreaId, res.ProviderId);
+
+                    return correctedProviderId;
+                }
+            }
+            return providerId;
         }
 
         StatusResponse IVerwijsIndex.ServiceStatus()

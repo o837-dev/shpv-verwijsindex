@@ -136,7 +136,16 @@ namespace Denion.WebService.VerwijsIndex
             return res;
         }
 
-      
+        internal static string GetProviderIdCorrection(string areaId, string providerId) {
+            using(SqlCommand com = new SqlCommand(@"
+                SELECT p.area_id, p.provider_id_from, p.provider_id_to from ProviderIdCorrections p where p.area_id = @AREAID and p.provider_id_from = @PROVIDERID")) {
+                com.Parameters.Add("@AREAID", SqlDbType.NVarChar, 200).Value = areaId;
+                com.Parameters.Add("@PROVIDERID", SqlDbType.NVarChar, 200).Value = providerId;
+
+                DataTable dt = Database.Database.ExecuteQuery(com);
+                return dt.Rows.Count > 0 ? dt.Rows[0]["provider_id_to"] as string: providerId;
+            }
+        }
 
         private static Providers ListOfProviders(LinkRegistrationRequest req)
         {
