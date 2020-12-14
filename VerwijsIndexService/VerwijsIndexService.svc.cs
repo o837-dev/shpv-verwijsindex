@@ -150,7 +150,7 @@ namespace Denion.WebService.VerwijsIndex
 
                 if(areaId != null) {
                     //Get possible name change for current area id en provider
-                    string correctedProviderId = DatabaseFunctions.GetProviderIdCorrection(res.AreaId, res.ProviderId);
+                    string correctedProviderId = DatabaseFunctions.GetProviderIdCorrection(areaId, providerId);
 
                     return correctedProviderId;
                 }
