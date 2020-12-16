@@ -37,9 +37,6 @@ namespace Denion.WebService.Beheer
 
         private void RefreshPage()
         {
-            //grd.EditIndex = -1;
-            //LoadData();
-
             // prevents the message on page refresh
             Response.Redirect(Request.RawUrl);
         }
@@ -116,8 +113,8 @@ namespace Denion.WebService.Beheer
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                object ID = grd.DataKeys[e.Row.RowIndex].Value;
-                if (ID == DBNull.Value) e.Row.Visible = false;
+                object id = grd.DataKeys[e.Row.RowIndex].Value;
+                if (id == DBNull.Value) e.Row.Visible = false;
             }
         }
     }

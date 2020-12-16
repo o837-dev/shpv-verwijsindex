@@ -136,9 +136,7 @@ namespace Denion.WebService.VerwijsIndex
                 }
             }
 
-
             res.ProviderId = FixProviderId(res.AreaId, res.ProviderId);
-
 
             t.Finish();
             return res;
@@ -151,7 +149,6 @@ namespace Denion.WebService.VerwijsIndex
                 if(areaId != null) {
                     //Get possible name change for current area id en provider
                     string correctedProviderId = DatabaseFunctions.GetProviderIdCorrection(areaId, providerId);
-
                     return correctedProviderId;
                 }
             }
