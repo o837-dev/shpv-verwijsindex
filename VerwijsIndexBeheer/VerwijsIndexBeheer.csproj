@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="AreaGroups.aspx" />
     <Content Include="AreaManager.aspx" />
+    <Content Include="ProviderIdCorrections.aspx" />
     <Content Include="AreaManagerFix.aspx" />
     <Content Include="Authorisation.aspx" />
     <Content Include="ConsumerContract.aspx" />
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="AreaManager.aspx.designer.cs">
       <DependentUpon>AreaManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderIdCorrections.aspx.cs">
+      <DependentUpon>ProviderIdCorrections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProviderIdCorrections.aspx.designer.cs">
+      <DependentUpon>ProviderIdCorrections.aspx</DependentUpon>
     </Compile>
     <Compile Include="AreaManagerFix.aspx.cs">
       <DependentUpon>AreaManagerFix.aspx</DependentUpon>
@@ -326,6 +334,9 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Web.Bravo.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.BS-SPO13.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -333,6 +344,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.NPRTest.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.sqlVM.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
