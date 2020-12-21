@@ -145,11 +145,9 @@ namespace Denion.WebService.VerwijsIndex
         private string FixProviderId(string areaId, string providerId) {
             //GA-32 workaround voor PMS
             if(providerId != null) {
-
                 if(areaId != null) {
                     //Get possible name change for current area id en provider
-                    string correctedProviderId = DatabaseFunctions.GetProviderIdCorrection(areaId, providerId);
-                    return correctedProviderId;
+                    return DatabaseFunctions.GetProviderIdCorrection(areaId, providerId);
                 }
             }
             return providerId;
