@@ -235,6 +235,15 @@
     <Content Include="Connected Services\RDW\NPRProxyService.RDW.RevokeLinkResponseError.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RetrieveLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RetrieveLinkResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RDW\NPRProxyService.RDW.RetrieveLinkResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\RDW\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -263,7 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\RDW\Registration.wsdl" />
-    <None Include="Connected Services\RDW\Registration1.xsd">
+    <None Include="Connected Services\RDW\Registration.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

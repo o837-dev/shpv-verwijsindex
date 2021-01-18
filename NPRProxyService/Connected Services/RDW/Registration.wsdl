@@ -16,7 +16,7 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://rdw.nl/rpv/1.0/Imports">
-      <xsd:import schemaLocation="https://psb.gatrdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=d9801c4bced67e4b1e448ffd7cafc385" namespace="http://rdw.nl/rpv/1.0" />
+      <xsd:import schemaLocation="https://psb.gatrdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=e86132733b9114471e870bfea115d2a7" namespace="http://rdw.nl/rpv/1.0" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="RevokeLinkRequest">
@@ -36,6 +36,15 @@
   </wsdl:message>
   <wsdl:message name="EnrollLinkResponse">
     <wsdl:part name="parameters" element="tns:EnrollLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLinkRequest">
+    <wsdl:part name="parameters" element="tns:RetrieveLinkRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLinkRequest_Headers">
+    <wsdl:part name="PIN" element="tns:PIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLinkResponse">
+    <wsdl:part name="parameters" element="tns:RetrieveLinkResponse" />
   </wsdl:message>
   <wsdl:message name="PSRightEnrollRequest">
     <wsdl:part name="parameters" element="tns:PSRightEnrollRequest" />
@@ -190,6 +199,10 @@
       <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollLink" name="EnrollLinkRequest" message="tns:EnrollLinkRequest" />
       <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollLinkResponse" name="EnrollLinkResponse" message="tns:EnrollLinkResponse" />
     </wsdl:operation>
+    <wsdl:operation name="RetrieveLink">
+      <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLink" name="RetrieveLinkRequest" message="tns:RetrieveLinkRequest" />
+      <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLinkResponse" name="RetrieveLinkResponse" message="tns:RetrieveLinkResponse" />
+    </wsdl:operation>
     <wsdl:operation name="EnrollPSRight">
       <wsdl:input wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight" name="PSRightEnrollRequest" message="tns:PSRightEnrollRequest" />
       <wsdl:output wsaw:Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRightResponse" name="PSRightEnrollResponse" message="tns:PSRightEnrollResponse" />
@@ -275,6 +288,16 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="EnrollLinkResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLink">
+      <soap:operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLink" style="document" />
+      <wsdl:input name="RetrieveLinkRequest">
+        <soap:header message="tns:RetrieveLinkRequest_Headers" part="PIN" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveLinkResponse">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -459,6 +482,16 @@
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap12/" />
       </wsdl:input>
       <wsdl:output name="EnrollLinkResponse">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLink">
+      <operation soapAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLink" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input name="RetrieveLinkRequest">
+        <header message="tns:RetrieveLinkRequest_Headers" part="PIN" use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap12/" />
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output name="RetrieveLinkResponse">
         <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap12/" />
       </wsdl:output>
     </wsdl:operation>

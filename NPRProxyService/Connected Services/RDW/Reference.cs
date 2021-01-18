@@ -33,6 +33,15 @@ namespace NPRProxyService.RDW {
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollLink", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/EnrollLinkResponse")]
         System.Threading.Tasks.Task<NPRProxyService.RDW.EnrollLinkResponse> EnrollLinkAsync(NPRProxyService.RDW.EnrollLinkRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLink", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLinkResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        NPRProxyService.RDW.RetrieveLinkResponse RetrieveLink(NPRProxyService.RDW.RetrieveLinkRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLink", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLinkResponse")]
+        System.Threading.Tasks.Task<NPRProxyService.RDW.RetrieveLinkResponse> RetrieveLinkAsync(NPRProxyService.RDW.RetrieveLinkRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight", ReplyAction="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRightResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
@@ -2355,13 +2364,15 @@ namespace NPRProxyService.RDW {
         
         private string usageIdField;
         
-        private string tokenField;
-        
-        private string tokenTypeField;
+        private TokenListData[] tokenListField;
         
         private System.Nullable<decimal> authorisationMaxAmountField;
         
         private bool authorisationMaxAmountFieldSpecified;
+        
+        private System.Nullable<decimal> vATMaxAmountField;
+        
+        private bool vATMaxAmountFieldSpecified;
         
         private System.Nullable<System.DateTime> endDateTimeAdjustedField;
         
@@ -2428,31 +2439,19 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
-        public string Token {
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=5)]
+        public TokenListData[] TokenList {
             get {
-                return this.tokenField;
+                return this.tokenListField;
             }
             set {
-                this.tokenField = value;
-                this.RaisePropertyChanged("Token");
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
-        public string TokenType {
-            get {
-                return this.tokenTypeField;
-            }
-            set {
-                this.tokenTypeField = value;
-                this.RaisePropertyChanged("TokenType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public System.Nullable<decimal> AuthorisationMaxAmount {
             get {
                 return this.authorisationMaxAmountField;
@@ -2472,6 +2471,30 @@ namespace NPRProxyService.RDW {
             set {
                 this.authorisationMaxAmountFieldSpecified = value;
                 this.RaisePropertyChanged("AuthorisationMaxAmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<decimal> VATMaxAmount {
+            get {
+                return this.vATMaxAmountField;
+            }
+            set {
+                this.vATMaxAmountField = value;
+                this.RaisePropertyChanged("VATMaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATMaxAmountSpecified {
+            get {
+                return this.vATMaxAmountFieldSpecified;
+            }
+            set {
+                this.vATMaxAmountFieldSpecified = value;
+                this.RaisePropertyChanged("VATMaxAmountSpecified");
             }
         }
         
@@ -2496,6 +2519,52 @@ namespace NPRProxyService.RDW {
             set {
                 this.endDateTimeAdjustedFieldSpecified = value;
                 this.RaisePropertyChanged("EndDateTimeAdjustedSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class TokenListData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string tokenField;
+        
+        private string tokenTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Token {
+            get {
+                return this.tokenField;
+            }
+            set {
+                this.tokenField = value;
+                this.RaisePropertyChanged("Token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string TokenType {
+            get {
+                return this.tokenTypeField;
+            }
+            set {
+                this.tokenTypeField = value;
+                this.RaisePropertyChanged("TokenType");
             }
         }
         
@@ -2547,9 +2616,7 @@ namespace NPRProxyService.RDW {
         
         private bool vATFieldSpecified;
         
-        private string tokenField;
-        
-        private string tokenTypeField;
+        private TokenListData[] tokenListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
@@ -2732,26 +2799,14 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
-        public string Token {
+        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
+        public TokenListData[] TokenList {
             get {
-                return this.tokenField;
+                return this.tokenListField;
             }
             set {
-                this.tokenField = value;
-                this.RaisePropertyChanged("Token");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
-        public string TokenType {
-            get {
-                return this.tokenTypeField;
-            }
-            set {
-                this.tokenTypeField = value;
-                this.RaisePropertyChanged("TokenType");
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
             }
         }
         
@@ -2790,6 +2845,10 @@ namespace NPRProxyService.RDW {
         private System.Nullable<decimal> authorisationMaxAmountField;
         
         private bool authorisationMaxAmountFieldSpecified;
+        
+        private System.Nullable<decimal> vATMaxAmountField;
+        
+        private bool vATMaxAmountFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
@@ -2896,6 +2955,30 @@ namespace NPRProxyService.RDW {
             set {
                 this.authorisationMaxAmountFieldSpecified = value;
                 this.RaisePropertyChanged("AuthorisationMaxAmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> VATMaxAmount {
+            get {
+                return this.vATMaxAmountField;
+            }
+            set {
+                this.vATMaxAmountField = value;
+                this.RaisePropertyChanged("VATMaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATMaxAmountSpecified {
+            get {
+                return this.vATMaxAmountFieldSpecified;
+            }
+            set {
+                this.vATMaxAmountFieldSpecified = value;
+                this.RaisePropertyChanged("VATMaxAmountSpecified");
             }
         }
         
@@ -4962,9 +5045,15 @@ namespace NPRProxyService.RDW {
         
         private bool countryCodeVehicleFieldSpecified;
         
+        private string vehicleIdTypeField;
+        
         private string sellingPointIdField;
         
         private System.DateTime startTimePSRightField;
+        
+        private System.Nullable<System.DateTime> startTimePSRightAdjustedField;
+        
+        private bool startTimePSRightAdjustedFieldSpecified;
         
         private System.Nullable<System.DateTime> endTimePSRightField;
         
@@ -5008,6 +5097,14 @@ namespace NPRProxyService.RDW {
         
         private bool vATPSRightFieldSpecified;
         
+        private System.Nullable<decimal> maxAmountPSRightField;
+        
+        private bool maxAmountPSRightFieldSpecified;
+        
+        private System.Nullable<decimal> vATMaxAmountPSRightField;
+        
+        private bool vATMaxAmountPSRightFieldSpecified;
+        
         private System.Nullable<decimal> amountPSRightCalculatedField;
         
         private bool amountPSRightCalculatedFieldSpecified;
@@ -5027,6 +5124,8 @@ namespace NPRProxyService.RDW {
         private System.DateTime timeRecalculationField;
         
         private bool timeRecalculationFieldSpecified;
+        
+        private TokenListData[] tokenListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
@@ -5077,7 +5176,19 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=4)]
         public string SellingPointId {
             get {
                 return this.sellingPointIdField;
@@ -5089,7 +5200,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public System.DateTime StartTimePSRight {
             get {
                 return this.startTimePSRightField;
@@ -5101,7 +5212,31 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<System.DateTime> StartTimePSRightAdjusted {
+            get {
+                return this.startTimePSRightAdjustedField;
+            }
+            set {
+                this.startTimePSRightAdjustedField = value;
+                this.RaisePropertyChanged("StartTimePSRightAdjusted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartTimePSRightAdjustedSpecified {
+            get {
+                return this.startTimePSRightAdjustedFieldSpecified;
+            }
+            set {
+                this.startTimePSRightAdjustedFieldSpecified = value;
+                this.RaisePropertyChanged("StartTimePSRightAdjustedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public System.Nullable<System.DateTime> EndTimePSRight {
             get {
                 return this.endTimePSRightField;
@@ -5125,7 +5260,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
             get {
                 return this.endTimePSRightAdjustedField;
@@ -5149,7 +5284,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
         public PSRightWindowData[] PSRightWindowList {
             get {
                 return this.pSRightWindowListField;
@@ -5161,7 +5296,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string PSRightAcquirerCode {
             get {
                 return this.pSRightAcquirerCodeField;
@@ -5173,7 +5308,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
         public string PSRightAcquirerDesc {
             get {
                 return this.pSRightAcquirerDescField;
@@ -5185,7 +5320,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=12)]
         public string AreaManagerId {
             get {
                 return this.areaManagerIdField;
@@ -5197,7 +5332,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
         public string AreaManagerDesc {
             get {
                 return this.areaManagerDescField;
@@ -5209,7 +5344,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string AreaId {
             get {
                 return this.areaIdField;
@@ -5221,7 +5356,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
         public string AreaDesc {
             get {
                 return this.areaDescField;
@@ -5233,7 +5368,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string UsageId {
             get {
                 return this.usageIdField;
@@ -5245,7 +5380,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string UsageDesc {
             get {
                 return this.usageDescField;
@@ -5257,7 +5392,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public System.DateTime RegistrationTimePSRight {
             get {
                 return this.registrationTimePSRightField;
@@ -5269,7 +5404,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public System.DateTime RegistrationEndTimePSRight {
             get {
                 return this.registrationEndTimePSRightField;
@@ -5293,7 +5428,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public PSRightInfoDataLocationPSRight LocationPSRight {
             get {
                 return this.locationPSRightField;
@@ -5305,7 +5440,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=21)]
         public System.Nullable<decimal> AmountPSRight {
             get {
                 return this.amountPSRightField;
@@ -5329,7 +5464,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=22)]
         public System.Nullable<decimal> VATPSRight {
             get {
                 return this.vATPSRightField;
@@ -5353,7 +5488,55 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=23)]
+        public System.Nullable<decimal> MaxAmountPSRight {
+            get {
+                return this.maxAmountPSRightField;
+            }
+            set {
+                this.maxAmountPSRightField = value;
+                this.RaisePropertyChanged("MaxAmountPSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MaxAmountPSRightSpecified {
+            get {
+                return this.maxAmountPSRightFieldSpecified;
+            }
+            set {
+                this.maxAmountPSRightFieldSpecified = value;
+                this.RaisePropertyChanged("MaxAmountPSRightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=24)]
+        public System.Nullable<decimal> VATMaxAmountPSRight {
+            get {
+                return this.vATMaxAmountPSRightField;
+            }
+            set {
+                this.vATMaxAmountPSRightField = value;
+                this.RaisePropertyChanged("VATMaxAmountPSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATMaxAmountPSRightSpecified {
+            get {
+                return this.vATMaxAmountPSRightFieldSpecified;
+            }
+            set {
+                this.vATMaxAmountPSRightFieldSpecified = value;
+                this.RaisePropertyChanged("VATMaxAmountPSRightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=25)]
         public System.Nullable<decimal> AmountPSRightCalculated {
             get {
                 return this.amountPSRightCalculatedField;
@@ -5377,7 +5560,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=26)]
         public System.Nullable<decimal> VATPSRightCalculated {
             get {
                 return this.vATPSRightCalculatedField;
@@ -5401,7 +5584,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=27)]
         public System.Nullable<decimal> AmountPSRightRecalculated {
             get {
                 return this.amountPSRightRecalculatedField;
@@ -5425,7 +5608,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=28)]
         public System.Nullable<decimal> VATPSRightRecalculated {
             get {
                 return this.vATPSRightRecalculatedField;
@@ -5449,7 +5632,7 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public System.DateTime TimeRecalculation {
             get {
                 return this.timeRecalculationField;
@@ -5469,6 +5652,18 @@ namespace NPRProxyService.RDW {
             set {
                 this.timeRecalculationFieldSpecified = value;
                 this.RaisePropertyChanged("TimeRecalculationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=30)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
             }
         }
         
@@ -7356,6 +7551,8 @@ namespace NPRProxyService.RDW {
         
         private PSRightEnrollResponseDataPSRightParentData pSRightParentDataField;
         
+        private TokenListData[] tokenListField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
         public string PSRightId {
@@ -7536,6 +7733,18 @@ namespace NPRProxyService.RDW {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=11)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -7623,6 +7832,8 @@ namespace NPRProxyService.RDW {
         private string referencePSRightField;
         
         private PSRightParentData pSRightParentDataField;
+        
+        private TokenListData[] tokenListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -7852,6 +8063,18 @@ namespace NPRProxyService.RDW {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=15)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -7974,19 +8197,381 @@ namespace NPRProxyService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class LinkInfoData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdTypeField;
+        
+        private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
+        
+        private bool countryCodeVehicleFieldSpecified;
+        
+        private string countryNameField;
+        
+        private string areaManagerIdField;
+        
+        private string areaManagerDescField;
+        
+        private string areaIdField;
+        
+        private string areaDescField;
+        
+        private string linkIdField;
+        
+        private string usageIdField;
+        
+        private string usageDescField;
+        
+        private System.DateTime startTimeLinkField;
+        
+        private System.Nullable<System.DateTime> endTimeLinkField;
+        
+        private bool endTimeLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
+            get {
+                return this.countryCodeVehicleField;
+            }
+            set {
+                this.countryCodeVehicleField = value;
+                this.RaisePropertyChanged("CountryCodeVehicle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountryCodeVehicleSpecified {
+            get {
+                return this.countryCodeVehicleFieldSpecified;
+            }
+            set {
+                this.countryCodeVehicleFieldSpecified = value;
+                this.RaisePropertyChanged("CountryCodeVehicleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string CountryName {
+            get {
+                return this.countryNameField;
+            }
+            set {
+                this.countryNameField = value;
+                this.RaisePropertyChanged("CountryName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string AreaManagerDesc {
+            get {
+                return this.areaManagerDescField;
+            }
+            set {
+                this.areaManagerDescField = value;
+                this.RaisePropertyChanged("AreaManagerDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string AreaDesc {
+            get {
+                return this.areaDescField;
+            }
+            set {
+                this.areaDescField = value;
+                this.RaisePropertyChanged("AreaDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=7)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string UsageDesc {
+            get {
+                return this.usageDescField;
+            }
+            set {
+                this.usageDescField = value;
+                this.RaisePropertyChanged("UsageDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public System.DateTime StartTimeLink {
+            get {
+                return this.startTimeLinkField;
+            }
+            set {
+                this.startTimeLinkField = value;
+                this.RaisePropertyChanged("StartTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<System.DateTime> EndTimeLink {
+            get {
+                return this.endTimeLinkField;
+            }
+            set {
+                this.endTimeLinkField = value;
+                this.RaisePropertyChanged("EndTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimeLinkSpecified {
+            get {
+                return this.endTimeLinkFieldSpecified;
+            }
+            set {
+                this.endTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimeLinkSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveLinkResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private LinkInfoData[] linkInfoListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public LinkInfoData[] LinkInfoList {
+            get {
+                return this.linkInfoListField;
+            }
+            set {
+                this.linkInfoListField = value;
+                this.RaisePropertyChanged("LinkInfoList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveLinkRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private string linkIdField;
+        
+        private System.DateTime startTimeLinkField;
+        
+        private bool startTimeLinkFieldSpecified;
+        
+        private System.Nullable<System.DateTime> endTimeLinkField;
+        
+        private bool endTimeLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime StartTimeLink {
+            get {
+                return this.startTimeLinkField;
+            }
+            set {
+                this.startTimeLinkField = value;
+                this.RaisePropertyChanged("StartTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartTimeLinkSpecified {
+            get {
+                return this.startTimeLinkFieldSpecified;
+            }
+            set {
+                this.startTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("StartTimeLinkSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> EndTimeLink {
+            get {
+                return this.endTimeLinkField;
+            }
+            set {
+                this.endTimeLinkField = value;
+                this.RaisePropertyChanged("EndTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimeLinkSpecified {
+            get {
+                return this.endTimeLinkFieldSpecified;
+            }
+            set {
+                this.endTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimeLinkSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
     public partial class EnrollLinkResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string pSRightIdField;
+        private string linkIdField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
-        public string PSRightId {
+        public string LinkId {
             get {
-                return this.pSRightIdField;
+                return this.linkIdField;
             }
             set {
-                this.pSRightIdField = value;
-                this.RaisePropertyChanged("PSRightId");
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
             }
         }
         
@@ -8170,6 +8755,7 @@ namespace NPRProxyService.RDW {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PSRightCheckResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PSRightRevokeResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PSRightEnrollResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveLinkResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnrollLinkResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RevokeLinkResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveAreaManagersResponseError))]
@@ -9183,6 +9769,85 @@ namespace NPRProxyService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveLinkResponseError : ResponseError {
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private string linkIdField;
+        
+        private string startTimeLinksField;
+        
+        private string endTimeLinksField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string StartTimeLinks {
+            get {
+                return this.startTimeLinksField;
+            }
+            set {
+                this.startTimeLinksField = value;
+                this.RaisePropertyChanged("StartTimeLinks");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string EndTimeLinks {
+            get {
+                return this.endTimeLinksField;
+            }
+            set {
+                this.endTimeLinksField = value;
+                this.RaisePropertyChanged("EndTimeLinks");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
     public partial class EnrollLinkResponseError : ResponseError {
         
         private string areaManagerIdField;
@@ -9559,6 +10224,46 @@ namespace NPRProxyService.RDW {
         public EnrollLinkResponse(NPRProxyService.RDW.EnrollLinkResponseData EnrollLinkResponseData, NPRProxyService.RDW.EnrollLinkResponseError EnrollLinkResponseError) {
             this.EnrollLinkResponseData = EnrollLinkResponseData;
             this.EnrollLinkResponseError = EnrollLinkResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveLinkRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveLinkRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRProxyService.RDW.RetrieveLinkRequestData RetrieveLinkRequestData;
+        
+        public RetrieveLinkRequest() {
+        }
+        
+        public RetrieveLinkRequest(string PIN, NPRProxyService.RDW.RetrieveLinkRequestData RetrieveLinkRequestData) {
+            this.PIN = PIN;
+            this.RetrieveLinkRequestData = RetrieveLinkRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveLinkResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveLinkResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public NPRProxyService.RDW.RetrieveLinkResponseData RetrieveLinkResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public NPRProxyService.RDW.RetrieveLinkResponseError RetrieveLinkResponseError;
+        
+        public RetrieveLinkResponse() {
+        }
+        
+        public RetrieveLinkResponse(NPRProxyService.RDW.RetrieveLinkResponseData RetrieveLinkResponseData, NPRProxyService.RDW.RetrieveLinkResponseError RetrieveLinkResponseError) {
+            this.RetrieveLinkResponseData = RetrieveLinkResponseData;
+            this.RetrieveLinkResponseError = RetrieveLinkResponseError;
         }
     }
     
@@ -10263,6 +10968,24 @@ namespace NPRProxyService.RDW {
         
         public System.Threading.Tasks.Task<NPRProxyService.RDW.EnrollLinkResponse> EnrollLinkAsync(NPRProxyService.RDW.EnrollLinkRequest request) {
             return base.Channel.EnrollLinkAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        NPRProxyService.RDW.RetrieveLinkResponse NPRProxyService.RDW.IRegistration.RetrieveLink(NPRProxyService.RDW.RetrieveLinkRequest request) {
+            return base.Channel.RetrieveLink(request);
+        }
+        
+        public NPRProxyService.RDW.RetrieveLinkResponseData RetrieveLink(string PIN, NPRProxyService.RDW.RetrieveLinkRequestData RetrieveLinkRequestData, out NPRProxyService.RDW.RetrieveLinkResponseError RetrieveLinkResponseError) {
+            NPRProxyService.RDW.RetrieveLinkRequest inValue = new NPRProxyService.RDW.RetrieveLinkRequest();
+            inValue.PIN = PIN;
+            inValue.RetrieveLinkRequestData = RetrieveLinkRequestData;
+            NPRProxyService.RDW.RetrieveLinkResponse retVal = ((NPRProxyService.RDW.IRegistration)(this)).RetrieveLink(inValue);
+            RetrieveLinkResponseError = retVal.RetrieveLinkResponseError;
+            return retVal.RetrieveLinkResponseData;
+        }
+        
+        public System.Threading.Tasks.Task<NPRProxyService.RDW.RetrieveLinkResponse> RetrieveLinkAsync(NPRProxyService.RDW.RetrieveLinkRequest request) {
+            return base.Channel.RetrieveLinkAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
