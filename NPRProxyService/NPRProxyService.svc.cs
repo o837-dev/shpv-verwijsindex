@@ -36,7 +36,7 @@ namespace NPRProxyService
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null) {
+                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
                     data.CountryCodeVehicle = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
                 }
                 data.CountryCodeVehicleSpecified = req.CountryCode != null;
@@ -68,7 +68,11 @@ namespace NPRProxyService
 
                     res.ProviderId = RDWres.ProviderId != null && RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
-                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount;
+                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    if(RDWres.AuthorisationMaxAmount.Value == 0) {
+                        //Hack garages willen blijkbaar geen maxamount 0 accetperen
+                        res.AuthorisationMaxAmount = null;
+                    }
                     res.AuthorisationValidUntil = RDWres.EndDateTimeAdjusted;
                     res.Token = RDWres.TokenList[0]?.Token;
                     res.TokenType = RDWres.TokenList[0]?.TokenType;
@@ -190,7 +194,7 @@ namespace NPRProxyService
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null) {
+                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
                     data.CountryCode = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
                 }
                 data.CountryCodeSpecified = req.CountryCode != null;

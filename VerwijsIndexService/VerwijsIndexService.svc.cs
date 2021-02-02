@@ -147,10 +147,10 @@ namespace Denion.WebService.VerwijsIndex
             if(providerId != null) {
                 if(areaId != null) {
                     //Get possible name change for current area id en provider
-                    return DatabaseFunctions.GetProviderIdCorrection(areaId, providerId);
+                    return DatabaseFunctions.GetProviderIdCorrection(areaId, providerId).Trim();
                 }
             }
-            return providerId;
+            return providerId.Trim();
         }
 
         StatusResponse IVerwijsIndex.ServiceStatus()
