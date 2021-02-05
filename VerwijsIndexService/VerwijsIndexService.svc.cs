@@ -150,7 +150,7 @@ namespace Denion.WebService.VerwijsIndex
                     return DatabaseFunctions.GetProviderIdCorrection(areaId, providerId).Trim();
                 }
             }
-            return providerId.Trim();
+            return providerId != null ? providerId.Trim(): null;
         }
 
         StatusResponse IVerwijsIndex.ServiceStatus()
