@@ -29,7 +29,7 @@ namespace NPRProxyService {
                 RDW.PaymentStartResponseError RDWerr = new RDW.PaymentStartResponseError();
 
                 RDW.PaymentStartRequestData data = new RDW.PaymentStartRequestData();
-                data.AreaManagerId = req.AreaManagerId;
+                data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
@@ -172,7 +172,7 @@ namespace NPRProxyService {
                 RDW.PaymentCheckResponseError RDWerr = new RDW.PaymentCheckResponseError();
 
                 RDW.PaymentCheckRequestData data = new RDW.PaymentCheckRequestData();
-                data.AreaManagerId = req.AreaManagerId;
+                data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
