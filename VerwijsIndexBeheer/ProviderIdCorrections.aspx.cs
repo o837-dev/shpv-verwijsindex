@@ -100,7 +100,7 @@ namespace Denion.WebService.Beheer
             if (e.CommandName == "Insert")
             {
                 Dictionary<string, string> dic = ValuesFromRow(grd.FooterRow);
-                SqlCommand com = new SqlCommand("INSERT INTO [ProviderIdCorrections] (area_id, provider_id_to, provider_id_from) values (@AreaId, @ProviderIdFrom, @ProviderIdTo)");
+                SqlCommand com = new SqlCommand("INSERT INTO [ProviderIdCorrections] (area_id, provider_id_to, provider_id_from) values (@AreaId, @ProviderIdTo, @ProviderIdFrom)");
                 ArgumentsFromDictionary(com, dic);
 
                 Database.Database.ExecuteScalar(com);

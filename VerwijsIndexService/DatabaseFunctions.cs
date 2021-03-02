@@ -236,6 +236,18 @@ namespace Denion.WebService.VerwijsIndex
             }
         }
 
+        internal static string FixAreaManagerId(string AreaManagerId) {
+            SqlCommand com = new SqlCommand();
+            com.CommandText = "SELECT [AreaManagerIdTo] from AreaManagerIdFix where [AreaManagerIdFrom] = @AreaManagerIdFrom";
+            com.Parameters.Add("@AreaManagerIdFrom", SqlDbType.NVarChar, 200).Value = AreaManagerId;
+
+            DataTable dt = Database.Database.ExecuteQuery(com);
+            if(dt != null && dt.Rows.Count == 1) {
+                return dt.Rows[0]["AreaManagerIdTo"].ToString();
+            }
+            return AreaManagerId;
+        }
+
         //private static Providers getSimular(LinkRegistrationRequest req)
         //{
         //    using (SqlCommand com = new SqlCommand(@"

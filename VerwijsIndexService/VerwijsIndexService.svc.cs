@@ -147,10 +147,10 @@ namespace Denion.WebService.VerwijsIndex
             if(providerId != null) {
                 if(areaId != null) {
                     //Get possible name change for current area id en provider
-                    return DatabaseFunctions.GetProviderIdCorrection(areaId, providerId);
+                    return DatabaseFunctions.GetProviderIdCorrection(areaId, providerId).Trim();
                 }
             }
-            return providerId;
+            return providerId != null ? providerId.Trim(): null;
         }
 
         StatusResponse IVerwijsIndex.ServiceStatus()
@@ -320,7 +320,7 @@ namespace Denion.WebService.VerwijsIndex
             /// </summary>
             public override void Settle() {
                 try {
-                    _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode, _request.AreaManagerId, _request.StartDateTime, _request.AreaId, _request.VehicleIdType, "");
+                    _requestid = DatabaseFunctions.RegisterRequest(_request.AccessId, _request.VehicleId, _request.CountryCode,  DatabaseFunctions.FixAreaManagerId(_request.AreaManagerId), _request.StartDateTime, _request.AreaId, _request.VehicleIdType, "");
 
                     Providers providers = DatabaseFunctions.ListOfProvider(_request.AreaManagerId, _request.StartDateTime);
                     if (providers.Count > 0) {

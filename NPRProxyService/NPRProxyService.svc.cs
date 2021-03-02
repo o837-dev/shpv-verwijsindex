@@ -31,12 +31,12 @@ namespace NPRProxyService
                 RDW.PaymentStartResponseError RDWerr = new RDW.PaymentStartResponseError();
 
                 RDW.PaymentStartRequestData data = new RDW.PaymentStartRequestData();
-                data.AreaManagerId = req.AreaManagerId;
+                data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null) {
+                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
                     data.CountryCodeVehicle = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
                 }
                 data.CountryCodeVehicleSpecified = req.CountryCode != null;
@@ -48,8 +48,16 @@ namespace NPRProxyService
                 data.AmountSpecified = req.Amount != null;
                 data.VAT = (decimal?)req.VAT;
                 data.VATSpecified = req.VAT != null;
-                data.Token = req.Token;
-                data.TokenType = req.TokenType;
+
+                if(req.Token != null) { 
+                    RDW.TokenListData tokenListData = new RDW.TokenListData();
+                    tokenListData.Token = req.Token;
+                    tokenListData.TokenType = req.TokenType;
+                    RDW.TokenListData[] tokenListDatas = new RDW.TokenListData[1];
+                    tokenListDatas[0] = tokenListData;
+                    data.TokenList = tokenListDatas;
+                }
+
 
                 RDWreq.PaymentStartRequestData = data;
 
@@ -60,10 +68,14 @@ namespace NPRProxyService
 
                     res.ProviderId = RDWres.ProviderId != null && RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
-                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount;
+                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    if(RDWres.AuthorisationMaxAmount.Value == 0) {
+                        //Hack garages willen blijkbaar geen maxamount 0 accetperen
+                        res.AuthorisationMaxAmount = null;
+                    }
                     res.AuthorisationValidUntil = RDWres.EndDateTimeAdjusted;
-                    res.Token = RDWres.Token;
-                    res.TokenType = RDWres.TokenType;
+                    res.Token = RDWres.TokenList[0]?.Token;
+                    res.TokenType = RDWres.TokenList[0]?.TokenType;
                 } catch(Exception ex) {
                     Database.Log(Settings.Default.ProviderId + "; Exception: " + ex.Message);
                     Database.Log(ex.StackTrace);
@@ -177,12 +189,12 @@ namespace NPRProxyService
                 RDW.PaymentCheckResponseError RDWerr = new RDW.PaymentCheckResponseError();
 
                 RDW.PaymentCheckRequestData data = new RDW.PaymentCheckRequestData();
-                data.AreaManagerId = req.AreaManagerId;
+                data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null) {
+                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
                     data.CountryCode = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
                 }
                 data.CountryCodeSpecified = req.CountryCode != null;
