@@ -28,7 +28,6 @@ namespace NPRProxyService
             } else {
 
                 //Omzetten vwx PaymentStart naar NPR PaymentStart
-                //TODO pin?
                 RDW.PaymentStartRequest RDWreq = new RDW.PaymentStartRequest();
                 RDW.PaymentStartResponseData RDWres = new RDW.PaymentStartResponseData();
                 RDW.PaymentStartResponseError RDWerr = new RDW.PaymentStartResponseError();

@@ -23,7 +23,6 @@ namespace NPRProxyService {
             } else {
 
                 //Omzetten vwx PaymentStart naar NPR PaymentStart
-                //TODO pin?
                 RDW.PaymentStartRequest RDWreq = new RDW.PaymentStartRequest();
                 RDW.PaymentStartResponseData RDWres = new RDW.PaymentStartResponseData();
                 RDW.PaymentStartResponseError RDWerr = new RDW.PaymentStartResponseError();
@@ -31,17 +30,14 @@ namespace NPRProxyService {
                 RDW.PaymentStartRequestData data = new RDW.PaymentStartRequestData();
                 data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
-                //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
-                    data.CountryCodeVehicle = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
-                }
-                data.CountryCodeVehicleSpecified = req.CountryCode != null;
+
+                //SERV-299 Leave countrycode empty even if it is send by the garage.
+                data.CountryCodeVehicleSpecified = false;
                 data.StartDateTime = req.StartDateTime;
                 data.EndDateTime = req.EndDateTime;
                 data.EndDateTimeSpecified = req.EndDateTime != null;
-                //data.UsageId = req.Usage;
                 data.Amount = (decimal?)req.Amount;
                 data.AmountSpecified = req.Amount != null;
                 data.VAT = (decimal?)req.VAT;
@@ -166,7 +162,6 @@ namespace NPRProxyService {
             } else {
 
                 //Omzetten vwx paymentcheck naar NPR paymentcheck
-                //TODO pin?
                 RDW.PaymentCheckRequest RDWreq = new RDW.PaymentCheckRequest();
                 RDW.PaymentCheckResponseData RDWres = new RDW.PaymentCheckResponseData();
                 RDW.PaymentCheckResponseError RDWerr = new RDW.PaymentCheckResponseError();
@@ -174,13 +169,11 @@ namespace NPRProxyService {
                 RDW.PaymentCheckRequestData data = new RDW.PaymentCheckRequestData();
                 data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
-                //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
-                    data.CountryCode = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
-                }
-                data.CountryCodeSpecified = req.CountryCode != null;
+
+                //SERV-299 Leave countrycode empty even if it is send by the garage.
+                data.CountryCodeSpecified = false;
                 data.CheckDateTime = req.CheckDateTime;
 
                 RDWreq.PaymentCheckRequestData = data;
