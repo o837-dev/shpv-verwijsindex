@@ -13,6 +13,9 @@ namespace NPRProxyService
     [ServiceBehavior(Name = "NPRProxy", Namespace = "https://verwijsindex.shpv.nl/service/")]
     public class ProxyService : IVerwijsIndex
     {
+        /**
+         * Van Garage naar RDW/NPR
+         **/
         PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest req)
         {
             PaymentStartResponse res = new PaymentStartResponse();
@@ -33,17 +36,14 @@ namespace NPRProxyService
                 RDW.PaymentStartRequestData data = new RDW.PaymentStartRequestData();
                 data.AreaManagerId = Functions.FixAreaManagerId(req.AreaManagerId);
                 data.AreaId = req.AreaId;
-                //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
-                    data.CountryCodeVehicle = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
-                }
-                data.CountryCodeVehicleSpecified = req.CountryCode != null;
+
+                //SERV-299 Leave countrycode empty even if it is send by the garage.
+                data.CountryCodeVehicleSpecified = false;
                 data.StartDateTime = req.StartDateTime;
                 data.EndDateTime = req.EndDateTime;
                 data.EndDateTimeSpecified = req.EndDateTime != null;
-                //data.UsageId = req.Usage;
                 data.Amount = (decimal?)req.Amount;
                 data.AmountSpecified = req.Amount != null;
                 data.VAT = (decimal?)req.VAT;
@@ -70,7 +70,7 @@ namespace NPRProxyService
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
                     res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
                     if(RDWres.AuthorisationMaxAmount.Value == 0) {
-                        //Hack garages willen blijkbaar geen maxamount 0 accetperen
+                        //Hack garages willen blijkbaar geen maxamount 0 accepteren
                         res.AuthorisationMaxAmount = null;
                     }
                     res.AuthorisationValidUntil = RDWres.EndDateTimeAdjusted;
@@ -194,10 +194,9 @@ namespace NPRProxyService
                 //data.SellingPointId = req.Sellingp
                 data.VehicleId = req.VehicleId;
                 data.VehicleIdType = req.VehicleIdType;
-                if(req.CountryCode != null && req.CountryCode.Trim() != "") {
-                    data.CountryCode = (RDW.UneceLandCodesType)Enum.Parse(typeof(RDW.UneceLandCodesType), req.CountryCode);
-                }
-                data.CountryCodeSpecified = req.CountryCode != null;
+
+                //SERV-299 Leave countrycode empty even if it is send by the garage.
+                data.CountryCodeSpecified = false;
                 data.CheckDateTime = req.CheckDateTime;
               
                 RDWreq.PaymentCheckRequestData = data;
