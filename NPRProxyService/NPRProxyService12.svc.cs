@@ -61,7 +61,9 @@ namespace NPRProxyService {
 
                     res.ProviderId = RDWres.ProviderId;
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
-                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    if(RDWres.AuthorisationMaxAmount.HasValue) {
+                        res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    }
                     if(RDWres.AuthorisationMaxAmount.Value == 0) {
                         //Hack garages willen blijkbaar geen maxamount 0 accetperen
                         res.AuthorisationMaxAmount = null;

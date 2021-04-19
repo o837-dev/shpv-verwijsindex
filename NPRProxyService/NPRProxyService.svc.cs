@@ -67,7 +67,9 @@ namespace NPRProxyService
 
                     res.ProviderId = RDWres.ProviderId != null && RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
-                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    if(RDWres.AuthorisationMaxAmount.HasValue) {
+                        res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    }
                     if(RDWres.AuthorisationMaxAmount.Value == 0) {
                         //Hack garages willen blijkbaar geen maxamount 0 accepteren
                         res.AuthorisationMaxAmount = null;
