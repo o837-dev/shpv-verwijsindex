@@ -9,46 +9,55 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>05/18/2017 23:01:24</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
-      <publishTime>05/18/2017 23:01:24</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>05/18/2017 23:01:24</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
+    </File>
+    <File Include="bin/Denion.WebService.Database.dll.config">
+      <publishTime>05/11/2021 10:48:25</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
-      <publishTime>05/18/2017 23:01:24</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/ManualProviderService.dll">
-      <publishTime>05/19/2017 17:29:17</publishTime>
+      <publishTime>05/11/2021 12:03:54</publishTime>
     </File>
     <File Include="bin/ManualProviderService.pdb">
-      <publishTime>05/19/2017 17:29:17</publishTime>
+      <publishTime>05/11/2021 12:03:54</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>05/19/2017 17:28:52</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
+    </File>
+    <File Include="bin/VerwijsIndexInterface.dll.config">
+      <publishTime>05/11/2021 10:49:59</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>05/19/2017 17:28:52</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>05/19/2017 17:28:52</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>05/19/2017 17:28:52</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>02/20/2017 21:31:39</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>07/11/2016 16:17:38</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
+    </File>
+    <File Include="ManualProviderService.cd">
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="ManualProviderService.svc">
-      <publishTime>07/11/2016 16:17:38</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/10/2017 11:55:37</publishTime>
+      <publishTime>05/11/2021 12:03:55</publishTime>
     </File>
   </ItemGroup>
 </Project>

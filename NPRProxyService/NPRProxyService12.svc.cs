@@ -1,6 +1,6 @@
 ﻿using Denion.WebService.VerwijsIndex;
 using Denion.WebService.Database;
-using Denion.WebService.Properties;
+using NPRProxyService.Properties;
 using System;
 using System.ServiceModel;
 using System.Data.SqlClient;
