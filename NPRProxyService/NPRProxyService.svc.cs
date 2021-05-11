@@ -48,10 +48,11 @@ namespace NPRProxyService
                 data.VAT = (decimal?)req.VAT;
                 data.VATSpecified = req.VAT != null;
 
-                if(req.Token != null) { 
-                    RDW.TokenListData tokenListData = new RDW.TokenListData();
-                    tokenListData.Token = req.Token;
-                    tokenListData.TokenType = req.TokenType;
+                if(req.Token != null) {
+                    RDW.TokenListData tokenListData = new RDW.TokenListData {
+                        Token = req.Token,
+                        TokenType = req.TokenType
+                    };
                     RDW.TokenListData[] tokenListDatas = new RDW.TokenListData[1];
                     tokenListDatas[0] = tokenListData;
                     data.TokenList = tokenListDatas;
