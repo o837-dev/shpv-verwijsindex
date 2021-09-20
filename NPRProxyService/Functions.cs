@@ -174,7 +174,7 @@ namespace NPRProxyService
                 }
                 catch (Exception ex)
                 {
-                    Database.Log(Denion.WebService.Properties.Settings.Default.ProviderId + "; Exception: " + ex.Message);
+                    Database.Log(Properties.Settings.Default.ProviderId + "; Exception: " + ex.Message);
                     return ex.Message;
                 }
 
@@ -214,7 +214,7 @@ namespace NPRProxyService
             try
             {
                 client = new RDW.RegistrationClient();
-                client.Endpoint.Address = new EndpointAddress(Denion.WebService.Properties.Settings.Default.EndPoint);
+                client.Endpoint.Address = new EndpointAddress(Properties.Settings.Default.EndPoint);
                 client.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
                 client.ClientCredentials.ClientCertificate.Certificate = cert;
             }
@@ -233,7 +233,7 @@ namespace NPRProxyService
             // intantiate the client and the URL 
             try
             {
-                string url = ConfigurationManager.AppSettings["EndPoint"];
+                string url = Properties.Settings.Default.EndPoint;
 
                 HttpsTransportBindingElement httpsBinding = new HttpsTransportBindingElement();
                 httpsBinding.RequireClientCertificate = true;
@@ -248,7 +248,7 @@ namespace NPRProxyService
                 Database.Log("CLNT; url: " + url + "; encoding: " + (useSoap11? "Soap11": "Soap12"));
                 CustomBinding binding = new CustomBinding(encoding, httpsBinding);
 
-                client = new RDW.RegistrationClient(binding, Service.GetEndPoint(url ?? Denion.WebService.Properties.Settings.Default.EndPoint));
+                client = new RDW.RegistrationClient(binding, Service.GetEndPoint(url ?? Properties.Settings.Default.EndPoint));
                 client.Endpoint.Contract.Behaviors.Add(new SoapContractBehavior());
                 if (!client.Endpoint.Address.Uri.ToString().Contains("localhost"))
                 {

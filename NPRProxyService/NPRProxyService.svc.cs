@@ -1,6 +1,6 @@
 ﻿using Denion.WebService.VerwijsIndex;
 using Denion.WebService.Database;
-using Denion.WebService.Properties;
+using NPRProxyService.Properties;
 using System;
 using System.ServiceModel;
 using System.Data.SqlClient;
@@ -48,10 +48,11 @@ namespace NPRProxyService
                 data.VAT = (decimal?)req.VAT;
                 data.VATSpecified = req.VAT != null;
 
-                if(req.Token != null) { 
-                    RDW.TokenListData tokenListData = new RDW.TokenListData();
-                    tokenListData.Token = req.Token;
-                    tokenListData.TokenType = req.TokenType;
+                if(req.Token != null) {
+                    RDW.TokenListData tokenListData = new RDW.TokenListData {
+                        Token = req.Token,
+                        TokenType = req.TokenType
+                    };
                     RDW.TokenListData[] tokenListDatas = new RDW.TokenListData[1];
                     tokenListDatas[0] = tokenListData;
                     data.TokenList = tokenListDatas;
@@ -67,7 +68,9 @@ namespace NPRProxyService
 
                     res.ProviderId = RDWres.ProviderId != null && RDWres.ProviderId.Length == 4 ? "0" + RDWres.ProviderId : RDWres.ProviderId;//Hackwerk om NPR leading 0 te fixen
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
-                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    if(RDWres.AuthorisationMaxAmount.HasValue) {
+                        res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    }
                     if(RDWres.AuthorisationMaxAmount.Value == 0) {
                         //Hack garages willen blijkbaar geen maxamount 0 accepteren
                         res.AuthorisationMaxAmount = null;
@@ -89,7 +92,7 @@ namespace NPRProxyService
             PaymentEndResponse res = new PaymentEndResponse();
             res.PaymentAuthorisationId = req.PaymentAuthorisationId;
 
-            String providerId = findProviderByAuthorisationId(req.PaymentAuthorisationId);
+            string providerId = findProviderByAuthorisationId(req.PaymentAuthorisationId);
             if (providerId == null)
             {
                 res.Remark = "Proxy kan geen providerId vinden voor " + req.PaymentAuthorisationId;

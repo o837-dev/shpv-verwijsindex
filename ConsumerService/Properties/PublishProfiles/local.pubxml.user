@@ -10,46 +10,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/ConsumerService.dll">
-      <publishTime>08/20/2018 09:30:24</publishTime>
+      <publishTime>05/11/2021 11:56:40</publishTime>
     </File>
     <File Include="bin/ConsumerService.pdb">
-      <publishTime>08/20/2018 09:30:24</publishTime>
+      <publishTime>05/11/2021 11:56:40</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>05/11/2021 10:48:25</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>05/11/2021 10:49:59</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>08/20/2018 09:15:53</publishTime>
+      <publishTime>05/11/2021 11:55:13</publishTime>
     </File>
     <File Include="Consumer.svc">
       <publishTime>07/18/2016 22:53:46</publishTime>
     </File>
     <File Include="ConsumerService.cd">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="ConsumerService.csproj">
       <publishTime>08/20/2018 09:30:06</publishTime>
@@ -58,13 +58,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2018 09:28:47</publishTime>
     </File>
     <File Include="ConsumerService.svc">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="ConsumerService.svc.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="Default.aspx.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -73,7 +73,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>06/12/2018 13:56:32</publishTime>
     </File>
     <File Include="Global.asax.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -97,7 +97,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/08/2018 09:38:15</publishTime>
+      <publishTime>05/11/2021 11:56:40</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>

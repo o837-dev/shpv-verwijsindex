@@ -1,6 +1,6 @@
 ﻿using Denion.WebService.VerwijsIndex;
 using Denion.WebService.Database;
-using Denion.WebService.Properties;
+using NPRProxyService.Properties;
 using System;
 using System.ServiceModel;
 using System.Data.SqlClient;
@@ -10,7 +10,7 @@ using System.Data;
 namespace NPRProxyService {
 
     [LogBehavior]
-    [ServiceBehavior(Name = "NPRProxy", Namespace = "https://verwijsindex.shpv.nl/service/")]
+    [ServiceBehavior(Name = "NPRProxy12", Namespace = "https://verwijsindex.shpv.nl/service/")]
     public class ProxyService12 : IVerwijsIndex {
         PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest req) {
             PaymentStartResponse res = new PaymentStartResponse();
@@ -61,7 +61,9 @@ namespace NPRProxyService {
 
                     res.ProviderId = RDWres.ProviderId;
                     res.PaymentAuthorisationId = RDWres.PaymentAuthorisationId;
-                    res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    if(RDWres.AuthorisationMaxAmount.HasValue) {
+                        res.AuthorisationMaxAmount = (double?)RDWres.AuthorisationMaxAmount.Value;
+                    }
                     if(RDWres.AuthorisationMaxAmount.Value == 0) {
                         //Hack garages willen blijkbaar geen maxamount 0 accetperen
                         res.AuthorisationMaxAmount = null;
@@ -155,7 +157,7 @@ namespace NPRProxyService {
             PaymentCheckResponse res = new PaymentCheckResponse();
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient(req.Provider, false, false);
+            RDW.RegistrationClient client = Functions.RDWClient("02065", false, false);
             if(client == null) {
                 res.RemarkId = "70";
                 res.Remark = "NPR Provider server error";

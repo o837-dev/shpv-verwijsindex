@@ -9,40 +9,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>11/13/2019 10:34:39</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
       <publishTime>05/15/2019 16:49:47</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>11/13/2019 10:34:39</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 12:29:36</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
       <publishTime>10/01/2019 11:30:45</publishTime>
     </File>
     <File Include="bin/NPRProviderService.dll">
-      <publishTime>01/03/2020 08:29:34</publishTime>
+      <publishTime>05/31/2021 12:46:17</publishTime>
     </File>
     <File Include="bin/NPRProviderService.pdb">
-      <publishTime>01/03/2020 08:29:34</publishTime>
+      <publishTime>05/31/2021 12:46:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>11/13/2019 10:34:39</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>05/13/2019 14:22:18</publishTime>
+      <publishTime>05/11/2021 12:29:36</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>11/13/2019 10:34:39</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>01/03/2020 08:29:33</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>01/03/2020 08:29:33</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="Functions.cs">
       <publishTime>08/17/2018 11:55:24</publishTime>
@@ -111,70 +111,70 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.CalculatePriceResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.CalculatePriceResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightCheckResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightCheckResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightEnrollResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightEnrollResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightRevokeResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.PSRightRevokeResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.ReplyPSPhotoInfoResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.ReplyPSPhotoInfoResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreaRegulationFareInfoResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreasByLocationResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveAreasByLocationResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveCheckInfoResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveCheckInfoResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoForProviderResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoForProviderResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.RetrieveRightInfoResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.StatusRequestResponseData.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Denion.WebService.RDW.StatusRequestResponseError.datasource">
-      <publishTime>06/12/2018 13:56:32</publishTime>
+      <publishTime>05/11/2021 10:49:07</publishTime>
     </File>
     <File Include="Service References/RDW/Reference.cs">
       <publishTime>06/08/2018 09:38:15</publishTime>
@@ -198,7 +198,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/21/2019 08:56:20</publishTime>
+      <publishTime>05/11/2021 12:29:36</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
