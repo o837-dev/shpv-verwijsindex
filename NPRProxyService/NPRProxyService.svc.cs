@@ -92,7 +92,7 @@ namespace NPRProxyService
             PaymentEndResponse res = new PaymentEndResponse();
             res.PaymentAuthorisationId = req.PaymentAuthorisationId;
 
-            String providerId = findProviderByAuthorisationId(req.PaymentAuthorisationId);
+            string providerId = findProviderByAuthorisationId(req.PaymentAuthorisationId);
             if (providerId == null)
             {
                 res.Remark = "Proxy kan geen providerId vinden voor " + req.PaymentAuthorisationId;

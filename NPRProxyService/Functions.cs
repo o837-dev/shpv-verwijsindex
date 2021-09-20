@@ -233,7 +233,7 @@ namespace NPRProxyService
             // intantiate the client and the URL 
             try
             {
-                string url = ConfigurationManager.AppSettings["EndPoint"];
+                string url = Properties.Settings.Default.EndPoint;
 
                 HttpsTransportBindingElement httpsBinding = new HttpsTransportBindingElement();
                 httpsBinding.RequireClientCertificate = true;

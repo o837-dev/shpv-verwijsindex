@@ -10,7 +10,7 @@ using System.Data;
 namespace NPRProxyService {
 
     [LogBehavior]
-    [ServiceBehavior(Name = "NPRProxy", Namespace = "https://verwijsindex.shpv.nl/service/")]
+    [ServiceBehavior(Name = "NPRProxy12", Namespace = "https://verwijsindex.shpv.nl/service/")]
     public class ProxyService12 : IVerwijsIndex {
         PaymentStartResponse IVerwijsIndex.PaymentStart(PaymentStartRequest req) {
             PaymentStartResponse res = new PaymentStartResponse();
@@ -157,7 +157,7 @@ namespace NPRProxyService {
             PaymentCheckResponse res = new PaymentCheckResponse();
 
             // init RDW Client
-            RDW.RegistrationClient client = Functions.RDWClient(req.Provider, false, false);
+            RDW.RegistrationClient client = Functions.RDWClient("02065", false, false);
             if(client == null) {
                 res.RemarkId = "70";
                 res.Remark = "NPR Provider server error";

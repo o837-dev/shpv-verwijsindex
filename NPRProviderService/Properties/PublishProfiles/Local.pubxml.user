@@ -9,40 +9,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>05/11/2021 11:06:22</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
       <publishTime>05/15/2019 16:49:47</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>05/11/2021 11:06:22</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
-      <publishTime>05/11/2021 10:48:25</publishTime>
+      <publishTime>05/11/2021 12:29:36</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
       <publishTime>10/01/2019 11:30:45</publishTime>
     </File>
     <File Include="bin/NPRProviderService.dll">
-      <publishTime>05/11/2021 12:06:49</publishTime>
+      <publishTime>05/31/2021 12:46:17</publishTime>
     </File>
     <File Include="bin/NPRProviderService.pdb">
-      <publishTime>05/11/2021 12:06:49</publishTime>
+      <publishTime>05/31/2021 12:46:17</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>05/11/2021 11:06:22</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>05/11/2021 10:49:59</publishTime>
+      <publishTime>05/11/2021 12:29:36</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>05/11/2021 11:06:22</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>05/11/2021 11:06:22</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>05/11/2021 11:06:22</publishTime>
+      <publishTime>05/31/2021 11:50:10</publishTime>
     </File>
     <File Include="Functions.cs">
       <publishTime>08/17/2018 11:55:24</publishTime>
@@ -198,7 +198,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/11/2021 10:49:05</publishTime>
+      <publishTime>05/11/2021 12:29:36</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>
