@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="qb4ppw4wMTR44mkNQUCTn4/sKSo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="WqghHnHsInfIE8ZytcXSn7SkorfGALh64yhZ8rpm5Gs=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="CustomBinding_IRegistration">
+    <bindingConfiguration bindingType="basicHttpBinding" name="CustomBinding_IRegistration1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>CustomBinding_IRegistration</serializedValue>
+          <serializedValue>CustomBinding_IRegistration1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_IRegistration" contract="RDW.IRegistration" bindingType="basicHttpBinding" address="http://xsbsvc201511.diensten.tld/Registration.svc" bindingConfiguration="CustomBinding_IRegistration">
+    <endpoint name="CustomBinding_IRegistration" contract="RDW.IRegistration" bindingType="basicHttpBinding" address="http://xsbsvc201511-o.ot.tld/Registration.svc" bindingConfiguration="CustomBinding_IRegistration1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://xsbsvc201511.diensten.tld/Registration.svc</serializedValue>
+          <serializedValue>http://xsbsvc201511-o.ot.tld/Registration.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>CustomBinding_IRegistration</serializedValue>
+          <serializedValue>CustomBinding_IRegistration1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>RDW.IRegistration</serializedValue>

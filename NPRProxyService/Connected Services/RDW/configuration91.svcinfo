@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="IkAcFNsaklwmC9fXs1Z86D19fzo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="5jgmNgjSnP7VPocgIoO9aSqd3PIc1Xf0bDY+3c0WABQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_IRegistration">
       <properties>

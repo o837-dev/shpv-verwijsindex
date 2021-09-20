@@ -623,10 +623,12 @@ namespace NPRProxyService.RDW {
         
         private string areaManagerIdField;
         
-        private System.DateTime referenceDateField;
+        private System.Nullable<System.DateTime> referenceDateField;
+        
+        private bool referenceDateFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
         public string AreaManagerId {
             get {
                 return this.areaManagerIdField;
@@ -638,14 +640,26 @@ namespace NPRProxyService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public System.DateTime ReferenceDate {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> ReferenceDate {
             get {
                 return this.referenceDateField;
             }
             set {
                 this.referenceDateField = value;
                 this.RaisePropertyChanged("ReferenceDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReferenceDateSpecified {
+            get {
+                return this.referenceDateFieldSpecified;
+            }
+            set {
+                this.referenceDateFieldSpecified = value;
+                this.RaisePropertyChanged("ReferenceDateSpecified");
             }
         }
         
@@ -2114,7 +2128,7 @@ namespace NPRProxyService.RDW {
         private string usageIdField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
         public string ProviderId {
             get {
                 return this.providerIdField;
@@ -2379,7 +2393,7 @@ namespace NPRProxyService.RDW {
         private bool endDateTimeAdjustedFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ProviderId {
             get {
                 return this.providerIdField;

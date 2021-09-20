@@ -272,7 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\RDW\Registration.wsdl" />
-    <None Include="Connected Services\RDW\Registration.xsd">
+    <None Include="Connected Services\RDW\Registration1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

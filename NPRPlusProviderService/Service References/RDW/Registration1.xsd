@@ -9,8 +9,8 @@
     <xs:documentation>Includes message:			RevokeLinkResponse</xs:documentation>
     <xs:documentation>Includes message:			RetrieveLinkRequest</xs:documentation>
     <xs:documentation>Includes message:			RetrieveLinkResponse</xs:documentation>
-    <xs:documentation>Includes message:			RetrieveSellingPointRequest</xs:documentation>
-    <xs:documentation>Includes message:			RetrieveSellingPointResponse</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveSellingPointsRequest</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveSellingPointsResponse</xs:documentation>
     <xs:documentation>Includes message:			PaymentEndRequest</xs:documentation>
     <xs:documentation>Includes message:			PaymentEndResponse</xs:documentation>
     <xs:documentation>Includes message:			PaymentStartRequest</xs:documentation>
@@ -51,8 +51,8 @@
   </xs:element>
   <xs:complexType name="RetrieveSellingPointsRequestData">
     <xs:sequence>
-      <xs:element minOccurs="1" maxOccurs="1" name="AreaManagerId" type="tns:Numeric4Type" />
-      <xs:element minOccurs="1" maxOccurs="1" name="ReferenceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceDate" nillable="true" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RetrieveSellingPointsResponse">

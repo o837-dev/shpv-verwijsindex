@@ -21,7 +21,7 @@
     <MetadataSource Address="https://psb.rdw.nl/bevraging/rpv/201511/registration.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Registration.xsd" MetadataType="Schema" ID="ae1f90a7-970e-4a83-a0a7-897a2c1ba641" SourceId="1" SourceUrl="https://psb.rdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=ace784ad8da201765493f2d5d0d04df5" />
+    <MetadataFile FileName="Registration1.xsd" MetadataType="Schema" ID="1e1971a8-6c4d-4d9d-a8ab-62a58889aae4" SourceId="1" SourceUrl="https://psb.rdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=a7693d6c6610db4781ae7b0eabb37515" />
     <MetadataFile FileName="Registration.wsdl" MetadataType="Wsdl" ID="5ca35621-94a2-4f15-a452-25feb6bb8a7b" SourceId="1" SourceUrl="https://psb.rdw.nl/bevraging/rpv/201511/registration.svc?wsdl" />
   </Metadata>
   <Extensions>

@@ -16,7 +16,7 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://rdw.nl/rpv/1.0/Imports">
-      <xsd:import schemaLocation="https://psb.gatrdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=e86132733b9114471e870bfea115d2a7" namespace="http://rdw.nl/rpv/1.0" />
+      <xsd:import schemaLocation="https://psb.gatrdw.nl/ssg/wsdl/Registration.svc?serviceoid=fc8b21b432e5fa8aaa503a4c2cf138cf&amp;servdocoid=fc207d6a647ac7967b8aad9d95f2e132" namespace="http://rdw.nl/rpv/1.0" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="RevokeLinkRequest">
