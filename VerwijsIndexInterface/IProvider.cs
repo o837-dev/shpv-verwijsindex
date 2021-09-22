@@ -17,7 +17,7 @@ namespace Denion.WebService.VerwijsIndex
         LinkRegistrationBatchResponse BatchRegistration(LinkRegistrationBatchRequest req);
 
         [OperationContract]
-        ActivateAuthorisationResponse ActivateAuthorisation(ActivateAuthorisationRequest activateAuthorisationRequest);
+        ActivateAuthorisationResponse ActivateAuthorisation(ActivateAuthorisationRequest ActivateAuthorisationRequest);
 
         [OperationContract]
         CancelAuthorisationResponse CancelAuthorisation(CancelAuthorisationRequest CancelAuthorisationRequest);
@@ -444,7 +444,7 @@ namespace Denion.WebService.VerwijsIndex
         /// Voertuigkenteken, verplicht
         /// Redundant maar ter controle, in combinatie met ProviderId en PaymentAuthorisationId
         /// </summary>
-        [DataMember(Order = 2, IsRequired = true)]
+        [DataMember(Order = 2, IsRequired = false)]
         public string VehicleId { get; set; }
 
         /// <summary>
@@ -462,7 +462,7 @@ namespace Denion.WebService.VerwijsIndex
         /// <summary>
         /// Gebiedscode van de stad, verplicht
         /// </summary>
-        [DataMember(Order = 5, IsRequired = true)]
+        [DataMember(Order = 5, IsRequired = false)]
         public string AreaManagerId { get; set; }
 
         /// <summary>
@@ -494,10 +494,6 @@ namespace Denion.WebService.VerwijsIndex
             else if (string.IsNullOrEmpty(VehicleId))
             {
                 return new Err60("VehicleId");
-            }
-            else if (string.IsNullOrEmpty(AreaManagerId))
-            {
-                return new Err60("AreaManagerId");
             }
             else if (string.IsNullOrEmpty(AreaId))
             {
