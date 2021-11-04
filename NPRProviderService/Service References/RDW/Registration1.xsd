@@ -2,13 +2,29 @@
 <xs:schema xmlns:tns="http://rdw.nl/rpv/1.0" elementFormDefault="qualified" targetNamespace="http://rdw.nl/rpv/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Content: RPV messages</xs:documentation>
-    <xs:documentation>Interface description:	v8.00</xs:documentation>
+    <xs:documentation>Interface description:	v18.0</xs:documentation>
+    <xs:documentation>Includes message:			EnrollLinkRequest</xs:documentation>
+    <xs:documentation>Includes message:			EnrollLinkResponse</xs:documentation>
+    <xs:documentation>Includes message:			RevokeLinkRequest</xs:documentation>
+    <xs:documentation>Includes message:			RevokeLinkResponse</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveLinkRequest</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveLinkResponse</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveSellingPointsRequest</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveSellingPointsResponse</xs:documentation>
+    <xs:documentation>Includes message:			PaymentEndRequest</xs:documentation>
+    <xs:documentation>Includes message:			PaymentEndResponse</xs:documentation>
+    <xs:documentation>Includes message:			PaymentStartRequest</xs:documentation>
+    <xs:documentation>Includes message:			PaymentStartResponse</xs:documentation>
+    <xs:documentation>Includes message:			PaymentCheckRequest</xs:documentation>
+    <xs:documentation>Includes message:			PaymentCheckResponse</xs:documentation>
     <xs:documentation>Includes message:			PSRightEnrollRequest</xs:documentation>
     <xs:documentation>Includes message:			PSRightEnrollResponse</xs:documentation>
     <xs:documentation>Includes message:			PSRightRevokeRequest</xs:documentation>
     <xs:documentation>Includes message:			PSRightRevokeResponse</xs:documentation>
     <xs:documentation>Includes message:			PSRightCheckRequest</xs:documentation>
     <xs:documentation>Includes message:			PSRightCheckResponse</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveAreaManagersRequest</xs:documentation>
+    <xs:documentation>Includes message:			RetrieveAreaManagersResponse</xs:documentation>
     <xs:documentation>Includes message:			RetrieveAreaRegulationFareInfoRequest</xs:documentation>
     <xs:documentation>Includes message:			RetrieveAreaRegulationFareInfoResponse</xs:documentation>
     <xs:documentation>Includes message:			RetrieveRightInfoRequest</xs:documentation>
@@ -26,6 +42,414 @@
     <xs:documentation>Includes message:			StatusRequestRequest</xs:documentation>
     <xs:documentation>Includes message:			StatusRequestResponse</xs:documentation>
   </xs:annotation>
+  <xs:element name="RetrieveSellingPointsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="RetrieveSellingPointsRequestData" type="tns:RetrieveSellingPointsRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetrieveSellingPointsRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetrieveSellingPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RetrieveSellingPointsResponseData" type="tns:RetrieveSellingPointsResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RetrieveSellingPointsResponseError" type="tns:RetrieveSellingPointsResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetrieveSellingPointsResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SellingPointList" type="tns:ArrayOfSellingPointInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSellingPointInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SellingPointInfoData" nillable="true" type="tns:SellingPointInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SellingPointInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="SellingPointId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellingPointDesc" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartDateSellingPoint" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateSellingPoint" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationSellingPoint">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="tns:CoordinatesType" />
+            <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="tns:CoordinatesType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="AreaManagerId" type="tns:Numeric4Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AreaId" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaDesc" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartDateArea" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateArea" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaymentMethodList" type="tns:ArrayOfPaymentMethodData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPaymentMethodData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentInfoData" nillable="true" type="tns:PaymentInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="tns:StringOf20Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveSellingPointsResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReferenceDate" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentEndRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="PaymentEndRequestData" type="tns:PaymentEndRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentEndRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PaymentAuthorisationId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EndDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Amount" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VAT" nillable="true" type="tns:PriceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentEndResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="PaymentEndResponseData" type="tns:PaymentEndResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PaymentEndResponseError" type="tns:PaymentEndResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentEndResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PaymentAuthorisationId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateTimeAdjusted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AmountCalculated" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATCalculated" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AuthorisationMaxAmount" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATMaxAmount" nillable="true" type="tns:PriceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentEndResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PaymentAuthorisationId" nillable="true" type="tns:Numeric10Type" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RemarkId" nillable="true" type="tns:Numeric10Type" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Remark" nillable="true" type="tns:StringOf200Type" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentStartRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="PaymentStartRequestData" type="tns:PaymentStartRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentStartRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellingPointId" nillable="true" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="tns:StringOf20Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="tns:UneceLandCodesType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsageId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Amount" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VAT" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TokenList" type="tns:ArrayOfTokenListData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentStartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="PaymentStartResponseData" type="tns:PaymentStartResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PaymentStartResponseError" type="tns:PaymentStartResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentStartResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ProviderId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PaymentAuthorisationId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsageId" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TokenList" nillable="true" type="tns:ArrayOfTokenListData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AuthorisationMaxAmount" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATMaxAmount" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateTimeAdjusted" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentStartResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RemarkId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Remark" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentCheckRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="PaymentCheckRequestData" type="tns:PaymentCheckRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentCheckRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellingPointId" nillable="true" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="tns:StringOf20Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryCode" nillable="true" type="tns:UneceLandCodesType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CheckDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsageId" nillable="true" type="tns:StringOf10Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="PaymentCheckResponseData" type="tns:PaymentCheckResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PaymentCheckResponseError" type="tns:PaymentCheckResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentCheckResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ProviderId" nillable="true" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Granted" nillable="true" type="tns:IndicatorYNType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsageId" nillable="true" type="tns:StringOf10Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentCheckResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RemarkId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Remark" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveAreaManagersRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="RetrieveAreaManagersRequestData" type="tns:RetrieveAreaManagersRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetrieveAreaManagersRequestData">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RetrieveAreaManagersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RetrieveAreaManagersResponseData" type="tns:RetrieveAreaManagersResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RetrieveAreaManagersResponseError" type="tns:RetrieveAreaManagersResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetrieveAreaManagersResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerList" type="tns:ArrayOfAreaManagerInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAreaManagerInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaManagerInfoData" nillable="true" type="tns:AreaManagerInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AreaManagerInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDateAreaManager" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndDateAreaManager" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerDesc" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerUrl" nillable="true" type="tns:StringOf200Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATNumber" nillable="true" type="tns:StringOf14Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StreetName" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HouseNumber" nillable="true" type="tns:Numeric5Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostalCode" nillable="true" type="tns:StringOf6Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PlaceOfBusiness" nillable="true" type="tns:StringOf35Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveAreaManagersResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RevokeLinkRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="RevokeLinkRequestData" type="tns:RevokeLinkRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RevokeLinkRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="LinkId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndTimeLink" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RevokeLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RevokeLinkResponseData" type="tns:RevokeLinkResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RevokeLinkResponseError" type="tns:RevokeLinkResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RevokeLinkResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="LinkId" type="tns:Numeric10Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RevokeLinkResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnrollLinkRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="EnrollLinkRequestData" type="tns:EnrollLinkRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EnrollLinkRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VehicleIdType" type="tns:StringOf20Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="tns:UneceLandCodesType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsageId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartTimeLink" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndTimeLink" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnrollLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="EnrollLinkResponseData" type="tns:EnrollLinkResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="EnrollLinkResponseError" type="tns:EnrollLinkResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EnrollLinkResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="LinkId" type="tns:Numeric10Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnrollLinkResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UsageId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveLinkRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="RetrieveLinkRequestData" type="tns:RetrieveLinkRequestData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetrieveLinkRequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" type="tns:StringOf20Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LinkId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StartTimeLink" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndTimeLink" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetrieveLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RetrieveLinkResponseData" type="tns:RetrieveLinkResponseData" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RetrieveLinkResponseError" type="tns:RetrieveLinkResponseError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RetrieveLinkResponseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LinkInfoList" type="tns:ArrayOfLinkInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveLinkResponseError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseError">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LinkId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StartTimeLinks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EndTimeLinks" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLinkInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkInfoData" nillable="true" type="tns:LinkInfoData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinkInfoData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="tns:StringOf20Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="tns:UneceLandCodesType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryName" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerDesc" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AreaDesc" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LinkId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UsageId" type="tns:StringOf10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsageDesc" nillable="true" type="tns:StringOf80Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartTimeLink" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EndTimeLink" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="PSRightEnrollRequest">
     <xs:complexType>
       <xs:sequence>
@@ -36,6 +460,7 @@
   <xs:complexType name="PSRightEnrollRequestData">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" type="tns:StringOf20Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="tns:UneceLandCodesType" />
       <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
@@ -55,11 +480,20 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AmountPSright" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="VATPSright" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="ReferencePSRight" nillable="true" type="tns:StringOf40Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PSRightParentData" type="tns:PSRightParentData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TokenList" type="tns:ArrayOfTokenListData" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ArrayOfPSRightWindowData">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PSRightWindowData" nillable="true" type="tns:PSRightWindowData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PSRightParentData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ParentRightId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ExternalReferenceParentRight" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsageIDParent" type="tns:StringOf10Type" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PSRightWindowData">
@@ -86,11 +520,20 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="tns:Numeric4Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="AreaId" nillable="true" type="tns:StringOf10Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="SellingPointId" nillable="true" type="tns:Numeric10Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StartTimePSRightAdjusted" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="EndTimePSRightAdjusted" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="AmountPSRightCalculated" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="VATPSRightCalculated" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="SpecifCalcAmountList" type="tns:ArrayOfSpecifCalcAmountData" />
       <xs:element minOccurs="0" maxOccurs="1" name="PSRightRemarkList" type="tns:ArrayOfPSRightRemarkData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PSRightParentData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ParentRightId" type="tns:Numeric10Type" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TokenList" nillable="true" type="tns:ArrayOfTokenListData" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ArrayOfSpecifCalcAmountData">
@@ -124,6 +567,7 @@
       <xs:extension base="tns:ResponseError">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerId" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="AreaTable" type="tns:ArrayOfAreaData" />
@@ -137,6 +581,7 @@
           </xs:element>
           <xs:element minOccurs="0" maxOccurs="1" name="SellingPointId" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="UsageId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PSRightParentData" type="tns:PSRightParentData" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -159,6 +604,8 @@
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="PSRightId" type="tns:Numeric10Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="EndTimePSRight" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AmountPSright" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATPSright" nillable="true" type="tns:PriceType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PSRightRevokeResponse">
@@ -211,17 +658,19 @@
       <xs:element minOccurs="0" maxOccurs="1" name="CheckAddress" type="tns:AddressDataRequest" />
       <xs:element minOccurs="1" maxOccurs="1" name="UsageId" type="tns:StringOf10Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" type="tns:StringOf20Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="tns:UneceLandCodesType" />
       <xs:element minOccurs="1" maxOccurs="1" name="CheckTime" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="ReferenceCheckOrg" nillable="true" type="tns:StringOf40Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="ExtraInfoIndicator" type="tns:IndicatorYNType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIDConfidenceLevel" type="tns:ConfidenceLevelType" />
       <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerTable" type="tns:ArrayOfAreaManagerData" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AddressDataRequest">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="StreetCode" nillable="true" type="tns:StringOf5Type" />
-      <xs:element minOccurs="0" maxOccurs="1" name="StreetName" nillable="true" type="tns:StringOf24Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StreetCode" nillable="true" type="tns:StringOf16Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StreetName" nillable="true" type="tns:StringOf80Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="HouseNumber" type="tns:Numeric5Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="HouseNumberAdditions" nillable="true" type="tns:StringOf10Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="PlaceOfResidence" type="tns:StringOf24Type" />
@@ -229,8 +678,8 @@
   </xs:complexType>
   <xs:complexType name="AddressDataResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="StreetCode" nillable="true" type="tns:StringOf5Type" />
-      <xs:element minOccurs="0" maxOccurs="1" name="StreetName" nillable="true" type="tns:StringOf24Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StreetCode" nillable="true" type="tns:StringOf16Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StreetName" nillable="true" type="tns:StringOf80Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="HouseNumber" type="tns:Numeric5Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="HouseNumberAdditions" nillable="true" type="tns:StringOf10Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="PlaceOfResidence" type="tns:StringOf24Type" />
@@ -315,6 +764,7 @@
           <xs:element minOccurs="0" maxOccurs="1" name="CheckTime" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="ReferenceCheckOrg" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="ExtraInfoIndicator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleIDConfidenceLevel" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -344,7 +794,6 @@
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="AreaManagerId" type="tns:Numeric4Type" />
-      <xs:element minOccurs="0" maxOccurs="1" name="AreaManagerDesc" nillable="true" type="tns:StringOf80Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="CheckInfoList" type="tns:ArrayOfCheckInfoData" />
     </xs:sequence>
   </xs:complexType>
@@ -396,8 +845,10 @@
   <xs:complexType name="RetrieveRightInfoRequestData">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" type="tns:StringOf20Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="PSRightId" type="tns:Numeric10Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="IndicatorTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UsageId" nillable="true" type="tns:StringOf10Type" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RetrieveRightInfoResponse">
@@ -411,8 +862,10 @@
   <xs:complexType name="RetrieveRightInfoResponseData">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" type="tns:StringOf25Type" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" type="tns:StringOf20Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="IndicatorTime" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="PSRightInfoList" type="tns:ArrayOfPSRightInfoData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TableofChildPSRightsList" type="tns:ArrayOfChildPSRights" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RetrieveRightInfoForProviderRequest">
@@ -444,6 +897,17 @@
       <xs:element minOccurs="0" maxOccurs="1" name="PSRightInfoList" type="tns:ArrayOfPSRightInfoData" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="ArrayOfChildPSRights">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChildPSRight" nillable="true" type="tns:ChildPSRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChildPSRight">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="PSRightId" type="tns:Numeric10Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LastTwoDigits" type="tns:StringOf10Type" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ArrayOfPSRightInfoData">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PSRightInfoData" nillable="true" type="tns:PSRightInfoData" />
@@ -454,8 +918,10 @@
       <xs:element minOccurs="1" maxOccurs="1" name="PSRightId" type="tns:Numeric10Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="ReferencePSRight" nillable="true" type="tns:StringOf40Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="CountryCodeVehicle" nillable="true" type="tns:UneceLandCodesType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="tns:StringOf20Type" />
       <xs:element minOccurs="0" maxOccurs="1" name="SellingPointId" nillable="true" type="tns:Numeric10Type" />
       <xs:element minOccurs="1" maxOccurs="1" name="StartTimePSRight" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StartTimePSRightAdjusted" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="EndTimePSRight" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="EndTimePSRightAdjusted" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" maxOccurs="1" name="PSRightWindowList" type="tns:ArrayOfPSRightWindowData" />
@@ -479,11 +945,14 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="AmountPSRight" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="VATPSRight" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MaxAmountPSRight" nillable="true" type="tns:PriceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VATMaxAmountPSRight" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="AmountPSRightCalculated" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="VATPSRightCalculated" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="AmountPSRightRecalculated" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="VATPSRightRecalculated" nillable="true" type="tns:PriceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="TimeRecalculation" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TokenList" nillable="true" type="tns:ArrayOfTokenListData" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="RetrieveRightInfoResponseError">
@@ -491,7 +960,9 @@
       <xs:extension base="tns:ResponseError">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="1" name="VehicleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleIdType" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="IndicatorTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UsageId" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -851,6 +1322,17 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="ArrayOfTokenListData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenListData" nillable="true" type="tns:TokenListData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TokenListData">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Token" type="tns:StringOf40Type" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TokenType" type="tns:StringOf20Type" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="StatusRequestRequest">
     <xs:complexType>
       <xs:sequence>
@@ -896,10 +1378,16 @@
   <xs:annotation>
     <xs:documentation> *** Section 1: String types *** </xs:documentation>
   </xs:annotation>
-  <xs:simpleType name="StringOf5Type">
+  <xs:simpleType name="StringOf8Type">
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
-      <xs:maxLength value="5" />
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringOf16Type">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="16" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="StringOf10Type">
@@ -911,6 +1399,18 @@
   <xs:simpleType name="StringOf10TypeOptional">
     <xs:restriction base="xs:string">
       <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringOf6Type">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="6" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringOf14Type">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="14" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="StringOf20Type">
@@ -929,6 +1429,12 @@
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
       <xs:maxLength value="25" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringOf35Type">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="StringOf40Type">
@@ -1006,6 +1512,13 @@
       <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="ConfidenceLevelType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="3" />
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="100" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:annotation>
     <xs:documentation>*** Section 3: DateTime types ***</xs:documentation>
   </xs:annotation>
@@ -1048,6 +1561,7 @@
       <xs:enumeration value="1" />
       <xs:enumeration value="2" />
       <xs:enumeration value="3" />
+      <xs:enumeration value="4" />
     </xs:restriction>
   </xs:simpleType>
   <xs:annotation>

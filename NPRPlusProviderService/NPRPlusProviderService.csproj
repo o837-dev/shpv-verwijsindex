@@ -137,6 +137,54 @@
     <Content Include="Service References\RDW\NPRPlusProviderService.RDW.StatusRequestResponseError.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.EnrollLinkResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.EnrollLinkResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.PaymentCheckResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.PaymentCheckResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.PaymentEndResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.PaymentEndResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.PaymentStartResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.PaymentStartResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RetrieveAreaManagersResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RetrieveAreaManagersResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RetrieveLinkResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RetrieveLinkResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RetrieveSellingPointsResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RetrieveSellingPointsResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RevokeLinkResponseData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RDW\NPRPlusProviderService.RDW.RevokeLinkResponseError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\RDW\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -169,7 +217,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\PublishProfiles\verwijsindex - Web Deploy.pubxml" />
     <None Include="Service References\RDW\Registration.wsdl" />
-    <None Include="Service References\RDW\Registration.xsd">
+    <None Include="Service References\RDW\Registration1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Azure.config">

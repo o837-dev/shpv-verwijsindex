@@ -7,43 +7,44 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\Temp\VerwijsIndex\NPRPlusPS</_PublishTargetUrl>
+    <History>True|2021-09-20T09:49:33.3835265Z;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Denion.WebService.Cryptography.dll">
-      <publishTime>05/31/2021 11:50:10</publishTime>
+      <publishTime>09/20/2021 11:46:03</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Cryptography.pdb">
       <publishTime>05/15/2019 16:49:47</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll">
-      <publishTime>05/31/2021 11:50:10</publishTime>
+      <publishTime>09/20/2021 11:46:03</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.dll.config">
-      <publishTime>05/11/2021 12:29:36</publishTime>
+      <publishTime>09/20/2021 10:52:32</publishTime>
     </File>
     <File Include="bin/Denion.WebService.Database.pdb">
       <publishTime>10/01/2019 11:30:45</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.dll">
-      <publishTime>05/31/2021 12:31:49</publishTime>
+      <publishTime>09/20/2021 11:49:31</publishTime>
     </File>
     <File Include="bin/NPRPlusProviderService.pdb">
       <publishTime>10/07/2019 14:50:03</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll">
-      <publishTime>05/31/2021 11:50:10</publishTime>
+      <publishTime>09/20/2021 11:46:03</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.dll.config">
-      <publishTime>05/11/2021 12:29:36</publishTime>
+      <publishTime>09/20/2021 10:52:32</publishTime>
     </File>
     <File Include="bin/VerwijsIndexInterface.pdb">
-      <publishTime>05/31/2021 11:50:10</publishTime>
+      <publishTime>09/20/2021 11:46:03</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.dll">
-      <publishTime>05/31/2021 11:50:10</publishTime>
+      <publishTime>09/20/2021 11:46:05</publishTime>
     </File>
     <File Include="bin/VerwijsIndexShared.pdb">
-      <publishTime>05/31/2021 11:50:10</publishTime>
+      <publishTime>09/20/2021 11:46:05</publishTime>
     </File>
     <File Include="Functions.cs">
       <publishTime>11/09/2018 12:06:18</publishTime>
@@ -88,70 +89,118 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/09/2018 11:36:08</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.CalculatePriceResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:48</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.CalculatePriceResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.EnrollLinkResponseData.datasource">
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.EnrollLinkResponseError.datasource">
+      <publishTime>09/20/2021 11:38:47</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.PaymentCheckResponseData.datasource">
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.PaymentCheckResponseError.datasource">
+      <publishTime>09/20/2021 11:38:47</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.PaymentEndResponseData.datasource">
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.PaymentEndResponseError.datasource">
+      <publishTime>09/20/2021 11:38:48</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.PaymentStartResponseData.datasource">
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.PaymentStartResponseError.datasource">
+      <publishTime>09/20/2021 11:38:47</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightCheckResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightCheckResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightEnrollResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightEnrollResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:47</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightRevokeResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.PSRightRevokeResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.ReplyPSPhotoInfoResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreaManagersResponseData.datasource">
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreaManagersResponseError.datasource">
+      <publishTime>09/20/2021 11:38:47</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreaRegulationFareInfoResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveAreasByLocationResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveCheckInfoResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveCheckInfoResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveLinkResponseData.datasource">
+      <publishTime>09/20/2021 11:38:45</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveLinkResponseError.datasource">
+      <publishTime>09/20/2021 11:38:47</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoForProviderResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoForProviderResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveRightInfoResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveSellingPointsResponseData.datasource">
+      <publishTime>09/20/2021 11:38:45</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RetrieveSellingPointsResponseError.datasource">
+      <publishTime>09/20/2021 11:38:48</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RevokeLinkResponseData.datasource">
+      <publishTime>09/20/2021 11:38:45</publishTime>
+    </File>
+    <File Include="Service References/RDW/NPRPlusProviderService.RDW.RevokeLinkResponseError.datasource">
+      <publishTime>09/20/2021 11:38:47</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.StatusRequestResponseData.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:45</publishTime>
     </File>
     <File Include="Service References/RDW/NPRPlusProviderService.RDW.StatusRequestResponseError.datasource">
-      <publishTime>05/11/2021 10:48:51</publishTime>
+      <publishTime>09/20/2021 11:38:46</publishTime>
     </File>
     <File Include="Service References/RDW/Reference.cs">
       <publishTime>11/09/2018 11:36:08</publishTime>
@@ -169,7 +218,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2018 09:38:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/11/2021 12:29:36</publishTime>
+      <publishTime>09/20/2021 11:38:48</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>06/08/2018 09:38:15</publishTime>

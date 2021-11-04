@@ -27,17 +27,47 @@ namespace Denion.WebService.RDW {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.RDW.PSRightCheckResponse CheckPSRight(Denion.WebService.RDW.PSRightCheckRequest request);
         
+        // CODEGEN: Generating message contract since the wrapper name (EnrollLinkRequest) of message EnrollLinkRequest does not match the default value (EnrollLink)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollLink", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.EnrollLinkResponse EnrollLink(Denion.WebService.RDW.EnrollLinkRequest request);
+        
         // CODEGEN: Generating message contract since the wrapper name (PSRightEnrollRequest) of message PSRightEnrollRequest does not match the default value (EnrollPSRight)
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/EnrollPSRight", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.RDW.PSRightEnrollResponse EnrollPSRight(Denion.WebService.RDW.PSRightEnrollRequest request);
         
+        // CODEGEN: Generating message contract since the wrapper name (PaymentCheckRequest) of message PaymentCheckRequest does not match the default value (PaymentCheck)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/PaymentCheck", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.PaymentCheckResponse PaymentCheck(Denion.WebService.RDW.PaymentCheckRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (PaymentEndRequest) of message PaymentEndRequest does not match the default value (PaymentEnd)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/PaymentEnd", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.PaymentEndResponse PaymentEnd(Denion.WebService.RDW.PaymentEndRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (PaymentStartRequest) of message PaymentStartRequest does not match the default value (PaymentStart)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/PaymentStart", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.PaymentStartResponse PaymentStart(Denion.WebService.RDW.PaymentStartRequest request);
+        
         // CODEGEN: Generating message contract since the wrapper name (ReplyPSPhotoInfoRequest) of message ReplyPSPhotoInfoRequest does not match the default value (ReplyPSPhotoInfo)
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/ReplyPSPhotoInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.RDW.ReplyPSPhotoInfoResponse ReplyPSPhotoInfo(Denion.WebService.RDW.ReplyPSPhotoInfoRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (RetrieveAreaManagersRequest) of message RetrieveAreaManagersRequest does not match the default value (RetrieveAreaManagers)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaManagers", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.RetrieveAreaManagersResponse RetrieveAreaManagers(Denion.WebService.RDW.RetrieveAreaManagersRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (RetrieveAreaRegulationFareInfoRequest) of message RetrieveAreaRegulationFareInfoRequest does not match the default value (RetrieveAreaRegulationFareInfo)
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveAreaRegulationFareInfo", ReplyAction="*")]
@@ -57,6 +87,12 @@ namespace Denion.WebService.RDW {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.RDW.RetrieveCheckInfoResponse RetrieveCheckInfo(Denion.WebService.RDW.RetrieveCheckInfoRequest request);
         
+        // CODEGEN: Generating message contract since the wrapper name (RetrieveLinkRequest) of message RetrieveLinkRequest does not match the default value (RetrieveLink)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveLink", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.RetrieveLinkResponse RetrieveLink(Denion.WebService.RDW.RetrieveLinkRequest request);
+        
         // CODEGEN: Generating message contract since the wrapper name (RetrieveRightInfoRequest) of message RetrieveRightInfoRequest does not match the default value (RetrieveRightInfo)
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveRightInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -68,6 +104,18 @@ namespace Denion.WebService.RDW {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
         Denion.WebService.RDW.RetrieveRightInfoForProviderResponse RetrieveRightInfoForProvider(Denion.WebService.RDW.RetrieveRightInfoForProviderRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (RetrieveSellingPointsRequest) of message RetrieveSellingPointsRequest does not match the default value (RetrieveSellingPoints)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RetrieveSellingPoints", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.RetrieveSellingPointsResponse RetrieveSellingPoints(Denion.WebService.RDW.RetrieveSellingPointsRequest request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (RevokeLinkRequest) of message RevokeLinkRequest does not match the default value (RevokeLink)
+        [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RevokeLink", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ResponseError))]
+        Denion.WebService.RDW.RevokeLinkResponse RevokeLink(Denion.WebService.RDW.RevokeLinkRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (PSRightRevokeRequest) of message PSRightRevokeRequest does not match the default value (RevokePSRight)
         [System.ServiceModel.OperationContractAttribute(Action="http://rdw.nl/rpv/1.0/IRegistration/RevokePSRight", ReplyAction="*")]
@@ -1354,6 +1402,10 @@ namespace Denion.WebService.RDW {
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("3")]
         Item3,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("4")]
+        Item4,
     }
     
     /// <remarks/>
@@ -1367,6 +1419,14 @@ namespace Denion.WebService.RDW {
         private string pSRightIdField;
         
         private System.DateTime endTimePSRightField;
+        
+        private System.Nullable<decimal> amountPSrightField;
+        
+        private bool amountPSrightFieldSpecified;
+        
+        private System.Nullable<decimal> vATPSrightField;
+        
+        private bool vATPSrightFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
@@ -1389,6 +1449,572 @@ namespace Denion.WebService.RDW {
             set {
                 this.endTimePSRightField = value;
                 this.RaisePropertyChanged("EndTimePSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> AmountPSright {
+            get {
+                return this.amountPSrightField;
+            }
+            set {
+                this.amountPSrightField = value;
+                this.RaisePropertyChanged("AmountPSright");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountPSrightSpecified {
+            get {
+                return this.amountPSrightFieldSpecified;
+            }
+            set {
+                this.amountPSrightFieldSpecified = value;
+                this.RaisePropertyChanged("AmountPSrightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> VATPSright {
+            get {
+                return this.vATPSrightField;
+            }
+            set {
+                this.vATPSrightField = value;
+                this.RaisePropertyChanged("VATPSright");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATPSrightSpecified {
+            get {
+                return this.vATPSrightFieldSpecified;
+            }
+            set {
+                this.vATPSrightFieldSpecified = value;
+                this.RaisePropertyChanged("VATPSrightSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RevokeLinkResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string linkIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RevokeLinkRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string linkIdField;
+        
+        private System.DateTime endTimeLinkField;
+        
+        private bool endTimeLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime EndTimeLink {
+            get {
+                return this.endTimeLinkField;
+            }
+            set {
+                this.endTimeLinkField = value;
+                this.RaisePropertyChanged("EndTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimeLinkSpecified {
+            get {
+                return this.endTimeLinkFieldSpecified;
+            }
+            set {
+                this.endTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimeLinkSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentInfoData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string paymentMethodField;
+        
+        private System.Nullable<System.DateTime> startDateTimeField;
+        
+        private bool startDateTimeFieldSpecified;
+        
+        private System.Nullable<System.DateTime> endDateTimeField;
+        
+        private bool endDateTimeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string PaymentMethod {
+            get {
+                return this.paymentMethodField;
+            }
+            set {
+                this.paymentMethodField = value;
+                this.RaisePropertyChanged("PaymentMethod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> StartDateTime {
+            get {
+                return this.startDateTimeField;
+            }
+            set {
+                this.startDateTimeField = value;
+                this.RaisePropertyChanged("StartDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartDateTimeSpecified {
+            get {
+                return this.startDateTimeFieldSpecified;
+            }
+            set {
+                this.startDateTimeFieldSpecified = value;
+                this.RaisePropertyChanged("StartDateTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> EndDateTime {
+            get {
+                return this.endDateTimeField;
+            }
+            set {
+                this.endDateTimeField = value;
+                this.RaisePropertyChanged("EndDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateTimeSpecified {
+            get {
+                return this.endDateTimeFieldSpecified;
+            }
+            set {
+                this.endDateTimeFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateTimeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class SellingPointInfoData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string sellingPointIdField;
+        
+        private string sellingPointDescField;
+        
+        private System.DateTime startDateSellingPointField;
+        
+        private System.Nullable<System.DateTime> endDateSellingPointField;
+        
+        private bool endDateSellingPointFieldSpecified;
+        
+        private SellingPointInfoDataLocationSellingPoint locationSellingPointField;
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string areaDescField;
+        
+        private System.DateTime startDateAreaField;
+        
+        private System.Nullable<System.DateTime> endDateAreaField;
+        
+        private bool endDateAreaFieldSpecified;
+        
+        private PaymentInfoData[] paymentMethodListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string SellingPointId {
+            get {
+                return this.sellingPointIdField;
+            }
+            set {
+                this.sellingPointIdField = value;
+                this.RaisePropertyChanged("SellingPointId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string SellingPointDesc {
+            get {
+                return this.sellingPointDescField;
+            }
+            set {
+                this.sellingPointDescField = value;
+                this.RaisePropertyChanged("SellingPointDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime StartDateSellingPoint {
+            get {
+                return this.startDateSellingPointField;
+            }
+            set {
+                this.startDateSellingPointField = value;
+                this.RaisePropertyChanged("StartDateSellingPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> EndDateSellingPoint {
+            get {
+                return this.endDateSellingPointField;
+            }
+            set {
+                this.endDateSellingPointField = value;
+                this.RaisePropertyChanged("EndDateSellingPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateSellingPointSpecified {
+            get {
+                return this.endDateSellingPointFieldSpecified;
+            }
+            set {
+                this.endDateSellingPointFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateSellingPointSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public SellingPointInfoDataLocationSellingPoint LocationSellingPoint {
+            get {
+                return this.locationSellingPointField;
+            }
+            set {
+                this.locationSellingPointField = value;
+                this.RaisePropertyChanged("LocationSellingPoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=5)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public string AreaDesc {
+            get {
+                return this.areaDescField;
+            }
+            set {
+                this.areaDescField = value;
+                this.RaisePropertyChanged("AreaDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public System.DateTime StartDateArea {
+            get {
+                return this.startDateAreaField;
+            }
+            set {
+                this.startDateAreaField = value;
+                this.RaisePropertyChanged("StartDateArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<System.DateTime> EndDateArea {
+            get {
+                return this.endDateAreaField;
+            }
+            set {
+                this.endDateAreaField = value;
+                this.RaisePropertyChanged("EndDateArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateAreaSpecified {
+            get {
+                return this.endDateAreaFieldSpecified;
+            }
+            set {
+                this.endDateAreaFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateAreaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=10)]
+        public PaymentInfoData[] PaymentMethodList {
+            get {
+                return this.paymentMethodListField;
+            }
+            set {
+                this.paymentMethodListField = value;
+                this.RaisePropertyChanged("PaymentMethodList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class SellingPointInfoDataLocationSellingPoint : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal latitudeField;
+        
+        private decimal longitudeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public decimal Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+                this.RaisePropertyChanged("Latitude");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+                this.RaisePropertyChanged("Longitude");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveSellingPointsResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SellingPointInfoData[] sellingPointListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public SellingPointInfoData[] SellingPointList {
+            get {
+                return this.sellingPointListField;
+            }
+            set {
+                this.sellingPointListField = value;
+                this.RaisePropertyChanged("SellingPointList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveSellingPointsRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private System.Nullable<System.DateTime> referenceDateField;
+        
+        private bool referenceDateFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> ReferenceDate {
+            get {
+                return this.referenceDateField;
+            }
+            set {
+                this.referenceDateField = value;
+                this.RaisePropertyChanged("ReferenceDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReferenceDateSpecified {
+            get {
+                return this.referenceDateFieldSpecified;
+            }
+            set {
+                this.referenceDateFieldSpecified = value;
+                this.RaisePropertyChanged("ReferenceDateSpecified");
             }
         }
         
@@ -1464,9 +2090,15 @@ namespace Denion.WebService.RDW {
         
         private bool countryCodeVehicleFieldSpecified;
         
+        private string vehicleIdTypeField;
+        
         private string sellingPointIdField;
         
         private System.DateTime startTimePSRightField;
+        
+        private System.Nullable<System.DateTime> startTimePSRightAdjustedField;
+        
+        private bool startTimePSRightAdjustedFieldSpecified;
         
         private System.Nullable<System.DateTime> endTimePSRightField;
         
@@ -1510,6 +2142,14 @@ namespace Denion.WebService.RDW {
         
         private bool vATPSRightFieldSpecified;
         
+        private System.Nullable<decimal> maxAmountPSRightField;
+        
+        private bool maxAmountPSRightFieldSpecified;
+        
+        private System.Nullable<decimal> vATMaxAmountPSRightField;
+        
+        private bool vATMaxAmountPSRightFieldSpecified;
+        
         private System.Nullable<decimal> amountPSRightCalculatedField;
         
         private bool amountPSRightCalculatedFieldSpecified;
@@ -1529,6 +2169,8 @@ namespace Denion.WebService.RDW {
         private System.DateTime timeRecalculationField;
         
         private bool timeRecalculationFieldSpecified;
+        
+        private TokenListData[] tokenListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
@@ -1579,7 +2221,19 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=4)]
         public string SellingPointId {
             get {
                 return this.sellingPointIdField;
@@ -1591,7 +2245,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public System.DateTime StartTimePSRight {
             get {
                 return this.startTimePSRightField;
@@ -1603,7 +2257,31 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<System.DateTime> StartTimePSRightAdjusted {
+            get {
+                return this.startTimePSRightAdjustedField;
+            }
+            set {
+                this.startTimePSRightAdjustedField = value;
+                this.RaisePropertyChanged("StartTimePSRightAdjusted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartTimePSRightAdjustedSpecified {
+            get {
+                return this.startTimePSRightAdjustedFieldSpecified;
+            }
+            set {
+                this.startTimePSRightAdjustedFieldSpecified = value;
+                this.RaisePropertyChanged("StartTimePSRightAdjustedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public System.Nullable<System.DateTime> EndTimePSRight {
             get {
                 return this.endTimePSRightField;
@@ -1627,7 +2305,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
             get {
                 return this.endTimePSRightAdjustedField;
@@ -1651,7 +2329,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
         public PSRightWindowData[] PSRightWindowList {
             get {
                 return this.pSRightWindowListField;
@@ -1663,7 +2341,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string PSRightAcquirerCode {
             get {
                 return this.pSRightAcquirerCodeField;
@@ -1675,7 +2353,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
         public string PSRightAcquirerDesc {
             get {
                 return this.pSRightAcquirerDescField;
@@ -1687,7 +2365,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=12)]
         public string AreaManagerId {
             get {
                 return this.areaManagerIdField;
@@ -1699,7 +2377,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
         public string AreaManagerDesc {
             get {
                 return this.areaManagerDescField;
@@ -1711,7 +2389,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string AreaId {
             get {
                 return this.areaIdField;
@@ -1723,7 +2401,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
         public string AreaDesc {
             get {
                 return this.areaDescField;
@@ -1735,7 +2413,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string UsageId {
             get {
                 return this.usageIdField;
@@ -1747,7 +2425,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string UsageDesc {
             get {
                 return this.usageDescField;
@@ -1759,7 +2437,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public System.DateTime RegistrationTimePSRight {
             get {
                 return this.registrationTimePSRightField;
@@ -1771,7 +2449,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public System.DateTime RegistrationEndTimePSRight {
             get {
                 return this.registrationEndTimePSRightField;
@@ -1795,7 +2473,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public PSRightInfoDataLocationPSRight LocationPSRight {
             get {
                 return this.locationPSRightField;
@@ -1807,7 +2485,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=21)]
         public System.Nullable<decimal> AmountPSRight {
             get {
                 return this.amountPSRightField;
@@ -1831,7 +2509,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=22)]
         public System.Nullable<decimal> VATPSRight {
             get {
                 return this.vATPSRightField;
@@ -1855,7 +2533,55 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=23)]
+        public System.Nullable<decimal> MaxAmountPSRight {
+            get {
+                return this.maxAmountPSRightField;
+            }
+            set {
+                this.maxAmountPSRightField = value;
+                this.RaisePropertyChanged("MaxAmountPSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MaxAmountPSRightSpecified {
+            get {
+                return this.maxAmountPSRightFieldSpecified;
+            }
+            set {
+                this.maxAmountPSRightFieldSpecified = value;
+                this.RaisePropertyChanged("MaxAmountPSRightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=24)]
+        public System.Nullable<decimal> VATMaxAmountPSRight {
+            get {
+                return this.vATMaxAmountPSRightField;
+            }
+            set {
+                this.vATMaxAmountPSRightField = value;
+                this.RaisePropertyChanged("VATMaxAmountPSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATMaxAmountPSRightSpecified {
+            get {
+                return this.vATMaxAmountPSRightFieldSpecified;
+            }
+            set {
+                this.vATMaxAmountPSRightFieldSpecified = value;
+                this.RaisePropertyChanged("VATMaxAmountPSRightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=25)]
         public System.Nullable<decimal> AmountPSRightCalculated {
             get {
                 return this.amountPSRightCalculatedField;
@@ -1879,7 +2605,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=26)]
         public System.Nullable<decimal> VATPSRightCalculated {
             get {
                 return this.vATPSRightCalculatedField;
@@ -1903,7 +2629,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=27)]
         public System.Nullable<decimal> AmountPSRightRecalculated {
             get {
                 return this.amountPSRightRecalculatedField;
@@ -1927,7 +2653,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=28)]
         public System.Nullable<decimal> VATPSRightRecalculated {
             get {
                 return this.vATPSRightRecalculatedField;
@@ -1951,7 +2677,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public System.DateTime TimeRecalculation {
             get {
                 return this.timeRecalculationField;
@@ -1971,6 +2697,18 @@ namespace Denion.WebService.RDW {
             set {
                 this.timeRecalculationFieldSpecified = value;
                 this.RaisePropertyChanged("TimeRecalculationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=30)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
             }
         }
         
@@ -2166,6 +2904,52 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class TokenListData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string tokenField;
+        
+        private string tokenTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Token {
+            get {
+                return this.tokenField;
+            }
+            set {
+                this.tokenField = value;
+                this.RaisePropertyChanged("Token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string TokenType {
+            get {
+                return this.tokenTypeField;
+            }
+            set {
+                this.tokenTypeField = value;
+                this.RaisePropertyChanged("TokenType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
     public partial class RetrieveRightInfoForProviderRequestData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string vehicleIdField;
@@ -2268,61 +3052,33 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveRightInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ChildPSRight : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string vehicleIdField;
+        private string pSRightIdField;
         
-        private System.Nullable<System.DateTime> indicatorTimeField;
-        
-        private bool indicatorTimeFieldSpecified;
-        
-        private PSRightInfoData[] pSRightInfoListField;
+        private string lastTwoDigitsField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string VehicleId {
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string PSRightId {
             get {
-                return this.vehicleIdField;
+                return this.pSRightIdField;
             }
             set {
-                this.vehicleIdField = value;
-                this.RaisePropertyChanged("VehicleId");
+                this.pSRightIdField = value;
+                this.RaisePropertyChanged("PSRightId");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<System.DateTime> IndicatorTime {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string LastTwoDigits {
             get {
-                return this.indicatorTimeField;
+                return this.lastTwoDigitsField;
             }
             set {
-                this.indicatorTimeField = value;
-                this.RaisePropertyChanged("IndicatorTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IndicatorTimeSpecified {
-            get {
-                return this.indicatorTimeFieldSpecified;
-            }
-            set {
-                this.indicatorTimeFieldSpecified = value;
-                this.RaisePropertyChanged("IndicatorTimeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        public PSRightInfoData[] PSRightInfoList {
-            get {
-                return this.pSRightInfoListField;
-            }
-            set {
-                this.pSRightInfoListField = value;
-                this.RaisePropertyChanged("PSRightInfoList");
+                this.lastTwoDigitsField = value;
+                this.RaisePropertyChanged("LastTwoDigits");
             }
         }
         
@@ -2342,15 +3098,19 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
-    public partial class RetrieveRightInfoRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class RetrieveRightInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string vehicleIdField;
         
-        private string pSRightIdField;
+        private string vehicleIdTypeField;
         
         private System.Nullable<System.DateTime> indicatorTimeField;
         
         private bool indicatorTimeFieldSpecified;
+        
+        private PSRightInfoData[] pSRightInfoListField;
+        
+        private ChildPSRight[] tableofChildPSRightsListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -2365,14 +3125,14 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=1)]
-        public string PSRightId {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VehicleIdType {
             get {
-                return this.pSRightIdField;
+                return this.vehicleIdTypeField;
             }
             set {
-                this.pSRightIdField = value;
-                this.RaisePropertyChanged("PSRightId");
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
             }
         }
         
@@ -2397,6 +3157,494 @@ namespace Denion.WebService.RDW {
             set {
                 this.indicatorTimeFieldSpecified = value;
                 this.RaisePropertyChanged("IndicatorTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        public PSRightInfoData[] PSRightInfoList {
+            get {
+                return this.pSRightInfoListField;
+            }
+            set {
+                this.pSRightInfoListField = value;
+                this.RaisePropertyChanged("PSRightInfoList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
+        public ChildPSRight[] TableofChildPSRightsList {
+            get {
+                return this.tableofChildPSRightsListField;
+            }
+            set {
+                this.tableofChildPSRightsListField = value;
+                this.RaisePropertyChanged("TableofChildPSRightsList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveRightInfoRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private string pSRightIdField;
+        
+        private System.Nullable<System.DateTime> indicatorTimeField;
+        
+        private bool indicatorTimeFieldSpecified;
+        
+        private string usageIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string PSRightId {
+            get {
+                return this.pSRightIdField;
+            }
+            set {
+                this.pSRightIdField = value;
+                this.RaisePropertyChanged("PSRightId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> IndicatorTime {
+            get {
+                return this.indicatorTimeField;
+            }
+            set {
+                this.indicatorTimeField = value;
+                this.RaisePropertyChanged("IndicatorTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IndicatorTimeSpecified {
+            get {
+                return this.indicatorTimeFieldSpecified;
+            }
+            set {
+                this.indicatorTimeFieldSpecified = value;
+                this.RaisePropertyChanged("IndicatorTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class LinkInfoData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdTypeField;
+        
+        private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
+        
+        private bool countryCodeVehicleFieldSpecified;
+        
+        private string countryNameField;
+        
+        private string areaManagerIdField;
+        
+        private string areaManagerDescField;
+        
+        private string areaIdField;
+        
+        private string areaDescField;
+        
+        private string linkIdField;
+        
+        private string usageIdField;
+        
+        private string usageDescField;
+        
+        private System.DateTime startTimeLinkField;
+        
+        private System.Nullable<System.DateTime> endTimeLinkField;
+        
+        private bool endTimeLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
+            get {
+                return this.countryCodeVehicleField;
+            }
+            set {
+                this.countryCodeVehicleField = value;
+                this.RaisePropertyChanged("CountryCodeVehicle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountryCodeVehicleSpecified {
+            get {
+                return this.countryCodeVehicleFieldSpecified;
+            }
+            set {
+                this.countryCodeVehicleFieldSpecified = value;
+                this.RaisePropertyChanged("CountryCodeVehicleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string CountryName {
+            get {
+                return this.countryNameField;
+            }
+            set {
+                this.countryNameField = value;
+                this.RaisePropertyChanged("CountryName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string AreaManagerDesc {
+            get {
+                return this.areaManagerDescField;
+            }
+            set {
+                this.areaManagerDescField = value;
+                this.RaisePropertyChanged("AreaManagerDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string AreaDesc {
+            get {
+                return this.areaDescField;
+            }
+            set {
+                this.areaDescField = value;
+                this.RaisePropertyChanged("AreaDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=7)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string UsageDesc {
+            get {
+                return this.usageDescField;
+            }
+            set {
+                this.usageDescField = value;
+                this.RaisePropertyChanged("UsageDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public System.DateTime StartTimeLink {
+            get {
+                return this.startTimeLinkField;
+            }
+            set {
+                this.startTimeLinkField = value;
+                this.RaisePropertyChanged("StartTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<System.DateTime> EndTimeLink {
+            get {
+                return this.endTimeLinkField;
+            }
+            set {
+                this.endTimeLinkField = value;
+                this.RaisePropertyChanged("EndTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimeLinkSpecified {
+            get {
+                return this.endTimeLinkFieldSpecified;
+            }
+            set {
+                this.endTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimeLinkSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveLinkResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private LinkInfoData[] linkInfoListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public LinkInfoData[] LinkInfoList {
+            get {
+                return this.linkInfoListField;
+            }
+            set {
+                this.linkInfoListField = value;
+                this.RaisePropertyChanged("LinkInfoList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveLinkRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private string linkIdField;
+        
+        private System.DateTime startTimeLinkField;
+        
+        private bool startTimeLinkFieldSpecified;
+        
+        private System.Nullable<System.DateTime> endTimeLinkField;
+        
+        private bool endTimeLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=2)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime StartTimeLink {
+            get {
+                return this.startTimeLinkField;
+            }
+            set {
+                this.startTimeLinkField = value;
+                this.RaisePropertyChanged("StartTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartTimeLinkSpecified {
+            get {
+                return this.startTimeLinkFieldSpecified;
+            }
+            set {
+                this.startTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("StartTimeLinkSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> EndTimeLink {
+            get {
+                return this.endTimeLinkField;
+            }
+            set {
+                this.endTimeLinkField = value;
+                this.RaisePropertyChanged("EndTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimeLinkSpecified {
+            get {
+                return this.endTimeLinkFieldSpecified;
+            }
+            set {
+                this.endTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimeLinkSpecified");
             }
         }
         
@@ -2849,8 +4097,6 @@ namespace Denion.WebService.RDW {
         
         private string areaManagerIdField;
         
-        private string areaManagerDescField;
-        
         private CheckInfoData[] checkInfoListField;
         
         /// <remarks/>
@@ -2878,19 +4124,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public string AreaManagerDesc {
-            get {
-                return this.areaManagerDescField;
-            }
-            set {
-                this.areaManagerDescField = value;
-                this.RaisePropertyChanged("AreaManagerDesc");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
         public CheckInfoData[] CheckInfoList {
             get {
                 return this.checkInfoListField;
@@ -4302,6 +5536,242 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class AreaManagerInfoData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private System.Nullable<System.DateTime> startDateAreaManagerField;
+        
+        private bool startDateAreaManagerFieldSpecified;
+        
+        private System.Nullable<System.DateTime> endDateAreaManagerField;
+        
+        private bool endDateAreaManagerFieldSpecified;
+        
+        private string areaManagerDescField;
+        
+        private string areaManagerUrlField;
+        
+        private string vATNumberField;
+        
+        private string streetNameField;
+        
+        private string houseNumberField;
+        
+        private string postalCodeField;
+        
+        private string placeOfBusinessField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> StartDateAreaManager {
+            get {
+                return this.startDateAreaManagerField;
+            }
+            set {
+                this.startDateAreaManagerField = value;
+                this.RaisePropertyChanged("StartDateAreaManager");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartDateAreaManagerSpecified {
+            get {
+                return this.startDateAreaManagerFieldSpecified;
+            }
+            set {
+                this.startDateAreaManagerFieldSpecified = value;
+                this.RaisePropertyChanged("StartDateAreaManagerSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> EndDateAreaManager {
+            get {
+                return this.endDateAreaManagerField;
+            }
+            set {
+                this.endDateAreaManagerField = value;
+                this.RaisePropertyChanged("EndDateAreaManager");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateAreaManagerSpecified {
+            get {
+                return this.endDateAreaManagerFieldSpecified;
+            }
+            set {
+                this.endDateAreaManagerFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateAreaManagerSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string AreaManagerDesc {
+            get {
+                return this.areaManagerDescField;
+            }
+            set {
+                this.areaManagerDescField = value;
+                this.RaisePropertyChanged("AreaManagerDesc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string AreaManagerUrl {
+            get {
+                return this.areaManagerUrlField;
+            }
+            set {
+                this.areaManagerUrlField = value;
+                this.RaisePropertyChanged("AreaManagerUrl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string VATNumber {
+            get {
+                return this.vATNumberField;
+            }
+            set {
+                this.vATNumberField = value;
+                this.RaisePropertyChanged("VATNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public string StreetName {
+            get {
+                return this.streetNameField;
+            }
+            set {
+                this.streetNameField = value;
+                this.RaisePropertyChanged("StreetName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=7)]
+        public string HouseNumber {
+            get {
+                return this.houseNumberField;
+            }
+            set {
+                this.houseNumberField = value;
+                this.RaisePropertyChanged("HouseNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public string PostalCode {
+            get {
+                return this.postalCodeField;
+            }
+            set {
+                this.postalCodeField = value;
+                this.RaisePropertyChanged("PostalCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string PlaceOfBusiness {
+            get {
+                return this.placeOfBusinessField;
+            }
+            set {
+                this.placeOfBusinessField = value;
+                this.RaisePropertyChanged("PlaceOfBusiness");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreaManagersResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AreaManagerInfoData[] areaManagerListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public AreaManagerInfoData[] AreaManagerList {
+            get {
+                return this.areaManagerListField;
+            }
+            set {
+                this.areaManagerListField = value;
+                this.RaisePropertyChanged("AreaManagerList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreaManagersRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
     public partial class ReplyPSPhotoInfoResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string referencePSPhotoField;
@@ -4482,6 +5952,940 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentStartResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string providerIdField;
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string paymentAuthorisationIdField;
+        
+        private string usageIdField;
+        
+        private TokenListData[] tokenListField;
+        
+        private System.Nullable<decimal> authorisationMaxAmountField;
+        
+        private bool authorisationMaxAmountFieldSpecified;
+        
+        private System.Nullable<decimal> vATMaxAmountField;
+        
+        private bool vATMaxAmountFieldSpecified;
+        
+        private System.Nullable<System.DateTime> endDateTimeAdjustedField;
+        
+        private bool endDateTimeAdjustedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string ProviderId {
+            get {
+                return this.providerIdField;
+            }
+            set {
+                this.providerIdField = value;
+                this.RaisePropertyChanged("ProviderId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=3)]
+        public string PaymentAuthorisationId {
+            get {
+                return this.paymentAuthorisationIdField;
+            }
+            set {
+                this.paymentAuthorisationIdField = value;
+                this.RaisePropertyChanged("PaymentAuthorisationId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=5)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> AuthorisationMaxAmount {
+            get {
+                return this.authorisationMaxAmountField;
+            }
+            set {
+                this.authorisationMaxAmountField = value;
+                this.RaisePropertyChanged("AuthorisationMaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AuthorisationMaxAmountSpecified {
+            get {
+                return this.authorisationMaxAmountFieldSpecified;
+            }
+            set {
+                this.authorisationMaxAmountFieldSpecified = value;
+                this.RaisePropertyChanged("AuthorisationMaxAmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<decimal> VATMaxAmount {
+            get {
+                return this.vATMaxAmountField;
+            }
+            set {
+                this.vATMaxAmountField = value;
+                this.RaisePropertyChanged("VATMaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATMaxAmountSpecified {
+            get {
+                return this.vATMaxAmountFieldSpecified;
+            }
+            set {
+                this.vATMaxAmountFieldSpecified = value;
+                this.RaisePropertyChanged("VATMaxAmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<System.DateTime> EndDateTimeAdjusted {
+            get {
+                return this.endDateTimeAdjustedField;
+            }
+            set {
+                this.endDateTimeAdjustedField = value;
+                this.RaisePropertyChanged("EndDateTimeAdjusted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateTimeAdjustedSpecified {
+            get {
+                return this.endDateTimeAdjustedFieldSpecified;
+            }
+            set {
+                this.endDateTimeAdjustedFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateTimeAdjustedSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentStartRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string sellingPointIdField;
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
+        
+        private bool countryCodeVehicleFieldSpecified;
+        
+        private System.DateTime startDateTimeField;
+        
+        private System.Nullable<System.DateTime> endDateTimeField;
+        
+        private bool endDateTimeFieldSpecified;
+        
+        private string usageIdField;
+        
+        private System.Nullable<decimal> amountField;
+        
+        private bool amountFieldSpecified;
+        
+        private System.Nullable<decimal> vATField;
+        
+        private bool vATFieldSpecified;
+        
+        private TokenListData[] tokenListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string SellingPointId {
+            get {
+                return this.sellingPointIdField;
+            }
+            set {
+                this.sellingPointIdField = value;
+                this.RaisePropertyChanged("SellingPointId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
+            get {
+                return this.countryCodeVehicleField;
+            }
+            set {
+                this.countryCodeVehicleField = value;
+                this.RaisePropertyChanged("CountryCodeVehicle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountryCodeVehicleSpecified {
+            get {
+                return this.countryCodeVehicleFieldSpecified;
+            }
+            set {
+                this.countryCodeVehicleFieldSpecified = value;
+                this.RaisePropertyChanged("CountryCodeVehicleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime StartDateTime {
+            get {
+                return this.startDateTimeField;
+            }
+            set {
+                this.startDateTimeField = value;
+                this.RaisePropertyChanged("StartDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<System.DateTime> EndDateTime {
+            get {
+                return this.endDateTimeField;
+            }
+            set {
+                this.endDateTimeField = value;
+                this.RaisePropertyChanged("EndDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateTimeSpecified {
+            get {
+                return this.endDateTimeFieldSpecified;
+            }
+            set {
+                this.endDateTimeFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<decimal> Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountSpecified {
+            get {
+                return this.amountFieldSpecified;
+            }
+            set {
+                this.amountFieldSpecified = value;
+                this.RaisePropertyChanged("AmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public System.Nullable<decimal> VAT {
+            get {
+                return this.vATField;
+            }
+            set {
+                this.vATField = value;
+                this.RaisePropertyChanged("VAT");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATSpecified {
+            get {
+                return this.vATFieldSpecified;
+            }
+            set {
+                this.vATFieldSpecified = value;
+                this.RaisePropertyChanged("VATSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentEndResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string paymentAuthorisationIdField;
+        
+        private System.Nullable<System.DateTime> endDateTimeAdjustedField;
+        
+        private bool endDateTimeAdjustedFieldSpecified;
+        
+        private System.Nullable<decimal> amountCalculatedField;
+        
+        private bool amountCalculatedFieldSpecified;
+        
+        private System.Nullable<decimal> vATCalculatedField;
+        
+        private bool vATCalculatedFieldSpecified;
+        
+        private System.Nullable<decimal> authorisationMaxAmountField;
+        
+        private bool authorisationMaxAmountFieldSpecified;
+        
+        private System.Nullable<decimal> vATMaxAmountField;
+        
+        private bool vATMaxAmountFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string PaymentAuthorisationId {
+            get {
+                return this.paymentAuthorisationIdField;
+            }
+            set {
+                this.paymentAuthorisationIdField = value;
+                this.RaisePropertyChanged("PaymentAuthorisationId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> EndDateTimeAdjusted {
+            get {
+                return this.endDateTimeAdjustedField;
+            }
+            set {
+                this.endDateTimeAdjustedField = value;
+                this.RaisePropertyChanged("EndDateTimeAdjusted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateTimeAdjustedSpecified {
+            get {
+                return this.endDateTimeAdjustedFieldSpecified;
+            }
+            set {
+                this.endDateTimeAdjustedFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateTimeAdjustedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> AmountCalculated {
+            get {
+                return this.amountCalculatedField;
+            }
+            set {
+                this.amountCalculatedField = value;
+                this.RaisePropertyChanged("AmountCalculated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountCalculatedSpecified {
+            get {
+                return this.amountCalculatedFieldSpecified;
+            }
+            set {
+                this.amountCalculatedFieldSpecified = value;
+                this.RaisePropertyChanged("AmountCalculatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> VATCalculated {
+            get {
+                return this.vATCalculatedField;
+            }
+            set {
+                this.vATCalculatedField = value;
+                this.RaisePropertyChanged("VATCalculated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATCalculatedSpecified {
+            get {
+                return this.vATCalculatedFieldSpecified;
+            }
+            set {
+                this.vATCalculatedFieldSpecified = value;
+                this.RaisePropertyChanged("VATCalculatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> AuthorisationMaxAmount {
+            get {
+                return this.authorisationMaxAmountField;
+            }
+            set {
+                this.authorisationMaxAmountField = value;
+                this.RaisePropertyChanged("AuthorisationMaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AuthorisationMaxAmountSpecified {
+            get {
+                return this.authorisationMaxAmountFieldSpecified;
+            }
+            set {
+                this.authorisationMaxAmountFieldSpecified = value;
+                this.RaisePropertyChanged("AuthorisationMaxAmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> VATMaxAmount {
+            get {
+                return this.vATMaxAmountField;
+            }
+            set {
+                this.vATMaxAmountField = value;
+                this.RaisePropertyChanged("VATMaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATMaxAmountSpecified {
+            get {
+                return this.vATMaxAmountFieldSpecified;
+            }
+            set {
+                this.vATMaxAmountFieldSpecified = value;
+                this.RaisePropertyChanged("VATMaxAmountSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentEndRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string paymentAuthorisationIdField;
+        
+        private System.DateTime endDateTimeField;
+        
+        private System.Nullable<decimal> amountField;
+        
+        private bool amountFieldSpecified;
+        
+        private System.Nullable<decimal> vATField;
+        
+        private bool vATFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string PaymentAuthorisationId {
+            get {
+                return this.paymentAuthorisationIdField;
+            }
+            set {
+                this.paymentAuthorisationIdField = value;
+                this.RaisePropertyChanged("PaymentAuthorisationId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime EndDateTime {
+            get {
+                return this.endDateTimeField;
+            }
+            set {
+                this.endDateTimeField = value;
+                this.RaisePropertyChanged("EndDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountSpecified {
+            get {
+                return this.amountFieldSpecified;
+            }
+            set {
+                this.amountFieldSpecified = value;
+                this.RaisePropertyChanged("AmountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> VAT {
+            get {
+                return this.vATField;
+            }
+            set {
+                this.vATField = value;
+                this.RaisePropertyChanged("VAT");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool VATSpecified {
+            get {
+                return this.vATFieldSpecified;
+            }
+            set {
+                this.vATFieldSpecified = value;
+                this.RaisePropertyChanged("VATSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentCheckResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string providerIdField;
+        
+        private System.Nullable<IndicatorYNType> grantedField;
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string usageIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string ProviderId {
+            get {
+                return this.providerIdField;
+            }
+            set {
+                this.providerIdField = value;
+                this.RaisePropertyChanged("ProviderId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<IndicatorYNType> Granted {
+            get {
+                return this.grantedField;
+            }
+            set {
+                this.grantedField = value;
+                this.RaisePropertyChanged("Granted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentCheckRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string sellingPointIdField;
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private System.Nullable<UneceLandCodesType> countryCodeField;
+        
+        private bool countryCodeFieldSpecified;
+        
+        private System.DateTime checkDateTimeField;
+        
+        private string usageIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        public string SellingPointId {
+            get {
+                return this.sellingPointIdField;
+            }
+            set {
+                this.sellingPointIdField = value;
+                this.RaisePropertyChanged("SellingPointId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<UneceLandCodesType> CountryCode {
+            get {
+                return this.countryCodeField;
+            }
+            set {
+                this.countryCodeField = value;
+                this.RaisePropertyChanged("CountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountryCodeSpecified {
+            get {
+                return this.countryCodeFieldSpecified;
+            }
+            set {
+                this.countryCodeFieldSpecified = value;
+                this.RaisePropertyChanged("CountryCodeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime CheckDateTime {
+            get {
+                return this.checkDateTimeField;
+            }
+            set {
+                this.checkDateTimeField = value;
+                this.RaisePropertyChanged("CheckDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
     public partial class PSRightEnrollResponseData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string pSRightIdField;
@@ -4491,6 +6895,10 @@ namespace Denion.WebService.RDW {
         private string areaIdField;
         
         private string sellingPointIdField;
+        
+        private System.Nullable<System.DateTime> startTimePSRightAdjustedField;
+        
+        private bool startTimePSRightAdjustedFieldSpecified;
         
         private System.Nullable<System.DateTime> endTimePSRightAdjustedField;
         
@@ -4507,6 +6915,10 @@ namespace Denion.WebService.RDW {
         private SpecifCalcAmountData[] specifCalcAmountListField;
         
         private PSRightRemarkData[] pSRightRemarkListField;
+        
+        private PSRightEnrollResponseDataPSRightParentData pSRightParentDataField;
+        
+        private TokenListData[] tokenListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
@@ -4558,6 +6970,30 @@ namespace Denion.WebService.RDW {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<System.DateTime> StartTimePSRightAdjusted {
+            get {
+                return this.startTimePSRightAdjustedField;
+            }
+            set {
+                this.startTimePSRightAdjustedField = value;
+                this.RaisePropertyChanged("StartTimePSRightAdjusted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartTimePSRightAdjustedSpecified {
+            get {
+                return this.startTimePSRightAdjustedFieldSpecified;
+            }
+            set {
+                this.startTimePSRightAdjustedFieldSpecified = value;
+                this.RaisePropertyChanged("StartTimePSRightAdjustedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
         public System.Nullable<System.DateTime> EndTimePSRightAdjusted {
             get {
                 return this.endTimePSRightAdjustedField;
@@ -4581,7 +7017,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public System.Nullable<decimal> AmountPSRightCalculated {
             get {
                 return this.amountPSRightCalculatedField;
@@ -4605,7 +7041,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public System.Nullable<decimal> VATPSRightCalculated {
             get {
                 return this.vATPSRightCalculatedField;
@@ -4629,7 +7065,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
         public SpecifCalcAmountData[] SpecifCalcAmountList {
             get {
                 return this.specifCalcAmountListField;
@@ -4641,7 +7077,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
         public PSRightRemarkData[] PSRightRemarkList {
             get {
                 return this.pSRightRemarkListField;
@@ -4649,6 +7085,62 @@ namespace Denion.WebService.RDW {
             set {
                 this.pSRightRemarkListField = value;
                 this.RaisePropertyChanged("PSRightRemarkList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public PSRightEnrollResponseDataPSRightParentData PSRightParentData {
+            get {
+                return this.pSRightParentDataField;
+            }
+            set {
+                this.pSRightParentDataField = value;
+                this.RaisePropertyChanged("PSRightParentData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=11)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightEnrollResponseDataPSRightParentData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string parentRightIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string ParentRightId {
+            get {
+                return this.parentRightIdField;
+            }
+            set {
+                this.parentRightIdField = value;
+                this.RaisePropertyChanged("ParentRightId");
             }
         }
         
@@ -4671,6 +7163,8 @@ namespace Denion.WebService.RDW {
     public partial class PSRightEnrollRequestData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
         
         private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
         
@@ -4704,6 +7198,10 @@ namespace Denion.WebService.RDW {
         
         private string referencePSRightField;
         
+        private PSRightParentData pSRightParentDataField;
+        
+        private TokenListData[] tokenListField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string VehicleId {
@@ -4717,7 +7215,19 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
             get {
                 return this.countryCodeVehicleField;
@@ -4741,7 +7251,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=3)]
         public string AreaManagerId {
             get {
                 return this.areaManagerIdField;
@@ -4753,7 +7263,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
         public string AreaId {
             get {
                 return this.areaIdField;
@@ -4765,7 +7275,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public PSRightEnrollRequestDataLocationPSRight LocationPSRight {
             get {
                 return this.locationPSRightField;
@@ -4777,7 +7287,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=6)]
         public string SellingPointId {
             get {
                 return this.sellingPointIdField;
@@ -4789,7 +7299,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string UsageId {
             get {
                 return this.usageIdField;
@@ -4801,7 +7311,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public System.DateTime StartTimePSright {
             get {
                 return this.startTimePSrightField;
@@ -4813,7 +7323,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
         public System.Nullable<System.DateTime> EndTimePSright {
             get {
                 return this.endTimePSrightField;
@@ -4837,7 +7347,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=10)]
         public PSRightWindowData[] PSRightWindowList {
             get {
                 return this.pSRightWindowListField;
@@ -4849,7 +7359,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
         public System.Nullable<decimal> AmountPSright {
             get {
                 return this.amountPSrightField;
@@ -4873,7 +7383,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
         public System.Nullable<decimal> VATPSright {
             get {
                 return this.vATPSrightField;
@@ -4897,7 +7407,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
         public string ReferencePSRight {
             get {
                 return this.referencePSRightField;
@@ -4905,6 +7415,30 @@ namespace Denion.WebService.RDW {
             set {
                 this.referencePSRightField = value;
                 this.RaisePropertyChanged("ReferencePSRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public PSRightParentData PSRightParentData {
+            get {
+                return this.pSRightParentDataField;
+            }
+            set {
+                this.pSRightParentDataField = value;
+                this.RaisePropertyChanged("PSRightParentData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=15)]
+        public TokenListData[] TokenList {
+            get {
+                return this.tokenListField;
+            }
+            set {
+                this.tokenListField = value;
+                this.RaisePropertyChanged("TokenList");
             }
         }
         
@@ -4951,6 +7485,256 @@ namespace Denion.WebService.RDW {
             set {
                 this.longitudeField = value;
                 this.RaisePropertyChanged("Longitude");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PSRightParentData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string parentRightIdField;
+        
+        private string externalReferenceParentRightField;
+        
+        private string usageIDParentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string ParentRightId {
+            get {
+                return this.parentRightIdField;
+            }
+            set {
+                this.parentRightIdField = value;
+                this.RaisePropertyChanged("ParentRightId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ExternalReferenceParentRight {
+            get {
+                return this.externalReferenceParentRightField;
+            }
+            set {
+                this.externalReferenceParentRightField = value;
+                this.RaisePropertyChanged("ExternalReferenceParentRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string UsageIDParent {
+            get {
+                return this.usageIDParentField;
+            }
+            set {
+                this.usageIDParentField = value;
+                this.RaisePropertyChanged("UsageIDParent");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class EnrollLinkResponseData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string linkIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", Order=0)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class EnrollLinkRequestData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
+        
+        private bool countryCodeVehicleFieldSpecified;
+        
+        private string usageIdField;
+        
+        private System.DateTime startTimeLinkField;
+        
+        private System.Nullable<System.DateTime> endTimeLinkField;
+        
+        private bool endTimeLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
+            get {
+                return this.countryCodeVehicleField;
+            }
+            set {
+                this.countryCodeVehicleField = value;
+                this.RaisePropertyChanged("CountryCodeVehicle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountryCodeVehicleSpecified {
+            get {
+                return this.countryCodeVehicleFieldSpecified;
+            }
+            set {
+                this.countryCodeVehicleFieldSpecified = value;
+                this.RaisePropertyChanged("CountryCodeVehicleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime StartTimeLink {
+            get {
+                return this.startTimeLinkField;
+            }
+            set {
+                this.startTimeLinkField = value;
+                this.RaisePropertyChanged("StartTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<System.DateTime> EndTimeLink {
+            get {
+                return this.endTimeLinkField;
+            }
+            set {
+                this.endTimeLinkField = value;
+                this.RaisePropertyChanged("EndTimeLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndTimeLinkSpecified {
+            get {
+                return this.endTimeLinkFieldSpecified;
+            }
+            set {
+                this.endTimeLinkFieldSpecified = value;
+                this.RaisePropertyChanged("EndTimeLinkSpecified");
             }
         }
         
@@ -5526,6 +8310,8 @@ namespace Denion.WebService.RDW {
         
         private string vehicleIdField;
         
+        private string vehicleIdTypeField;
+        
         private System.Nullable<UneceLandCodesType> countryCodeVehicleField;
         
         private bool countryCodeVehicleFieldSpecified;
@@ -5535,6 +8321,8 @@ namespace Denion.WebService.RDW {
         private string referenceCheckOrgField;
         
         private IndicatorYNType extraInfoIndicatorField;
+        
+        private string vehicleIDConfidenceLevelField;
         
         private AreaManagerData[] areaManagerTableField;
         
@@ -5635,7 +8423,19 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public System.Nullable<UneceLandCodesType> CountryCodeVehicle {
             get {
                 return this.countryCodeVehicleField;
@@ -5659,7 +8459,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public System.DateTime CheckTime {
             get {
                 return this.checkTimeField;
@@ -5671,7 +8471,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
         public string ReferenceCheckOrg {
             get {
                 return this.referenceCheckOrgField;
@@ -5683,7 +8483,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public IndicatorYNType ExtraInfoIndicator {
             get {
                 return this.extraInfoIndicatorField;
@@ -5695,7 +8495,19 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=12)]
+        public string VehicleIDConfidenceLevel {
+            get {
+                return this.vehicleIDConfidenceLevelField;
+            }
+            set {
+                this.vehicleIDConfidenceLevelField = value;
+                this.RaisePropertyChanged("VehicleIDConfidenceLevel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=13)]
         public AreaManagerData[] AreaManagerTable {
             get {
                 return this.areaManagerTableField;
@@ -5774,6 +8586,14 @@ namespace Denion.WebService.RDW {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PSRightCheckResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PSRightRevokeResponseError))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PSRightEnrollResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveLinkResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnrollLinkResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RevokeLinkResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveAreaManagersResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentCheckResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentStartResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentEndResponseError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveSellingPointsResponseError))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6269,7 +9089,11 @@ namespace Denion.WebService.RDW {
         
         private string vehicleIdField;
         
+        private string vehicleIdTypeField;
+        
         private string indicatorTimeField;
+        
+        private string usageIdField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
@@ -6285,6 +9109,18 @@ namespace Denion.WebService.RDW {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string IndicatorTime {
             get {
                 return this.indicatorTimeField;
@@ -6292,6 +9128,18 @@ namespace Denion.WebService.RDW {
             set {
                 this.indicatorTimeField = value;
                 this.RaisePropertyChanged("IndicatorTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
             }
         }
     }
@@ -6358,6 +9206,8 @@ namespace Denion.WebService.RDW {
         private string referenceCheckOrgField;
         
         private string extraInfoIndicatorField;
+        
+        private string vehicleIDConfidenceLevelField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
@@ -6466,6 +9316,18 @@ namespace Denion.WebService.RDW {
                 this.RaisePropertyChanged("ExtraInfoIndicator");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string VehicleIDConfidenceLevel {
+            get {
+                return this.vehicleIDConfidenceLevelField;
+            }
+            set {
+                this.vehicleIDConfidenceLevelField = value;
+                this.RaisePropertyChanged("VehicleIDConfidenceLevel");
+            }
+        }
     }
     
     /// <remarks/>
@@ -6561,6 +9423,8 @@ namespace Denion.WebService.RDW {
         
         private string vehicleIdField;
         
+        private string vehicleIdTypeField;
+        
         private string countryCodeVehicleField;
         
         private string areaManagerIdField;
@@ -6572,6 +9436,8 @@ namespace Denion.WebService.RDW {
         private string sellingPointIdField;
         
         private string usageIdField;
+        
+        private PSRightParentData pSRightParentDataField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
@@ -6587,6 +9453,18 @@ namespace Denion.WebService.RDW {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
         public string CountryCodeVehicle {
             get {
                 return this.countryCodeVehicleField;
@@ -6598,7 +9476,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
         public string AreaManagerId {
             get {
                 return this.areaManagerIdField;
@@ -6610,7 +9488,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
         public AreaData[] AreaTable {
             get {
                 return this.areaTableField;
@@ -6622,7 +9500,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public PSRightEnrollResponseErrorLocationPSRight LocationPSRight {
             get {
                 return this.locationPSRightField;
@@ -6634,7 +9512,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string SellingPointId {
             get {
                 return this.sellingPointIdField;
@@ -6646,7 +9524,7 @@ namespace Denion.WebService.RDW {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string UsageId {
             get {
                 return this.usageIdField;
@@ -6654,6 +9532,18 @@ namespace Denion.WebService.RDW {
             set {
                 this.usageIdField = value;
                 this.RaisePropertyChanged("UsageId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public PSRightParentData PSRightParentData {
+            get {
+                return this.pSRightParentDataField;
+            }
+            set {
+                this.pSRightParentDataField = value;
+                this.RaisePropertyChanged("PSRightParentData");
             }
         }
     }
@@ -6700,6 +9590,358 @@ namespace Denion.WebService.RDW {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveLinkResponseError : ResponseError {
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private string linkIdField;
+        
+        private string startTimeLinksField;
+        
+        private string endTimeLinksField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string LinkId {
+            get {
+                return this.linkIdField;
+            }
+            set {
+                this.linkIdField = value;
+                this.RaisePropertyChanged("LinkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string StartTimeLinks {
+            get {
+                return this.startTimeLinksField;
+            }
+            set {
+                this.startTimeLinksField = value;
+                this.RaisePropertyChanged("StartTimeLinks");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string EndTimeLinks {
+            get {
+                return this.endTimeLinksField;
+            }
+            set {
+                this.endTimeLinksField = value;
+                this.RaisePropertyChanged("EndTimeLinks");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class EnrollLinkResponseError : ResponseError {
+        
+        private string areaManagerIdField;
+        
+        private string areaIdField;
+        
+        private string vehicleIdField;
+        
+        private string vehicleIdTypeField;
+        
+        private string countryCodeVehicleField;
+        
+        private string usageIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string AreaId {
+            get {
+                return this.areaIdField;
+            }
+            set {
+                this.areaIdField = value;
+                this.RaisePropertyChanged("AreaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string VehicleId {
+            get {
+                return this.vehicleIdField;
+            }
+            set {
+                this.vehicleIdField = value;
+                this.RaisePropertyChanged("VehicleId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string VehicleIdType {
+            get {
+                return this.vehicleIdTypeField;
+            }
+            set {
+                this.vehicleIdTypeField = value;
+                this.RaisePropertyChanged("VehicleIdType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public string CountryCodeVehicle {
+            get {
+                return this.countryCodeVehicleField;
+            }
+            set {
+                this.countryCodeVehicleField = value;
+                this.RaisePropertyChanged("CountryCodeVehicle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public string UsageId {
+            get {
+                return this.usageIdField;
+            }
+            set {
+                this.usageIdField = value;
+                this.RaisePropertyChanged("UsageId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RevokeLinkResponseError : ResponseError {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveAreaManagersResponseError : ResponseError {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentCheckResponseError : ResponseError {
+        
+        private string remarkIdField;
+        
+        private string remarkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string RemarkId {
+            get {
+                return this.remarkIdField;
+            }
+            set {
+                this.remarkIdField = value;
+                this.RaisePropertyChanged("RemarkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string Remark {
+            get {
+                return this.remarkField;
+            }
+            set {
+                this.remarkField = value;
+                this.RaisePropertyChanged("Remark");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentStartResponseError : ResponseError {
+        
+        private string remarkIdField;
+        
+        private string remarkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string RemarkId {
+            get {
+                return this.remarkIdField;
+            }
+            set {
+                this.remarkIdField = value;
+                this.RaisePropertyChanged("RemarkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string Remark {
+            get {
+                return this.remarkField;
+            }
+            set {
+                this.remarkField = value;
+                this.RaisePropertyChanged("Remark");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class PaymentEndResponseError : ResponseError {
+        
+        private string paymentAuthorisationIdField;
+        
+        private string remarkIdField;
+        
+        private string remarkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=0)]
+        public string PaymentAuthorisationId {
+            get {
+                return this.paymentAuthorisationIdField;
+            }
+            set {
+                this.paymentAuthorisationIdField = value;
+                this.RaisePropertyChanged("PaymentAuthorisationId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="nonNegativeInteger", IsNullable=true, Order=1)]
+        public string RemarkId {
+            get {
+                return this.remarkIdField;
+            }
+            set {
+                this.remarkIdField = value;
+                this.RaisePropertyChanged("RemarkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string Remark {
+            get {
+                return this.remarkField;
+            }
+            set {
+                this.remarkField = value;
+                this.RaisePropertyChanged("Remark");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+    public partial class RetrieveSellingPointsResponseError : ResponseError {
+        
+        private string areaManagerIdField;
+        
+        private string referenceDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string AreaManagerId {
+            get {
+                return this.areaManagerIdField;
+            }
+            set {
+                this.areaManagerIdField = value;
+                this.RaisePropertyChanged("AreaManagerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string ReferenceDate {
+            get {
+                return this.referenceDateField;
+            }
+            set {
+                this.referenceDateField = value;
+                this.RaisePropertyChanged("ReferenceDate");
             }
         }
     }
@@ -6949,6 +10191,48 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="EnrollLinkRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class EnrollLinkRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.EnrollLinkRequestData EnrollLinkRequestData;
+        
+        public EnrollLinkRequest() {
+        }
+        
+        public EnrollLinkRequest(string PIN, Denion.WebService.RDW.EnrollLinkRequestData EnrollLinkRequestData) {
+            this.PIN = PIN;
+            this.EnrollLinkRequestData = EnrollLinkRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="EnrollLinkResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class EnrollLinkResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.EnrollLinkResponseData EnrollLinkResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.EnrollLinkResponseError EnrollLinkResponseError;
+        
+        public EnrollLinkResponse() {
+        }
+        
+        public EnrollLinkResponse(Denion.WebService.RDW.EnrollLinkResponseData EnrollLinkResponseData, Denion.WebService.RDW.EnrollLinkResponseError EnrollLinkResponseError) {
+            this.EnrollLinkResponseData = EnrollLinkResponseData;
+            this.EnrollLinkResponseError = EnrollLinkResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="PSRightEnrollRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
     public partial class PSRightEnrollRequest {
         
@@ -6991,6 +10275,132 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PaymentCheckRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PaymentCheckRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.PaymentCheckRequestData PaymentCheckRequestData;
+        
+        public PaymentCheckRequest() {
+        }
+        
+        public PaymentCheckRequest(string PIN, Denion.WebService.RDW.PaymentCheckRequestData PaymentCheckRequestData) {
+            this.PIN = PIN;
+            this.PaymentCheckRequestData = PaymentCheckRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PaymentCheckResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PaymentCheckResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.PaymentCheckResponseData PaymentCheckResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.PaymentCheckResponseError PaymentCheckResponseError;
+        
+        public PaymentCheckResponse() {
+        }
+        
+        public PaymentCheckResponse(Denion.WebService.RDW.PaymentCheckResponseData PaymentCheckResponseData, Denion.WebService.RDW.PaymentCheckResponseError PaymentCheckResponseError) {
+            this.PaymentCheckResponseData = PaymentCheckResponseData;
+            this.PaymentCheckResponseError = PaymentCheckResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PaymentEndRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PaymentEndRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.PaymentEndRequestData PaymentEndRequestData;
+        
+        public PaymentEndRequest() {
+        }
+        
+        public PaymentEndRequest(string PIN, Denion.WebService.RDW.PaymentEndRequestData PaymentEndRequestData) {
+            this.PIN = PIN;
+            this.PaymentEndRequestData = PaymentEndRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PaymentEndResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PaymentEndResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.PaymentEndResponseData PaymentEndResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.PaymentEndResponseError PaymentEndResponseError;
+        
+        public PaymentEndResponse() {
+        }
+        
+        public PaymentEndResponse(Denion.WebService.RDW.PaymentEndResponseData PaymentEndResponseData, Denion.WebService.RDW.PaymentEndResponseError PaymentEndResponseError) {
+            this.PaymentEndResponseData = PaymentEndResponseData;
+            this.PaymentEndResponseError = PaymentEndResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PaymentStartRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PaymentStartRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.PaymentStartRequestData PaymentStartRequestData;
+        
+        public PaymentStartRequest() {
+        }
+        
+        public PaymentStartRequest(string PIN, Denion.WebService.RDW.PaymentStartRequestData PaymentStartRequestData) {
+            this.PIN = PIN;
+            this.PaymentStartRequestData = PaymentStartRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PaymentStartResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class PaymentStartResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.PaymentStartResponseData PaymentStartResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.PaymentStartResponseError PaymentStartResponseError;
+        
+        public PaymentStartResponse() {
+        }
+        
+        public PaymentStartResponse(Denion.WebService.RDW.PaymentStartResponseData PaymentStartResponseData, Denion.WebService.RDW.PaymentStartResponseError PaymentStartResponseError) {
+            this.PaymentStartResponseData = PaymentStartResponseData;
+            this.PaymentStartResponseError = PaymentStartResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ReplyPSPhotoInfoRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
     public partial class ReplyPSPhotoInfoRequest {
         
@@ -7027,6 +10437,48 @@ namespace Denion.WebService.RDW {
         public ReplyPSPhotoInfoResponse(Denion.WebService.RDW.ReplyPSPhotoInfoResponseData ReplyPSPhotoInfoResponseData, Denion.WebService.RDW.ReplyPSPhotoInfoResponseError ReplyPSPhotoInfoResponseError) {
             this.ReplyPSPhotoInfoResponseData = ReplyPSPhotoInfoResponseData;
             this.ReplyPSPhotoInfoResponseError = ReplyPSPhotoInfoResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreaManagersRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveAreaManagersRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RetrieveAreaManagersRequestData RetrieveAreaManagersRequestData;
+        
+        public RetrieveAreaManagersRequest() {
+        }
+        
+        public RetrieveAreaManagersRequest(string PIN, Denion.WebService.RDW.RetrieveAreaManagersRequestData RetrieveAreaManagersRequestData) {
+            this.PIN = PIN;
+            this.RetrieveAreaManagersRequestData = RetrieveAreaManagersRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveAreaManagersResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveAreaManagersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RetrieveAreaManagersResponseData RetrieveAreaManagersResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.RetrieveAreaManagersResponseError RetrieveAreaManagersResponseError;
+        
+        public RetrieveAreaManagersResponse() {
+        }
+        
+        public RetrieveAreaManagersResponse(Denion.WebService.RDW.RetrieveAreaManagersResponseData RetrieveAreaManagersResponseData, Denion.WebService.RDW.RetrieveAreaManagersResponseError RetrieveAreaManagersResponseError) {
+            this.RetrieveAreaManagersResponseData = RetrieveAreaManagersResponseData;
+            this.RetrieveAreaManagersResponseError = RetrieveAreaManagersResponseError;
         }
     }
     
@@ -7159,6 +10611,48 @@ namespace Denion.WebService.RDW {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveLinkRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveLinkRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RetrieveLinkRequestData RetrieveLinkRequestData;
+        
+        public RetrieveLinkRequest() {
+        }
+        
+        public RetrieveLinkRequest(string PIN, Denion.WebService.RDW.RetrieveLinkRequestData RetrieveLinkRequestData) {
+            this.PIN = PIN;
+            this.RetrieveLinkRequestData = RetrieveLinkRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveLinkResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveLinkResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RetrieveLinkResponseData RetrieveLinkResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.RetrieveLinkResponseError RetrieveLinkResponseError;
+        
+        public RetrieveLinkResponse() {
+        }
+        
+        public RetrieveLinkResponse(Denion.WebService.RDW.RetrieveLinkResponseData RetrieveLinkResponseData, Denion.WebService.RDW.RetrieveLinkResponseError RetrieveLinkResponseError) {
+            this.RetrieveLinkResponseData = RetrieveLinkResponseData;
+            this.RetrieveLinkResponseError = RetrieveLinkResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveRightInfoRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
     public partial class RetrieveRightInfoRequest {
         
@@ -7237,6 +10731,90 @@ namespace Denion.WebService.RDW {
         public RetrieveRightInfoForProviderResponse(Denion.WebService.RDW.RetrieveRightInfoForProviderResponseData PSRightInfoForProviderResponseData, Denion.WebService.RDW.RetrieveRightInfoForProviderResponseError RightInfoForProviderResponseError) {
             this.PSRightInfoForProviderResponseData = PSRightInfoForProviderResponseData;
             this.RightInfoForProviderResponseError = RightInfoForProviderResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveSellingPointsRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveSellingPointsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RetrieveSellingPointsRequestData RetrieveSellingPointsRequestData;
+        
+        public RetrieveSellingPointsRequest() {
+        }
+        
+        public RetrieveSellingPointsRequest(string PIN, Denion.WebService.RDW.RetrieveSellingPointsRequestData RetrieveSellingPointsRequestData) {
+            this.PIN = PIN;
+            this.RetrieveSellingPointsRequestData = RetrieveSellingPointsRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RetrieveSellingPointsResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RetrieveSellingPointsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RetrieveSellingPointsResponseData RetrieveSellingPointsResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.RetrieveSellingPointsResponseError RetrieveSellingPointsResponseError;
+        
+        public RetrieveSellingPointsResponse() {
+        }
+        
+        public RetrieveSellingPointsResponse(Denion.WebService.RDW.RetrieveSellingPointsResponseData RetrieveSellingPointsResponseData, Denion.WebService.RDW.RetrieveSellingPointsResponseError RetrieveSellingPointsResponseError) {
+            this.RetrieveSellingPointsResponseData = RetrieveSellingPointsResponseData;
+            this.RetrieveSellingPointsResponseError = RetrieveSellingPointsResponseError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RevokeLinkRequest", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RevokeLinkRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://rdw.nl/rpv/1.0")]
+        public string PIN;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RevokeLinkRequestData RevokeLinkRequestData;
+        
+        public RevokeLinkRequest() {
+        }
+        
+        public RevokeLinkRequest(string PIN, Denion.WebService.RDW.RevokeLinkRequestData RevokeLinkRequestData) {
+            this.PIN = PIN;
+            this.RevokeLinkRequestData = RevokeLinkRequestData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RevokeLinkResponse", WrapperNamespace="http://rdw.nl/rpv/1.0", IsWrapped=true)]
+    public partial class RevokeLinkResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=0)]
+        public Denion.WebService.RDW.RevokeLinkResponseData RevokeLinkResponseData;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://rdw.nl/rpv/1.0", Order=1)]
+        public Denion.WebService.RDW.RevokeLinkResponseError RevokeLinkResponseError;
+        
+        public RevokeLinkResponse() {
+        }
+        
+        public RevokeLinkResponse(Denion.WebService.RDW.RevokeLinkResponseData RevokeLinkResponseData, Denion.WebService.RDW.RevokeLinkResponseError RevokeLinkResponseError) {
+            this.RevokeLinkResponseData = RevokeLinkResponseData;
+            this.RevokeLinkResponseError = RevokeLinkResponseError;
         }
     }
     
@@ -7380,6 +10958,20 @@ namespace Denion.WebService.RDW {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.EnrollLinkResponse Denion.WebService.RDW.IRegistration.EnrollLink(Denion.WebService.RDW.EnrollLinkRequest request) {
+            return base.Channel.EnrollLink(request);
+        }
+        
+        public Denion.WebService.RDW.EnrollLinkResponseData EnrollLink(string PIN, Denion.WebService.RDW.EnrollLinkRequestData EnrollLinkRequestData, out Denion.WebService.RDW.EnrollLinkResponseError EnrollLinkResponseError) {
+            Denion.WebService.RDW.EnrollLinkRequest inValue = new Denion.WebService.RDW.EnrollLinkRequest();
+            inValue.PIN = PIN;
+            inValue.EnrollLinkRequestData = EnrollLinkRequestData;
+            Denion.WebService.RDW.EnrollLinkResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).EnrollLink(inValue);
+            EnrollLinkResponseError = retVal.EnrollLinkResponseError;
+            return retVal.EnrollLinkResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Denion.WebService.RDW.PSRightEnrollResponse Denion.WebService.RDW.IRegistration.EnrollPSRight(Denion.WebService.RDW.PSRightEnrollRequest request) {
             return base.Channel.EnrollPSRight(request);
         }
@@ -7394,6 +10986,48 @@ namespace Denion.WebService.RDW {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.PaymentCheckResponse Denion.WebService.RDW.IRegistration.PaymentCheck(Denion.WebService.RDW.PaymentCheckRequest request) {
+            return base.Channel.PaymentCheck(request);
+        }
+        
+        public Denion.WebService.RDW.PaymentCheckResponseData PaymentCheck(string PIN, Denion.WebService.RDW.PaymentCheckRequestData PaymentCheckRequestData, out Denion.WebService.RDW.PaymentCheckResponseError PaymentCheckResponseError) {
+            Denion.WebService.RDW.PaymentCheckRequest inValue = new Denion.WebService.RDW.PaymentCheckRequest();
+            inValue.PIN = PIN;
+            inValue.PaymentCheckRequestData = PaymentCheckRequestData;
+            Denion.WebService.RDW.PaymentCheckResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).PaymentCheck(inValue);
+            PaymentCheckResponseError = retVal.PaymentCheckResponseError;
+            return retVal.PaymentCheckResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.PaymentEndResponse Denion.WebService.RDW.IRegistration.PaymentEnd(Denion.WebService.RDW.PaymentEndRequest request) {
+            return base.Channel.PaymentEnd(request);
+        }
+        
+        public Denion.WebService.RDW.PaymentEndResponseData PaymentEnd(string PIN, Denion.WebService.RDW.PaymentEndRequestData PaymentEndRequestData, out Denion.WebService.RDW.PaymentEndResponseError PaymentEndResponseError) {
+            Denion.WebService.RDW.PaymentEndRequest inValue = new Denion.WebService.RDW.PaymentEndRequest();
+            inValue.PIN = PIN;
+            inValue.PaymentEndRequestData = PaymentEndRequestData;
+            Denion.WebService.RDW.PaymentEndResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).PaymentEnd(inValue);
+            PaymentEndResponseError = retVal.PaymentEndResponseError;
+            return retVal.PaymentEndResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.PaymentStartResponse Denion.WebService.RDW.IRegistration.PaymentStart(Denion.WebService.RDW.PaymentStartRequest request) {
+            return base.Channel.PaymentStart(request);
+        }
+        
+        public Denion.WebService.RDW.PaymentStartResponseData PaymentStart(string PIN, Denion.WebService.RDW.PaymentStartRequestData PaymentStartRequestData, out Denion.WebService.RDW.PaymentStartResponseError PaymentStartResponseError) {
+            Denion.WebService.RDW.PaymentStartRequest inValue = new Denion.WebService.RDW.PaymentStartRequest();
+            inValue.PIN = PIN;
+            inValue.PaymentStartRequestData = PaymentStartRequestData;
+            Denion.WebService.RDW.PaymentStartResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).PaymentStart(inValue);
+            PaymentStartResponseError = retVal.PaymentStartResponseError;
+            return retVal.PaymentStartResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Denion.WebService.RDW.ReplyPSPhotoInfoResponse Denion.WebService.RDW.IRegistration.ReplyPSPhotoInfo(Denion.WebService.RDW.ReplyPSPhotoInfoRequest request) {
             return base.Channel.ReplyPSPhotoInfo(request);
         }
@@ -7405,6 +11039,20 @@ namespace Denion.WebService.RDW {
             Denion.WebService.RDW.ReplyPSPhotoInfoResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).ReplyPSPhotoInfo(inValue);
             ReplyPSPhotoInfoResponseError = retVal.ReplyPSPhotoInfoResponseError;
             return retVal.ReplyPSPhotoInfoResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.RetrieveAreaManagersResponse Denion.WebService.RDW.IRegistration.RetrieveAreaManagers(Denion.WebService.RDW.RetrieveAreaManagersRequest request) {
+            return base.Channel.RetrieveAreaManagers(request);
+        }
+        
+        public Denion.WebService.RDW.RetrieveAreaManagersResponseData RetrieveAreaManagers(string PIN, Denion.WebService.RDW.RetrieveAreaManagersRequestData RetrieveAreaManagersRequestData, out Denion.WebService.RDW.RetrieveAreaManagersResponseError RetrieveAreaManagersResponseError) {
+            Denion.WebService.RDW.RetrieveAreaManagersRequest inValue = new Denion.WebService.RDW.RetrieveAreaManagersRequest();
+            inValue.PIN = PIN;
+            inValue.RetrieveAreaManagersRequestData = RetrieveAreaManagersRequestData;
+            Denion.WebService.RDW.RetrieveAreaManagersResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).RetrieveAreaManagers(inValue);
+            RetrieveAreaManagersResponseError = retVal.RetrieveAreaManagersResponseError;
+            return retVal.RetrieveAreaManagersResponseData;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7450,6 +11098,20 @@ namespace Denion.WebService.RDW {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.RetrieveLinkResponse Denion.WebService.RDW.IRegistration.RetrieveLink(Denion.WebService.RDW.RetrieveLinkRequest request) {
+            return base.Channel.RetrieveLink(request);
+        }
+        
+        public Denion.WebService.RDW.RetrieveLinkResponseData RetrieveLink(string PIN, Denion.WebService.RDW.RetrieveLinkRequestData RetrieveLinkRequestData, out Denion.WebService.RDW.RetrieveLinkResponseError RetrieveLinkResponseError) {
+            Denion.WebService.RDW.RetrieveLinkRequest inValue = new Denion.WebService.RDW.RetrieveLinkRequest();
+            inValue.PIN = PIN;
+            inValue.RetrieveLinkRequestData = RetrieveLinkRequestData;
+            Denion.WebService.RDW.RetrieveLinkResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).RetrieveLink(inValue);
+            RetrieveLinkResponseError = retVal.RetrieveLinkResponseError;
+            return retVal.RetrieveLinkResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Denion.WebService.RDW.RetrieveRightInfoResponse Denion.WebService.RDW.IRegistration.RetrieveRightInfo(Denion.WebService.RDW.RetrieveRightInfoRequest request) {
             return base.Channel.RetrieveRightInfo(request);
         }
@@ -7475,6 +11137,34 @@ namespace Denion.WebService.RDW {
             Denion.WebService.RDW.RetrieveRightInfoForProviderResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).RetrieveRightInfoForProvider(inValue);
             RightInfoForProviderResponseError = retVal.RightInfoForProviderResponseError;
             return retVal.PSRightInfoForProviderResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.RetrieveSellingPointsResponse Denion.WebService.RDW.IRegistration.RetrieveSellingPoints(Denion.WebService.RDW.RetrieveSellingPointsRequest request) {
+            return base.Channel.RetrieveSellingPoints(request);
+        }
+        
+        public Denion.WebService.RDW.RetrieveSellingPointsResponseData RetrieveSellingPoints(string PIN, Denion.WebService.RDW.RetrieveSellingPointsRequestData RetrieveSellingPointsRequestData, out Denion.WebService.RDW.RetrieveSellingPointsResponseError RetrieveSellingPointsResponseError) {
+            Denion.WebService.RDW.RetrieveSellingPointsRequest inValue = new Denion.WebService.RDW.RetrieveSellingPointsRequest();
+            inValue.PIN = PIN;
+            inValue.RetrieveSellingPointsRequestData = RetrieveSellingPointsRequestData;
+            Denion.WebService.RDW.RetrieveSellingPointsResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).RetrieveSellingPoints(inValue);
+            RetrieveSellingPointsResponseError = retVal.RetrieveSellingPointsResponseError;
+            return retVal.RetrieveSellingPointsResponseData;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Denion.WebService.RDW.RevokeLinkResponse Denion.WebService.RDW.IRegistration.RevokeLink(Denion.WebService.RDW.RevokeLinkRequest request) {
+            return base.Channel.RevokeLink(request);
+        }
+        
+        public Denion.WebService.RDW.RevokeLinkResponseData RevokeLink(string PIN, Denion.WebService.RDW.RevokeLinkRequestData RevokeLinkRequestData, out Denion.WebService.RDW.RevokeLinkResponseError RevokeLinkResponseError) {
+            Denion.WebService.RDW.RevokeLinkRequest inValue = new Denion.WebService.RDW.RevokeLinkRequest();
+            inValue.PIN = PIN;
+            inValue.RevokeLinkRequestData = RevokeLinkRequestData;
+            Denion.WebService.RDW.RevokeLinkResponse retVal = ((Denion.WebService.RDW.IRegistration)(this)).RevokeLink(inValue);
+            RevokeLinkResponseError = retVal.RevokeLinkResponseError;
+            return retVal.RevokeLinkResponseData;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
