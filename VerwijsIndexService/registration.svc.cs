@@ -623,6 +623,10 @@ namespace Denion.WebService.VerwijsIndex
         }
 
         public static bool getNprRegistration(object providerId, object areaManagerId) {
+            if(providerId == null || areaManagerId == null) {
+                return false;
+            }
+
             SqlCommand com = new SqlCommand();
             com.CommandText = @"Select c.NPRREGISTRATION
                     from [Provider] as p 
